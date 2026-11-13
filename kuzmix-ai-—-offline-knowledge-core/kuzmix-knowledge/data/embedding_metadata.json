@@ -1,0 +1,82 @@
+[
+  {
+    "id": "emb_concept_c_gravity",
+    "target_type": "concept",
+    "target_id": "c_gravity",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_newtons_laws",
+    "target_type": "concept",
+    "target_id": "c_newtons_laws",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_ohms_law",
+    "target_type": "concept",
+    "target_id": "c_ohms_law",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_big_o_notation",
+    "target_type": "concept",
+    "target_id": "c_big_o_notation",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_hash_table",
+    "target_type": "concept",
+    "target_id": "c_hash_table",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_rag",
+    "target_type": "concept",
+    "target_id": "c_rag",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_transformer_arch",
+    "target_type": "concept",
+    "target_id": "c_transformer_arch",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  },
+  {
+    "id": "emb_concept_c_supply_demand",
+    "target_type": "concept",
+    "target_id": "c_supply_demand",
+    "model_name": "text-embedding-004",
+    "dimensions": 768,
+    "quantization": "float32",
+    "vector_json": null,
+    "version": "1.0.0"
+  }
+]

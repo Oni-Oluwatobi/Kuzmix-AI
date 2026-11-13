@@ -1,0 +1,856 @@
+[
+  {
+    "id": "top_cat_math_algebra_core",
+    "category_id": "cat_math_algebra",
+    "name": "Algebra & Number Theory \u2014 Core Principles & Theory",
+    "slug": "algebra-number-theory-core",
+    "description": "Foundational theorems, formal laws, and definitions within Algebra & Number Theory."
+  },
+  {
+    "id": "top_cat_math_algebra_applied",
+    "category_id": "cat_math_algebra",
+    "name": "Algebra & Number Theory \u2014 Applied Methods & Systems",
+    "slug": "algebra-number-theory-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Algebra & Number Theory."
+  },
+  {
+    "id": "top_cat_math_calculus_core",
+    "category_id": "cat_math_calculus",
+    "name": "Calculus & Analysis \u2014 Core Principles & Theory",
+    "slug": "calculus-analysis-core",
+    "description": "Foundational theorems, formal laws, and definitions within Calculus & Analysis."
+  },
+  {
+    "id": "top_cat_math_calculus_applied",
+    "category_id": "cat_math_calculus",
+    "name": "Calculus & Analysis \u2014 Applied Methods & Systems",
+    "slug": "calculus-analysis-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Calculus & Analysis."
+  },
+  {
+    "id": "top_cat_math_probability_core",
+    "category_id": "cat_math_probability",
+    "name": "Probability & Statistics \u2014 Core Principles & Theory",
+    "slug": "probability-statistics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Probability & Statistics."
+  },
+  {
+    "id": "top_cat_math_probability_applied",
+    "category_id": "cat_math_probability",
+    "name": "Probability & Statistics \u2014 Applied Methods & Systems",
+    "slug": "probability-statistics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Probability & Statistics."
+  },
+  {
+    "id": "top_cat_math_discrete_core",
+    "category_id": "cat_math_discrete",
+    "name": "Discrete Mathematics & Logic \u2014 Core Principles & Theory",
+    "slug": "discrete-math-logic-core",
+    "description": "Foundational theorems, formal laws, and definitions within Discrete Mathematics & Logic."
+  },
+  {
+    "id": "top_cat_math_discrete_applied",
+    "category_id": "cat_math_discrete",
+    "name": "Discrete Mathematics & Logic \u2014 Applied Methods & Systems",
+    "slug": "discrete-math-logic-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Discrete Mathematics & Logic."
+  },
+  {
+    "id": "top_cat_physics_mechanics_core",
+    "category_id": "cat_physics_mechanics",
+    "name": "Classical & Continuum Mechanics \u2014 Core Principles & Theory",
+    "slug": "classical-mechanics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Classical & Continuum Mechanics."
+  },
+  {
+    "id": "top_cat_physics_mechanics_applied",
+    "category_id": "cat_physics_mechanics",
+    "name": "Classical & Continuum Mechanics \u2014 Applied Methods & Systems",
+    "slug": "classical-mechanics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Classical & Continuum Mechanics."
+  },
+  {
+    "id": "top_cat_physics_thermo_core",
+    "category_id": "cat_physics_thermo",
+    "name": "Thermodynamics & Statistical Physics \u2014 Core Principles & Theory",
+    "slug": "thermodynamics-statistical-core",
+    "description": "Foundational theorems, formal laws, and definitions within Thermodynamics & Statistical Physics."
+  },
+  {
+    "id": "top_cat_physics_thermo_applied",
+    "category_id": "cat_physics_thermo",
+    "name": "Thermodynamics & Statistical Physics \u2014 Applied Methods & Systems",
+    "slug": "thermodynamics-statistical-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Thermodynamics & Statistical Physics."
+  },
+  {
+    "id": "top_cat_physics_electromagnetism_core",
+    "category_id": "cat_physics_electromagnetism",
+    "name": "Electromagnetism & Wave Optics \u2014 Core Principles & Theory",
+    "slug": "electromagnetism-optics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Electromagnetism & Wave Optics."
+  },
+  {
+    "id": "top_cat_physics_electromagnetism_applied",
+    "category_id": "cat_physics_electromagnetism",
+    "name": "Electromagnetism & Wave Optics \u2014 Applied Methods & Systems",
+    "slug": "electromagnetism-optics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Electromagnetism & Wave Optics."
+  },
+  {
+    "id": "top_cat_physics_quantum_core",
+    "category_id": "cat_physics_quantum",
+    "name": "Quantum & Relativistic Physics \u2014 Core Principles & Theory",
+    "slug": "quantum-relativity-core",
+    "description": "Foundational theorems, formal laws, and definitions within Quantum & Relativistic Physics."
+  },
+  {
+    "id": "top_cat_physics_quantum_applied",
+    "category_id": "cat_physics_quantum",
+    "name": "Quantum & Relativistic Physics \u2014 Applied Methods & Systems",
+    "slug": "quantum-relativity-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Quantum & Relativistic Physics."
+  },
+  {
+    "id": "top_cat_chem_general_core",
+    "category_id": "cat_chem_general",
+    "name": "General & Inorganic Chemistry \u2014 Core Principles & Theory",
+    "slug": "general-inorganic-chem-core",
+    "description": "Foundational theorems, formal laws, and definitions within General & Inorganic Chemistry."
+  },
+  {
+    "id": "top_cat_chem_general_applied",
+    "category_id": "cat_chem_general",
+    "name": "General & Inorganic Chemistry \u2014 Applied Methods & Systems",
+    "slug": "general-inorganic-chem-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in General & Inorganic Chemistry."
+  },
+  {
+    "id": "top_cat_chem_organic_core",
+    "category_id": "cat_chem_organic",
+    "name": "Organic & Biological Chemistry \u2014 Core Principles & Theory",
+    "slug": "organic-biochem-core",
+    "description": "Foundational theorems, formal laws, and definitions within Organic & Biological Chemistry."
+  },
+  {
+    "id": "top_cat_chem_organic_applied",
+    "category_id": "cat_chem_organic",
+    "name": "Organic & Biological Chemistry \u2014 Applied Methods & Systems",
+    "slug": "organic-biochem-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Organic & Biological Chemistry."
+  },
+  {
+    "id": "top_cat_chem_physical_core",
+    "category_id": "cat_chem_physical",
+    "name": "Physical Chemistry & Electrochemistry \u2014 Core Principles & Theory",
+    "slug": "physical-electrochem-core",
+    "description": "Foundational theorems, formal laws, and definitions within Physical Chemistry & Electrochemistry."
+  },
+  {
+    "id": "top_cat_chem_physical_applied",
+    "category_id": "cat_chem_physical",
+    "name": "Physical Chemistry & Electrochemistry \u2014 Applied Methods & Systems",
+    "slug": "physical-electrochem-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Physical Chemistry & Electrochemistry."
+  },
+  {
+    "id": "top_cat_bio_cellular_core",
+    "category_id": "cat_bio_cellular",
+    "name": "Cellular & Molecular Biology \u2014 Core Principles & Theory",
+    "slug": "cellular-molecular-bio-core",
+    "description": "Foundational theorems, formal laws, and definitions within Cellular & Molecular Biology."
+  },
+  {
+    "id": "top_cat_bio_cellular_applied",
+    "category_id": "cat_bio_cellular",
+    "name": "Cellular & Molecular Biology \u2014 Applied Methods & Systems",
+    "slug": "cellular-molecular-bio-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Cellular & Molecular Biology."
+  },
+  {
+    "id": "top_cat_bio_genetics_core",
+    "category_id": "cat_bio_genetics",
+    "name": "Genetics & Evolutionary Biology \u2014 Core Principles & Theory",
+    "slug": "genetics-evolution-core",
+    "description": "Foundational theorems, formal laws, and definitions within Genetics & Evolutionary Biology."
+  },
+  {
+    "id": "top_cat_bio_genetics_applied",
+    "category_id": "cat_bio_genetics",
+    "name": "Genetics & Evolutionary Biology \u2014 Applied Methods & Systems",
+    "slug": "genetics-evolution-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Genetics & Evolutionary Biology."
+  },
+  {
+    "id": "top_cat_bio_ecology_core",
+    "category_id": "cat_bio_ecology",
+    "name": "Ecology & Environmental Biology \u2014 Core Principles & Theory",
+    "slug": "ecology-environmental-core",
+    "description": "Foundational theorems, formal laws, and definitions within Ecology & Environmental Biology."
+  },
+  {
+    "id": "top_cat_bio_ecology_applied",
+    "category_id": "cat_bio_ecology",
+    "name": "Ecology & Environmental Biology \u2014 Applied Methods & Systems",
+    "slug": "ecology-environmental-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Ecology & Environmental Biology."
+  },
+  {
+    "id": "top_cat_earth_geology_core",
+    "category_id": "cat_earth_geology",
+    "name": "Geology & Geophysics \u2014 Core Principles & Theory",
+    "slug": "geology-geophysics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Geology & Geophysics."
+  },
+  {
+    "id": "top_cat_earth_geology_applied",
+    "category_id": "cat_earth_geology",
+    "name": "Geology & Geophysics \u2014 Applied Methods & Systems",
+    "slug": "geology-geophysics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Geology & Geophysics."
+  },
+  {
+    "id": "top_cat_earth_meteorology_core",
+    "category_id": "cat_earth_meteorology",
+    "name": "Atmospheric Science & Meteorology \u2014 Core Principles & Theory",
+    "slug": "meteorology-climate-core",
+    "description": "Foundational theorems, formal laws, and definitions within Atmospheric Science & Meteorology."
+  },
+  {
+    "id": "top_cat_earth_meteorology_applied",
+    "category_id": "cat_earth_meteorology",
+    "name": "Atmospheric Science & Meteorology \u2014 Applied Methods & Systems",
+    "slug": "meteorology-climate-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Atmospheric Science & Meteorology."
+  },
+  {
+    "id": "top_cat_space_astronomy_core",
+    "category_id": "cat_space_astronomy",
+    "name": "Astronomy & Astrophysics \u2014 Core Principles & Theory",
+    "slug": "astronomy-astrophysics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Astronomy & Astrophysics."
+  },
+  {
+    "id": "top_cat_space_astronomy_applied",
+    "category_id": "cat_space_astronomy",
+    "name": "Astronomy & Astrophysics \u2014 Applied Methods & Systems",
+    "slug": "astronomy-astrophysics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Astronomy & Astrophysics."
+  },
+  {
+    "id": "top_cat_eng_mechanical_core",
+    "category_id": "cat_eng_mechanical",
+    "name": "Mechanical & Aerospace Engineering \u2014 Core Principles & Theory",
+    "slug": "mechanical-aerospace-core",
+    "description": "Foundational theorems, formal laws, and definitions within Mechanical & Aerospace Engineering."
+  },
+  {
+    "id": "top_cat_eng_mechanical_applied",
+    "category_id": "cat_eng_mechanical",
+    "name": "Mechanical & Aerospace Engineering \u2014 Applied Methods & Systems",
+    "slug": "mechanical-aerospace-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Mechanical & Aerospace Engineering."
+  },
+  {
+    "id": "top_cat_eng_electrical_core",
+    "category_id": "cat_eng_electrical",
+    "name": "Electrical & Electronics Engineering \u2014 Core Principles & Theory",
+    "slug": "electrical-electronics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Electrical & Electronics Engineering."
+  },
+  {
+    "id": "top_cat_eng_electrical_applied",
+    "category_id": "cat_eng_electrical",
+    "name": "Electrical & Electronics Engineering \u2014 Applied Methods & Systems",
+    "slug": "electrical-electronics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Electrical & Electronics Engineering."
+  },
+  {
+    "id": "top_cat_eng_civil_core",
+    "category_id": "cat_eng_civil",
+    "name": "Civil & Structural Engineering \u2014 Core Principles & Theory",
+    "slug": "civil-structural-core",
+    "description": "Foundational theorems, formal laws, and definitions within Civil & Structural Engineering."
+  },
+  {
+    "id": "top_cat_eng_civil_applied",
+    "category_id": "cat_eng_civil",
+    "name": "Civil & Structural Engineering \u2014 Applied Methods & Systems",
+    "slug": "civil-structural-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Civil & Structural Engineering."
+  },
+  {
+    "id": "top_cat_eng_materials_core",
+    "category_id": "cat_eng_materials",
+    "name": "Materials Science & Metallurgy \u2014 Core Principles & Theory",
+    "slug": "materials-science-core",
+    "description": "Foundational theorems, formal laws, and definitions within Materials Science & Metallurgy."
+  },
+  {
+    "id": "top_cat_eng_materials_applied",
+    "category_id": "cat_eng_materials",
+    "name": "Materials Science & Metallurgy \u2014 Applied Methods & Systems",
+    "slug": "materials-science-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Materials Science & Metallurgy."
+  },
+  {
+    "id": "top_cat_eng_robotics_core",
+    "category_id": "cat_eng_robotics",
+    "name": "Robotics & Control Systems \u2014 Core Principles & Theory",
+    "slug": "robotics-control-core",
+    "description": "Foundational theorems, formal laws, and definitions within Robotics & Control Systems."
+  },
+  {
+    "id": "top_cat_eng_robotics_applied",
+    "category_id": "cat_eng_robotics",
+    "name": "Robotics & Control Systems \u2014 Applied Methods & Systems",
+    "slug": "robotics-control-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Robotics & Control Systems."
+  },
+  {
+    "id": "top_cat_eng_energy_core",
+    "category_id": "cat_eng_energy",
+    "name": "Energy Systems & Power Generation \u2014 Core Principles & Theory",
+    "slug": "energy-power-systems-core",
+    "description": "Foundational theorems, formal laws, and definitions within Energy Systems & Power Generation."
+  },
+  {
+    "id": "top_cat_eng_energy_applied",
+    "category_id": "cat_eng_energy",
+    "name": "Energy Systems & Power Generation \u2014 Applied Methods & Systems",
+    "slug": "energy-power-systems-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Energy Systems & Power Generation."
+  },
+  {
+    "id": "top_cat_cs_foundations_core",
+    "category_id": "cat_cs_foundations",
+    "name": "Computer Science Foundations \u2014 Core Principles & Theory",
+    "slug": "cs-foundations-core",
+    "description": "Foundational theorems, formal laws, and definitions within Computer Science Foundations."
+  },
+  {
+    "id": "top_cat_cs_foundations_applied",
+    "category_id": "cat_cs_foundations",
+    "name": "Computer Science Foundations \u2014 Applied Methods & Systems",
+    "slug": "cs-foundations-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Computer Science Foundations."
+  },
+  {
+    "id": "top_cat_cs_dsa_core",
+    "category_id": "cat_cs_dsa",
+    "name": "Data Structures & Algorithms \u2014 Core Principles & Theory",
+    "slug": "data-structures-algorithms-core",
+    "description": "Foundational theorems, formal laws, and definitions within Data Structures & Algorithms."
+  },
+  {
+    "id": "top_cat_cs_dsa_applied",
+    "category_id": "cat_cs_dsa",
+    "name": "Data Structures & Algorithms \u2014 Applied Methods & Systems",
+    "slug": "data-structures-algorithms-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Data Structures & Algorithms."
+  },
+  {
+    "id": "top_cat_cs_systems_core",
+    "category_id": "cat_cs_systems",
+    "name": "Operating Systems & Hardware Architecture \u2014 Core Principles & Theory",
+    "slug": "os-architecture-core",
+    "description": "Foundational theorems, formal laws, and definitions within Operating Systems & Hardware Architecture."
+  },
+  {
+    "id": "top_cat_cs_systems_applied",
+    "category_id": "cat_cs_systems",
+    "name": "Operating Systems & Hardware Architecture \u2014 Applied Methods & Systems",
+    "slug": "os-architecture-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Operating Systems & Hardware Architecture."
+  },
+  {
+    "id": "top_cat_cs_networking_core",
+    "category_id": "cat_cs_networking",
+    "name": "Computer Networking & Protocols \u2014 Core Principles & Theory",
+    "slug": "networking-protocols-core",
+    "description": "Foundational theorems, formal laws, and definitions within Computer Networking & Protocols."
+  },
+  {
+    "id": "top_cat_cs_networking_applied",
+    "category_id": "cat_cs_networking",
+    "name": "Computer Networking & Protocols \u2014 Applied Methods & Systems",
+    "slug": "networking-protocols-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Computer Networking & Protocols."
+  },
+  {
+    "id": "top_cat_cs_distributed_core",
+    "category_id": "cat_cs_distributed",
+    "name": "Distributed Systems & Cloud Computing \u2014 Core Principles & Theory",
+    "slug": "distributed-systems-core",
+    "description": "Foundational theorems, formal laws, and definitions within Distributed Systems & Cloud Computing."
+  },
+  {
+    "id": "top_cat_cs_distributed_applied",
+    "category_id": "cat_cs_distributed",
+    "name": "Distributed Systems & Cloud Computing \u2014 Applied Methods & Systems",
+    "slug": "distributed-systems-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Distributed Systems & Cloud Computing."
+  },
+  {
+    "id": "top_cat_cs_security_core",
+    "category_id": "cat_cs_security",
+    "name": "Cybersecurity & Cryptography \u2014 Core Principles & Theory",
+    "slug": "cybersecurity-cryptography-core",
+    "description": "Foundational theorems, formal laws, and definitions within Cybersecurity & Cryptography."
+  },
+  {
+    "id": "top_cat_cs_security_applied",
+    "category_id": "cat_cs_security",
+    "name": "Cybersecurity & Cryptography \u2014 Applied Methods & Systems",
+    "slug": "cybersecurity-cryptography-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Cybersecurity & Cryptography."
+  },
+  {
+    "id": "top_cat_cs_software_core",
+    "category_id": "cat_cs_software",
+    "name": "Software Engineering & Architecture \u2014 Core Principles & Theory",
+    "slug": "software-engineering-core",
+    "description": "Foundational theorems, formal laws, and definitions within Software Engineering & Architecture."
+  },
+  {
+    "id": "top_cat_cs_software_applied",
+    "category_id": "cat_cs_software",
+    "name": "Software Engineering & Architecture \u2014 Applied Methods & Systems",
+    "slug": "software-engineering-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Software Engineering & Architecture."
+  },
+  {
+    "id": "top_cat_cs_ai_ml_core",
+    "category_id": "cat_cs_ai_ml",
+    "name": "Artificial Intelligence & Machine Learning \u2014 Core Principles & Theory",
+    "slug": "ai-machine-learning-core",
+    "description": "Foundational theorems, formal laws, and definitions within Artificial Intelligence & Machine Learning."
+  },
+  {
+    "id": "top_cat_cs_ai_ml_applied",
+    "category_id": "cat_cs_ai_ml",
+    "name": "Artificial Intelligence & Machine Learning \u2014 Applied Methods & Systems",
+    "slug": "ai-machine-learning-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Artificial Intelligence & Machine Learning."
+  },
+  {
+    "id": "top_cat_econ_micro_core",
+    "category_id": "cat_econ_micro",
+    "name": "Microeconomics & Market Structures \u2014 Core Principles & Theory",
+    "slug": "microeconomics-markets-core",
+    "description": "Foundational theorems, formal laws, and definitions within Microeconomics & Market Structures."
+  },
+  {
+    "id": "top_cat_econ_micro_applied",
+    "category_id": "cat_econ_micro",
+    "name": "Microeconomics & Market Structures \u2014 Applied Methods & Systems",
+    "slug": "microeconomics-markets-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Microeconomics & Market Structures."
+  },
+  {
+    "id": "top_cat_econ_macro_core",
+    "category_id": "cat_econ_macro",
+    "name": "Macroeconomics & Monetary Policy \u2014 Core Principles & Theory",
+    "slug": "macroeconomics-policy-core",
+    "description": "Foundational theorems, formal laws, and definitions within Macroeconomics & Monetary Policy."
+  },
+  {
+    "id": "top_cat_econ_macro_applied",
+    "category_id": "cat_econ_macro",
+    "name": "Macroeconomics & Monetary Policy \u2014 Applied Methods & Systems",
+    "slug": "macroeconomics-policy-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Macroeconomics & Monetary Policy."
+  },
+  {
+    "id": "top_cat_biz_finance_core",
+    "category_id": "cat_biz_finance",
+    "name": "Corporate Finance & Capital Markets \u2014 Core Principles & Theory",
+    "slug": "finance-capital-markets-core",
+    "description": "Foundational theorems, formal laws, and definitions within Corporate Finance & Capital Markets."
+  },
+  {
+    "id": "top_cat_biz_finance_applied",
+    "category_id": "cat_biz_finance",
+    "name": "Corporate Finance & Capital Markets \u2014 Applied Methods & Systems",
+    "slug": "finance-capital-markets-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Corporate Finance & Capital Markets."
+  },
+  {
+    "id": "top_cat_biz_accounting_core",
+    "category_id": "cat_biz_accounting",
+    "name": "Financial & Managerial Accounting \u2014 Core Principles & Theory",
+    "slug": "accounting-financial-core",
+    "description": "Foundational theorems, formal laws, and definitions within Financial & Managerial Accounting."
+  },
+  {
+    "id": "top_cat_biz_accounting_applied",
+    "category_id": "cat_biz_accounting",
+    "name": "Financial & Managerial Accounting \u2014 Applied Methods & Systems",
+    "slug": "accounting-financial-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Financial & Managerial Accounting."
+  },
+  {
+    "id": "top_cat_biz_strategy_core",
+    "category_id": "cat_biz_strategy",
+    "name": "Strategic Management & Operations \u2014 Core Principles & Theory",
+    "slug": "strategy-operations-core",
+    "description": "Foundational theorems, formal laws, and definitions within Strategic Management & Operations."
+  },
+  {
+    "id": "top_cat_biz_strategy_applied",
+    "category_id": "cat_biz_strategy",
+    "name": "Strategic Management & Operations \u2014 Applied Methods & Systems",
+    "slug": "strategy-operations-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Strategic Management & Operations."
+  },
+  {
+    "id": "top_cat_biz_marketing_core",
+    "category_id": "cat_biz_marketing",
+    "name": "Marketing & Customer Dynamics \u2014 Core Principles & Theory",
+    "slug": "marketing-customer-core",
+    "description": "Foundational theorems, formal laws, and definitions within Marketing & Customer Dynamics."
+  },
+  {
+    "id": "top_cat_biz_marketing_applied",
+    "category_id": "cat_biz_marketing",
+    "name": "Marketing & Customer Dynamics \u2014 Applied Methods & Systems",
+    "slug": "marketing-customer-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Marketing & Customer Dynamics."
+  },
+  {
+    "id": "top_cat_hum_philosophy_core",
+    "category_id": "cat_hum_philosophy",
+    "name": "Epistemology & Metaphysics \u2014 Core Principles & Theory",
+    "slug": "philosophy-epistemology-core",
+    "description": "Foundational theorems, formal laws, and definitions within Epistemology & Metaphysics."
+  },
+  {
+    "id": "top_cat_hum_philosophy_applied",
+    "category_id": "cat_hum_philosophy",
+    "name": "Epistemology & Metaphysics \u2014 Applied Methods & Systems",
+    "slug": "philosophy-epistemology-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Epistemology & Metaphysics."
+  },
+  {
+    "id": "top_cat_hum_ethics_core",
+    "category_id": "cat_hum_ethics",
+    "name": "Ethics & Moral Philosophy \u2014 Core Principles & Theory",
+    "slug": "ethics-moral-philosophy-core",
+    "description": "Foundational theorems, formal laws, and definitions within Ethics & Moral Philosophy."
+  },
+  {
+    "id": "top_cat_hum_ethics_applied",
+    "category_id": "cat_hum_ethics",
+    "name": "Ethics & Moral Philosophy \u2014 Applied Methods & Systems",
+    "slug": "ethics-moral-philosophy-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Ethics & Moral Philosophy."
+  },
+  {
+    "id": "top_cat_hum_history_core",
+    "category_id": "cat_hum_history",
+    "name": "World History & Historiography \u2014 Core Principles & Theory",
+    "slug": "world-history-eras-core",
+    "description": "Foundational theorems, formal laws, and definitions within World History & Historiography."
+  },
+  {
+    "id": "top_cat_hum_history_applied",
+    "category_id": "cat_hum_history",
+    "name": "World History & Historiography \u2014 Applied Methods & Systems",
+    "slug": "world-history-eras-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in World History & Historiography."
+  },
+  {
+    "id": "top_cat_hum_psychology_core",
+    "category_id": "cat_hum_psychology",
+    "name": "Cognitive & Behavioral Psychology \u2014 Core Principles & Theory",
+    "slug": "psychology-cognitive-core",
+    "description": "Foundational theorems, formal laws, and definitions within Cognitive & Behavioral Psychology."
+  },
+  {
+    "id": "top_cat_hum_psychology_applied",
+    "category_id": "cat_hum_psychology",
+    "name": "Cognitive & Behavioral Psychology \u2014 Applied Methods & Systems",
+    "slug": "psychology-cognitive-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Cognitive & Behavioral Psychology."
+  },
+  {
+    "id": "top_cat_hum_linguistics_core",
+    "category_id": "cat_hum_linguistics",
+    "name": "Linguistics & Semantics \u2014 Core Principles & Theory",
+    "slug": "linguistics-semantics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Linguistics & Semantics."
+  },
+  {
+    "id": "top_cat_hum_linguistics_applied",
+    "category_id": "cat_hum_linguistics",
+    "name": "Linguistics & Semantics \u2014 Applied Methods & Systems",
+    "slug": "linguistics-semantics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Linguistics & Semantics."
+  },
+  {
+    "id": "top_cat_soc_civics_core",
+    "category_id": "cat_soc_civics",
+    "name": "Civics & Governance Structures \u2014 Core Principles & Theory",
+    "slug": "civics-governance-core",
+    "description": "Foundational theorems, formal laws, and definitions within Civics & Governance Structures."
+  },
+  {
+    "id": "top_cat_soc_civics_applied",
+    "category_id": "cat_soc_civics",
+    "name": "Civics & Governance Structures \u2014 Applied Methods & Systems",
+    "slug": "civics-governance-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Civics & Governance Structures."
+  },
+  {
+    "id": "top_cat_soc_law_core",
+    "category_id": "cat_soc_law",
+    "name": "Jurisprudence & Legal Principles \u2014 Core Principles & Theory",
+    "slug": "law-jurisprudence-core",
+    "description": "Foundational theorems, formal laws, and definitions within Jurisprudence & Legal Principles."
+  },
+  {
+    "id": "top_cat_soc_law_applied",
+    "category_id": "cat_soc_law",
+    "name": "Jurisprudence & Legal Principles \u2014 Applied Methods & Systems",
+    "slug": "law-jurisprudence-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Jurisprudence & Legal Principles."
+  },
+  {
+    "id": "top_cat_soc_international_core",
+    "category_id": "cat_soc_international",
+    "name": "International Relations & Treaties \u2014 Core Principles & Theory",
+    "slug": "international-relations-core",
+    "description": "Foundational theorems, formal laws, and definitions within International Relations & Treaties."
+  },
+  {
+    "id": "top_cat_soc_international_applied",
+    "category_id": "cat_soc_international",
+    "name": "International Relations & Treaties \u2014 Applied Methods & Systems",
+    "slug": "international-relations-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in International Relations & Treaties."
+  },
+  {
+    "id": "top_cat_soc_sociology_core",
+    "category_id": "cat_soc_sociology",
+    "name": "Sociology & Social Institutions \u2014 Core Principles & Theory",
+    "slug": "sociology-institutions-core",
+    "description": "Foundational theorems, formal laws, and definitions within Sociology & Social Institutions."
+  },
+  {
+    "id": "top_cat_soc_sociology_applied",
+    "category_id": "cat_soc_sociology",
+    "name": "Sociology & Social Institutions \u2014 Applied Methods & Systems",
+    "slug": "sociology-institutions-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Sociology & Social Institutions."
+  },
+  {
+    "id": "top_cat_health_anatomy_core",
+    "category_id": "cat_health_anatomy",
+    "name": "Human Anatomy & Organ Systems \u2014 Core Principles & Theory",
+    "slug": "human-anatomy-systems-core",
+    "description": "Foundational theorems, formal laws, and definitions within Human Anatomy & Organ Systems."
+  },
+  {
+    "id": "top_cat_health_anatomy_applied",
+    "category_id": "cat_health_anatomy",
+    "name": "Human Anatomy & Organ Systems \u2014 Applied Methods & Systems",
+    "slug": "human-anatomy-systems-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Human Anatomy & Organ Systems."
+  },
+  {
+    "id": "top_cat_health_physiology_core",
+    "category_id": "cat_health_physiology",
+    "name": "Human Physiology & Neurobiology \u2014 Core Principles & Theory",
+    "slug": "human-physiology-core",
+    "description": "Foundational theorems, formal laws, and definitions within Human Physiology & Neurobiology."
+  },
+  {
+    "id": "top_cat_health_physiology_applied",
+    "category_id": "cat_health_physiology",
+    "name": "Human Physiology & Neurobiology \u2014 Applied Methods & Systems",
+    "slug": "human-physiology-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Human Physiology & Neurobiology."
+  },
+  {
+    "id": "top_cat_health_nutrition_core",
+    "category_id": "cat_health_nutrition",
+    "name": "Nutrition Science & Metabolism \u2014 Core Principles & Theory",
+    "slug": "nutrition-metabolic-science-core",
+    "description": "Foundational theorems, formal laws, and definitions within Nutrition Science & Metabolism."
+  },
+  {
+    "id": "top_cat_health_nutrition_applied",
+    "category_id": "cat_health_nutrition",
+    "name": "Nutrition Science & Metabolism \u2014 Applied Methods & Systems",
+    "slug": "nutrition-metabolic-science-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Nutrition Science & Metabolism."
+  },
+  {
+    "id": "top_cat_health_first_aid_core",
+    "category_id": "cat_health_first_aid",
+    "name": "First Aid & Emergency Protocols \u2014 Core Principles & Theory",
+    "slug": "first-aid-emergency-core",
+    "description": "Foundational theorems, formal laws, and definitions within First Aid & Emergency Protocols."
+  },
+  {
+    "id": "top_cat_health_first_aid_applied",
+    "category_id": "cat_health_first_aid",
+    "name": "First Aid & Emergency Protocols \u2014 Applied Methods & Systems",
+    "slug": "first-aid-emergency-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in First Aid & Emergency Protocols."
+  },
+  {
+    "id": "top_cat_health_public_core",
+    "category_id": "cat_health_public",
+    "name": "Public Health & Epidemiology \u2014 Core Principles & Theory",
+    "slug": "public-health-epidemiology-core",
+    "description": "Foundational theorems, formal laws, and definitions within Public Health & Epidemiology."
+  },
+  {
+    "id": "top_cat_health_public_applied",
+    "category_id": "cat_health_public",
+    "name": "Public Health & Epidemiology \u2014 Applied Methods & Systems",
+    "slug": "public-health-epidemiology-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Public Health & Epidemiology."
+  },
+  {
+    "id": "top_cat_art_design_core",
+    "category_id": "cat_art_design",
+    "name": "Visual Design & Composition \u2014 Core Principles & Theory",
+    "slug": "visual-design-composition-core",
+    "description": "Foundational theorems, formal laws, and definitions within Visual Design & Composition."
+  },
+  {
+    "id": "top_cat_art_design_applied",
+    "category_id": "cat_art_design",
+    "name": "Visual Design & Composition \u2014 Applied Methods & Systems",
+    "slug": "visual-design-composition-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Visual Design & Composition."
+  },
+  {
+    "id": "top_cat_art_typography_core",
+    "category_id": "cat_art_typography",
+    "name": "Typography & Editorial Layout \u2014 Core Principles & Theory",
+    "slug": "typography-layout-core",
+    "description": "Foundational theorems, formal laws, and definitions within Typography & Editorial Layout."
+  },
+  {
+    "id": "top_cat_art_typography_applied",
+    "category_id": "cat_art_typography",
+    "name": "Typography & Editorial Layout \u2014 Applied Methods & Systems",
+    "slug": "typography-layout-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Typography & Editorial Layout."
+  },
+  {
+    "id": "top_cat_art_architecture_core",
+    "category_id": "cat_art_architecture",
+    "name": "Architectural Design & Space \u2014 Core Principles & Theory",
+    "slug": "architectural-design-core",
+    "description": "Foundational theorems, formal laws, and definitions within Architectural Design & Space."
+  },
+  {
+    "id": "top_cat_art_architecture_applied",
+    "category_id": "cat_art_architecture",
+    "name": "Architectural Design & Space \u2014 Applied Methods & Systems",
+    "slug": "architectural-design-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Architectural Design & Space."
+  },
+  {
+    "id": "top_cat_art_music_core",
+    "category_id": "cat_art_music",
+    "name": "Music Theory & Acoustics \u2014 Core Principles & Theory",
+    "slug": "music-theory-acoustics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Music Theory & Acoustics."
+  },
+  {
+    "id": "top_cat_art_music_applied",
+    "category_id": "cat_art_music",
+    "name": "Music Theory & Acoustics \u2014 Applied Methods & Systems",
+    "slug": "music-theory-acoustics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Music Theory & Acoustics."
+  },
+  {
+    "id": "top_cat_art_narrative_core",
+    "category_id": "cat_art_narrative",
+    "name": "Narrative Structure & Storytelling \u2014 Core Principles & Theory",
+    "slug": "narrative-storytelling-core",
+    "description": "Foundational theorems, formal laws, and definitions within Narrative Structure & Storytelling."
+  },
+  {
+    "id": "top_cat_art_narrative_applied",
+    "category_id": "cat_art_narrative",
+    "name": "Narrative Structure & Storytelling \u2014 Applied Methods & Systems",
+    "slug": "narrative-storytelling-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Narrative Structure & Storytelling."
+  },
+  {
+    "id": "top_cat_prac_tools_core",
+    "category_id": "cat_prac_tools",
+    "name": "Tools, Hardware & Fasteners \u2014 Core Principles & Theory",
+    "slug": "tools-hardware-fasteners-core",
+    "description": "Foundational theorems, formal laws, and definitions within Tools, Hardware & Fasteners."
+  },
+  {
+    "id": "top_cat_prac_tools_applied",
+    "category_id": "cat_prac_tools",
+    "name": "Tools, Hardware & Fasteners \u2014 Applied Methods & Systems",
+    "slug": "tools-hardware-fasteners-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Tools, Hardware & Fasteners."
+  },
+  {
+    "id": "top_cat_prac_mechanics_core",
+    "category_id": "cat_prac_mechanics",
+    "name": "Everyday Mechanical Advantage \u2014 Core Principles & Theory",
+    "slug": "everyday-mechanics-core",
+    "description": "Foundational theorems, formal laws, and definitions within Everyday Mechanical Advantage."
+  },
+  {
+    "id": "top_cat_prac_mechanics_applied",
+    "category_id": "cat_prac_mechanics",
+    "name": "Everyday Mechanical Advantage \u2014 Applied Methods & Systems",
+    "slug": "everyday-mechanics-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Everyday Mechanical Advantage."
+  },
+  {
+    "id": "top_cat_prac_electrical_core",
+    "category_id": "cat_prac_electrical",
+    "name": "Domestic Electrical & Utility Safety \u2014 Core Principles & Theory",
+    "slug": "domestic-electrical-utilities-core",
+    "description": "Foundational theorems, formal laws, and definitions within Domestic Electrical & Utility Safety."
+  },
+  {
+    "id": "top_cat_prac_electrical_applied",
+    "category_id": "cat_prac_electrical",
+    "name": "Domestic Electrical & Utility Safety \u2014 Applied Methods & Systems",
+    "slug": "domestic-electrical-utilities-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Domestic Electrical & Utility Safety."
+  },
+  {
+    "id": "top_cat_prac_food_sci_core",
+    "category_id": "cat_prac_food_sci",
+    "name": "Culinary Science & Cooking Principles \u2014 Core Principles & Theory",
+    "slug": "culinary-food-science-core",
+    "description": "Foundational theorems, formal laws, and definitions within Culinary Science & Cooking Principles."
+  },
+  {
+    "id": "top_cat_prac_food_sci_applied",
+    "category_id": "cat_prac_food_sci",
+    "name": "Culinary Science & Cooking Principles \u2014 Applied Methods & Systems",
+    "slug": "culinary-food-science-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Culinary Science & Cooking Principles."
+  },
+  {
+    "id": "top_cat_prac_safety_skills_core",
+    "category_id": "cat_prac_safety_skills",
+    "name": "Safety, Water & Life Skills \u2014 Core Principles & Theory",
+    "slug": "practical-safety-skills-core",
+    "description": "Foundational theorems, formal laws, and definitions within Safety, Water & Life Skills."
+  },
+  {
+    "id": "top_cat_prac_safety_skills_applied",
+    "category_id": "cat_prac_safety_skills",
+    "name": "Safety, Water & Life Skills \u2014 Applied Methods & Systems",
+    "slug": "practical-safety-skills-applied",
+    "description": "Applied implementations, edge cases, and real-world mechanisms in Safety, Water & Life Skills."
+  }
+]

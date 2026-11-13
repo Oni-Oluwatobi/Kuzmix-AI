@@ -1,0 +1,6 @@
+{
+  "name": "Kuzmix AI — Offline Knowledge Core",
+  "description": "Production-grade offline SQLite knowledge database, RAG retrieval engine, and knowledge management system for Kuzmix AI on Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

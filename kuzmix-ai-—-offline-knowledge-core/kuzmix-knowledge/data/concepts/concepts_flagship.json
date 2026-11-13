@@ -1,0 +1,2602 @@
+[
+  {
+    "id": "c_supply_demand",
+    "domain_id": "business_econ",
+    "category_id": "cat_econ_micro",
+    "topic_id": "top_cat_econ_micro_applied",
+    "name": "Supply, Demand, and Market Equilibrium",
+    "summary_definition": "A foundational microeconomic model describing how the competitive interaction between buyers (demand) and sellers (supply) determines the market clearing price and quantity of a good or service.",
+    "primary_explanation": "The Law of Demand states that, ceteris paribus (all else held equal), as price increases, quantity demanded decreases (downward sloping demand curve) due to income and substitution effects. The Law of Supply states that as price increases, quantity supplied increases (upward sloping supply curve) as producers earn higher marginal profits. Market Equilibrium occurs at the precise intersection where quantity demanded equals quantity supplied (Qd = Qs). If market price is held artificially above equilibrium (e.g., via price floors), an excess supply (surplus) develops; if held below (price ceilings), an excess demand (shortage) develops. Shifts in external factors (consumer preferences, input costs, technology, taxes) shift the curves themselves, establishing a new equilibrium.",
+    "key_properties": [
+      {
+        "property": "Equilibrium Condition",
+        "value": "Quantity Demanded (Qd) = Quantity Supplied (Qs)"
+      },
+      {
+        "property": "Law of Demand Gradient",
+        "value": "Negative slope (dQd / dP < 0)"
+      },
+      {
+        "property": "Law of Supply Gradient",
+        "value": "Positive slope (dQs / dP > 0)"
+      },
+      {
+        "property": "Price Elasticity of Demand (PED)",
+        "value": "% Change in Quantity Demanded / % Change in Price"
+      }
+    ],
+    "applications": [
+      "Commodity price forecasting in energy and agricultural markets.",
+      "Evaluating economic incidence and deadweight loss of sales taxes and import tariffs.",
+      "Algorithmic dynamic pricing models used in ride-sharing and airline ticketing."
+    ],
+    "prerequisites": [
+      "c_calculus_derivative"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_mankiw_econ",
+    "aliases": [
+      {
+        "alias": "Law of Supply and Demand",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Market Clearing Price",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Price Discovery",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A 'change in demand' is identical to a 'change in quantity demanded'.",
+        "correction_text": "A change in quantity demanded is a movement along an existing curve caused solely by price; a change in demand is a full shift of the entire curve caused by external non-price factors.",
+        "explanation": "If the price of apples drops, people buy more apples (movement along the curve). If a medical study reveals apples prevent illness, people want more apples at every price point (shift of the demand curve)."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_ped_elasticity_formula",
+        "record_type": "formula",
+        "title": "Price Elasticity of Demand Formula",
+        "content": "PED = (% Delta Qd) / (% Delta P). When |PED| > 1, demand is elastic; when |PED| < 1, demand is inelastic.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Supply and Demand model price formation in competitive markets. Law of Demand: higher price reduces quantity demanded (downward slope). Law of Supply: higher price increases quantity supplied (upward slope). Intersection yields market clearing equilibrium (Qd = Qs). Non-price shocks (income, input costs, regulations) shift curves; price movements cause shifts along the curve.",
+        "token_estimate": 73
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_alfred_marshall",
+        "entity_type": "person",
+        "name": "Alfred Marshall",
+        "description": "British economist whose Principles of Economics (1890) standardized graphical supply-and-demand analysis."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_opportunity_cost",
+        "relationship_type": "related_to",
+        "description": "Supply curves reflect the marginal opportunity cost of allocating productive resources to manufacture goods.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_opportunity_cost",
+    "domain_id": "business_econ",
+    "category_id": "cat_econ_micro",
+    "topic_id": "top_cat_econ_micro_applied",
+    "name": "Opportunity Cost and Comparative Advantage",
+    "summary_definition": "The loss of potential gain from other alternatives when one alternative is chosen, representing the true economic cost of any decision.",
+    "primary_explanation": "Opportunity cost is the cornerstone of economic reasoning. Because resources (time, money, labor, raw materials) are inherently scarce, every allocation decision requires forgoing the next-best alternative. In accounting, only explicit monetary costs are tracked; in economics, total cost equals explicit out-of-pocket costs plus implicit opportunity costs. For example, the economic cost of attending university includes tuition (explicit) plus the wages forgone during four years of study (implicit). David Ricardo applied opportunity cost to international trade in 1817, demonstrating the Principle of Comparative Advantage: entities should specialize in producing goods where their opportunity cost is lowest, enabling mutually beneficial trade even if one party possesses an absolute advantage in producing everything.",
+    "key_properties": [
+      {
+        "property": "Economic Cost Formula",
+        "value": "Total Economic Cost = Explicit Accounting Costs + Implicit Opportunity Costs"
+      },
+      {
+        "property": "Comparative Advantage Principle",
+        "value": "Specializing in the activity with the lowest marginal opportunity cost maximizes total collective output"
+      },
+      {
+        "property": "Sunk Cost Distinction",
+        "value": "Past irrecoverable expenditures should be excluded from future opportunity cost evaluations"
+      }
+    ],
+    "applications": [
+      "Capital budgeting: deciding whether to invest cash reserves into internal R&D versus dividend distribution or yield-bearing bonds.",
+      "Personal time management: assessing the monetary equivalent value of outsourcing domestic chores versus focused professional work.",
+      "International trade agreements and tariff policy between nations."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_mankiw_econ",
+    "aliases": [
+      {
+        "alias": "Alternative Cost",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Economic Cost",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Trade-off Cost",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Opportunity cost includes the sum of all other possible alternative choices.",
+        "correction_text": "Opportunity cost is solely the value of the single next-best forgone alternative, not the cumulative total of every discarded option.",
+        "explanation": "If you choose to read a book instead of (A) sleeping, (B) watching a movie, or (C) jogging, your opportunity cost is whichever single option (A, B, or C) you would have chosen next."
+      },
+      {
+        "misconception_text": "A country that is worse at producing every product cannot trade beneficially with an advanced nation.",
+        "correction_text": "Ricardo's Law of Comparative Advantage proves that trade benefits both nations as long as their internal opportunity cost ratios differ.",
+        "explanation": "Even if nation A produces both shoes and computers more efficiently than nation B, nation A will still gain by trading for shoes if its relative advantage in computers is higher."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_ricardo_comparative_adv",
+        "record_type": "law",
+        "title": "Ricardo's Law of Comparative Advantage",
+        "content": "Total global economic output is maximized when each economic entity specializes in producing the good or service for which it has the lowest relative opportunity cost, followed by trade.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Opportunity Cost is the value of the next-best forgone alternative when a choice is made. Economic cost = explicit out-of-pocket expenses + implicit forgone opportunities (e.g. lost wages while studying). Sunk costs (already spent) must be ignored. Forms the basis of David Ricardo's Comparative Advantage: entities should specialize where their opportunity cost is lowest.",
+        "token_estimate": 74
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_david_ricardo",
+        "entity_type": "person",
+        "name": "David Ricardo",
+        "description": "Classical British economist who formalized comparative advantage in On the Principles of Political Economy and Taxation (1817)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "Producer supply curves are directly governed by the opportunity cost of production inputs.",
+        "weight": 0.88,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_compound_interest",
+    "domain_id": "business_econ",
+    "category_id": "cat_biz_finance",
+    "topic_id": "top_cat_biz_finance_applied",
+    "name": "Compound Interest and Time Value of Money",
+    "summary_definition": "The financial mechanism whereby interest earned on a principal sum also earns interest in subsequent periods, generating exponential wealth accumulation over time.",
+    "primary_explanation": "Compound interest embodies the Time Value of Money principle: a dollar received today is worth more than a dollar received tomorrow due to its potential earning capacity. Unlike simple interest (which only accrues on the initial principal P: I = P*r*t), compound interest calculates interest on both the principal and the accumulated interest from prior compounding cycles: A = P * (1 + r/n)^(n*t), where A is final amount, r is annual interest rate, n is compounding frequency per year, and t is years. In continuous compounding, this converges to A = P * e^(r*t). A practical rule of thumb is the Rule of 72: dividing 72 by the annual interest rate provides the approximate number of years required for an investment to double (e.g., at 8% annual return, an investment doubles in ~9 years).",
+    "key_properties": [
+      {
+        "property": "Discrete Compounding Formula",
+        "value": "A = P * (1 + r/n)^(n*t)"
+      },
+      {
+        "property": "Continuous Compounding Formula",
+        "value": "A = P * e^(r*t)"
+      },
+      {
+        "property": "Rule of 72 Doubling Time",
+        "value": "Doubling Years \u2248 72 / (Annual Rate %)"
+      },
+      {
+        "property": "Present Value (Discounting)",
+        "value": "PV = FV / (1 + r)^t"
+      }
+    ],
+    "applications": [
+      "Long-term retirement planning and pension fund endowment growth modeling.",
+      "Debt amortisation scheduling for mortgages, revolving credit cards, and student loans.",
+      "Corporate discounted cash flow (DCF) valuation models calculating Net Present Value (NPV)."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_mankiw_econ",
+    "aliases": [
+      {
+        "alias": "Compounding",
+        "alias_type": "colloquial"
+      },
+      {
+        "alias": "Exponential Capital Growth",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Time Value of Money",
+        "alias_type": "scientific_name"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Starting retirement savings 10 years later can easily be made up by saving slightly more money later in one's career.",
+        "correction_text": "Because compounding is an exponential curve, time invested has a far greater mathematical impact than capital contributed in later years.",
+        "explanation": "An investor contributing $200/month from age 20 to 30 (investing $24k total) will generally accumulate more money at age 65 than someone contributing $200/month continuously from age 30 to 65 ($84k total) at 8% returns."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_compound_math_eq",
+        "record_type": "formula",
+        "title": "Discrete Compound Interest Equation",
+        "content": "A = P * (1 + r/n)^(n*t), where A is future value, P is principal, r is nominal annual interest rate, n is compounding periods per year, and t is time in years.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Compound Interest accumulates interest on both the initial principal and previously earned interest: A = P*(1 + r/n)^(n*t), creating exponential capital growth over time. Contrast with simple interest (I = P*r*t). The Rule of 72 estimates doubling time: Years \u2248 72 / (Interest Rate %). Underpins the Time Value of Money and investment valuation discounting: PV = FV / (1 + r)^t.",
+        "token_estimate": 80
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_rule_of_72",
+        "entity_type": "standard",
+        "name": "Rule of 72",
+        "description": "Mental approximation heuristic dating to Luca Pacioli's 1494 mathematics treatise for calculating doubling periods."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_opportunity_cost",
+        "relationship_type": "related_to",
+        "description": "Discounting future cash flows in finance reflects the opportunity cost of capital invested elsewhere.",
+        "weight": 0.89,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_big_o_notation",
+    "domain_id": "computing_ai",
+    "category_id": "cat_cs_foundations",
+    "topic_id": "top_cat_cs_foundations_applied",
+    "name": "Big-O Notation and Algorithmic Complexity",
+    "summary_definition": "A formal mathematical notation used in computer science to describe the limiting asymptotic behavior and upper bound of an algorithm's execution time or space requirements as input size approaches infinity.",
+    "primary_explanation": "Big-O notation characterizes the scalability of an algorithm independent of hardware speeds, operating system overhead, or compiler optimizations. Formally, f(n) = O(g(n)) if there exist positive constants c and n0 such that for all n >= n0, |f(n)| <= c * |g(n)|. Key complexity classes include: O(1) Constant (hash table lookup), O(log n) Logarithmic (binary search), O(n) Linear (sequential scanning), O(n log n) Linearithmic (quicksort/mergesort average), O(n^2) Quadratic (nested loops / bubble sort), and O(2^n) Exponential (brute force knapsack). In software engineering, Big-O analysis determines whether an algorithm will run in milliseconds or stall completely when scaling from 1,000 items to 100,000,000 items on low-RAM mobile devices.",
+    "key_properties": [
+      {
+        "property": "Formal Definition",
+        "value": "f(n) <= c * g(n) for all n >= n_0 where c > 0, n_0 >= 0"
+      },
+      {
+        "property": "Dominant Term Rule",
+        "value": "Low-order terms and constant coefficients are dropped (e.g., 3n^2 + 50n + 1000 = O(n^2))"
+      },
+      {
+        "property": "Big-Omega (Omega)",
+        "value": "Asymptotic lower bound"
+      },
+      {
+        "property": "Big-Theta (Theta)",
+        "value": "Asymptotically tight bound (both upper and lower)"
+      }
+    ],
+    "applications": [
+      "Database index design (B-Trees provide O(log n) searches compared to O(n) table scans).",
+      "Mobile Android app optimization to prevent UI thread lockups and ANR (Application Not Responding) dialogs.",
+      "Evaluating network payload sizes and distributed consensus round complexity."
+    ],
+    "prerequisites": [
+      "c_calculus_derivative"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_clrs_algorithms",
+    "aliases": [
+      {
+        "alias": "Asymptotic Complexity",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Time Complexity",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Order of Growth",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "An O(1) algorithm is always faster than an O(n) algorithm for every input size.",
+        "correction_text": "Big-O only describes asymptotic growth as n becomes very large; for small inputs, hidden constant factors can make an O(n) algorithm faster.",
+        "explanation": "If an O(1) operation requires 1,000,000 CPU cycles and an O(n) loop requires 2 CPU cycles per element, the O(n) algorithm will run faster for any input smaller than 500,000 elements."
+      },
+      {
+        "misconception_text": "Big-O always means 'worst-case runtime'.",
+        "correction_text": "Big-O is an upper bound on whatever case is being analyzed (worst, best, or average case).",
+        "explanation": "Quicksort has an average-case time complexity of O(n log n) and a worst-case time complexity of O(n^2). Both statements legitimately use Big-O notation."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_big_o_hierarchy",
+        "record_type": "classification",
+        "title": "Hierarchy of Common Time Complexities",
+        "content": "From fastest to slowest: O(1) Constant < O(log n) Logarithmic < O(n) Linear < O(n log n) Linearithmic < O(n^2) Quadratic < O(n^3) Cubic < O(2^n) Exponential < O(n!) Factorial.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Big-O notation specifies the asymptotic upper bound of algorithm runtime or memory scaling as input size n approaches infinity. Constant factors and lower terms are ignored: O(1) constant < O(log n) logarithmic < O(n) linear < O(n log n) linearithmic < O(n^2) quadratic < O(2^n) exponential. Critical rule: Big-O reflects scaling slope at large n, not raw execution speed for small inputs where constant factors dominate.",
+        "token_estimate": 87
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_paul_bachmann",
+        "entity_type": "person",
+        "name": "Paul Bachmann",
+        "description": "German mathematician who introduced Big-O notation in Analytische Zahlentheorie (1894)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_hash_table",
+        "relationship_type": "used_for",
+        "description": "Big-O notation evaluates the average O(1) versus worst-case O(n) performance of hash table operations.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_hash_table",
+    "domain_id": "computing_ai",
+    "category_id": "cat_cs_dsa",
+    "topic_id": "top_cat_cs_dsa_applied",
+    "name": "Hash Table and Collision Resolution",
+    "summary_definition": "An associative data structure that maps keys to values using a mathematical hash function to compute an index into an array of buckets, achieving average O(1) time complexity for lookup, insertion, and deletion.",
+    "primary_explanation": "A hash table transforms arbitrary keys (such as strings or identifiers) into fixed-size integer indices via a deterministic hash function. Because the universe of possible keys exceeds the finite number of array slots, the Pigeonhole Principle dictates that hash collisions are inevitable. Primary collision resolution strategies include: 1. Separate Chaining: Each bucket holds a linked list or small balanced tree of entries sharing the same hash index. 2. Open Addressing: All elements reside in the table itself; upon collision, alternative slots are systematically probed via linear probing, quadratic probing, or double hashing. Performance hinges on the load factor (alpha = n / m, items divided by buckets); when alpha exceeds a threshold (typically 0.75), the table dynamically resizes (rehashes) to maintain average O(1) performance.",
+    "key_properties": [
+      {
+        "property": "Average Time Complexity",
+        "value": "Search O(1), Insert O(1), Delete O(1)"
+      },
+      {
+        "property": "Worst-Case Time Complexity (all keys collide)",
+        "value": "O(n) when all entries hash to the same bucket"
+      },
+      {
+        "property": "Load Factor Threshold",
+        "value": "alpha = n / m, typically reallocated when alpha >= 0.75"
+      },
+      {
+        "property": "Hash Function Requisites",
+        "value": "Deterministic, uniform bucket distribution, and fast computation"
+      }
+    ],
+    "applications": [
+      "In-memory symbol tables and keyword lookup inside programming language compilers and interpreters.",
+      "Database indexing (hash indexes in SQLite and PostgreSQL for direct key-value matching).",
+      "High-speed caching layers (Redis, Memcached, HTTP web browser request caches)."
+    ],
+    "prerequisites": [
+      "c_big_o_notation"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_clrs_algorithms",
+    "aliases": [
+      {
+        "alias": "Hash Map",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Associative Array",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Dictionary",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Hash tables guarantee O(1) operations in all circumstances.",
+        "correction_text": "O(1) is an average-case expectation; malicious inputs or catastrophic collision clustering can degrade performance to O(n).",
+        "explanation": "If an attacker supplies keys engineered to produce identical hash values (Hash DoS attack), lookups degrade into linear linked-list scans. Modern systems use randomized seed salts (e.g. SipHash) to prevent this."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_hash_collision_types",
+        "record_type": "comparison",
+        "title": "Chaining vs Open Addressing",
+        "content": "Chaining: Simple deletion, degrades gracefully under high load factors (alpha > 1.0), requires pointer memory overhead. Open Addressing: Cache-friendly continuous memory layout, no pointer overhead, sensitive to clustering, degrades rapidly when load factor approaches 1.0.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "A Hash Table maps keys to values in average O(1) time using a deterministic hash function index. Because collisions are inevitable, collisions are resolved via Separate Chaining (linked lists/trees per bucket) or Open Addressing (probing empty slots: linear, quadratic, or double hashing). When load factor alpha = n/m reaches ~0.75, tables resize and rehash to prevent O(n) degradation.",
+        "token_estimate": 80
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_hans_peter_luhn",
+        "entity_type": "person",
+        "name": "Hans Peter Luhn",
+        "description": "IBM researcher who pioneered hashing and automated indexing in 1953."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_big_o_notation",
+        "relationship_type": "depends_on",
+        "description": "Hash table performance characteristics are fundamentally analyzed and bounded using Big-O notation.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_rag",
+    "domain_id": "computing_ai",
+    "category_id": "cat_cs_ai_ml",
+    "topic_id": "top_cat_cs_ai_ml_applied",
+    "name": "Retrieval-Augmented Generation (RAG)",
+    "summary_definition": "An AI architecture pattern that enhances language model generation by dynamically retrieving relevant facts, structured records, or document chunks from an external knowledge base to ground output and eliminate hallucinations.",
+    "primary_explanation": "Retrieval-Augmented Generation (RAG), formalized by Lewis et al. in 2020, addresses the core limitations of parametric Large Language Models (LLMs): static knowledge cutoffs, hallucination of non-existent facts, and inability to inspect proprietary or offline data. In a RAG pipeline: 1. Ingestion: Source knowledge is segmented into semantically coherent chunks (typically 100-300 tokens) with contextual headers, and optionally indexed with full-text search (BM25 / SQLite FTS5) or dense vector embeddings. 2. Retrieval: Given a user query, the system retrieves the top-k most relevant knowledge chunks without loading the entire corpus into memory. 3. Augmentation: The retrieved chunks are formatted into a constrained system prompt context. 4. Generation: The LLM synthesizes an authoritative response strictly conditioned on the retrieved factual evidence. In mobile offline environments like Kuzmix on Android, SQLite FTS5 provides ultra-fast, zero-overhead retrieval within low RAM budgets.",
+    "key_properties": [
+      {
+        "property": "Core Pipeline Phases",
+        "value": "Ingestion -> Indexing -> Retrieval -> Context Augmentation -> Generation"
+      },
+      {
+        "property": "Retrieval Modalities",
+        "value": "Sparse (BM25, SQLite FTS5), Dense (Vector Cosine Similarity), or Hybrid"
+      },
+      {
+        "property": "Mobile Optimization Benefit",
+        "value": "Retrieves only necessary KB rows (<50KB RAM) instead of keeping multi-gigabyte corpora in active device memory"
+      },
+      {
+        "property": "Hallucination Mitigation",
+        "value": "Grounds generative output in verifiable, source-attributed chunks"
+      }
+    ],
+    "applications": [
+      "Offline mobile assistants (Kuzmix AI on Android) querying localized SQLite databases without internet access.",
+      "Enterprise document search synthesizing answers over internal technical manuals and legal contracts.",
+      "Medical and academic QA providing strict citations back to peer-reviewed literature."
+    ],
+    "prerequisites": [
+      "c_hash_table",
+      "c_transformer_arch"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_russell_norvig_ai",
+    "aliases": [
+      {
+        "alias": "RAG",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Grounded AI Retrieval",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Knowledge Augmented Generation",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "RAG requires high-dimensional vector embeddings and a dedicated vector database to work.",
+        "correction_text": "RAG operates exceptionally well using structured relational queries and sparse BM25/FTS full-text search in SQLite.",
+        "explanation": "On resource-constrained mobile hardware, running heavy embedding neural models on-device adds severe latency and battery drain. SQLite FTS5 provides near-instantaneous lexical retrieval with zero memory overhead."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_rag_chunking_principle",
+        "record_type": "procedure",
+        "title": "Optimal Chunking Strategy for Mobile Knowledge RAG",
+        "content": "Keep chunks between 80-250 tokens; include hierarchical breadcrumb headers (Domain > Category > Concept); store pre-computed token estimates to guarantee prompts fit within the small context windows of lightweight edge LLMs.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Retrieval-Augmented Generation (RAG) grounds language model synthesis in dynamic, external knowledge: 1. Retrieval of top-k factual chunks matching the user query (via SQLite FTS5 or vector similarity); 2. Injecting retrieved chunks into the prompt context; 3. Generating answers constrained by retrieved evidence. Eliminates hallucinations and enables offline mobile AI on low-RAM devices.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_patrick_lewis",
+        "entity_type": "person",
+        "name": "Patrick Lewis",
+        "description": "Lead author of the landmark paper 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' (2020)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_transformer_arch",
+        "relationship_type": "depends_on",
+        "description": "RAG supplies contextual prompt tokens that are processed through the self-attention layers of transformer architectures.",
+        "weight": 0.92,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_transformer_arch",
+    "domain_id": "computing_ai",
+    "category_id": "cat_cs_ai_ml",
+    "topic_id": "top_cat_cs_ai_ml_applied",
+    "name": "Transformer Neural Network Architecture",
+    "summary_definition": "A deep learning neural network architecture based solely on self-attention mechanisms that processes sequential tokens in parallel, forming the technical foundation for modern large language models.",
+    "primary_explanation": "Introduced by Vaswani et al. in the 2017 seminal paper 'Attention Is All You Need', the Transformer replaced recurrent neural networks (RNNs) and LSTMs. Unlike RNNs that process sequences sequentially (creating a computational bottleneck and suffering from vanishing gradients over long distances), the Transformer uses Scaled Dot-Product Attention: Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V. Queries (Q), Keys (K), and Values (V) are linearly projected across multiple attention heads (Multi-Head Attention), allowing the network to simultaneously attend to information from different representation subspaces. Because self-attention has no inherent concept of order, Positional Encodings (sinusoidal or rotary RoPE) are injected to provide sequence awareness.",
+    "key_properties": [
+      {
+        "property": "Core Attention Equation",
+        "value": "Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V"
+      },
+      {
+        "property": "Computational Complexity",
+        "value": "Standard self-attention scales quadratically O(N^2) with sequence length N"
+      },
+      {
+        "property": "Key Innovations",
+        "value": "Multi-head attention, layer normalization, residual skip connections, and parallelized token processing"
+      }
+    ],
+    "applications": [
+      "Large language models (LLMs) powering conversational agents, code generation, and translation.",
+      "Vision Transformers (ViT) dividing images into sequential patches for visual classification.",
+      "Bioinformatics predicting 3D protein folding configurations (AlphaFold)."
+    ],
+    "prerequisites": [
+      "c_calculus_derivative"
+    ],
+    "difficulty_level": "advanced",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_russell_norvig_ai",
+    "aliases": [
+      {
+        "alias": "Self-Attention Architecture",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Transformer Model",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Transformers understand facts and possess intrinsic consciousness.",
+        "correction_text": "Transformers are statistical pattern completion engines executing high-dimensional matrix multiplications and probability distributions over vocabulary tokens.",
+        "explanation": "A transformer predicts the most likely next token conditioned on prior tokens and attention weights; it lacks sentient experiential cognition or innate real-world understanding."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_scaled_dot_product_eq",
+        "record_type": "formula",
+        "title": "Scaled Dot-Product Attention Formula",
+        "content": "Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V, where d_k represents the dimensionality of the key vectors.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "The Transformer architecture (Vaswani et al., 2017) computes token interactions in parallel via Scaled Dot-Product Self-Attention: softmax((Q*K^T)/sqrt(d_k))*V. Multi-Head Attention allows attending to distinct semantic subspaces simultaneously. Positional encodings (e.g. RoPE) supply sequence ordering. Replaced recurrent networks, enabling modern LLMs.",
+        "token_estimate": 71
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_vaswani_2017",
+        "entity_type": "standard",
+        "name": "Attention Is All You Need (2017)",
+        "description": "Seminal research paper published by Google Brain / Research introducing the Transformer architecture."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_rag",
+        "relationship_type": "used_for",
+        "description": "Transformers serve as the generative synthesis component in Retrieval-Augmented Generation architectures.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_gestalt_design",
+    "domain_id": "creative_arts",
+    "category_id": "cat_art_design",
+    "topic_id": "top_cat_art_design_applied",
+    "name": "Gestalt Principles of Visual Perception",
+    "summary_definition": "A foundational set of psychological laws describing how human vision naturally organizes visual stimuli into unified wholes and structured patterns rather than isolated disparate parts.",
+    "primary_explanation": "Originating in Berlin psychology in the early 20th century (Max Wertheimer, Wolfgang K\u00f6hler, Kurt Koffka), Gestalt theory ('the whole is other than the sum of its parts') identifies the innate subconscious grouping mechanisms of the human visual cortex. Key principles include: 1. Proximity: Elements placed close together are perceived as belonging to a collective group. 2. Similarity: Elements sharing visual characteristics (color, shape, scale) are assumed to have related function. 3. Continuity: The eye naturally follows smooth continuous paths or lines rather than abrupt angle changes. 4. Closure: The human brain automatically fills in missing gaps in incomplete figures to perceive a recognizable whole. 5. Figure-Ground: Visual perception immediately segregates a focal object (figure) from its surrounding background plane (ground). In UI/UX, product design, and graphic art, Gestalt laws dictate whether an interface feels intuitive or chaotic.",
+    "key_properties": [
+      {
+        "property": "Law of Proximity",
+        "value": "Spatial proximity implies conceptual association"
+      },
+      {
+        "property": "Law of Similarity",
+        "value": "Shared visual styling implies shared interactive behavior"
+      },
+      {
+        "property": "Law of Closure",
+        "value": "Perceptual completion of broken or fragmented contours"
+      },
+      {
+        "property": "Figure-Ground Segregation",
+        "value": "Contrast differentiation between interactive element and ambient canvas"
+      }
+    ],
+    "applications": [
+      "User interface layout: spacing input fields, submit buttons, and related labels using proximity.",
+      "Corporate logo and icon design using closure (e.g., WWF panda, FedEx arrow).",
+      "Cartography and data visualization: organizing multi-series charts using consistent color similarity."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Gestalt Laws of Grouping",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Visual Grouping Principles",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Gestalt Psychology",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Adding decorative borders and boxes around every UI element is the best way to group related items.",
+        "correction_text": "Using proper spatial proximity and whitespace (Gestalt Proximity) communicates grouping much cleaner without introducing visual clutter.",
+        "explanation": "Excessive nested borders create visual noise (extraneous cognitive load); adjusting whitespace creates effortless perceptual boundaries."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_gestalt_wertheimer_1923",
+        "record_type": "principle",
+        "title": "Wertheimer's Law of Pr\u00e4gnanz",
+        "content": "The Law of Pr\u00e4gnanz (simplicity) asserts that perceptual fields are naturally organized into the simplest, most stable, and most regular interpretation possible.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Gestalt Principles of Visual Perception describe how the human brain organizes visual elements into unified groups: 1. Proximity (close items are grouped); 2. Similarity (shared color/shape implies shared function); 3. Continuity (eye tracks smooth continuous lines); 4. Closure (brain fills in missing gaps in figures); 5. Figure-Ground (distinguishing focal subject from background). Vital for uncluttered UX design.",
+        "token_estimate": 82
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_max_wertheimer",
+        "entity_type": "person",
+        "name": "Max Wertheimer",
+        "description": "Austro-Hungarian psychologist who founded Gestalt psychology in 1912 with his studies on apparent motion (phi phenomenon)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_working_memory",
+        "relationship_type": "related_to",
+        "description": "Gestalt visual grouping enables chunking in working memory, minimizing extraneous cognitive load.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_typography_hierarchy",
+    "domain_id": "creative_arts",
+    "category_id": "cat_art_design",
+    "topic_id": "top_cat_art_design_applied",
+    "name": "Typographic Hierarchy and Readability",
+    "summary_definition": "The systematic structuring of text across visual weights, scale ratios, line lengths, and vertical rhythms to guide reader attention and optimize reading comprehension.",
+    "primary_explanation": "Typographic hierarchy establishes clear visual pathways through written text, allowing readers to instantly scan, navigate, and comprehend documents or digital interfaces. Key typographic dimensions include: 1. Scale and Contrast: Employing modular scale ratios (e.g., Major Third 1.25, Perfect Fourth 1.333) creates noticeable, mathematically harmonious differences between headings (H1, H2, H3) and body copy. 2. Measure (Line Length): Optimal body text reading length is 45 to 75 characters per line (including spaces); lines exceeding this cause eye fatigue during return sweeps, while overly short lines break sentence cadence. 3. Leading (Line Height): Typically 130% to 150% of font size for body text ensures comfortable horizontal tracking. 4. Weight and Color: Distinguishing section titles using font weight (e.g., Bold 700 vs Regular 400) or contrasting tonal values.",
+    "key_properties": [
+      {
+        "property": "Optimal Line Length (Measure)",
+        "value": "45 to 75 characters per line (60-65 ideal)"
+      },
+      {
+        "property": "Standard Body Line Height (Leading)",
+        "value": "1.4 to 1.6 times font size (140-160%)"
+      },
+      {
+        "property": "Modular Scale Ratio",
+        "value": "Mathematical multiplier (e.g., 1.25x Major Third) ensuring consistent vertical intervals"
+      }
+    ],
+    "applications": [
+      "Mobile web responsive reading layouts preventing eye-tracking strain across varying screen sizes.",
+      "Editorial newspaper and magazine layout design.",
+      "Wayfinding and emergency signage requiring rapid readability from distance."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Typographic Scale",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Visual Typography",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Text Readability Standards",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Using many different decorative font families in a single document makes it look more creative and professional.",
+        "correction_text": "Professional typographic design typically restricts fonts to one or at most two well-paired font families, relying on scale, weight, and spacing for variety.",
+        "explanation": "Combining three or four disparate typefaces causes visual cacophony, breaking reading flow and confusing visual hierarchy."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_bringhurst_typographic_rule",
+        "record_type": "principle",
+        "title": "Bringhurst's Canon of Line Length",
+        "content": "From Robert Bringhurst's The Elements of Typographic Style: Anything from 45 to 75 characters is widely regarded as a satisfactory length of line for a single-column page set in a serifed text face in a text size with proportional leading.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Typographic Hierarchy guides reader navigation through mathematical scale, weight, and spacing. Standards: Modular scales (e.g. 1.25 or 1.333 ratio between levels); optimal line length (measure) of 45-75 characters to avoid eye fatigue; line height (leading) at 140-160% of font size. Use 1-2 font families maximum; establish variety via weight and proportional scale.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_robert_bringhurst",
+        "entity_type": "person",
+        "name": "Robert Bringhurst",
+        "description": "Canadian poet and typographer who authored The Elements of Typographic Style (1992)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_gestalt_design",
+        "relationship_type": "depends_on",
+        "description": "Typographic hierarchy relies on Gestalt proximity and similarity to visually connect headings with their corresponding paragraphs.",
+        "weight": 0.92,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_ohms_law",
+    "domain_id": "eng_tech",
+    "category_id": "cat_eng_electrical",
+    "topic_id": "top_cat_eng_electrical_applied",
+    "name": "Ohm's Law and Electrical Resistance",
+    "summary_definition": "A fundamental electrical engineering principle asserting that the electric current passing through an ideal conductor is directly proportional to the applied voltage difference and inversely proportional to electrical resistance (V = I * R).",
+    "primary_explanation": "Discovered experimentally by Georg Simon Ohm in 1827, Ohm's law forms the core foundation of circuit analysis. In an ohmic material at constant temperature, the current (I, in amperes) flowing through a conductor is directly driven by the potential difference (V, in volts) across it, moderated by the conductor's resistance (R, in ohms): V = I * R. Resistance arises from electron collisions with vibrating lattice ions within the material. The associated power dissipated as thermal heat is expressed by Joule's law: P = V * I = I^2 * R = V^2 / R. While metallic conductors are generally ohmic over normal ranges, non-ohmic devices like diodes and transistors exhibit non-linear voltage-current relationships.",
+    "key_properties": [
+      {
+        "property": "Mathematical Equation",
+        "value": "V = I * R (Voltage = Current \u00d7 Resistance)"
+      },
+      {
+        "property": "SI Units",
+        "value": "Volts (V), Amperes (A), Ohms (\u03a9)"
+      },
+      {
+        "property": "Joule Heating Power Dissipation",
+        "value": "P = I^2 * R = V * I"
+      },
+      {
+        "property": "Material Resistivity Relationship",
+        "value": "R = rho * (L / A), where rho is resistivity, L is length, A is cross-sectional area"
+      }
+    ],
+    "applications": [
+      "Determining current-limiting resistor values to protect sensitive light-emitting diodes (LEDs).",
+      "Designing printed circuit board (PCB) trace widths to avoid thermal overheating.",
+      "Diagnosing open or short circuits in domestic and automotive wiring."
+    ],
+    "prerequisites": [
+      "c_electric_charge",
+      "c_potential_difference"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "V=IR",
+        "alias_type": "colloquial"
+      },
+      {
+        "alias": "Ohmic Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Circuit Law of Resistance",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Ohm's law is a universal law of nature that applies identically to every electronic component.",
+        "correction_text": "Ohm's law is an empirical constitutive relation valid for ohmic conductors (like metals and resistors), but not for non-linear semiconductors like diodes and transistors.",
+        "explanation": "A semiconductor diode conducts negligible current until a forward threshold (~0.7V for silicon) is reached, after which current increases exponentially, exhibiting non-ohmic behavior."
+      },
+      {
+        "misconception_text": "Voltage flows through a wire.",
+        "correction_text": "Current (charge carriers) flows through a wire; voltage is the electrical potential difference across two points that pushes the current.",
+        "explanation": "Voltage is analogous to water pressure between two points in a pipe, while current is analogous to the volume flow rate of the water itself."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_joule_heating_law",
+        "record_type": "law",
+        "title": "Joule's First Law of Electric Heating",
+        "content": "The rate at which electric energy is transformed into thermal heat in a resistive conductor is proportional to the square of the current multiplied by the resistance: P = I^2 * R.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Ohm's Law governs electrical circuits: V = I * R (Voltage = Current \u00d7 Resistance). Power dissipated as heat obeys Joule's law: P = I^2 * R = V * I. Resistance depends on material resistivity rho, length L, and cross-section A (R = rho * L / A). Valid for ohmic materials; non-linear components like silicon diodes do not obey a constant V/I ratio.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_georg_ohm",
+        "entity_type": "person",
+        "name": "Georg Simon Ohm",
+        "description": "German physicist and mathematician who published Die galvanische Kette, mathematisch bearbeitet (1827) establishing the mathematical theory of circuits."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "related_to",
+        "description": "Joule heating P = I^2*R demonstrates conservation of energy as electric potential energy converts into thermal agitation of atoms.",
+        "weight": 0.88,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_bernoullis_principle",
+    "domain_id": "eng_tech",
+    "category_id": "cat_eng_mechanical",
+    "topic_id": "top_cat_eng_mechanical_applied",
+    "name": "Bernoulli's Principle and Fluid Dynamics",
+    "summary_definition": "A fluid dynamics principle stating that an increase in the speed of an inviscid fluid occurs simultaneously with a decrease in static pressure or fluid potential energy.",
+    "primary_explanation": "Derived from the conservation of energy for flowing fluids by Daniel Bernoulli in 1738, Bernoulli's equation states that along a streamline in steady, incompressible, frictionless flow, the sum of static pressure (P), dynamic pressure (0.5 * rho * v^2), and hydrostatic pressure (rho * g * h) is constant: P + 0.5*rho*v^2 + rho*g*h = Constant. When fluid is constricted (such as in a Venturi tube), mass conservation (continuity equation A1*v1 = A2*v2) forces fluid velocity to increase; consequently, static pressure must drop to conserve total energy. This explains pressure differentials in carburetors, atomizer sprayers, pitot tubes on aircraft, and contributes alongside Newtonian circulation to aerodynamic airfoil lift.",
+    "key_properties": [
+      {
+        "property": "Bernoulli Equation along Streamline",
+        "value": "P + 0.5 * rho * v^2 + rho * g * h = Constant"
+      },
+      {
+        "property": "Continuity Equation (Incompressible)",
+        "value": "A1 * v1 = A2 * v2 = Constant volumetric flow rate (Q)"
+      },
+      {
+        "property": "Assumptions Required",
+        "value": "Inviscid (zero viscosity), steady state, incompressible flow along a streamline"
+      }
+    ],
+    "applications": [
+      "Venturi meters measuring fluid flow rates in pipelines and chemical plants.",
+      "Pitot-static airspeed indicators used on commercial and military aircraft.",
+      "Atomizers, paint spray guns, and carburetors entraining liquid fuel via pressure drops."
+    ],
+    "prerequisites": [
+      "c_conservation_energy",
+      "c_newtons_laws"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "Bernoulli Effect",
+        "alias_type": "colloquial"
+      },
+      {
+        "alias": "Bernoulli's Equation",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Venturi Effect",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Airfoil lift is caused entirely by air traveling faster over the top because upper and lower parcels of air must meet at the trailing edge simultaneously ('equal transit time theory').",
+        "correction_text": "The equal transit time theory is false; air over the upper surface actually reaches the trailing edge much faster than air below.",
+        "explanation": "Lift is generated by aerodynamic downwash (Newton's third law: forcing air downward induces upward reaction) combined with upper curved surface circulation and Bernoulli pressure gradients, not equal arrival times."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_bernoulli_eq_record",
+        "record_type": "formula",
+        "title": "Bernoulli Conservation Form",
+        "content": "P1 + 0.5 * rho * v1^2 + rho * g * h1 = P2 + 0.5 * rho * v2^2 + rho * g * h2, representing total mechanical head conservation per unit volume.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Bernoulli's Principle: In steady, inviscid, incompressible fluid flow along a streamline, an increase in velocity coincides with a decrease in static pressure: P + 0.5*rho*v^2 + rho*g*h = Constant. Combined with continuity (A1*v1 = A2*v2), fluid constriction accelerates speed and lowers pressure (Venturi effect). Fundamental for pitot tube airspeed sensors and carburetors.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_daniel_bernoulli",
+        "entity_type": "person",
+        "name": "Daniel Bernoulli",
+        "description": "Swiss mathematician and physicist who published Hydrodynamica (1738) analyzing fluid pressures and conservation principles."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "example_of",
+        "description": "Bernoulli's principle is a direct mathematical expression of conservation of mechanical energy applied to a continuous fluid streamline.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_stress_strain",
+    "domain_id": "eng_tech",
+    "category_id": "cat_eng_materials",
+    "topic_id": "top_cat_eng_materials_applied",
+    "name": "Stress, Strain, and Young's Modulus",
+    "summary_definition": "Foundational mechanical and materials engineering concepts quantifying the internal resisting forces per unit area (stress) and resultant fractional deformation (strain) in materials under load.",
+    "primary_explanation": "When an external load is applied to a solid body, the material experiences mechanical stress (sigma = Force / Area, measured in Pascals or N/m^2) and deforms, exhibiting strain (epsilon = Delta_L / L_0, a dimensionless ratio of elongation). Under Hooke's Law in the linear elastic regime, stress is directly proportional to strain: sigma = E * epsilon, where the constant of proportionality E is Young's Modulus (modulus of elasticity), quantifying a material's intrinsic stiffness. Beyond the elastic limit (yield strength), permanent plastic deformation occurs without recovery. Further loading reaches the Ultimate Tensile Strength (UTS), culminating at the fracture point. Ductile materials (e.g., mild steel) deform extensively before rupture, whereas brittle materials (e.g., glass, cast iron) fracture suddenly with minimal plastic strain.",
+    "key_properties": [
+      {
+        "property": "Tensile Stress Formula",
+        "value": "sigma = F / A_0 (Force per cross-sectional area, Pascals)"
+      },
+      {
+        "property": "Engineering Strain Formula",
+        "value": "epsilon = Delta_L / L_0 (Fractional elongation, dimensionless)"
+      },
+      {
+        "property": "Hooke's Law for Elasticity",
+        "value": "sigma = E * epsilon (E = Young's Modulus)"
+      },
+      {
+        "property": "Young's Modulus of Structural Steel",
+        "value": "~200 GPa (200 \u00d7 10^9 N/m^2)"
+      }
+    ],
+    "applications": [
+      "Civil engineering structural design ensuring beams remain safely below yield strength with an adequate factor of safety.",
+      "Aerospace airframe material selection balancing high Young's modulus with low density (e.g., titanium, carbon-fiber composites).",
+      "Biomedical bone implant engineering matching the elasticity of natural human cortical bone (~10-18 GPa)."
+    ],
+    "prerequisites": [
+      "c_newtons_laws"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Tensile Modulus",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Hooke's Law in Continuum Mechanics",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Material Elasticity",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Material stiffness (Young's modulus) is the same property as material strength.",
+        "correction_text": "Stiffness measures resistance to elastic bending/stretching; strength measures the maximum stress a material can withstand before permanently yielding or breaking.",
+        "explanation": "High-strength steel and mild construction steel have virtually the identical stiffness (Young's modulus ~200 GPa) and will bend by the exact same amount under a small load, but high-strength steel can carry vastly higher loads before permanently bending."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_hookes_continuum_law",
+        "record_type": "law",
+        "title": "Hooke's Law in 1D Continuum Mechanics",
+        "content": "sigma = E * epsilon, stating that normal stress equals Young's modulus multiplied by engineering strain within the proportional elastic limit.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Stress (sigma = F/A) measures internal restoring force per unit area in Pascals (N/m^2). Strain (epsilon = Delta_L/L_0) measures dimensionless relative elongation. Within the linear elastic region, Hooke's Law holds: sigma = E * epsilon, where E is Young's Modulus (stiffness). Critical distinction: stiffness is resistance to elastic deflection, whereas strength is resistance to permanent yield or fracture.",
+        "token_estimate": 80
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_thomas_young",
+        "entity_type": "person",
+        "name": "Thomas Young",
+        "description": "English polymath who generalized the concept of modulus of elasticity (Young's Modulus) in 1807."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_newtons_laws",
+        "relationship_type": "depends_on",
+        "description": "Mechanical stress distributes external Newton reaction forces across the internal atomic cross-section of a structural member.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cardiovascular_sys",
+    "domain_id": "health_life",
+    "category_id": "cat_health_physiology",
+    "topic_id": "top_cat_health_physiology_applied",
+    "name": "Human Cardiovascular Circulation",
+    "summary_definition": "The organ system comprising the heart, blood vessels, and blood that circulates oxygen, nutrients, hormones, and cellular waste products throughout the human body across systemic and pulmonary circuits.",
+    "primary_explanation": "The human cardiovascular system is a closed dual-circulation loop driven by a muscular four-chambered pump (two atria, two ventricles). Circulation operates in two distinct pathways: 1. The Pulmonary Circuit: Deoxygenated blood returns from bodily tissues via the superior/inferior vena cava into the right atrium, passes through the tricuspid valve into the right ventricle, and is pumped via pulmonary arteries to the alveolar capillaries of the lungs for CO2/O2 gas exchange. 2. The Systemic Circuit: Oxygen-rich blood returns via pulmonary veins to the left atrium, moves through the bicuspid/mitral valve into the thick-walled left ventricle, and is pumped under high pressure into the aorta to supply brain, organs, and peripheral tissues. Arterial blood pressure is expressed as Systolic (peak pressure during ventricular ejection, typically ~120 mmHg) over Diastolic (resting pressure during ventricular filling, typically ~80 mmHg).",
+    "key_properties": [
+      {
+        "property": "Normal Resting Blood Pressure",
+        "value": "Approximately 120/80 mmHg (Systolic / Diastolic)"
+      },
+      {
+        "property": "Normal Adult Resting Heart Rate",
+        "value": "60 to 100 beats per minute (bpm)"
+      },
+      {
+        "property": "Typical Cardiac Output",
+        "value": "Stroke Volume (~70 mL) \u00d7 Heart Rate (~72 bpm) \u2248 5.0 Liters/minute"
+      },
+      {
+        "property": "Primary Circuit Division",
+        "value": "Pulmonary Circuit (low pressure) and Systemic Circuit (high pressure)"
+      }
+    ],
+    "applications": [
+      "Physiological monitoring of cardiac rhythm and telemetry in emergency medical assessment.",
+      "Aerobic conditioning and stroke volume adaptations in sports science training.",
+      "Understanding pharmacodynamics of antihypertensive medications (beta-blockers, ACE inhibitors)."
+    ],
+    "prerequisites": [
+      "c_cellular_respiration"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_openstax_bio",
+    "aliases": [
+      {
+        "alias": "Circulatory System",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Cardiac Cycle",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Cardiovascular Physiology",
+        "alias_type": "scientific_name"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Deoxygenated blood in human veins is physically bright blue inside the body.",
+        "correction_text": "Human blood is always red; deoxygenated blood is dark crimson-red, while oxygenated blood is bright scarlet-red.",
+        "explanation": "Veins appear blue through the skin due to optical physics: subcutaneous fat and skin layers scatter short blue wavelengths of light back to the eye while absorbing longer red wavelengths."
+      },
+      {
+        "misconception_text": "The heart rests on the far left side of the human chest.",
+        "correction_text": "The heart is located centrally in the chest within the mediastinum, tilted slightly with its apex pointing toward the left.",
+        "explanation": "The heart sits directly behind the sternum in the center of the chest cavity; only its lower apex tilts approximately two-thirds to the left."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_cardiac_output_equation",
+        "record_type": "formula",
+        "title": "Cardiac Output Formula",
+        "content": "Cardiac Output (Q) = Heart Rate (HR) \u00d7 Stroke Volume (SV). Measured in liters per minute (L/min).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "The cardiovascular system circulates oxygen and nutrients via two loops: 1. Pulmonary circuit (right ventricle pumps deoxygenated blood to lungs for gas exchange); 2. Systemic circuit (left ventricle pumps oxygenated blood through the aorta to the body). Normal resting blood pressure is ~120/80 mmHg (systolic/diastolic); cardiac output is ~5 L/min. Blood is always red (dark red when deoxygenated, never blue).",
+        "token_estimate": 87
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_william_harvey",
+        "entity_type": "person",
+        "name": "William Harvey",
+        "description": "English physician who first described complete systemic circulation of blood pumped by the heart in De Motu Cordis (1628)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cellular_respiration",
+        "relationship_type": "used_for",
+        "description": "The cardiovascular system delivers dissolved oxygen and glucose required for mitochondrial cellular respiration.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cpr_first_aid",
+    "domain_id": "health_life",
+    "category_id": "cat_health_first_aid",
+    "topic_id": "top_cat_health_first_aid_applied",
+    "name": "Cardiopulmonary Resuscitation (CPR) and AED Science",
+    "summary_definition": "An emergency lifesaving procedure performed when the heart ceases to beat, using rhythmic chest compressions and artificial ventilation to manually preserve partial blood circulation and brain oxygenation.",
+    "primary_explanation": "Cardiopulmonary Resuscitation (CPR) is an emergency intervention for sudden cardiac arrest. When the heart enters a lethal arrhythmia (such as ventricular fibrillation) or asystole, blood flow to the brain halts, inducing irreversible cerebral tissue necrosis within 4 to 6 minutes. Chest compressions manually compress the heart against the thoracic vertebrae and create intrathoracic pressure fluctuations that maintain approximately 20-30% of normal coronary and cerebral perfusion. High-quality adult CPR parameters mandated by international resuscitation protocols (AHA/ERC) specify: 1. Compression depth: at least 5 cm (2 inches), not exceeding 6 cm (2.4 inches). 2. Compression rate: 100 to 120 compressions per minute (tempo of 'Stayin' Alive'). 3. Complete chest recoil between compressions to allow ventricular filling. 4. Automated External Defibrillator (AED) usage: AEDs analyze the cardiac rhythm and deliver a targeted electrical shock to depolarize myocardium cells simultaneously, allowing the heart's natural pacemaker (sinoatrial node) to resume an organized sinus rhythm.",
+    "key_properties": [
+      {
+        "property": "Compression Rate",
+        "value": "100 to 120 compressions per minute"
+      },
+      {
+        "property": "Compression Depth (Adult)",
+        "value": "5 to 6 cm (2 to 2.4 inches)"
+      },
+      {
+        "property": "Chest Recoil",
+        "value": "Full recoil required to permit coronary artery perfusion"
+      },
+      {
+        "property": "Standard Compression-to-Breath Ratio",
+        "value": "30 compressions to 2 rescue breaths (or continuous compression-only CPR for untrained bystanders)"
+      }
+    ],
+    "applications": [
+      "Immediate bystander intervention for out-of-hospital sudden cardiac arrest.",
+      "Deployment of public access defibrillators (AEDs) in airports, schools, and transit hubs.",
+      "Occupational health and safety compliance for workplace first aid responders."
+    ],
+    "prerequisites": [
+      "c_cardiovascular_sys"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_red_cross_first_aid",
+    "aliases": [
+      {
+        "alias": "CPR",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Basic Life Support",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Cardiopulmonary Resuscitation",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "An Automated External Defibrillator (AED) restarts a heart that has flatlined (complete asystole).",
+        "correction_text": "An AED does not restart a flatlined heart; it shocks erratic, chaotic fibrillating rhythms (ventricular fibrillation/pulseless VT) to halt the chaotic electrical activity so the natural pacemaker can restart.",
+        "explanation": "If the heart has completely ceased electrical activity (asystole/flatline), an AED will advise 'no shock indicated'; continuous manual chest compressions and epinephrine are required instead."
+      },
+      {
+        "misconception_text": "Performing CPR will instantly wake up a patient who will cough and converse like in movie dramas.",
+        "correction_text": "CPR rarely restores immediate consciousness on its own; its purpose is to keep brain tissue alive until advanced medical defibrillation can re-establish a spontaneous pulse.",
+        "explanation": "Effective CPR maintains minimal viable cerebral perfusion (~25% of baseline), preventing brain death while emergency medical services are en route."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_cpr_adult_steps",
+        "record_type": "procedure",
+        "title": "Adult CPR Protocol Sequence",
+        "content": "1. Verify scene safety and patient responsiveness; 2. Call emergency services and request an AED; 3. Check for breathing (no more than 10 seconds); 4. Position hands in center of chest and compress hard and fast (100-120 bpm, 5-6 cm deep); 5. Apply AED as soon as available and follow audio prompts.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "CPR is an emergency procedure for cardiac arrest to maintain coronary and cerebral perfusion until defibrillation. Protocol standards: Compress center of chest 5-6 cm deep at 100-120 beats/min with full recoil between compressions. 30 compressions to 2 breaths, or hands-only continuous compressions. AEDs treat shockable chaotic rhythms (VFib/VTach); they do NOT shock asystole (flatlines).",
+        "token_estimate": 85
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_peter_safar",
+        "entity_type": "person",
+        "name": "Dr. Peter Safar",
+        "description": "Austrian-American physician known as the pioneer of modern CPR, combining mouth-to-mouth with chest compressions in 1957."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cardiovascular_sys",
+        "relationship_type": "depends_on",
+        "description": "CPR relies on the physical mechanics of the heart chambers and valves to manually circulate oxygenated blood.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_scientific_falsifiability",
+    "domain_id": "humanities",
+    "category_id": "cat_hum_philosophy",
+    "topic_id": "top_cat_hum_philosophy_applied",
+    "name": "Falsifiability and the Demarcation Problem",
+    "summary_definition": "An epistemological criterion proposed by philosopher Karl Popper stating that for a theory to be considered genuinely scientific, it must make testable predictions that can in principle be proven false by empirical observation.",
+    "primary_explanation": "In The Logic of Scientific Discovery (1934), Karl Popper resolved the classical problem of induction (David Hume's observation that no matter how many white swans one observes, it can never conclusively prove that 'all swans are white'). Popper asserted that empirical science cannot progress through verification, but rather through falsification. A single counterexample (one black swan) decisively refutes a universal hypothesis. Therefore, a scientific claim must be falsifiable\u2014it must forbid certain observable states of affairs. Theories that can retroactively explain every possible outcome (such as classical astrology or unfalsifiable psychological constructs) explain nothing scientifically. Science advances through bold conjectures and rigorous, relentless attempts at refutation.",
+    "key_properties": [
+      {
+        "property": "Asymmetry of Proof",
+        "value": "A universal statement cannot be verified by infinite instances, but can be falsified by a single valid counterexample"
+      },
+      {
+        "property": "Criterion of Demarcation",
+        "value": "Distinguishes empirical science from metaphysics, pseudoscience, and tautologies"
+      },
+      {
+        "property": "Corroboration Metric",
+        "value": "Theories survive not by being 'proven', but by passing severe empirical tests"
+      }
+    ],
+    "applications": [
+      "Evaluating clinical trial hypotheses in medicine to ensure claims are empirically disprovable.",
+      "Distinguishing legitimate scientific cosmology from untestable metaphysical speculations.",
+      "Software testing philosophy (designing unit tests to deliberately break edge cases rather than only testing happy paths)."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Popperian Falsification",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Criterion of Falsifiability",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Demarcation Problem",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Calling a scientific theory 'falsifiable' means the theory is currently known to be false.",
+        "correction_text": "'Falsifiable' means the theory can be tested and could conceivably be proven false if contradicted by empirical evidence; it is a mark of scientific legitimacy.",
+        "explanation": "Newton's laws are falsifiable because one could imagine finding a scenario where F does not equal ma. If a theory cannot even in imagination be tested against reality, it is unscientific."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_popper_demarcation_quote",
+        "record_type": "principle",
+        "title": "Popper's Criterion of Demarcation",
+        "content": "A system is to be considered scientific only if it makes assertions which may clash with observations; and a system is, in fact, tested by attempts to produce such clashes, that is, attempts to refute it.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Falsifiability (Karl Popper, 1934) provides the criterion of demarcation separating empirical science from pseudoscience. A theory is scientific only if it makes testable predictions that could theoretically be proven false by empirical observation. Universal claims cannot be proven by infinite positive examples (Hume's black swan problem), but can be refuted by a single counterexample.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_karl_popper",
+        "entity_type": "person",
+        "name": "Karl Popper",
+        "description": "Austrian-British philosopher of science who established falsificationism in The Logic of Scientific Discovery (1934)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cognitive_biases",
+        "relationship_type": "contrasts_with",
+        "description": "Falsification deliberately combats confirmation bias by actively seeking disconfirming evidence.",
+        "weight": 0.92,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cognitive_biases",
+    "domain_id": "humanities",
+    "category_id": "cat_hum_psychology",
+    "topic_id": "top_cat_hum_psychology_applied",
+    "name": "Confirmation Bias and Dual-Process Theory",
+    "summary_definition": "A pervasive cognitive bias wherein people selectively search for, interpret, recall, and favor information that confirms their preexisting beliefs while ignoring or discounting contradictory evidence.",
+    "primary_explanation": "Confirmation bias is one of the most widely documented cognitive distortions in human psychology. In Daniel Kahneman and Amos Tversky's Dual-Process Cognitive Theory, human thought is bifurcated into System 1 (fast, automatic, unconscious, emotional, heuristic-driven) and System 2 (slow, deliberative, logical, effortful, conscious). System 1 seeks cognitive ease and rapid coherence, immediately accepting evidence that reinforces current mental schemas. Evaluating contrary evidence requires activating energy-intensive System 2 mental processing. Consequently, individuals exhibit selective exposure (reading only agreeable media), biased assimilation (interpreting ambiguous facts as supporting their position), and biased recall (remembering instances where their belief proved right and forgetting errors).",
+    "key_properties": [
+      {
+        "property": "System 1 Characteristics",
+        "value": "Fast, involuntary, associative, low energy, prone to confirmation heuristics"
+      },
+      {
+        "property": "System 2 Characteristics",
+        "value": "Slow, analytical, rule-governed, high energy, monitors and corrects System 1"
+      },
+      {
+        "property": "Manifestations",
+        "value": "Selective exposure, biased interpretation, selective recall"
+      }
+    ],
+    "applications": [
+      "Designing double-blind experimental protocols in medicine to prevent clinical observers from seeing patient assignments.",
+      "Intelligence analysis and forensic investigations to avoid anchoring on the first suspect.",
+      "User experience (UX) usability research: observing actual user behavior rather than asking leading interview questions."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Myside Bias",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Confirmation Heuristic",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "System 1 and System 2 Thinking",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Highly intelligent and educated people are immune to confirmation bias.",
+        "correction_text": "Empirical psychology shows that high intelligence often makes people better at rationalizing their preexisting biases rather than eliminating them.",
+        "explanation": "High cognitive capacity equips individuals with superior verbal agility to invent sophisticated justifications for emotionally held beliefs unless formal scientific methods (like double-blind testing) are enforced."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_kahneman_system_traits",
+        "record_type": "classification",
+        "title": "System 1 vs System 2 Cognitive Profiles",
+        "content": "System 1: Runs automatically and quickly, with little or no effort and no sense of voluntary control. System 2: Allocates attention to effortful mental operations, including complex computations, critical thinking, and conscious choice.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Confirmation Bias: The tendency to seek, interpret, and recall information confirming preexisting beliefs while dismissing contradictory data. Under Daniel Kahneman's Dual-Process Theory, System 1 (fast, automatic, heuristic) defaults to cognitive ease and coherence; System 2 (slow, analytical, effortful) is required to rigorously scrutinize counter-evidence. Countered via double-blind testing and formal falsification.",
+        "token_estimate": 80
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_daniel_kahneman",
+        "entity_type": "person",
+        "name": "Daniel Kahneman",
+        "description": "Nobel laureate psychologist who authored Thinking, Fast and Slow (2011) documenting dual-process cognition and behavioral heuristics."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_scientific_falsifiability",
+        "relationship_type": "contrasts_with",
+        "description": "The scientific method and falsification were developed specifically as cultural and procedural tools to overcome human confirmation bias.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_working_memory",
+    "domain_id": "humanities",
+    "category_id": "cat_hum_psychology",
+    "topic_id": "top_cat_hum_psychology_applied",
+    "name": "Working Memory Capacity and Cognitive Load Theory",
+    "summary_definition": "A cognitive architecture framework detailing the strict capacity and duration limits of human working memory (~4 to 7 items) and instructional strategies to manage mental load.",
+    "primary_explanation": "Working memory is the cognitive workspace responsible for temporarily holding, manipulating, and processing active information. In 1956, George A. Miller established 'The Magical Number Seven, Plus or Minus Two', refined by Nelson Cowan in 2001 to approximately 4 chunks for complex unfamiliar information. John Sweller's Cognitive Load Theory categorizes mental effort into three loads: 1. Intrinsic Load: The innate difficulty of the material itself (element interactivity). 2. Extraneous Load: Inefficient presentation, confusing UI, or distracting formatting that wastes mental capacity. 3. Germane Load: Productive processing directed toward constructing enduring long-term memory schemas. In software UX, mobile design, and teaching, eliminating extraneous load ensures working memory is not saturated, preventing cognitive overload and errors.",
+    "key_properties": [
+      {
+        "property": "Miller's Law",
+        "value": "7 \u00b1 2 items capacity for simple data"
+      },
+      {
+        "property": "Cowan's Working Memory Limit",
+        "value": "~4 distinct chunks for novel, complex elements"
+      },
+      {
+        "property": "Information Decay Duration",
+        "value": "~15 to 30 seconds without active rehearsal"
+      },
+      {
+        "property": "Three Cognitive Loads",
+        "value": "Intrinsic (topic difficulty) + Extraneous (poor presentation) + Germane (schema construction)"
+      }
+    ],
+    "applications": [
+      "Mobile user interface design: keeping forms, steps, and options below 4-5 items per screen to prevent user fatigue.",
+      "Educational pedagogy: chunking complex multi-step mathematical problems into guided scaffolding stages.",
+      "Aviation cockpit interface safety: ensuring warning alerts do not overwhelm pilots during critical flight emergencies."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Cognitive Load Theory",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Miller's Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Short-Term Working Memory",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Human beings can effectively multitask two high-cognitive attention tasks simultaneously.",
+        "correction_text": "The human brain cannot process two active conscious attention streams at once; it rapidly context-switches, incurring significant cognitive penalties.",
+        "explanation": "When people believe they are multitasking (e.g., reading an email while listening to a lecture), working memory is thrashing between tasks, reducing comprehension and drastically increasing error rates."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_sweller_load_taxonomy",
+        "record_type": "classification",
+        "title": "Sweller's Tripartite Cognitive Load Taxonomy",
+        "content": "1. Intrinsic Load: Inherent conceptual complexity. 2. Extraneous Load: Unnecessary mental friction caused by poor layout, jargon, or confusing navigation. 3. Germane Load: Conscious effort that successfully encodes knowledge into long-term schemas.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Working memory temporarily holds and manipulates information with strict limits: 7\u00b12 items (Miller's Law) or ~4 complex chunks (Cowan). John Sweller's Cognitive Load Theory divides load into: Intrinsic (inherent difficulty), Extraneous (wasteful mental overhead from bad UI/presentation), and Germane (schema encoding). Essential for mobile UI design and pedagogy to prevent cognitive overload.",
+        "token_estimate": 78
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_john_sweller",
+        "entity_type": "person",
+        "name": "John Sweller",
+        "description": "Australian educational psychologist who formulated Cognitive Load Theory in 1988."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cognitive_biases",
+        "relationship_type": "related_to",
+        "description": "High cognitive load depletes System 2 processing resources, forcing reliance on System 1 biases and heuristics.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_maillard_reaction",
+    "domain_id": "practical_life",
+    "category_id": "cat_prac_food_sci",
+    "topic_id": "top_cat_prac_food_sci_applied",
+    "name": "The Maillard Reaction in Culinary Food Science",
+    "summary_definition": "A complex chemical cascade between amino acids and reducing sugars under heat that produces hundreds of savory flavor compounds and the characteristic brown color of roasted, seared, and baked foods.",
+    "primary_explanation": "Discovered by French chemist Louis-Camille Maillard in 1912, the Maillard reaction is responsible for the distinct savory aroma and deep browning of seared steaks, toasted bread crusts, roasted coffee beans, and fried potatoes. Unlike simple caramelization (which involves the pyrolysis of pure sugars at higher temperatures typically >160\u00b0C/320\u00b0F without proteins), the Maillard reaction requires both proteins (specifically free amino groups) and reducing sugars (such as glucose or fructose). The reaction proceeds rapidly between 140\u00b0C and 165\u00b0C (284\u00b0F - 330\u00b0F). Moisture inhibits the reaction because water boiling temperature (100\u00b0C) stalls surface temperatures; patting meat dry before searing allows the surface to quickly reach optimal Maillard temperatures without boiling.",
+    "key_properties": [
+      {
+        "property": "Optimal Temperature Window",
+        "value": "140\u00b0C to 165\u00b0C (284\u00b0F to 330\u00b0F)"
+      },
+      {
+        "property": "Required Reactants",
+        "value": "Free amino acids (from proteins) + Reducing sugars (glucose, maltose, fructose)"
+      },
+      {
+        "property": "Reaction Inhibitor",
+        "value": "Surface water/moisture (stalls surface temp at 100\u00b0C latent heat of vaporization)"
+      },
+      {
+        "property": "Flavor Compounds Produced",
+        "value": "Pyrazines (roasted/nutty), Furans (sweet/meaty), Thiophenes, Pyrroles"
+      }
+    ],
+    "applications": [
+      "Culinary searing techniques (patting steak surfaces dry with paper towels prior to high-heat pan searing).",
+      "Baking chemistry: brushing pastry dough with egg wash (protein + sugar) to promote golden browning.",
+      "Industrial roasting control for cocoa beans, malts in brewing, and specialty coffee beans."
+    ],
+    "prerequisites": [
+      "c_cellular_respiration"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Non-Enzymatic Browning",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Maillard Browning",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Food Searing Chemistry",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Searing meat at high temperatures 'seals in the juices' by creating an impermeable crust.",
+        "correction_text": "Searing does not seal in moisture; in fact, seared meat loses slightly more moisture due to high thermal contraction of muscle fibers.",
+        "explanation": "Extensive culinary experiments (notably Harold McGee) prove meat loses moisture during searing; searing is done solely to generate rich Maillard flavor compounds, not to form a water-tight seal."
+      },
+      {
+        "misconception_text": "The Maillard reaction and caramelization are the same chemical process.",
+        "correction_text": "Caramelization is the thermal breakdown of sugars alone; the Maillard reaction requires both proteins (amino acids) and sugars reacting together.",
+        "explanation": "Caramelization creates sweet, butterscotch flavors from pure sugar (e.g. caramel sauce); Maillard browning creates complex savory, umami, roasted notes from protein-sugar interactions."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_maillard_opt_conditions",
+        "record_type": "process",
+        "title": "Optimizing the Maillard Reaction in Cooking",
+        "content": "1. Remove surface water (pat dry); 2. Use a high-heat cast iron or stainless pan preheated to ~200\u00b0C; 3. Avoid overcrowding the pan (overcrowding traps steaming moisture); 4. Alkalinity accelerates the reaction (e.g., baking soda bath for pretzels).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "The Maillard Reaction (140\u00b0C\u2013165\u00b0C / 284\u00b0F\u2013330\u00b0F) is a chemical reaction between amino acids and reducing sugars producing hundreds of savory, roasted flavor compounds and brown melanoidin pigments. Distinct from caramelization (which pyrolyzes sugars alone). Key practical rule: Surface moisture halts the reaction at 100\u00b0C boiling point; patting meat dry before searing is essential.",
+        "token_estimate": 80
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_louis_maillard",
+        "entity_type": "person",
+        "name": "Louis-Camille Maillard",
+        "description": "French physician and chemist who first described non-enzymatic browning synthesis in 1912."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "related_to",
+        "description": "Thermal energy transfer triggers chemical activation thresholds for amino-acid reducing-sugar condensation.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_leverage_mechanics",
+    "domain_id": "practical_life",
+    "category_id": "cat_prac_mechanics",
+    "topic_id": "top_cat_prac_mechanics_applied",
+    "name": "Leverage, Mechanical Advantage, and Everyday Tools",
+    "summary_definition": "The mechanical principle of using a rigid beam pivoting around a fulcrum to amplify applied force or displacement, achieving mechanical advantage according to the law of the lever.",
+    "primary_explanation": "A lever is one of the six classical simple machines. Discovered in antiquity and formalized mathematically by Archimedes ('Give me a place to stand, and I shall move the Earth'), the Law of the Lever states that a lever is in rotational equilibrium when the input torque equals the output torque: Force_in * Distance_in = Force_out * Distance_out. Mechanical Advantage (MA = F_out / F_in = D_in / D_out) measures the factor by which force is multiplied. Levers are classified into three orders: 1. Class 1 (Fulcrum between Effort and Load): Crowbars, scissors, pliers, seesaws. Can amplify either force or speed depending on fulcrum placement. 2. Class 2 (Load between Fulcrum and Effort): Wheelbarrows, nutcrackers, bottle openers. Mechanical advantage is always > 1, consistently amplifying force. 3. Class 3 (Effort between Fulcrum and Load): Tweezers, human forearm/biceps, baseball bats. Mechanical advantage is always < 1; sacrifices force to amplify velocity and range of motion.",
+    "key_properties": [
+      {
+        "property": "Law of the Lever Equilibrium",
+        "value": "F1 * d1 = F2 * d2 (Torque balance about the fulcrum)"
+      },
+      {
+        "property": "Ideal Mechanical Advantage (IMA)",
+        "value": "d_effort / d_load (Ratio of effort arm length to load arm length)"
+      },
+      {
+        "property": "Three Lever Classes",
+        "value": "Class 1: Fulcrum central; Class 2: Load central; Class 3: Effort central"
+      }
+    ],
+    "applications": [
+      "Hand tool selection: using long-handled bolt cutters or breaker bars to crack frozen, rusted lug nuts.",
+      "Ergonomics and biomechanics: understanding why lifting heavy loads with straight legs and bent back exerts extreme Class-3 lever shear force on lumbar vertebrae.",
+      "Weighing scales and crane hoist counterweight design."
+    ],
+    "prerequisites": [
+      "c_newtons_laws"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "Law of the Lever",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Mechanical Advantage",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Lever Classes",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A lever creates free energy or produces more total work output than the work put in.",
+        "correction_text": "A lever conserves work (Work = Force \u00d7 Distance); by amplifying output force, you must push the effort handle through a proportionally longer distance.",
+        "explanation": "If a crowbar gives a mechanical advantage of 10, it multiplies your lifting force by 10, but your hands must move 10 cm to raise the boulder by only 1 cm."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_lever_three_classes",
+        "record_type": "classification",
+        "title": "Three Orders of Levers",
+        "content": "Class 1 (F in middle): Crowbar, scissors. Class 2 (L in middle): Wheelbarrow, bottle opener (always force multiplier MA > 1). Class 3 (E in middle): Tweezers, human biceps (always velocity/reach multiplier MA < 1).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Levers amplify force through rotational torque balance: F_in * d_in = F_out * d_out. Ideal Mechanical Advantage (IMA) = d_in / d_out. Conserves work: greater force requires pushing through a proportionally longer distance. Three classes: Class 1 (fulcrum in center: crowbar/pliers); Class 2 (load in center: wheelbarrow/bottle opener, MA > 1); Class 3 (effort in center: tweezers/biceps, MA < 1, multiplies speed).",
+        "token_estimate": 87
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_archimedes",
+        "entity_type": "person",
+        "name": "Archimedes of Syracuse",
+        "description": "Ancient Greek mathematician, physicist, and engineer who proved the Law of the Lever geometrically in On the Equilibrium of Planes (c. 250 BC)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "related_to",
+        "description": "Levers obey conservation of energy: Force_in * Distance_in = Force_out * Distance_out, yielding zero net energy creation.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_domestic_electrical",
+    "domain_id": "practical_life",
+    "category_id": "cat_prac_mechanics",
+    "topic_id": "top_cat_prac_mechanics_applied",
+    "name": "Domestic Electrical Safety, Circuit Breakers, and GFCI",
+    "summary_definition": "The practical physics and engineering safeguards governing domestic alternating current (AC) power distribution, including overcurrent circuit breakers, equipment grounding, and Ground Fault Circuit Interrupters (GFCI).",
+    "primary_explanation": "Standard residential alternating current (e.g. 120V/230V at 50/60 Hz) travels across a three-conductor topology: 1. Hot (Live/Phase): Carries oscillating electrical potential from the transformer. 2. Neutral: Completes the normal return current loop back to the electrical service panel. 3. Ground (Earth): A non-current-carrying safety bond connected to Earth rods and metal plumbing. Safety mechanisms protect against two distinct hazards: A. Thermal Overcurrent / Fire: Standard circuit breakers (15A or 20A) use bimetallic thermal strips and magnetic solenoids to trip open when excessive current flows (e.g. short circuit), preventing wires inside walls from heating to ignition temperatures. B. Human Electrocution: Ground Fault Circuit Interrupters (GFCI / RCD) continuously compare current flowing through the hot wire versus the neutral wire. If a discrepancy as tiny as 4 to 6 milliamperes is detected (indicating current is leaking through a human body to ground), the GFCI trips in under 25 milliseconds, halting lethal ventricular fibrillation.",
+    "key_properties": [
+      {
+        "property": "GFCI Trip Sensitivity Threshold",
+        "value": "4 to 6 milliamperes (mA) difference between Hot and Neutral"
+      },
+      {
+        "property": "GFCI Response Time",
+        "value": "Under 25 milliseconds (0.025 seconds)"
+      },
+      {
+        "property": "Standard Residential Voltage/Frequency",
+        "value": "120V / 60Hz (North America) or 230V / 50Hz (Europe/Global)"
+      },
+      {
+        "property": "Ground Wire Role",
+        "value": "Provides low-resistance fault path back to panel to immediately trigger breaker if hot touches metal chassis"
+      }
+    ],
+    "applications": [
+      "Bathroom, kitchen, and outdoor wet-location outlet installation to prevent electrocution.",
+      "Selecting appropriate extension cord wire gauges (AWG 12 vs 16) based on connected amperage draw to avoid melting insulation.",
+      "Safely resetting tripped breaker panels and diagnosing electrical overloads."
+    ],
+    "prerequisites": [
+      "c_ohms_law"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "GFCI / RCD",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Home Electrical Safety",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Residual Current Device",
+        "alias_type": "scientific_name"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A standard 15-amp circuit breaker will protect a person from being electrocuted.",
+        "correction_text": "A standard circuit breaker will NOT protect a human from lethal electrocution; it only protects wires from overheating and catching fire.",
+        "explanation": "A current of only 50 to 100 milliamps (0.05 to 0.1 A) flowing through the chest is lethal to a human. A 15A breaker will allow 15,000 milliamps to pass indefinitely without tripping. Only a GFCI (which trips at 5 mA) provides anti-electrocution protection."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_gfci_operating_principle",
+        "record_type": "principle",
+        "title": "GFCI Differential Sensing Principle",
+        "content": "A GFCI uses a differential current transformer toroid. The hot and neutral wires pass through the core in opposite directions. In normal operation, currents cancel (I_hot - I_neutral = 0). If current leaks to ground, the magnetic flux difference induces a trip sensor signal within 25 milliseconds.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Residential AC circuits use Hot, Neutral, and Ground wires. Critical distinction: Standard breakers (15A/20A) prevent wiring fires from overcurrent, but DO NOT prevent electrocution (as little as 50-100mA is fatal). Ground Fault Circuit Interrupters (GFCI/RCD) monitor current balance between Hot and Neutral; if leakage to ground exceeds 4-6mA, GFCI trips within 25ms, preventing lethal cardiac arrest in wet environments.",
+        "token_estimate": 87
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_charles_dalziel",
+        "entity_type": "person",
+        "name": "Charles Dalziel",
+        "description": "UC Berkeley electrical engineering professor who invented the transistorized Ground Fault Circuit Interrupter (GFCI) in 1961."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_ohms_law",
+        "relationship_type": "depends_on",
+        "description": "Electrical safety calculations rely on Ohm's law (I = V/R) and human bodily skin resistance.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_gravity",
+    "domain_id": "sci_math",
+    "category_id": "cat_physics_mechanics",
+    "topic_id": "top_cat_physics_mechanics_applied",
+    "name": "Gravity and Gravitation",
+    "summary_definition": "A fundamental natural phenomenon by which all things with mass or energy are attracted toward one another, described classically as a force and in general relativity as spacetime curvature.",
+    "primary_explanation": "Gravity is the weakest of the four fundamental interactions in physics, yet it dominates on macroscopic and astronomical scales because it is universally attractive and acts across infinite distances. In Newtonian classical mechanics, gravity is formulated as an attractive force proportional to the product of two masses and inversely proportional to the square of the distance separating their centers (F = G*(m1*m2)/r^2). In Einstein's General Theory of Relativity (1915), gravity is reinterpreted not as an invisible pull through empty space, but as the geometric consequence of mass and energy warping the four-dimensional fabric of spacetime. Freely falling objects follow geodesics (straightest possible paths) through this curved manifold.",
+    "key_properties": [
+      {
+        "property": "Gravitational Constant (G)",
+        "value": "6.67430 \u00d7 10^-11 m^3\u00b7kg^-1\u00b7s^-2"
+      },
+      {
+        "property": "Standard Earth Surface Acceleration (g)",
+        "value": "9.80665 m/s^2"
+      },
+      {
+        "property": "Inverse Square Relationship",
+        "value": "Force scales inversely with distance squared (1/r^2)"
+      },
+      {
+        "property": "Speed of Propagation",
+        "value": "Equal to the speed of light in vacuum (c)"
+      }
+    ],
+    "applications": [
+      "Calculation of orbital trajectories for satellites, space probes, and GPS constellations.",
+      "Tidal force modeling governing oceanic tides caused by gravitational gradient of Moon and Sun.",
+      "Astrophysical mass estimation of stars, black holes, and dark matter halos via gravitational lensing."
+    ],
+    "prerequisites": [
+      "c_mass",
+      "c_acceleration",
+      "c_vectors"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "Gravitational Force",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Universal Gravitation",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Spacetime Curvature",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "There is zero gravity in low Earth orbit (such as on the International Space Station).",
+        "correction_text": "Gravity in low Earth orbit is roughly 90% as strong as on Earth's surface (~8.8 m/s^2 at 400 km altitude).",
+        "explanation": "Astronauts and satellites experience weightlessness because they are in continuous free fall alongside their spacecraft in an orbital trajectory around the Earth, not because gravity has ceased to exist."
+      },
+      {
+        "misconception_text": "Heavier objects fall faster in a vacuum than lighter objects.",
+        "correction_text": "In a vacuum without air resistance, all objects accelerate at the exact same rate regardless of mass.",
+        "explanation": "Newton's second law (a = F/m) demonstrates that while gravitational force is greater on a heavier mass, its greater inertia requires proportionally more force to accelerate, resulting in identical acceleration."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_gravity_law_01",
+        "record_type": "law",
+        "title": "Newton's Law of Universal Gravitation",
+        "content": "Every particle attracts every other particle in the universe with a force proportional to the product of their masses and inversely proportional to the square of the distance between their centers: F = G * (m1 * m2) / r^2.",
+        "structured_payload": null
+      },
+      {
+        "id": "rec_gravity_relativity_01",
+        "record_type": "detailed_explanation",
+        "title": "General Relativistic Formulation of Gravity",
+        "content": "Einstein's field equations relate local spacetime curvature (represented by the Einstein tensor G_mu_nu) to the local energy, momentum, and stress (represented by the stress-energy tensor T_mu_nu). Matter dictates how space curves; curved space dictates how matter moves.",
+        "structured_payload": null
+      },
+      {
+        "id": "rec_gravity_faq_01",
+        "record_type": "FAQ",
+        "title": "Why doesn't the Moon crash into Earth?",
+        "content": "The Moon possesses high tangential orbital velocity (~1.022 km/s). As Earth's gravity accelerates it downward, the curvature of the Earth drops away beneath it at the exact same rate, keeping the Moon in perpetual orbit.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Gravity is a fundamental interaction whereby mass and energy attract one another. Classically formulated by Newton as F = G*(m1*m2)/r^2, it is universally attractive and governs planetary orbits, ocean tides, and macroscopic structure. In Einstein's General Relativity, gravity is the physical curvature of four-dimensional spacetime caused by mass-energy distributions.",
+        "token_estimate": 62
+      },
+      {
+        "chunk_index": 1,
+        "chunk_type": "properties_and_examples",
+        "text_content": "Key physical constants: Gravitational constant G = 6.67430\u00d710^-11 m^3\u00b7kg^-1\u00b7s^-2; Earth sea-level acceleration g \u2248 9.81 m/s^2. Force drops with the square of distance (inverse-square law). Applications include satellite orbit insertion, geosynchronous positioning, and gravitational lensing analysis for astronomical cosmology.",
+        "token_estimate": 65
+      },
+      {
+        "chunk_index": 2,
+        "chunk_type": "misconceptions",
+        "text_content": "Crucial distinction: Weightlessness in orbit (like on the ISS at 400km) is NOT zero gravity; gravitational pull there remains ~90% of sea-level. Weightlessness arises from constant orbital free fall. In a vacuum, objects of differing masses accelerate at identical rates because gravitational force and inertia scale proportionally (a = F/m).",
+        "token_estimate": 68
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_isaac_newton",
+        "entity_type": "person",
+        "name": "Sir Isaac Newton",
+        "description": "English mathematician and physicist who published Philosophi\u00e6 Naturalis Principia Mathematica (1687) formulating classical mechanics and universal gravitation."
+      },
+      {
+        "id": "ent_albert_einstein",
+        "entity_type": "person",
+        "name": "Albert Einstein",
+        "description": "Theoretical physicist who developed General Relativity (1915), reformulating gravity as curvature of spacetime."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_newtons_laws",
+        "relationship_type": "related_to",
+        "description": "Gravitational force provides the net force vector in Newton's second law for celestial and projectile mechanics.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "related_to",
+        "description": "Gravitational potential energy converts to kinetic energy during gravitational acceleration while conserving total mechanical energy.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_newtons_laws",
+    "domain_id": "sci_math",
+    "category_id": "cat_physics_mechanics",
+    "topic_id": "top_cat_physics_mechanics_applied",
+    "name": "Newton's Laws of Motion",
+    "summary_definition": "Three fundamental physical laws that describe the mathematical relationship between the motion of an object and the forces acting upon it.",
+    "primary_explanation": "Formulated by Sir Isaac Newton in 1687, the three laws of motion underpin classical mechanics: First Law (Inertia): An object remains at rest or continues at constant velocity in a straight line unless acted upon by a net external force. Second Law (Force & Momentum): The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass, summarized as F = ma (or more precisely F = dp/dt). Third Law (Action-Reaction): Whenever one body exerts a force on a second body, the second body simultaneously exerts a force equal in magnitude and opposite in direction on the first body.",
+    "key_properties": [
+      {
+        "property": "First Law Formulation",
+        "value": "Sigma(F) = 0 implies dv/dt = 0 (constant velocity)"
+      },
+      {
+        "property": "Second Law Formulation",
+        "value": "F_net = m * a = d(mv)/dt"
+      },
+      {
+        "property": "Third Law Formulation",
+        "value": "F_A_on_B = -F_B_on_A"
+      },
+      {
+        "property": "Inertial Reference Frame",
+        "value": "Laws strictly hold in non-accelerating frames of reference"
+      }
+    ],
+    "applications": [
+      "Vehicle braking distance, passenger seatbelt design, and crash impact calculation.",
+      "Rocket propulsion: expelling exhaust gas backward creates forward reaction thrust.",
+      "Structural bridge and skyscraper load distribution analysis in civil engineering."
+    ],
+    "prerequisites": [
+      "c_vectors",
+      "c_acceleration"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "Classical Mechanics Laws",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "F=ma",
+        "alias_type": "colloquial"
+      },
+      {
+        "alias": "Newtonian Motion",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A continuous force is required to keep an object moving at constant speed.",
+        "correction_text": "An object at constant velocity in a frictionless vacuum requires zero net force to maintain motion.",
+        "explanation": "On Earth, friction and drag oppose motion; the applied force merely cancels resistive forces to produce a net force of zero."
+      },
+      {
+        "misconception_text": "Action and reaction forces act on the same body and cancel each other out.",
+        "correction_text": "Action and reaction forces act on two entirely distinct bodies, so they never cancel each other on a single body.",
+        "explanation": "When you jump, your feet push down on the Earth (body 1), and the Earth pushes up on your feet (body 2). The upward force acts on you alone, causing acceleration."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_newton_law2_calc",
+        "record_type": "formula",
+        "title": "Newton's Second Law Equation",
+        "content": "F_net = m * a, where F is net force in Newtons (N), m is mass in kilograms (kg), and a is acceleration in meters per second squared (m/s^2).",
+        "structured_payload": null
+      },
+      {
+        "id": "rec_newton_third_rocket",
+        "record_type": "example",
+        "title": "Rocket Propulsion as Third Law Action-Reaction",
+        "content": "A rocket in the vacuum of space accelerates because the combustion chamber exerts intense force backward on exhaust gases (action); the escaping gases simultaneously exert an equal forward force on the rocket hull (reaction).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Newton's Three Laws of Motion: 1. Law of Inertia: An object remains at rest or in uniform straight motion unless acted upon by a net external force. 2. Law of Acceleration: Net force equals mass times acceleration (F = ma or F = dp/dt). 3. Action-Reaction: For every action force, there is an equal and opposite reaction force acting on the opposing body.",
+        "token_estimate": 78
+      },
+      {
+        "chunk_index": 1,
+        "chunk_type": "misconceptions",
+        "text_content": "Common pitfalls: 1. Sustained motion does not require force\u2014only acceleration requires net force. Everyday objects slow down due to unobserved friction. 2. Action-reaction pairs act on different objects (A on B, B on A) and never cancel each other out on the same object.",
+        "token_estimate": 58
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_principia_1687",
+        "entity_type": "standard",
+        "name": "Philosophi\u00e6 Naturalis Principia Mathematica",
+        "description": "Foundational text by Newton establishing mathematical physics, calculus foundations, and classical mechanics."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_gravity",
+        "relationship_type": "related_to",
+        "description": "Newton's laws provide the kinematics framework where gravity serves as the primary force vector.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "related_to",
+        "description": "Integrating Newton's second law over distance yields the work-energy theorem.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_conservation_energy",
+    "domain_id": "sci_math",
+    "category_id": "cat_physics_mechanics",
+    "topic_id": "top_cat_physics_mechanics_applied",
+    "name": "Conservation of Energy and First Law of Thermodynamics",
+    "summary_definition": "A fundamental physical law stating that energy cannot be created or destroyed, only transformed from one form to another or transferred between systems.",
+    "primary_explanation": "The law of conservation of energy posits that the total energy of an isolated system remains constant over time. Energy manifests in numerous interchangeable states, including kinetic energy (motion), gravitational/elastic potential energy, thermal energy (microscopic kinetic motion of atoms), chemical bond energy, nuclear binding energy, and radiant electromagnetic energy. In thermodynamics, the First Law formalizes this as Delta_U = Q - W, where the change in internal energy (Delta_U) of a closed system equals heat added to the system (Q) minus work done by the system on its surroundings (W). Noether's theorem proved in 1915 that energy conservation is the direct mathematical consequence of continuous time-translation symmetry in the laws of physics.",
+    "key_properties": [
+      {
+        "property": "Thermodynamic Formulation",
+        "value": "Delta_U = Q - W (internal energy change = heat minus work)"
+      },
+      {
+        "property": "Mechanical Energy Equation",
+        "value": "E_total = Kinetic Energy + Potential Energy = 0.5*m*v^2 + m*g*h"
+      },
+      {
+        "property": "Theoretical Origin (Noether's Theorem)",
+        "value": "Invariance of physical laws under time translation"
+      },
+      {
+        "property": "Mass-Energy Equivalence",
+        "value": "E = m*c^2 in nuclear transitions"
+      }
+    ],
+    "applications": [
+      "Hydroelectric power stations converting gravitational potential energy of water into electricity.",
+      "Internal combustion and jet engines converting chemical hydrocarbon bonds into thermal and mechanical kinetic energy.",
+      "Calorimetric measurement of dietary energy and chemical reaction enthalpies."
+    ],
+    "prerequisites": [
+      "c_work_energy"
+    ],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_feynman_physics",
+    "aliases": [
+      {
+        "alias": "First Law of Thermodynamics",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Energy Conservation Principle",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Energy can be 'used up' or consumed until it disappears.",
+        "correction_text": "Energy is never consumed or destroyed; it merely degrades into lower-grade, dispersed thermal energy (entropy increase).",
+        "explanation": "When an engine burns fuel, the chemical energy is fully accounted for by mechanical propulsion, heat in the radiator, exhaust gas temperature, and sound vibrations."
+      },
+      {
+        "misconception_text": "Perpetual motion machines of the first kind are theoretically possible with sufficient technological refinement.",
+        "correction_text": "Machines that produce more work output than energy input fundamentally violate the conservation of energy and cannot exist.",
+        "explanation": "No mechanical mechanism, magnetic trick, or chemical device can generate net work without an equal depletion of internal energy or external input."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_first_law_formula",
+        "record_type": "formula",
+        "title": "First Law of Thermodynamics Equation",
+        "content": "Delta_U = Q - W (Delta_U: internal energy variation; Q: heat supplied to system; W: mechanical work done by system).",
+        "structured_payload": null
+      },
+      {
+        "id": "rec_noether_energy",
+        "record_type": "theorem",
+        "title": "Noether's Theorem Link to Energy",
+        "content": "Formulated by Emmy Noether in 1915: Every differentiable continuous symmetry of the action of a physical system has a corresponding conservation law. Time invariance implies energy conservation.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Conservation of Energy: In an isolated system, total energy remains invariant. Energy cannot be created or destroyed, only transformed between forms (kinetic, potential, thermal, chemical, nuclear). In thermodynamics: Delta_U = Q - W (change in internal energy equals heat supplied minus work executed). Noether's theorem proves this arises from time-translation symmetry.",
+        "token_estimate": 73
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_emmy_noether",
+        "entity_type": "person",
+        "name": "Emmy Noether",
+        "description": "German mathematician who discovered the fundamental relationship between symmetry and physical conservation laws."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_gravity",
+        "relationship_type": "related_to",
+        "description": "Gravitational fields act as conservative force fields where mechanical energy is strictly conserved in the absence of dissipative friction.",
+        "weight": 0.88,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cellular_respiration",
+    "domain_id": "sci_math",
+    "category_id": "cat_bio_cellular",
+    "topic_id": "top_cat_bio_cellular_applied",
+    "name": "Cellular Respiration and ATP Synthesis",
+    "summary_definition": "The metabolic pathway by which aerobic cells harvest biochemical energy from nutrients (such as glucose) and convert it into adenosine triphosphate (ATP), releasing carbon dioxide and water.",
+    "primary_explanation": "Cellular respiration is the foundational energy-harnessing process of aerobic life, summarized by the chemical equation C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~30-32 ATP. It occurs in three major successive stages: 1. Glycolysis (cytoplasm): anaerobic breakdown of 1 glucose molecule into 2 pyruvates, yielding a net 2 ATP and 2 NADH. 2. The Citric Acid / Krebs Cycle (mitochondrial matrix): converts acetyl-CoA into CO2, reducing electron carriers to produce NADH and FADH2. 3. Oxidative Phosphorylation & Electron Transport Chain (inner mitochondrial membrane): high-energy electrons from NADH/FADH2 travel through protein complexes, pumping protons (H+) into the intermembrane space to create an electrochemical gradient. ATP Synthase harnesses this proton-motive force through chemiosmosis to phosphorylate ADP into ATP.",
+    "key_properties": [
+      {
+        "property": "Net Balanced Equation",
+        "value": "C6H12O6 + 6 O2 -> 6 CO2 + 6 H2O + 30-32 ATP + heat"
+      },
+      {
+        "property": "Cellular Locations",
+        "value": "Glycolysis in cytosol; Krebs cycle in matrix; ETC on cristae"
+      },
+      {
+        "property": "Theoretical Maximum Yield",
+        "value": "30 to 32 ATP molecules per oxidized glucose molecule"
+      },
+      {
+        "property": "Terminal Electron Acceptor",
+        "value": "Molecular Oxygen (O2), which is reduced to water (H2O)"
+      }
+    ],
+    "applications": [
+      "Metabolic rate assessment and VO2 max measurement in sports physiology.",
+      "Understanding metabolic poisons like cyanide, which halts Complex IV in the electron transport chain.",
+      "Industrial fermentation pathways when oxygen is absent (anaerobic glycolysis producing lactic acid or ethanol)."
+    ],
+    "prerequisites": [
+      "c_molecules",
+      "c_chemical_reactions"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_openstax_bio",
+    "aliases": [
+      {
+        "alias": "Aerobic Respiration",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "ATP Synthesis",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Oxidative Metabolism",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Plants photosynthesize and therefore do not perform cellular respiration.",
+        "correction_text": "Plant cells possess mitochondria and carry out cellular respiration day and night to break down synthesized sugars for cellular work.",
+        "explanation": "Photosynthesis produces glucose and oxygen as stored energy; plants then consume this glucose via cellular respiration to power active transport, protein synthesis, and growth."
+      },
+      {
+        "misconception_text": "Breathing (pulmonary respiration) is the same as cellular respiration.",
+        "correction_text": "Breathing is mechanical gas exchange in lungs; cellular respiration is microscopic chemical phosphorylation inside individual cells.",
+        "explanation": "Lungs supply O2 and expel CO2 so that mitochondrial electron transport chains can function across all bodily tissues."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_respiration_three_stages",
+        "record_type": "process",
+        "title": "Three Consecutive Stages of Aerobic Respiration",
+        "content": "Stage 1: Glycolysis in cytoplasm (Glucose -> 2 Pyruvate + 2 ATP net + 2 NADH). Stage 2: Citric Acid Cycle in mitochondrial matrix (generates 2 ATP, 6 NADH, 2 FADH2, releases CO2). Stage 3: Oxidative Phosphorylation on inner membrane (chemiosmosis yields ~26-28 ATP).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Cellular respiration is the biochemical pathway converting glucose and oxygen into water, carbon dioxide, and ATP energy: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~30-32 ATP. It comprises three stages: Glycolysis (cytosol), Krebs Cycle (mitochondrial matrix), and Electron Transport Chain / Chemiosmosis (inner mitochondrial membrane) utilizing proton-motive force via ATP Synthase.",
+        "token_estimate": 77
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_atp_molecule",
+        "entity_type": "standard",
+        "name": "Adenosine Triphosphate (ATP)",
+        "description": "Universal molecular energy currency of living cells composed of adenine, ribose, and three phosphoanhydride-bonded phosphate groups."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_conservation_energy",
+        "relationship_type": "example_of",
+        "description": "Cellular respiration represents thermodynamic conservation of energy converting chemical bond enthalpy into biochemical phosphate bonds and thermal dissipation.",
+        "weight": 0.92,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_calculus_derivative",
+    "domain_id": "sci_math",
+    "category_id": "cat_math_calculus",
+    "topic_id": "top_cat_math_calculus_applied",
+    "name": "Derivative and Instantaneous Rate of Change",
+    "summary_definition": "A fundamental mathematical operation measuring the sensitivity to change of a function value with respect to a change in its argument, representing the slope of the tangent line to the curve.",
+    "primary_explanation": "The derivative of a function f(x) with respect to x formalizes the concept of instantaneous rate of change. While an average rate of change over an interval [x, x+h] is the slope of the secant line (f(x+h) - f(x))/h, the derivative takes the limit as the interval h approaches zero: f'(x) = lim_{h -> 0} (f(x+h) - f(x)) / h. Geometrically, f'(x) specifies the exact slope of the tangent line to the graph at point x. In physics, if position is expressed as x(t), the first derivative with respect to time dx/dt is instantaneous velocity, and the second derivative d^2x/dt^2 is instantaneous acceleration. In machine learning, multi-variable derivatives (gradients) guide optimization via gradient descent.",
+    "key_properties": [
+      {
+        "property": "Formal Limit Definition",
+        "value": "f'(x) = lim_{h->0} [f(x+h) - f(x)] / h"
+      },
+      {
+        "property": "Power Rule",
+        "value": "d/dx [x^n] = n * x^(n-1)"
+      },
+      {
+        "property": "Product Rule",
+        "value": "d/dx [u*v] = u'*v + u*v'"
+      },
+      {
+        "property": "Chain Rule (Compositions)",
+        "value": "d/dx [f(g(x))] = f'(g(x)) * g'(x)"
+      }
+    ],
+    "applications": [
+      "Physics kinematics: determining instantaneous velocity and acceleration from position functions.",
+      "Economics: calculating marginal cost, marginal revenue, and profit maximization points.",
+      "Machine learning backpropagation: calculating partial derivatives of loss with respect to neural weights via the chain rule."
+    ],
+    "prerequisites": [
+      "c_limits",
+      "c_algebraic_functions"
+    ],
+    "difficulty_level": "intermediate",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_clrs_algorithms",
+    "aliases": [
+      {
+        "alias": "Differential",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Instantaneous Rate of Change",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Tangent Slope",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Dividing by zero is occurring because the denominator h equals zero in the derivative formula.",
+        "correction_text": "The derivative is a limit as h approaches zero, meaning h never equals zero; it examines the trend as h becomes arbitrarily small.",
+        "explanation": "Calculus resolves the 0/0 indeterminate form by analyzing algebraic cancellation of terms before the limit evaluation."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_derivative_chain_rule",
+        "record_type": "theorem",
+        "title": "The Chain Rule in Calculus",
+        "content": "For composite functions F(x) = f(g(x)), if g is differentiable at x and f is differentiable at g(x), then F'(x) = f'(g(x)) * g'(x). In Leibniz notation: dy/dx = (dy/du) * (du/dx).",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "The derivative f'(x) defines the instantaneous rate of change of f(x) and equals the tangent slope at x: f'(x) = lim_{h->0} [f(x+h) - f(x)]/h. Fundamental rules: Power Rule d/dx[x^n] = n*x^(n-1); Product Rule d/dx[uv] = u'v + uv'; Chain Rule d/dx[f(g(x))] = f'(g(x))*g'(x). Powers physics kinematics (dx/dt = velocity) and AI neural network backpropagation.",
+        "token_estimate": 84
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_leibniz",
+        "entity_type": "person",
+        "name": "Gottfried Wilhelm Leibniz",
+        "description": "German polymath who independently co-invented calculus and developed modern notation (dy/dx, integral symbol)."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_newtons_laws",
+        "relationship_type": "prerequisite_of",
+        "description": "Formulating acceleration as the second time-derivative of position is essential to Newton's Second Law F = m * d^2x/dt^2.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_separation_of_powers",
+    "domain_id": "society_culture",
+    "category_id": "cat_soc_civics",
+    "topic_id": "top_cat_soc_civics_applied",
+    "name": "Separation of Powers and Checks and Balances",
+    "summary_definition": "A foundational constitutional governance model dividing political authority among distinct, autonomous branches (typically legislative, executive, and judicial) to prevent tyranny and abuse of power.",
+    "primary_explanation": "Articulated prominently by Baron de Montesquieu in The Spirit of the Laws (1748), the doctrine of the Separation of Powers (trias politica) posits that liberty is imperiled whenever executive, legislative, or judicial powers are concentrated in a single person or body. In modern constitutional democracies, the three branches operate with distinct mandates: 1. The Legislative branch creates and amends statutes and controls fiscal appropriations. 2. The Executive branch administers, implements, and enforces laws and directs civil administration. 3. The Judicial branch interprets statutory and constitutional law and adjudicates legal controversies. Through institutional Checks and Balances, each branch possesses counterbalancing powers over the other two (e.g., executive veto of legislative bills, legislative confirmation or impeachment of executive/judicial officials, and judicial review of legislative statutes and executive actions).",
+    "key_properties": [
+      {
+        "property": "Tripartite Classification",
+        "value": "Legislative (lawmaking), Executive (enforcement), Judicial (interpretation)"
+      },
+      {
+        "property": "Primary Institutional Objective",
+        "value": "Dispersion of state coercive authority to prevent authoritarian consolidation"
+      },
+      {
+        "property": "Checks and Balances Mechanism",
+        "value": "Each branch holds formal legal tools to check overreach by the other branches"
+      }
+    ],
+    "applications": [
+      "Constitutional drafting for emerging democracies establishing democratic durability.",
+      "Judicial review nullifying unconstitutional legislative acts or arbitrary executive decrees.",
+      "Corporate governance architectures separating board oversight from executive management."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Trias Politica",
+        "alias_type": "scientific_name"
+      },
+      {
+        "alias": "Checks and Balances",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Division of Governmental Powers",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Separation of powers means the branches operate in complete isolation without ever interacting.",
+        "correction_text": "Separation of powers is intentionally coupled with 'Checks and Balances', meaning the branches continually interact, supervise, and restrain one another.",
+        "explanation": "If branches were completely sealed off, there would be no mechanism to halt an overreaching branch; checks and balances create interdependent oversight."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_montesquieu_quote",
+        "record_type": "principle",
+        "title": "Montesquieu's Core Dictum on Liberty",
+        "content": "When the legislative and executive powers are united in the same person, or in the same body of magistrates, there can be no liberty; because apprehensions may arise, lest the same monarch or senate should enact tyrannical laws, to execute them in a tyrannical manner.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "Separation of Powers (Montesquieu's Trias Politica, 1748) divides governance into three independent branches: Legislative (making laws), Executive (enforcing laws), and Judicial (interpreting laws). Checks and balances grant each branch oversight tools (e.g. presidential veto, congressional impeachment, judicial review) to prevent autocratic consolidation of power.",
+        "token_estimate": 73
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_montesquieu",
+        "entity_type": "person",
+        "name": "Baron de Montesquieu",
+        "description": "French Enlightenment political philosopher whose De l'esprit des lois (1748) established the modern doctrine of separation of powers."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_rule_of_law",
+        "relationship_type": "prerequisite_of",
+        "description": "Separation of powers provides the institutional independence necessary to enforce the rule of law without executive interference.",
+        "weight": 0.94,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_rule_of_law",
+    "domain_id": "society_culture",
+    "category_id": "cat_soc_civics",
+    "topic_id": "top_cat_soc_civics_applied",
+    "name": "The Rule of Law and Due Process",
+    "summary_definition": "A legal and political doctrine establishing that all individuals, institutions, and government authorities are accountable to publicly promulgated, equally enforced, and independently adjudicated laws.",
+    "primary_explanation": "The Rule of Law stands in direct contrast to arbitrary autocratic rule ('rule by law' or 'rule of men'). Originating in antiquity (Aristotle: 'It is more proper that law should govern than any one of the citizens') and cemented in documents such as the Magna Carta (1215), the principle demands four essential pillars: 1. Equality before the law: No individual, king, or president is above the law. 2. Legal certainty and non-retroactivity: Laws must be clear, publicly accessible, stable, and cannot criminalize past actions retrospectively (nulla poena sine lege). 3. Procedural due process: Fair, public trials conducted by an impartial judiciary with presumption of innocence and right to legal defense. 4. Protection of fundamental human rights. Where the rule of law prevails, economic investment thrives and citizens are shielded from arbitrary state coercion.",
+    "key_properties": [
+      {
+        "property": "Equality Principle",
+        "value": "Universal applicability of legal statutes regardless of official rank or status"
+      },
+      {
+        "property": "Non-Retroactivity",
+        "value": "Prohibition of ex post facto criminal laws"
+      },
+      {
+        "property": "Judicial Impartiality",
+        "value": "Courts must be structurally and financially insulated from executive coercion"
+      }
+    ],
+    "applications": [
+      "International trade and foreign direct investment risk assessment based on contract enforceability indices.",
+      "Constitutional adjudication of habeas corpus challenges against unlawful detention.",
+      "Anti-corruption governance frameworks ensuring transparent public procurement."
+    ],
+    "prerequisites": [],
+    "difficulty_level": "introductory",
+    "confidence_score": 1,
+    "provenance_type": "curated_scientific",
+    "source_id": "src_norman_design",
+    "aliases": [
+      {
+        "alias": "Supremacy of Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Due Process of Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Rechtsstaat",
+        "alias_type": "scientific_name"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "'Rule of law' is the same thing as 'rule by law'.",
+        "correction_text": "'Rule by law' refers to an authoritarian regime using legal codes as instruments of state oppression; 'Rule of law' requires the state and rulers themselves to be constrained by just laws.",
+        "explanation": "In an autocracy, rulers can pass arbitrary edicts and call it 'law'. True Rule of Law requires substantive fairness, procedural protections, and government subjection to independent judicial review."
+      }
+    ],
+    "records": [
+      {
+        "id": "rec_magna_carta_due_process",
+        "record_type": "historical_event",
+        "title": "Magna Carta Clause 39 (1215)",
+        "content": "No free man shall be seized, imprisoned, stripped of his rights or possessions, or outlawed or exiled, except by the lawful judgment of his equals or by the law of the land.",
+        "structured_payload": null
+      }
+    ],
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "chunk_type": "definition",
+        "text_content": "The Rule of Law dictates that all persons and state entities are accountable to publicly promulgated, equally enforced, independently adjudicated laws. Core requirements: equality before the law, prohibition of retroactive punishment, open and stable rules, procedural due process (fair trial, presumption of innocence), and independent courts. Distinct from authoritarian 'rule by law'.",
+        "token_estimate": 73
+      }
+    ],
+    "entities": [
+      {
+        "id": "ent_magna_carta",
+        "entity_type": "standard",
+        "name": "Magna Carta Libertatum (1215)",
+        "description": "Royal charter of rights agreed to by King John of England establishing that the king's will is subject to law."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_separation_of_powers",
+        "relationship_type": "related_to",
+        "description": "The rule of law relies upon an independent judiciary created by the separation of powers.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  }
+]

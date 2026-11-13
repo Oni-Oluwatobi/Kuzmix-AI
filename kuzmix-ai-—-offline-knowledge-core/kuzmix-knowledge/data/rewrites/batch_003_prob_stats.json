@@ -1,0 +1,443 @@
+[
+  {
+    "id": "c_cat_math_probability_bayes_theorem",
+    "name": "Bayes' Theorem",
+    "summary_definition": "Bayes' theorem relates conditional probabilities: P(A|B) = P(B|A)·P(A) / P(B) — it tells you how to update the probability of a hypothesis given new evidence.",
+    "primary_explanation": "The theorem states that the posterior probability of a hypothesis given evidence equals the likelihood of that evidence under the hypothesis, times the prior probability, divided by the total probability of the evidence. Its practical power comes from reversing conditionals: doctors know P(symptom|disease) but want P(disease|symptom), and spam filters know P(words|spam) but need P(spam|words). The prior matters most when evidence is weak or the hypothesis is rare — a rare disease with a good test can still have a low positive predictive value, because false positives from the healthy majority swamp true positives. Iterating Bayes' rule as data arrives is exactly what Bayesian learning does.",
+    "key_properties": [
+      { "property": "Formula", "value": "P(A|B) = P(B|A) · P(A) / P(B)" },
+      { "property": "Terms", "value": "Prior × likelihood ÷ evidence = posterior" },
+      { "property": "Base-rate effect", "value": "Rare hypotheses stay improbable unless evidence is strong" },
+      { "property": "Iterability", "value": "Today's posterior becomes tomorrow's prior" }
+    ],
+    "applications": [
+      "Medical testing: interpreting screening results for rare diseases.",
+      "Spam filtering and fraud detection: combining prior frequency with message evidence.",
+      "Machine learning: naive Bayes classifiers and Bayesian parameter estimation."
+    ],
+    "aliases": [
+      { "alias": "Bayes' Rule", "alias_type": "synonym" },
+      { "alias": "Bayes Theorem", "alias_type": "spelling_variant" },
+      { "alias": "Inverse Probability Rule", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A 99% accurate test means a positive result is 99% likely to be correct.",
+        "correction_text": "Positive predictive value depends on prevalence: with a 1-in-1000 disease, even a 99%-specific test yields mostly false positives among positives.",
+        "explanation": "Bayes' theorem divides true positives by all positives — the healthy majority's false positives dominate when the base rate is low."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_prior_vs_posterior", "relationship_type": "related_to", "description": "Bayes' rule is the mechanism that converts prior to posterior.", "weight": 0.9, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_type_i_and_ii_errors", "relationship_type": "related_to", "description": "Testing errors arise from how posterior thresholds are set.", "weight": 0.85, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_central_limit_theorem",
+    "name": "Central Limit Theorem",
+    "summary_definition": "The central limit theorem states that the distribution of a sample mean approaches a normal distribution as sample size grows, regardless of the population's own distribution shape.",
+    "primary_explanation": "Take repeated samples of size n from any finite-variance distribution — uniform, exponential, skewed, whatever — and average each. As n increases (rule of thumb 30+), those averages form an ever-tighter bell curve centered on the population mean with standard deviation σ/√n. This is why the normal distribution appears everywhere: it is the default shape of accumulated random variation, from measurement error to portfolio returns to election polls. It also gives the foundation for confidence intervals and hypothesis tests on means — z- and t-procedures assume normality of the estimator through this theorem, not of the raw data. The theorem fails for infinite-variance distributions such as the Cauchy, where averages never stabilize.",
+    "key_properties": [
+      { "property": "Convergence target", "value": "Normal distribution of the sample mean" },
+      { "property": "Standard error", "value": "σ / √n — averages shrink variability by the square root of n" },
+      { "property": "Requirements", "value": "Independent observations, finite variance; population shape irrelevant" },
+      { "property": "Typical threshold", "value": "n ≥ 30 for a useful approximation" }
+    ],
+    "applications": [
+      "Polling: margins of error computed from sample means.",
+      "Quality control: X-bar control charts detecting process drift.",
+      "Finance: approximating portfolio return distributions from many small bets."
+    ],
+    "aliases": [
+      { "alias": "CLT", "alias_type": "acronym" },
+      { "alias": "Central Limit Theorem", "alias_type": "synonym" },
+      { "alias": "Sampling Distribution Normality", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "The central limit theorem says any dataset becomes normal with enough data.",
+        "correction_text": "It concerns the distribution of sample means/sums, not the raw observations themselves — individual data can stay heavily skewed forever.",
+        "explanation": "The theorem normalizes an estimator formed by averaging, not the underlying variable being measured."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_normal_distribution", "relationship_type": "related_to", "description": "The CLT explains why the normal distribution is the universal limit law.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_confidence_intervals", "relationship_type": "related_to", "description": "Confidence intervals for means rely on the CLT.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_normal_distribution",
+    "name": "Normal Distribution",
+    "summary_definition": "The normal (Gaussian) distribution is the symmetric bell-shaped probability density f(x) = (1/σ√(2π))·e^(-(x-μ)²/2σ²), fully determined by its mean μ and standard deviation σ.",
+    "primary_explanation": "About 68% of draws fall within one σ of the mean, 95% within two, and 99.7% within three — the 68-95-99.7 rule. Its importance is both physical and mathematical: sums of many small independent effects produce normal variation (via the central limit theorem), and the distribution maximizes entropy for a fixed variance, making it the least-assumptive choice when only mean and spread are known. Natural quantities like heights, measurement errors, and noise often approximate it; returns in finance often do not, showing fat tails instead. The standardized form (μ=0, σ=1) gives z-scores, letting any normal variable be compared on one table — the backbone of classical inference.",
+    "key_properties": [
+      { "property": "Parameters", "value": "Mean μ (location) and standard deviation σ (scale)" },
+      { "property": "68-95-99.7 rule", "value": "Share of mass within 1σ, 2σ, 3σ of the mean" },
+      { "property": "Standard form", "value": "z = (x − μ)/σ maps any normal to the unit normal" },
+      { "property": "Moment facts", "value": "All odd central moments are zero; kurtosis = 3 (excess kurtosis 0)" }
+    ],
+    "applications": [
+      "Standardized testing and quality control (six sigma).",
+      "Statistical inference: z-tests, t-tests, and confidence intervals.",
+      "Noise modeling in signal processing and sensor fusion."
+    ],
+    "aliases": [
+      { "alias": "Gaussian Distribution", "alias_type": "synonym" },
+      { "alias": "Bell Curve", "alias_type": "colloquial" },
+      { "alias": "N(μ, σ²)", "alias_type": "formula_repr" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Natural phenomena are normally distributed as a rule.",
+        "correction_text": "Normality is a convenient approximation for averages of many small effects; counts, incomes, and financial returns are typically skewed or heavy-tailed.",
+        "explanation": "The CLT produces normality of means, not of the raw variables themselves."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_law_of_large_numbers", "relationship_type": "related_to", "description": "LLN fixes the center; the normal law describes the spread around it.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_law_of_large_numbers",
+    "name": "Law of Large Numbers",
+    "summary_definition": "The law of large numbers states that the sample average converges to the true expected value as the number of independent trials grows — averages stabilize, even though individual outcomes never do.",
+    "primary_explanation": "For independent identically distributed draws with finite mean μ, the sample mean X̄ₙ → μ almost surely as n → ∞ (strong law) or in probability (weak law). The practical meaning: short runs are noisy, long runs are fair — a coin 60% heads after 100 flips is unremarkable; after 100,000 flips the share will sit within a whisker of 50%. Convergence is slow: deviations shrink like 1/√n, so quadrupling precision requires quadrupling the data. The theorem requires finite mean — for heavy-tailed distributions like the Cauchy the sample mean wanders and never settles. Crucially, it says nothing about the next single outcome; it governs averages, not fortune.",
+    "key_properties": [
+      { "property": "Convergence rate", "value": "Deviation of the mean shrinks as σ/√n" },
+      { "property": "Strong vs weak", "value": "Strong: converges almost surely; weak: in probability" },
+      { "property": "Requirement", "value": "Finite mean (and variance for rate statements)" },
+      { "property": "Scope", "value": "Applies to averages, not individual future outcomes" }
+    ],
+    "applications": [
+      "Casino and insurance mathematics: house edge materializes over volume.",
+      "A/B testing: stopping only when sample sizes make means reliable.",
+      "Monte Carlo simulation: estimates improve as runs accumulate."
+    ],
+    "aliases": [
+      { "alias": "LLN", "alias_type": "acronym" },
+      { "alias": "SLLN", "alias_type": "acronym" },
+      { "alias": "Averaging Law", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "After five heads in a row, tails is due (gambler's fallacy).",
+        "correction_text": "Independent flips have no memory; the law of large numbers works by diluting streaks with future trials, not by balancing past ones.",
+        "explanation": "The LLN constrains the long-run average and leaves every finite sequence, streaks included, fully possible."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_central_limit_theorem", "relationship_type": "related_to", "description": "LLN gives the limit the CLT's distribution concentrates around.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_hypothesis_testing",
+    "name": "Hypothesis Testing",
+    "summary_definition": "Hypothesis testing is a procedure for deciding whether sample data contradicts a stated null hypothesis — it quantifies how surprising the observed result would be if the null were true.",
+    "primary_explanation": "The method specifies a null hypothesis H₀ (usually 'no effect'), chooses a test statistic, computes a p-value — the probability of seeing data at least this extreme assuming H₀ — and rejects H₀ when the p-value falls below a preset α (commonly 0.05). Rejecting means the data are surprising under H₀, not that H₀ is false with 95% probability: the p-value is P(data|H₀), not P(H₀|data). Design choices matter as much as arithmetic: α sets the false-positive rate, sample size sets power (the chance of detecting a real effect), and multiple comparisons inflate false discoveries unless corrected. Preregistration of hypotheses and methods keeps the test honest.",
+    "key_properties": [
+      { "property": "Null hypothesis", "value": "H₀: the default of no effect or no difference" },
+      { "property": "Decision rule", "value": "Reject H₀ when p < α (α commonly 0.05)" },
+      { "property": "Error types", "value": "Type I = false positive (α); Type II = false negative (β)" },
+      { "property": "Power", "value": "1 − β: probability of detecting a true effect" }
+    ],
+    "applications": [
+      "Clinical trials: establishing whether a drug beats placebo.",
+      "A/B testing on product changes before full rollout.",
+      "Scientific replication: separating signal from noise in published findings."
+    ],
+    "aliases": [
+      { "alias": "Null Hypothesis Significance Testing", "alias_type": "synonym" },
+      { "alias": "NHST", "alias_type": "acronym" },
+      { "alias": "p-Value Test", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "p < 0.05 means there is a 95% probability the hypothesis is true.",
+        "correction_text": "The p-value is P(data extreme | H₀ true) — it says nothing directly about the probability that the hypothesis holds.",
+        "explanation": "Converting p-values to hypothesis probabilities requires Bayes' theorem with an explicit prior."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_type_i_and_ii_errors", "relationship_type": "related_to", "description": "The two error types are the failure modes of any test decision.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_confidence_intervals", "relationship_type": "related_to", "description": "Intervals and tests are dual views of the same inference.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_confidence_intervals",
+    "name": "Confidence Intervals",
+    "summary_definition": "A confidence interval is a range built from sample data that captures the true parameter at a stated rate (e.g., 95%) across repeated sampling — point estimates plus a measure of their precision.",
+    "primary_explanation": "The recipe: estimate ± (critical value × standard error). For a mean, x̄ ± 1.96·σ/√n gives a 95% interval when σ is known; with unknown σ and moderate n, the t-distribution widens it. The interpretation is procedural, not probabilistic-about-the-parameter: if you rebuilt the interval from 100 independent samples, about 95 of those intervals would contain the true μ — any single interval either does or doesn't, but you can't know which. Width shrinks with sample size (√n) and with variability, which is why bigger, cleaner experiments produce sharper estimates. Overlapping intervals between groups do not by themselves imply 'no significant difference' — the formal test compares the difference directly.",
+    "key_properties": [
+      { "property": "Formula shape", "value": "estimate ± (critical value × standard error)" },
+      { "property": "95% recipe", "value": "x̄ ± 1.96 · σ/√n for means with known σ" },
+      { "property": "Coverage meaning", "value": "95% of intervals from repeated samples capture the parameter" },
+      { "property": "Width drivers", "value": "Shrinks with √n; grows with variability and confidence level" }
+    ],
+    "applications": [
+      "Polling: reporting margin of error around vote shares.",
+      "Clinical trials: effect sizes reported with intervals, not just p-values.",
+      "Engineering tolerance: bounding measured means with stated coverage."
+    ],
+    "aliases": [
+      { "alias": "CI", "alias_type": "acronym" },
+      { "alias": "Interval Estimate", "alias_type": "synonym" },
+      { "alias": "Margin-of-Error Interval", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "There is a 95% probability the true parameter lies in this specific interval.",
+        "correction_text": "The parameter is fixed; it is the procedure that covers 95% of the time — this particular interval either contains it or not.",
+        "explanation": "Frequentist intervals measure long-run procedure reliability, not parameter uncertainty for a realized interval."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_standard_deviation", "relationship_type": "related_to", "description": "The standard deviation feeds the standard error that sets interval width.", "weight": 0.85, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_type_i_and_ii_errors",
+    "summary_definition": "A Type I error rejects a true null hypothesis (false positive, rate α); a Type II error fails to reject a false null hypothesis (false negative, rate β). No test eliminates both — lowering one raises the other, given fixed data.",
+    "primary_explanation": "Think courtroom: convicting an innocent person is Type I, letting a guilty person go free is Type II. In statistics, α is chosen in advance (0.05 conventional), while β depends on the true effect size, variability, and sample size — reducing β means running a bigger study (power = 1 − β). The trade-off curve is set by where you place the rejection threshold: move it to catch more true effects and you also catch more noise. Domain determines which error costs more: screening a lethal disease favors minimizing β (missed cases), while punishing fraud charges favors minimizing α (false accusations). The false-discovery rate extends this logic to hundreds of simultaneous tests.",
+    "key_properties": [
+      { "property": "Type I (α)", "value": "False positive — rejecting a true H₀" },
+      { "property": "Type II (β)", "value": "False negative — retaining a false H₀" },
+      { "property": "Power", "value": "1 − β; grows with effect size, variance reduction, and n" },
+      { "property": "Trade-off", "value": "For fixed data, α and β move in opposite directions" }
+    ],
+    "applications": [
+      "Medical screening: tolerating false positives to avoid missed diagnoses.",
+      "Quality inspection: balancing defective shipped vs good units discarded.",
+      "Security systems: tuning intrusion alarms to control false-alarm load."
+    ],
+    "aliases": [
+      { "alias": "False Positive / False Negative", "alias_type": "synonym" },
+      { "alias": "Alpha and Beta Errors", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A better test can eliminate both error types.",
+        "correction_text": "With fixed data, the errors trade off; only more data or lower noise shifts the frontier and reduces both.",
+        "explanation": "Sample size moves the whole ROC curve — threshold tweaks only move along it."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_statistical_power", "relationship_type": "related_to", "description": "Power is the complement of the Type II error rate.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_correlation_vs_causation",
+    "name": "Correlation vs Causation",
+    "summary_definition": "Correlation measures how two variables move together; causation means changing one changes the other. Association alone cannot distinguish cause from confounding, reverse direction, or coincidence.",
+    "primary_explanation": "Ice-cream sales and drowning deaths correlate because heat drives both — the classic confounder. Three mechanisms produce correlation without the causal link one imagines: a hidden common cause (confounding), reversed direction (drowning doesn't sell ice cream, but the logic works backwards elsewhere), and pure chance in noisy data. Establishing causation requires design: randomized controlled trials break confounding by balancing groups on average; when randomization is impossible, natural experiments, instrumental variables, diff-in-diff designs, and explicit causal graphs approximate it. Granger causality in time series shows only predictive precedence. The discipline matters because interventions based on spurious correlation waste resources or cause harm.",
+    "key_properties": [
+      { "property": "Correlation", "value": "Symmetric association, often Pearson's r ∈ [−1, 1]" },
+      { "property": "Causation", "value": "Asymmetric: intervention on cause changes effect" },
+      { "property": "Confounders", "value": "Common causes inflate or fabricate association" },
+      { "property": "Gold standard", "value": "Randomization; otherwise quasi-experimental designs" }
+    ],
+    "applications": [
+      "Epidemiology: moving from observational signals to trial-confirmed risk factors.",
+      "Product analytics: separating feature engagement from retention drivers.",
+      "Policy evaluation: difference-in-differences around regulation changes."
+    ],
+    "aliases": [
+      { "alias": "Causal Inference Basics", "alias_type": "synonym" },
+      { "alias": "Spurious Correlation", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A strong correlation implies one variable causes the other.",
+        "correction_text": "Even r ≈ 1 can arise from a third variable or reverse causation; correlation constrains association, not mechanism.",
+        "explanation": "Causal claims need a mechanism plus design (ideally randomization) that excludes common causes."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_linear_regression_fit", "relationship_type": "related_to", "description": "Regression quantifies association but does not by itself identify causation.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_linear_regression_fit",
+    "summary_definition": "Linear regression fits the line ŷ = β₀ + β₁x that minimizes the squared vertical distances (residuals) between observed points and the fitted line, estimating how the outcome changes with the predictor.",
+    "primary_explanation": "Ordinary least squares chooses coefficients that minimize Σ(yᵢ − ŷᵢ)², producing the best linear unbiased estimate under classic assumptions: linear relationship, independent errors, constant variance, and no perfect collinearity. β₁ reads as the expected change in y for a one-unit rise in x, with a standard error and t-statistic attached; R² reports the share of outcome variance the model explains. Diagnostics matter more than the formula: residual plots reveal nonlinearity and heteroskedasticity, and omitted variables bias β₁ when a confounder correlates with both x and y. With one predictor the fit is a line; with many, it becomes a hyperplane — the same least-squares machinery.",
+    "key_properties": [
+      { "property": "Estimator", "value": "Ordinary least squares: minimize sum of squared residuals" },
+      { "property": "Slope meaning", "value": "β₁ = expected Δy per unit Δx, holding other predictors fixed" },
+      { "property": "Goodness of fit", "value": "R² = share of variance explained (1 − SSE/SST)" },
+      { "property": "Assumptions", "value": "Linearity, independent homoskedastic errors, no severe multicollinearity" }
+    ],
+    "applications": [
+      "Forecasting: sales vs advertising spend, temperature vs energy use.",
+      "Economics: estimating returns to education controlling for experience.",
+      "Engineering: calibrating sensor output against reference measurements."
+    ],
+    "aliases": [
+      { "alias": "OLS", "alias_type": "acronym" },
+      { "alias": "Least Squares Regression", "alias_type": "synonym" },
+      { "alias": "Line of Best Fit", "alias_type": "colloquial" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A high R² means the model identifies a causal relationship.",
+        "correction_text": "R² measures fit, not causality — confounded or overfitted models can score high while implying nothing about interventions.",
+        "explanation": "Fit statistics describe in-sample association; causal identification comes from design or assumptions outside the regression."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_correlation_vs_causation", "relationship_type": "related_to", "description": "Regression output needs causal design to be read as cause.", "weight": 0.9, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_coefficient_of_determination_r", "relationship_type": "related_to", "description": "R² summarizes explained variance in the fitted model.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_monte_carlo_method",
+    "name": "Monte Carlo Method",
+    "summary_definition": "Monte Carlo methods estimate quantities by drawing random samples and averaging the results — replacing hard closed-form calculations with repeated random experiment.",
+    "primary_explanation": "If you cannot integrate a function analytically, sample points where it applies and average: the sample mean estimates the integral, with error shrinking as 1/√n. The name comes from Las Vegas casinos — the logic is the law of large numbers turned into a computational tool. Variants are everywhere: estimating π by throwing darts at a square, pricing options by simulating thousands of price paths, sizing risk by resampling portfolio returns (bootstrap), integrating posterior distributions in Bayesian models (MCMC), and rendering images by tracing light paths. Convergence is reliable but slow (sqrt rule), so variance-reduction tricks — importance sampling, antithetic variates, control variates — are used when precision is expensive.",
+    "key_properties": [
+      { "property": "Core idea", "value": "Random sampling + averaging to estimate integrals or probabilities" },
+      { "property": "Convergence", "value": "Error ~ 1/√n — quadruple precision requires 16× samples" },
+      { "property": "Key advantage", "value": "Works in high dimensions where grids become infeasible" },
+      { "property": "Family", "value": "Includes MCMC, bootstrap, option-pricing simulation, ray tracing" }
+    ],
+    "applications": [
+      "Finance: option pricing and value-at-risk via simulated paths.",
+      "Physics: radiation transport and molecular dynamics sampling.",
+      "Engineering: reliability and tolerance analysis with random inputs."
+    ],
+    "aliases": [
+      { "alias": "Monte Carlo Simulation", "alias_type": "synonym" },
+      { "alias": "MC Simulation", "alias_type": "acronym" },
+      { "alias": "Random Sampling Estimation", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Monte Carlo results depend on luck and are unreliable.",
+        "correction_text": "Estimates vary run to run but converge at the known 1/√n rate; confidence bounds can be computed from the sample variance.",
+        "explanation": "Randomness controls the error distribution precisely — that is what makes the method rigorous rather than lucky."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_law_of_large_numbers", "relationship_type": "related_to", "description": "The LLN guarantees Monte Carlo averages converge.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_maximum_likelihood",
+    "summary_definition": "Maximum likelihood estimation chooses the parameter value under which the observed data would have been most probable — maximizing the likelihood function L(θ) = P(data|θ).",
+    "primary_explanation": "Fix the data, treat θ as the free variable, and ask which θ makes the observed outcomes most likely. For i.i.d. samples the likelihood factorizes into a product of densities; maximizing it usually means maximizing its log, turning products into sums and derivatives into solvable equations. Fitting a Gaussian to data yields sample mean and variance; fitting logistic regression finds weights maximizing the probability of observed labels. MLE has strong properties: consistent, and asymptotically normal with the Cramér–Rao minimum variance at the efficient bound. It can overfit with little data — regularization (MAP estimation) or bias corrections address that. Bayes estimation extends it by weighting the likelihood with a prior.",
+    "key_properties": [
+      { "property": "Objective", "value": "θ̂ = argmax P(data | θ)" },
+      { "property": "Practical form", "value": "Maximize the log-likelihood (sum of log densities)" },
+      { "property": "Properties", "value": "Consistent and asymptotically efficient under standard conditions" },
+      { "property": "Weakness", "value": "Biased or degenerate with tiny samples — hence MAP/regularization" }
+    ],
+    "applications": [
+      "Fitting distributions: Gaussian, Poisson, and exponential parameters from data.",
+      "Machine learning: logistic regression and many neural losses are likelihoods.",
+      "Signal processing: estimating channel parameters from received symbols."
+    ],
+    "aliases": [
+      { "alias": "MLE", "alias_type": "acronym" },
+      { "alias": "Maximum Likelihood Estimator", "alias_type": "synonym" },
+      { "alias": "Likelihood Maximization", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Likelihood and probability are the same function.",
+        "correction_text": "Probability P(data|θ) sums to 1 over data for fixed θ; likelihood P(data|θ) as a function of θ has no such normalization.",
+        "explanation": "Same numbers, different variable role — probability varies over outcomes, likelihood varies over parameters."
+      }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_markov_chains",
+    "name": "Markov Chains",
+    "summary_definition": "A Markov chain is a random process where the next state depends only on the current state, not on the path taken — 'the future is independent of the past, given the present' — described by a transition matrix.",
+    "primary_explanation": "States evolve by fixed transition probabilities: today's weather decides tomorrow's, regardless of last week's. Despite this memorylessness, chains exhibit rich long-run behavior: irreducible, aperiodic chains converge to a stationary distribution π satisfying πP = π, and the starting point is forgotten. Special structure gives more — reversible chains satisfy detailed balance, absorbing chains eventually trap in absorbing states with computable hitting probabilities, and finite chains are guaranteed to reach stationarity. Applications include Google's original PageRank (a random-surfer Markov chain), speech-recognition decoding, queueing models, and MCMC sampling, where designing a chain whose stationary distribution equals the target distribution makes hard integrals tractable.",
+    "key_properties": [
+      { "property": "Markov property", "value": "P(Xₙ₊₁ | Xₙ, …, X₁) = P(Xₙ₊₁ | Xₙ)" },
+      { "property": "Representation", "value": "Transition matrix P with rows summing to 1" },
+      { "property": "Stationary distribution", "value": "πP = π — reached by irreducible aperiodic chains" },
+      { "property": "Classes", "value": "Absorbing, periodic, reversible, ergodic" }
+    ],
+    "applications": [
+      "PageRank: ranking web pages as a stationary distribution.",
+      "MCMC: sampling posteriors by simulating a chain (Metropolis-Hastings, Gibbs).",
+      "Reliability: modeling component lifecycles and equipment degradation."
+    ],
+    "aliases": [
+      { "alias": "Stochastic Process with Memorylessness", "alias_type": "synonym" },
+      { "alias": "Transition Matrix Process", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Markov means the process has no randomness.",
+        "correction_text": "Transitions are random — memorylessness only restricts dependence to the current state, not the outcome itself.",
+        "explanation": "The chain is stochastic at every step; the constraint is on what information the next step conditions on."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_stationary_distributions", "relationship_type": "related_to", "description": "The stationary distribution is the chain's long-run equilibrium.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_random_walks", "relationship_type": "related_to", "description": "Random walks are Markov chains on a lattice.", "weight": 0.85, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_conditional_expectation",
+    "name": "Conditional Expectation",
+    "summary_definition": "Conditional expectation E[Y|X] is the average value of Y once X is known — a function of X that gives the best single-number prediction of Y for each value of the conditioning variable.",
+    "primary_explanation": "Unconditional expectation averages over everything; conditional expectation averages only over the uncertainty that remains after observing X. E[Y|X = x] is what you would bet on Y given that specific x — for joint normal variables it is linear in x, which is exactly why linear regression estimates the conditional mean. Iterated expectations, E[Y] = E[E[Y|X]], show the total average decomposes over layers of information, and conditioning reduces variance: Var(Y) = Var(E[Y|X]) + E[Var(Y|X)], the basis of analysis of variance. Martingale theory generalizes the idea: a process is a martingale when its next conditional expectation equals its current value — no predictable drift.",
+    "key_properties": [
+      { "property": "Definition", "value": "E[Y|X] — expectation computed with X held fixed" },
+      { "property": "Tower property", "value": "E[E[Y|X]] = E[Y]" },
+      { "property": "Variance decomposition", "value": "Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]" },
+      { "property": "Best predictor", "value": "Minimizes mean squared error among functions of X" }
+    ],
+    "applications": [
+      "Regression: the true regression function is E[Y|X].",
+      "Finance: martingale pricing — discounted prices are martingales under risk-neutral measure.",
+      "Information: foundation for conditional mutual information and filtering."
+    ],
+    "aliases": [
+      { "alias": "Conditional Mean", "alias_type": "synonym" },
+      { "alias": "Regression Function", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "E[Y|X = x] is a probability, not an expectation.",
+        "correction_text": "It is a long-run average of Y values at that x — it can even take values Y itself never attains.",
+        "explanation": "The conditional expectation is a summary of the conditional distribution, which may be spread widely around it."
+      }
+    ]
+  },
+  {
+    "id": "c_cat_math_probability_probability_density_function",
+    "name": "Probability Density Function",
+    "summary_definition": "A probability density function f(x) describes the relative likelihood of a continuous random variable: probability over an interval is the area under f between its endpoints — individual points have probability zero.",
+    "primary_explanation": "For continuous variables, the PDF is not a probability but a density: f(x) can exceed 1 (as long as total area is 1) and P(X = x) = 0 for every exact point — only intervals carry mass, computed as the integral of f. Two conditions define a valid density: nonnegative everywhere and integrating to one over the support. The cumulative distribution function F(x) = ∫₋∞ˣ f(t)dt is the running area, with f = F′ where smooth. Densities compose: multiplying independent densities gives the joint; integrating one variable out gives the marginal; normalizing a product gives the conditional — the three operations behind all multivariate modeling. The continuous analogue of a PMF, its role in inference is identical: the full description of uncertainty.",
+    "key_properties": [
+      { "property": "Normalization", "value": "∫ f(x) dx = 1 over the support" },
+      { "property": "Non-negativity", "value": "f(x) ≥ 0 everywhere" },
+      { "property": "Interval probability", "value": "P(a ≤ X ≤ b) = ∫ₐᵇ f(x) dx" },
+      { "property": "Point probability", "value": "P(X = x) = 0 — density is not probability" }
+    ],
+    "applications": [
+      "Statistical modeling: specifying likelihoods for observed data.",
+      "Risk analysis: computing tail probabilities as tail areas of the density.",
+      "Signal processing: modeling noise distributions for detection thresholds."
+    ],
+    "aliases": [
+      { "alias": "PDF", "alias_type": "acronym" },
+      { "alias": "Density Function", "alias_type": "synonym" },
+      { "alias": "Continuous Distribution Density", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A PDF value can be read directly as a probability.",
+        "correction_text": "The PDF value is a density; probability comes from integrating it over an interval, so f(x) > 1 is perfectly legal.",
+        "explanation": "Units of density are 'probability per unit x' — probabilities appear only after multiplying by a width."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_math_probability_normal_distribution", "relationship_type": "related_to", "description": "The normal density is the canonical example PDF.", "weight": 0.9, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_math_probability_cumulative_distribution_functi", "relationship_type": "related_to", "description": "The CDF is the integral of the PDF.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  }
+]

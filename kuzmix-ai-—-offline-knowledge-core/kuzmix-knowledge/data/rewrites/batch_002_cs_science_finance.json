@@ -1,0 +1,368 @@
+[
+  {
+    "id": "c_cat_cs_networking_tcpip_4_layer_internet_protoco",
+    "name": "TCP/IP Protocol Stack",
+    "summary_definition": "The TCP/IP model organizes internet communication into four layers — link, internet, transport, and application — each adding a header as data travels down and stripping it on the way up.",
+    "primary_explanation": "Every message sent online is wrapped in nested envelopes. The application layer (HTTP, DNS, SMTP) formats meaning; the transport layer (TCP or UDP) adds ports and, for TCP, reliability — sequencing, retransmission, and flow control; the internet layer (IP) adds logical addresses and routing, moving packets hop by hop across networks; the link layer (Ethernet, Wi-Fi) frames bits for the local medium using MAC addresses. Decoupling is the design genius: IP does not care what it carries or which physical medium it crosses, so one addressing scheme unifies copper, fiber, radio, and satellite. Routers forward on internet-layer addresses alone; end hosts verify transport checksums; firewalls and load balancers operate at whichever layer their rules name — which is why 'layer 4 vs layer 7' matters in infrastructure design.",
+    "key_properties": [
+      {
+        "property": "Layers",
+        "value": "Application → Transport → Internet → Link (4-layer TCP/IP)"
+      },
+      {
+        "property": "Addressing split",
+        "value": "IP addresses route globally; MAC addresses deliver locally; ports identify services"
+      },
+      {
+        "property": "Transport options",
+        "value": "TCP = reliable, ordered, congestion-aware; UDP = fast, connectionless, best-effort"
+      },
+      {
+        "property": "Encapsulation",
+        "value": "Each layer prepends its header; decapsulation reverses it on receipt"
+      }
+    ],
+    "applications": [
+      "Network troubleshooting: isolating faults by layer (cable vs IP vs application).",
+      "Firewall and load-balancer rules keyed to ports (L4) or URLs (L7).",
+      "VPN and tunnel design: which layer each tunneling scheme operates at."
+    ],
+    "aliases": [
+      {
+        "alias": "TCP/IP Model",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Internet Protocol Suite",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Four-Layer Internet Model",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "TCP/IP and the OSI seven-layer model are the same thing.",
+        "correction_text": "OSI is a teaching reference; TCP/IP is the deployed four-layer stack the internet actually runs.",
+        "explanation": "OSI layers map onto TCP/IP layers (session/presentation fold into application), but real packets follow TCP/IP."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_cs_networking_tcp_three_way_handshake_syn_ac",
+        "relationship_type": "related_to",
+        "description": "TCP's handshake establishes the transport-layer connection.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_cs_networking_http_request_methods_get_post_",
+        "relationship_type": "related_to",
+        "description": "HTTP rides on top of the transport layer.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_cs_networking_http_request_methods_get_post_",
+    "name": "HTTP Request Methods",
+    "summary_definition": "HTTP methods define the action a request performs on a resource: GET reads, POST creates, PUT replaces, PATCH updates partially, and DELETE removes — a uniform interface borrowed from REST design.",
+    "primary_explanation": "Methods give HTTP its verbs. GET must be safe (no side effects) and ideally idempotent, so browsers and proxies can cache or retry it freely. POST creates a subordinate resource or submits data for processing; retrying a POST can duplicate the effect, which is why payment APIs add idempotency keys. PUT replaces the target wholly and is idempotent — sending it twice leaves the same state. PATCH applies a partial change and is not inherently idempotent. DELETE removes the resource and is idempotent in effect (deleting twice ends with the same absence). Semantics matter beyond elegance: caches, crawlers, and retry logic trust GET/PUT idempotency, and misuse — like GET endpoints that delete data — breaks proxies and prefetchers in surprising, data-losing ways.",
+    "key_properties": [
+      {
+        "property": "Safe methods",
+        "value": "GET, HEAD — no server side effects"
+      },
+      {
+        "property": "Idempotent methods",
+        "value": "GET, PUT, DELETE — repeating gives the same end state"
+      },
+      {
+        "property": "Creation",
+        "value": "POST (new subordinate) vs PUT (client-chosen identity)"
+      },
+      {
+        "property": "Statelessness",
+        "value": "Each request carries full context; cookies/tokens restore sessions"
+      }
+    ],
+    "applications": [
+      "REST API design: mapping CRUD to GET/POST/PUT/DELETE.",
+      "Safe retries: using idempotency keys with POST for payments.",
+      "Caching and CDN rules keyed to method and status."
+    ],
+    "aliases": [
+      {
+        "alias": "HTTP Verbs",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "GET POST PUT PATCH DELETE",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "REST Methods",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "GET requests can safely do anything POST can.",
+        "correction_text": "GET must not change server state — proxies, browsers, and crawlers may replay it, turning side effects into accidental deletions or charges.",
+        "explanation": "The safety contract of GET is what makes caching, prefetching, and bookmarking possible."
+      }
+    ]
+  },
+  {
+    "id": "c_cat_cs_security_sql_injection_parameterized_qu",
+    "name": "SQL Injection",
+    "summary_definition": "SQL injection is an attack in which user input is concatenated into a database query, letting an attacker smuggle in SQL commands to read, alter, or delete data they should never access.",
+    "primary_explanation": "If a login query is built as \"SELECT * FROM users WHERE name = '\" + input + \"'\" then an input like ' OR '1'='1 closes the quote and injects a tautology, returning every row. Impact ranges from data theft (dumping tables with UNION SELECT) to authentication bypass, and at worst to server-level code execution via stacked commands on permissive configurations. The definitive defense is parameterized queries (prepared statements): the query structure is compiled first and user values are bound separately as data, never as syntax — so injected text can never become code. Supporting defenses include least-privilege database accounts, escaping as a secondary measure only, and WAF rules. ORMs prevent injection only when used through parameter APIs; raw string-built SQL anywhere in the stack reopens the hole.",
+    "key_properties": [
+      {
+        "property": "Root cause",
+        "value": "Untrusted input interpolated into SQL syntax"
+      },
+      {
+        "property": "Primary fix",
+        "value": "Parameterized queries / prepared statements with bound parameters"
+      },
+      {
+        "property": "Classic payload",
+        "value": "' OR '1'='1 — tautology that bypasses authentication filters"
+      },
+      {
+        "property": "Severity",
+        "value": "OWASP Top-10 staple; can expose entire databases"
+      }
+    ],
+    "applications": [
+      "Secure code review: auditing every string-built query.",
+      "Penetration testing: probing forms and APIs for injection.",
+      "Database hardening: disabling stacked queries and restricting accounts."
+    ],
+    "aliases": [
+      {
+        "alias": "SQLi",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Query Injection",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "String-Concatenation SQL Flaw",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Input validation or escaping alone prevents SQL injection.",
+        "correction_text": "Validation and escaping help but are brittle against every encoding trick; parameterized queries make injection structurally impossible.",
+        "explanation": "Escaping must match the exact database dialect and context; binding parameters removes syntax interpretation entirely."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_cs_security_symmetric_key_encryption_block",
+        "relationship_type": "related_to",
+        "description": "Encryption protects data at rest; parameterization protects it in queries.",
+        "weight": 0.7,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_cs_security_advanced_encryption_standard_a",
+    "name": "Advanced Encryption Standard (AES)",
+    "summary_definition": "AES is the symmetric block cipher standardized by NIST in 2001, encrypting data in 128-bit blocks with 128/192/256-bit keys through repeated rounds of substitution, permutation, and key mixing.",
+    "primary_explanation": "AES replaced DES after its 56-bit key became brute-forceable. Each round applies four transformations: SubBytes replaces bytes through a non-linear S-box (the confusion step, resistant to linear analysis); ShiftRows and MixColumns scramble byte positions and mix across columns (diffusion, so one changed bit affects many); AddRoundKey XORs the round's key schedule derived from the master key. Twelve rounds for AES-128, fourteen for AES-256. AES-256 is approved for classified US data and is believed safe against quantum Grover search only if key sizes double accordingly — its 256-bit key yields 128-bit post-quantum strength. Real-world systems use authenticated modes: AES-GCM adds integrity so tampered ciphertext is detected, which is why TLS, Wi-Fi WPA2/3, and file encryption standardize on it.",
+    "key_properties": [
+      {
+        "property": "Block size",
+        "value": "128 bits, regardless of key length"
+      },
+      {
+        "property": "Key sizes",
+        "value": "128, 192, or 256 bits (10, 12, or 14 rounds)"
+      },
+      {
+        "property": "Structure",
+        "value": "Substitution-permutation network with key schedule"
+      },
+      {
+        "property": "Preferred mode",
+        "value": "AES-GCM (authenticated encryption) over raw ECB/CBC"
+      }
+    ],
+    "applications": [
+      "TLS 1.3 cipher suites securing web traffic.",
+      "Disk and file encryption (BitLocker, LUKS, iOS data protection).",
+      "VPNs, WPA3 Wi-Fi, and database column encryption."
+    ],
+    "aliases": [
+      {
+        "alias": "AES",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Rijndael",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "AES-128 AES-256",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "AES has been cracked and should be replaced.",
+        "correction_text": "No practical break of full AES exists; best attacks are theoretical round-reductions far below the full 10-14 rounds.",
+        "explanation": "AES remains the global default precisely because decades of cryptanalysis have found no shortcut better than generic attacks."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_cs_security_symmetric_key_encryption_block",
+        "relationship_type": "related_to",
+        "description": "AES is the leading symmetric block cipher in that family.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_cs_security_end_to_end_encryption_e2ee_sig",
+        "relationship_type": "related_to",
+        "description": "E2EE systems use AES (often GCM) for the message payload cipher.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_bio_cellular_photosynthesis_light_reactions",
+    "name": "Photosynthesis",
+    "summary_definition": "Photosynthesis is the process by which plants, algae, and cyanobacteria capture light energy and convert carbon dioxide and water into glucose and oxygen: 6CO2 + 6H2O + light → C6H12O6 + 6O2.",
+    "primary_explanation": "The process runs in two connected stages inside the chloroplast. The light reactions occur in the thylakoid membranes: chlorophyll absorbs photons, water is split (photolysis) releasing the oxygen we breathe, and the energy drives production of ATP and NADPH. The Calvin cycle in the stroma then uses that ATP and NADPH to fix atmospheric CO2 into glyceraldehyde-3-phosphate, the precursor to glucose and other organic molecules — the enzyme RuBisCO performs the critical carbon-fixing step. Overall efficiency is modest (1-2% of incident sunlight), yet photosynthesis underpins nearly every food chain and is responsible for the oxygenated atmosphere. It is also the target of research into artificial leaves and crop engineering to raise carbon fixation rates.",
+    "key_properties": [
+      {
+        "property": "Overall equation",
+        "value": "6CO2 + 6H2O + light energy → C6H12O6 + 6O2"
+      },
+      {
+        "property": "Light reactions",
+        "value": "Thylakoid membranes: photolysis of water, ATP + NADPH produced, O2 released"
+      },
+      {
+        "property": "Calvin cycle",
+        "value": "Stroma: CO2 fixed by RuBisCO into sugar using ATP and NADPH"
+      },
+      {
+        "property": "Energy conversion",
+        "value": "Roughly 1-2% of incident sunlight captured"
+      }
+    ],
+    "applications": [
+      "Agriculture: optimizing light, CO2, and water to raise crop yield.",
+      "Climate science: quantifying the ocean and land carbon sinks.",
+      "Biotechnology: engineering RuBisCO and C4 pathways for higher efficiency."
+    ],
+    "aliases": [
+      {
+        "alias": "Carbon Fixation",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Light Reactions and Calvin Cycle",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Photocarbon Assimilation",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Plants only photosynthesize during the day and respire at night.",
+        "correction_text": "Respiration runs continuously in all living cells; photosynthesis simply dominates during daylight, masking daytime respiration.",
+        "explanation": "Daytime gas exchange shows net O2 release because photosynthetic O2 production exceeds respiratory consumption."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cellular_respiration",
+        "relationship_type": "related_to",
+        "description": "Respiration reverses photosynthesis's energy equation, releasing stored glucose energy.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_bio_ecology_primary_producers_photosynthes",
+        "relationship_type": "related_to",
+        "description": "Primary producers anchor food webs via photosynthesis.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_biz_finance_compound_interest_exponential_",
+    "name": "Compound Interest",
+    "summary_definition": "Compound interest is interest earned on interest: each period's earnings join the principal, so balances grow exponentially rather than linearly — the foundation of long-term investing and debt cost.",
+    "primary_explanation": "With simple interest, $1,000 at 8% adds $80 every year forever. Compound interest adds each year's $80 (plus prior interest) to the base, so growth accelerates: the balance follows A = P(1 + r/n)^(nt), where n is the compounding frequency. Over 30 years, $1,000 at 8% grows to about $10,060 — seven times the simple-interest result. Time dominates rate: a 25-year-old investing $200 monthly until 65 typically out-earns a 35-year-old investing the same amount until 65, even with identical returns, because compounding needs decades to bend the curve. The mirror works against borrowers: credit-card debt compounding daily is why small balances metastasize. The rule of 72 gives a quick estimate — divide 72 by the rate to get doubling years (8% ≈ 9 years).",
+    "key_properties": [
+      {
+        "property": "Formula",
+        "value": "A = P(1 + r/n)^(nt)"
+      },
+      {
+        "property": "Key driver",
+        "value": "Time — compounding is exponential in the number of periods"
+      },
+      {
+        "property": "Rule of 72",
+        "value": "Doubling time ≈ 72 / annual rate (%)"
+      },
+      {
+        "property": "Reverse case",
+        "value": "Compounding debt grows the same way — interest on interest owed"
+      }
+    ],
+    "applications": [
+      "Retirement planning: starting early beats larger later contributions.",
+      "Mortgage and loan comparisons: APR with different compounding frequencies.",
+      "Business valuation: projecting reinvested earnings over decades."
+    ],
+    "aliases": [
+      {
+        "alias": "Compounding",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Interest-on-Interest Growth",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Exponential Money Growth",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Compound interest only benefits people who save.",
+        "correction_text": "It applies equally to debt — unpaid interest capitalizes, which is why minimum-payment balances balloon.",
+        "explanation": "Compounding is a mathematical property of reinvestment, morally neutral; direction depends on which side of the balance sheet you are on."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_compound_interest",
+        "relationship_type": "related_to",
+        "description": "Flagship treatment of the same principle with time-value-of-money context.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  }
+]

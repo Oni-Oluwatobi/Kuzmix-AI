@@ -1,0 +1,82 @@
+[
+  {
+    "id": "comp_001",
+    "concept_a_id": "c_cat_physics_mechanics_projectile_kinematics_trajecto",
+    "concept_b_id": "c_cat_physics_mechanics_orbital_velocity_mechanics",
+    "title": "Speed vs Velocity",
+    "shared_aspect": "Kinematics: Quantifying the rate of positional motion over time.",
+    "key_differences_json": "[{\"criterion\": \"Mathematical Nature\", \"concept_a_val\": \"Scalar quantity (magnitude only, e.g. 50 m/s)\", \"concept_b_val\": \"Vector quantity (magnitude + direction, e.g. 50 m/s North)\"}, {\"criterion\": \"Sign & Negative Values\", \"concept_a_val\": \"Strictly non-negative (>= 0)\", \"concept_b_val\": \"Can be negative depending on coordinate axis definition\"}, {\"criterion\": \"Calculation Formula\", \"concept_a_val\": \"Total Distance / Elapsed Time\", \"concept_b_val\": \"Displacement Vector / Elapsed Time\"}, {\"criterion\": \"Circular Motion Example\", \"concept_a_val\": \"Car on circular track at 60 km/h has constant speed\", \"concept_b_val\": \"Car on circular track has continuously changing velocity due to directional turning\"}]",
+    "common_confusion": "Everyday language uses them interchangeably, causing students to forget that turning at constant speed still involves non-zero acceleration.",
+    "rule_of_thumb": "If direction matters (or can cancel out over a round trip returning to start), it is Velocity. If only magnitude matters, it is Speed."
+  },
+  {
+    "id": "comp_002",
+    "concept_a_id": "c_cat_physics_mechanics_universal_gravitation",
+    "concept_b_id": "c_cat_physics_mechanics_newtons_second_law_fma",
+    "title": "Mass vs Weight",
+    "shared_aspect": "Classical Mechanics: Quantities associated with gravitational and inertial properties of matter.",
+    "key_differences_json": "[{\"criterion\": \"Physical Definition\", \"concept_a_val\": \"Intrinsic measure of matter and inertia; resistance to acceleration\", \"concept_b_val\": \"Gravitational downward force exerted on that mass (W = m*g)\"}, {\"criterion\": \"SI Units\", \"concept_a_val\": \"Kilograms (kg)\", \"concept_b_val\": \"Newtons (N)\"}, {\"criterion\": \"Location Dependency\", \"concept_a_val\": \"Invariant across the universe (same on Earth, Moon, or in deep space)\", \"concept_b_val\": \"Varies directly with local gravitational acceleration (Moon weight is 1/6th of Earth)\"}, {\"criterion\": \"Measurement Tool\", \"concept_a_val\": \"Balance scale (comparing unknown mass against reference masses)\", \"concept_b_val\": \"Spring scale or strain gauge (measuring gravitational pull)\"}]",
+    "common_confusion": "Scales in everyday commerce display kilograms for weight, confounding the force of gravity with intrinsic mass.",
+    "rule_of_thumb": "Mass is what you are made of (does not change on the Moon); Weight is how hard gravity pulls on that mass."
+  },
+  {
+    "id": "comp_003",
+    "concept_a_id": "c_cat_cs_networking_transmission_control_protocol_",
+    "concept_b_id": "c_cat_cs_networking_user_datagram_protocol_udp_dat",
+    "title": "TCP vs UDP",
+    "shared_aspect": "Computer Networking: Transport Layer (Layer 4) host-to-host data delivery protocols.",
+    "key_differences_json": "[{\"criterion\": \"Connection Paradigm\", \"concept_a_val\": \"Connection-oriented (3-way handshake SYN, SYN-ACK, ACK before transmission)\", \"concept_b_val\": \"Connectionless (fire-and-forget datagrams without pre-handshake)\"}, {\"criterion\": \"Reliability & Ordering\", \"concept_a_val\": \"Guaranteed delivery, automatic packet retransmission, and in-order sequence assembly\", \"concept_b_val\": \"No guarantee of packet delivery, ordering, or deduplication\"}, {\"criterion\": \"Overhead & Latency\", \"concept_a_val\": \"Higher latency (20-byte header, ACKs, flow control, congestion backoff)\", \"concept_b_val\": \"Minimal latency and low overhead (8-byte header, zero ACKs)\"}, {\"criterion\": \"Ideal Use Cases\", \"concept_a_val\": \"Web browsing (HTTP/HTTPS), file transfer (FTP), email (SMTP), financial transactions\", \"concept_b_val\": \"Real-time gaming, live video streaming, DNS lookups, VoIP audio\"}]",
+    "common_confusion": "Assuming TCP is always better because it is 'reliable'\u2014in real-time audio, waiting for retransmitted old packets causes unacceptable stutter.",
+    "rule_of_thumb": "If every byte must arrive intact without corruption: use TCP. If speed matters more than losing an occasional frame: use UDP."
+  },
+  {
+    "id": "comp_004",
+    "concept_a_id": "c_cat_cs_foundations_turing_machine_formal_definiti",
+    "concept_b_id": "c_cat_eng_civil_deep_pile_foundations_bedrock",
+    "title": "Compiler vs Interpreter",
+    "shared_aspect": "Computer Science: Translating high-level human-readable code into executable machine instructions.",
+    "key_differences_json": "[{\"criterion\": \"Translation Timing\", \"concept_a_val\": \"Ahead-Of-Time (AOT): Translates entire program once before runtime\", \"concept_b_val\": \"Just-In-Time (JIT) or line-by-line: Translates instructions dynamically as code executes\"}, {\"criterion\": \"Output Artifact\", \"concept_a_val\": \"Standalone native binary executable (.exe, ELF, Mach-O)\", \"concept_b_val\": \"No standalone binary; requires interpreter runtime environment to execute source/bytecode\"}, {\"criterion\": \"Execution Speed\", \"concept_a_val\": \"Very fast execution speed; deep compiler optimization passes (LLVM, GCC)\", \"concept_b_val\": \"Slower execution speed due to runtime interpretation overhead\"}, {\"criterion\": \"Error Detection\", \"concept_a_val\": \"Catches syntax and static type errors completely before any code runs\", \"concept_b_val\": \"Syntax or runtime type errors encountered only when execution reaches that line\"}]",
+    "common_confusion": "Classifying programming languages as strictly 'compiled' or 'interpreted'\u2014modern environments (Java JVM, Python PyPy, JavaScript V8) combine bytecode compilation with JIT interpretation.",
+    "rule_of_thumb": "Compilers translate before you run; Interpreters translate as you run."
+  },
+  {
+    "id": "comp_005",
+    "concept_a_id": "c_cat_math_probability_correlation_vs_causation",
+    "concept_b_id": "c_cat_hum_philosophy_popper_falsifiability_demarcat",
+    "title": "Correlation vs Causation",
+    "shared_aspect": "Statistics & Epistemology: Evaluating statistical relationships between observed variables.",
+    "key_differences_json": "[{\"criterion\": \"Definition\", \"concept_a_val\": \"Statistical association where two variables move together predictably (e.g. Pearson r)\", \"concept_b_val\": \"Direct causal mechanism where altering variable X directly forces an outcome in variable Y\"}, {\"criterion\": \"Confounding Factors\", \"concept_a_val\": \"Vulnerable to lurking third variables (e.g. ice cream sales and drowning both rise in summer)\", \"concept_b_val\": \"Controls for confounding variables via randomized controlled trials (RCTs)\"}, {\"criterion\": \"Directionality\", \"concept_a_val\": \"Symmetric: corr(A, B) equals corr(B, A)\", \"concept_b_val\": \"Asymmetric: X causes Y does not imply Y causes X\"}, {\"criterion\": \"Experimental Proof\", \"concept_a_val\": \"Can be demonstrated with observational data alone\", \"concept_b_val\": \"Requires experimental intervention, counterfactual analysis, or causal graphs\"}]",
+    "common_confusion": "Assuming that because two trends align graphically or statistically, one must be causing the other.",
+    "rule_of_thumb": "Correlation shows that two things happened together; Causation proves that one made the other happen."
+  },
+  {
+    "id": "comp_006",
+    "concept_a_id": "c_cat_bio_cellular_mitosis_cellular_division_phas",
+    "concept_b_id": "c_cat_bio_cellular_meiosis_haploid_gamete_formati",
+    "title": "Mitosis vs Meiosis",
+    "shared_aspect": "Cellular Biology & Genetics: Nuclear division in eukaryotic cells.",
+    "key_differences_json": "[{\"criterion\": \"Purpose & Function\", \"concept_a_val\": \"Growth, tissue repair, and asexual reproduction\", \"concept_b_val\": \"Production of gametes (sperm and egg cells) for sexual reproduction\"}, {\"criterion\": \"Daughter Cells Produced\", \"concept_a_val\": \"2 identical diploid (2n) daughter cells\", \"concept_b_val\": \"4 genetically distinct haploid (n) daughter cells\"}, {\"criterion\": \"Rounds of Division\", \"concept_a_val\": \"1 division cycle (Prophase, Metaphase, Anaphase, Telophase)\", \"concept_b_val\": \"2 sequential division cycles (Meiosis I and Meiosis II)\"}, {\"criterion\": \"Genetic Recombination\", \"concept_a_val\": \"No crossing over; produces exact genetic clones\", \"concept_b_val\": \"Homologous crossing over and independent assortment generate high diversity\"}]",
+    "common_confusion": "Mixing up chromosome count outcomes, forgetting that meiosis halves the genetic complement so fertilization restores the diploid count.",
+    "rule_of_thumb": "Mitosis makes identical copies for MY body (somatic); Meiosis makes unique cells for reproduction."
+  },
+  {
+    "id": "comp_007",
+    "concept_a_id": "c_cat_math_probability_hypothesis_testing",
+    "concept_b_id": "c_cat_hum_philosophy_popper_falsifiability_demarcat",
+    "title": "Hypothesis vs Scientific Theory",
+    "shared_aspect": "Philosophy of Science: Explanatory scientific propositions.",
+    "key_differences_json": "[{\"criterion\": \"Scope & Maturity\", \"concept_a_val\": \"A tentative, testable proposed explanation for an empirical observation\", \"concept_b_val\": \"A comprehensive, extensively tested, and corroborated framework explaining nature\"}, {\"criterion\": \"Evidentiary Backing\", \"concept_a_val\": \"May have minimal initial empirical data; awaiting testing\", \"concept_b_val\": \"Supported by vast bodies of independent empirical evidence across decades\"}, {\"criterion\": \"Colloquial Confusion\", \"concept_a_val\": \"Matches the everyday word 'guess'\", \"concept_b_val\": \"NOT a guess; represents the highest tier of scientific certainty (e.g. Germ Theory, Plate Tectonics)\"}, {\"criterion\": \"Falsifiability\", \"concept_a_val\": \"Must propose concrete predictions that could be proven false\", \"concept_b_val\": \"Continuously refined as new precise instruments challenge edge cases\"}]",
+    "common_confusion": "Saying 'it is only a theory' dismisses a well-tested scientific framework by confusing it with an unsubstantiated hypothesis.",
+    "rule_of_thumb": "A hypothesis is a question waiting to be tested; a theory is an overarching explanation backed by mountains of evidence."
+  },
+  {
+    "id": "comp_008",
+    "concept_a_id": "c_cat_cs_dsa_array_contiguous_memory_indexi",
+    "concept_b_id": "c_cat_cs_systems_journaling_file_systems_ext4_n",
+    "title": "RAM vs Secondary Storage",
+    "shared_aspect": "Computer Architecture: Digital hardware for storing binary program data and instructions.",
+    "key_differences_json": "[{\"criterion\": \"Volatility\", \"concept_a_val\": \"Volatile: contents vanish instantly when electric power is lost\", \"concept_b_val\": \"Non-volatile: data persists indefinitely without electric power (NAND Flash / HDD)\"}, {\"criterion\": \"Access Latency\", \"concept_a_val\": \"Ultra-fast direct CPU access: ~10 to 80 nanoseconds\", \"concept_b_val\": \"Slower block I/O access: ~10 to 100 microseconds (NVMe SSD) or milliseconds (HDD)\"}, {\"criterion\": \"System Role\", \"concept_a_val\": \"Workspace holding actively executing OS code, open applications, and live runtime memory\", \"concept_b_val\": \"Archive holding installed software, user files, media, and dormant data\"}, {\"criterion\": \"Cost per Gigabyte\", \"concept_a_val\": \"Significantly higher cost per gigabyte\", \"concept_b_val\": \"Low cost per gigabyte; orders of magnitude larger capacities\"}]",
+    "common_confusion": "Users saying their computer has '512 GB of memory' when they mean 512 GB of SSD storage and only 16 GB of RAM.",
+    "rule_of_thumb": "RAM is your desk where you work right now; Storage is the filing cabinet where you keep files when you are done."
+  }
+]

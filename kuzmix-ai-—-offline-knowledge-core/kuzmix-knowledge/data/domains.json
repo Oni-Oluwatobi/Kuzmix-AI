@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sci_math",
+    "name": "Science and Mathematics",
+    "slug": "science-and-mathematics",
+    "description": "Fundamental empirical laws governing nature and formal logical frameworks including physics, chemistry, biology, mathematics, and cosmology.",
+    "icon": "Atom",
+    "sort_order": 1
+  },
+  {
+    "id": "eng_tech",
+    "name": "Engineering and Technology",
+    "slug": "engineering-and-technology",
+    "description": "Application of scientific and mathematical principles to design, build, and optimize machines, structures, systems, and materials.",
+    "icon": "Cpu",
+    "sort_order": 2
+  },
+  {
+    "id": "computing_ai",
+    "name": "Computing and Artificial Intelligence",
+    "slug": "computing-and-ai",
+    "description": "Theoretical foundations of information processing, data structures, algorithms, operating systems, distributed architectures, and AI.",
+    "icon": "Binary",
+    "sort_order": 3
+  },
+  {
+    "id": "business_econ",
+    "name": "Business and Economics",
+    "slug": "business-and-economics",
+    "description": "Principles of resource allocation, market dynamics, corporate finance, entrepreneurship, organizational strategy, and trade.",
+    "icon": "TrendingUp",
+    "sort_order": 4
+  },
+  {
+    "id": "humanities",
+    "name": "Human Knowledge and Humanities",
+    "slug": "human-knowledge-and-humanities",
+    "description": "The study of human experience, philosophical inquiry, epistemology, history, cognitive psychology, language, and logic.",
+    "icon": "BookOpen",
+    "sort_order": 5
+  },
+  {
+    "id": "society_culture",
+    "name": "Society, Civics and Culture",
+    "slug": "society-civics-and-culture",
+    "description": "Institutions of human collective governance, legal principles, constitutional structures, international relations, and cultural customs.",
+    "icon": "Landmark",
+    "sort_order": 6
+  },
+  {
+    "id": "health_life",
+    "name": "Health and Life Sciences",
+    "slug": "health-and-life-sciences",
+    "description": "Foundational understanding of human anatomy, physiology, cellular metabolism, nutrition science, preventative wellness, and first aid.",
+    "icon": "HeartPulse",
+    "sort_order": 7
+  },
+  {
+    "id": "creative_arts",
+    "name": "Creative Fields and Arts",
+    "slug": "creative-fields-and-arts",
+    "description": "Formal principles of visual composition, architecture, design psychology, acoustic harmony, music theory, and narrative structure.",
+    "icon": "Palette",
+    "sort_order": 8
+  },
+  {
+    "id": "practical_life",
+    "name": "Practical and Applied Knowledge",
+    "slug": "practical-and-applied-knowledge",
+    "description": "Everyday scientific problem-solving, mechanical fasteners, food chemistry in cooking, domestic electrical safety, and tool taxonomy.",
+    "icon": "Wrench",
+    "sort_order": 9
+  }
+]

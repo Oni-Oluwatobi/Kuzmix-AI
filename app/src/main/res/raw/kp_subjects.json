@@ -1,0 +1,344 @@
+{
+  "knowledgeVersion": "6.0",
+  "subjects": [
+    {
+      "id": "subject.biology",
+      "name": "Biology",
+      "aliases": ["bio", "biological science", "life science", "study of life"],
+      "enabled": true,
+      "definition": "Biology is the branch of science that studies living organisms and life processes, including their structure, functions, growth, reproduction, evolution, and interactions with their environment.",
+      "subtopics": ["cells", "genetics", "ecology", "human biology", "photosynthesis", "reproduction", "cell division", "evolution", "classification", "nutrition", "respiration", "transport", "excretion", "plant biology", "homeostasis", "microorganisms", "adaptation", "biotechnology"],
+      "roadmap": ["What is Biology?", "Characteristics of living organisms", "Cell structure", "Genetics", "Ecology", "Physiology", "Evolution", "Cell functions", "Nutrition", "Respiration", "Transport", "Excretion", "Growth", "Reproduction", "Classification"],
+      "detectKeywords": ["photosynthesis", "respiration", "osmosis", "mitosis", "meiosis", "genetics", "ecology", "heredity"]
+    },
+    {
+      "id": "subject.chemistry",
+      "name": "Chemistry",
+      "aliases": ["chem", "chemical science"],
+      "enabled": true,
+      "definition": "Chemistry is the branch of science concerned with matter, its composition, structure, properties, transformations, and associated energy changes.",
+      "subtopics": ["atomic structure", "elements", "compounds", "mixtures", "periodic table", "chemical bonding", "mole concept", "chemical equations", "stoichiometry", "acids", "bases", "salts", "pH", "redox", "electrochemistry", "organic chemistry", "hydrocarbons"],
+      "roadmap": ["Matter", "Elements", "Atomic structure", "Periodic table", "Chemical bonding", "Mole concept", "Chemical equations", "Acids and bases", "Redox", "Organic chemistry"],
+      "detectKeywords": ["stoichiometry", "electrolysis", "isotope", "hydrocarbon", "alkali", "mole", "valency"]
+    },
+    {
+      "id": "subject.agricultural_science",
+      "name": "Agricultural Science",
+      "aliases": ["agriculture", "agric", "agro science", "farm science"],
+      "enabled": true,
+      "definition": "Agricultural science is the application of scientific principles to crop production, livestock management, soil science, farm tools, and agro-processing.",
+      "subtopics": ["crop production", "livestock", "soil science", "farm tools", "farm management", "agricultural economics", "pests", "diseases", "irrigation", "animal husbandry", "agro-processing"],
+      "roadmap": ["What is Agricultural Science?", "Farm tools and machinery", "Soil science", "Crop production", "Livestock production", "Animal husbandry", "Pests and diseases", "Irrigation and drainage", "Agricultural economics", "Agro-processing"],
+      "detectKeywords": ["irrigation", "husbandry", "agronomy", "poultry", "tillage", "manure", "seedling"]
+    },
+    {
+      "id": "subject.crs",
+      "name": "CRS",
+      "aliases": ["christian religious studies", "religious studies", "christian studies"],
+      "enabled": true,
+      "definition": "Christian Religious Studies (CRS) is the study of biblical narratives, Christian teachings, ethics, faith, and the moral lessons drawn from the Old and New Testaments.",
+      "subtopics": ["Biblical narratives", "Christian teachings", "Christian ethics", "faith", "discipleship", "leadership", "selected Old Testament themes", "selected New Testament themes", "moral lessons", "Christian values"],
+      "roadmap": ["What is CRS?", "The Creation and early patriarchs", "The Exodus and covenant", "Selected Old Testament themes", "The life and teachings of Jesus", "Selected New Testament themes", "Christian teachings and ethics", "Faith and discipleship", "Christian leadership", "Moral lessons and Christian values"],
+      "detectKeywords": ["testament", "disciple", "parable", "psalm", "covenant", "apostle"]
+    },
+    {
+      "id": "subject.mathematics",
+      "name": "Mathematics",
+      "aliases": ["maths", "math", "pure mathematics"],
+      "enabled": true,
+      "definition": "Mathematics is the science of numbers, quantity, structure, space, and change, used to solve problems through logical reasoning, proof, and calculation.",
+      "subtopics": ["arithmetic", "fractions", "percentages", "ratio", "indices", "logarithms", "algebra", "equations", "quadratics", "sequences", "functions", "geometry", "mensuration", "trigonometry", "statistics", "probability", "calculus", "vectors", "matrices"],
+      "roadmap": ["Number systems", "Arithmetic and fractions", "Indices and logarithms", "Algebraic expressions", "Linear equations", "Quadratic equations", "Sequences and series", "Geometry and mensuration", "Trigonometry", "Statistics", "Probability", "Vectors and matrices"],
+      "detectKeywords": ["quadratic", "logarithm", "trigonometry", "calculus", "matrix", "indices", "hypothesis"]
+    },
+    {
+      "id": "subject.physics",
+      "name": "Physics",
+      "aliases": ["physical science"],
+      "enabled": true,
+      "definition": "Physics studies matter, energy, motion, forces, interactions, space, time, and the laws describing physical phenomena.",
+      "subtopics": ["measurement", "motion", "forces", "Newton's laws", "momentum", "work", "energy", "power", "pressure", "heat", "waves", "sound", "light", "electricity", "magnetism", "electronics"],
+      "roadmap": ["Measurement", "Scalars and vectors", "Motion", "Forces", "Work and energy", "Momentum", "Heat", "Waves", "Light", "Electricity", "Magnetism"],
+      "detectKeywords": ["kinetics", "momentum", "friction", "magnetism", "inertia", "velocity", "thermodynamics"]
+    },
+    {
+      "id": "subject.computer_science",
+      "name": "Computer Science",
+      "aliases": ["cs", "computing", "comp sci", "informatics"],
+      "enabled": true,
+      "definition": "Computer science is the study of computers, computation, algorithms, data, and the practical and theoretical principles behind computing systems and software.",
+      "subtopics": ["algorithms", "programming", "data structures", "databases", "operating systems", "networking", "cybersecurity", "software engineering", "web development", "mobile development", "computer architecture", "AI", "machine learning"],
+      "roadmap": ["What is Computer Science?", "Number systems and binary", "Programming fundamentals", "Data structures", "Algorithms and complexity", "Database systems", "Networking and the internet", "Operating systems", "Software engineering", "Cybersecurity", "Artificial intelligence"],
+      "detectKeywords": ["programming", "algorithm", "recursion", "binary", "compiler", "syntax", "neural"]
+    },
+    {
+      "id": "subject.geography",
+      "name": "Geography",
+      "aliases": ["geo"],
+      "enabled": true,
+      "definition": "Geography is the study of Earth's physical environments, human societies, spatial relationships, and environmental interactions.",
+      "subtopics": ["physical geography", "human geography", "climate", "weather", "rocks", "landforms", "rivers", "population", "settlement", "maps", "resources", "urbanization", "environment"],
+      "roadmap": ["What is Geography?", "Maps and coordinates", "Earth's layers and landforms", "Rocks and soils", "Weather and climate", "Water cycle and rivers", "Population and settlement", "Natural resources", "Urbanization", "Environment and conservation"],
+      "detectKeywords": ["latitude", "longitude", "landform", "erosion", "volcano", "population", "tributary"]
+    },
+    {
+      "id": "subject.economics",
+      "name": "Economics",
+      "aliases": ["econ"],
+      "enabled": true,
+      "definition": "Economics is the social science analyzing the allocation of scarce resources toward fulfilling unlimited human wants.",
+      "subtopics": ["scarcity", "opportunity cost", "demand", "supply", "markets", "elasticity", "production", "cost", "revenue", "profit", "inflation", "unemployment", "taxation", "national income", "trade", "fiscal policy", "monetary policy"],
+      "roadmap": ["What is Economics?", "Scarcity and choice", "Opportunity cost", "Demand", "Supply", "Market equilibrium", "Production and cost", "Elasticity", "Inflation", "Unemployment", "Trade and taxation", "Fiscal and monetary policy"],
+      "detectKeywords": ["scarcity", "elasticity", "opportunity cost", "tariff", "monetary", "fiscal", "profit"]
+    },
+    {
+      "id": "subject.government",
+      "name": "Government",
+      "aliases": ["gov", "civic education", "civics", "political system"],
+      "enabled": true,
+      "definition": "Government is the political organization or system through which a state or nation is governed and administered.",
+      "subtopics": ["state", "sovereignty", "constitution", "democracy", "citizenship", "political parties", "elections", "separation of powers", "legislature", "executive", "judiciary", "federalism", "political participation", "public administration"],
+      "roadmap": ["What is Government?", "The state and sovereignty", "Constitution", "Democracy", "Citizenship", "Political parties and elections", "Separation of powers", "Legislature", "Executive", "Judiciary", "Federalism", "Public administration"],
+      "detectKeywords": ["sovereignty", "legislature", "federalism", "judiciary", "election", "executive", "decentralization"]
+    },
+    {
+      "id": "subject.english_language",
+      "name": "English Language",
+      "aliases": ["english", "eng", "english grammar"],
+      "enabled": true,
+      "definition": "English Language covers grammar, vocabulary, comprehension, summary, parts of speech, concord, punctuation, figures of speech, and writing skills.",
+      "subtopics": ["grammar", "vocabulary", "comprehension", "summary", "parts of speech", "clauses", "punctuation", "concord", "figures of speech", "writing"],
+      "roadmap": ["What is English Language?", "Parts of speech", "Tenses", "Concord and agreement", "Punctuation", "Clauses and phrases", "Figures of speech", "Comprehension", "Summary writing", "Essay and letter writing"],
+      "detectKeywords": ["concord", "tenses", "punctuation", "comprehension", "synonym", "antonym", "preposition"]
+    },
+    {
+      "id": "subject.literature",
+      "name": "Literature",
+      "aliases": ["english literature", "lit"],
+      "enabled": true,
+      "definition": "Literature is the study of written works — prose, poetry, and drama — including their themes, plot, characterization, setting, tone, and literary devices.",
+      "subtopics": ["prose", "poetry", "drama", "themes", "plot", "characterization", "setting", "tone", "symbolism", "literary devices"],
+      "roadmap": ["What is Literature?", "Prose", "Poetry", "Drama", "Plot and structure", "Characterization", "Setting", "Themes and tone", "Symbolism", "Literary devices"],
+      "detectKeywords": ["stanza", "metaphor", "irony", "protagonist", "epilogue", "alliteration", "simile"]
+    },
+    {
+      "id": "subject.general_knowledge",
+      "name": "General Knowledge",
+      "aliases": ["gk", "general studies", "gs", "general awareness"],
+      "enabled": true,
+      "definition": "General knowledge is broad, practical knowledge across science, technology, history, geography, civics, language, digital literacy, and everyday life.",
+      "subtopics": ["continents", "oceans", "basic astronomy", "history", "civics", "digital literacy", "everyday science", "health", "environment", "current affairs"],
+      "roadmap": ["Continents and oceans", "Basic astronomy", "Nigerian history and civics", "Everyday science", "Digital literacy", "Health and the human body", "Environment and energy", "Current affairs basics"],
+      "detectKeywords": ["continent", "ocean", "planet", "invention", "encyclopedia", "capital city"]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "formula.newtons_second_law",
+      "domain": "physics",
+      "name": "Newton's Second Law",
+      "formula": "F = ma",
+      "symbols": {"F": "force", "m": "mass", "a": "acceleration"},
+      "explanation": "The net force on an object equals its mass times its acceleration. The SI unit of force is the newton (N)."
+    },
+    {
+      "id": "formula.speed",
+      "domain": "physics",
+      "name": "Speed",
+      "formula": "speed = distance / time",
+      "symbols": {"speed": "speed", "distance": "distance travelled", "time": "time taken"},
+      "explanation": "Speed is the rate at which distance is covered. Its SI unit is metres per second (m/s)."
+    },
+    {
+      "id": "formula.acceleration",
+      "domain": "physics",
+      "name": "Acceleration",
+      "formula": "a = (v - u) / t",
+      "symbols": {"a": "acceleration", "v": "final velocity", "u": "initial velocity", "t": "time"},
+      "explanation": "Acceleration is the rate of change of velocity per unit time, measured in m/s²."
+    },
+    {
+      "id": "formula.momentum",
+      "domain": "physics",
+      "name": "Momentum",
+      "formula": "p = mv",
+      "symbols": {"p": "momentum", "m": "mass", "v": "velocity"},
+      "explanation": "Momentum is the product of mass and velocity, measured in kilogram-metres per second (kg·m/s)."
+    },
+    {
+      "id": "formula.work",
+      "domain": "physics",
+      "name": "Work",
+      "formula": "W = Fd",
+      "symbols": {"W": "work done", "F": "force", "d": "distance moved in the direction of the force"},
+      "explanation": "Work is energy transferred by a force acting through a distance, measured in joules (J)."
+    },
+    {
+      "id": "formula.power",
+      "domain": "physics",
+      "name": "Power",
+      "formula": "P = W / t",
+      "symbols": {"P": "power", "W": "work done or energy used", "t": "time taken"},
+      "explanation": "Power is the rate of doing work, measured in watts (W)."
+    },
+    {
+      "id": "formula.kinetic_energy",
+      "domain": "physics",
+      "name": "Kinetic Energy",
+      "formula": "Ek = 1/2 m v^2",
+      "symbols": {"Ek": "kinetic energy", "m": "mass", "v": "velocity"},
+      "explanation": "Kinetic energy is the energy an object possesses due to its motion, measured in joules (J)."
+    },
+    {
+      "id": "formula.potential_energy",
+      "domain": "physics",
+      "name": "Gravitational Potential Energy",
+      "formula": "Ep = mgh",
+      "symbols": {"Ep": "potential energy", "m": "mass", "g": "acceleration due to gravity", "h": "height"},
+      "explanation": "Gravitational potential energy is stored energy due to an object's position in a gravitational field."
+    },
+    {
+      "id": "formula.density",
+      "domain": "physics",
+      "name": "Density",
+      "formula": "density = mass / volume",
+      "symbols": {"density": "density", "mass": "mass", "volume": "volume"},
+      "explanation": "Density is mass per unit volume of a substance, measured in kg/m³ or g/cm³."
+    },
+    {
+      "id": "formula.pressure",
+      "domain": "physics",
+      "name": "Pressure",
+      "formula": "P = F / A",
+      "symbols": {"P": "pressure", "F": "force", "A": "area"},
+      "explanation": "Pressure is the force applied per unit area, measured in pascals (Pa)."
+    },
+    {
+      "id": "formula.ohms_law",
+      "domain": "physics",
+      "name": "Ohm's Law",
+      "formula": "V = IR",
+      "symbols": {"V": "voltage", "I": "current", "R": "resistance"},
+      "explanation": "Current through a conductor is proportional to voltage across it and inversely proportional to its resistance."
+    },
+    {
+      "id": "formula.quadratic",
+      "domain": "mathematics",
+      "name": "Quadratic Formula",
+      "formula": "x = (-b +/- sqrt(b^2 - 4ac)) / 2a",
+      "symbols": {"a": "coefficient of x^2", "b": "coefficient of x", "c": "constant term"},
+      "explanation": "The quadratic formula gives the solutions of ax^2 + bx + c = 0."
+    },
+    {
+      "id": "formula.pythagoras",
+      "domain": "mathematics",
+      "name": "Pythagorean Theorem",
+      "formula": "a^2 + b^2 = c^2",
+      "symbols": {"a": "shorter leg", "b": "longer leg", "c": "hypotenuse"},
+      "explanation": "In a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides."
+    },
+    {
+      "id": "formula.arithmetic_progression",
+      "domain": "mathematics",
+      "name": "Arithmetic Progression",
+      "formula": "an = a + (n - 1)d",
+      "symbols": {"an": "nth term", "a": "first term", "n": "number of terms", "d": "common difference"},
+      "explanation": "The nth term of an arithmetic sequence where each term differs from the previous one by a constant d."
+    },
+    {
+      "id": "formula.geometric_progression",
+      "domain": "mathematics",
+      "name": "Geometric Progression",
+      "formula": "an = a * r^(n - 1)",
+      "symbols": {"an": "nth term", "a": "first term", "r": "common ratio", "n": "number of terms"},
+      "explanation": "The nth term of a geometric sequence where each term is found by multiplying the previous one by a constant ratio r."
+    },
+    {
+      "id": "formula.probability",
+      "domain": "mathematics",
+      "name": "Probability",
+      "formula": "P(event) = favourable outcomes / total outcomes",
+      "symbols": {"P": "probability", "favourable outcomes": "outcomes that satisfy the event", "total outcomes": "all equally likely outcomes"},
+      "explanation": "Probability measures the likelihood of an event occurring, from 0 (impossible) to 1 (certain)."
+    },
+    {
+      "id": "formula.circle_area",
+      "domain": "mathematics",
+      "name": "Area of a Circle",
+      "formula": "A = pi r^2",
+      "symbols": {"A": "area", "pi": "mathematical constant approximately 3.14159", "r": "radius"},
+      "explanation": "The area of a circle is pi times the square of its radius."
+    },
+    {
+      "id": "formula.mole",
+      "domain": "chemistry",
+      "name": "Mole Calculation",
+      "formula": "n = m / M",
+      "symbols": {"n": "number of moles", "m": "mass in grams", "M": "molar mass in g/mol"},
+      "explanation": "The number of moles equals mass divided by molar mass. One mole contains 6.022 x 10^23 particles (Avogadro's constant)."
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "misconception.plants_food_soil",
+      "domain": "biology",
+      "misconception": "Plants get all their food from soil.",
+      "correction": "Plants obtain water and mineral nutrients from soil, but manufacture organic food through photosynthesis."
+    },
+    {
+      "id": "misconception.osmosis_diffusion",
+      "domain": "biology",
+      "misconception": "Osmosis and diffusion are the same thing.",
+      "correction": "Diffusion is the movement of any particles from a region of high concentration to low concentration; osmosis is specifically the movement of water molecules across a selectively permeable membrane."
+    },
+    {
+      "id": "misconception.weight_mass",
+      "domain": "physics",
+      "misconception": "Weight and mass are the same thing.",
+      "correction": "Mass measures the amount of matter; weight is the gravitational force acting on an object."
+    },
+    {
+      "id": "misconception.heat_temperature",
+      "domain": "physics",
+      "misconception": "Heat and temperature are identical.",
+      "correction": "Temperature describes thermal state; heat is energy transferred because of a temperature difference."
+    },
+    {
+      "id": "misconception.atom_indivisible",
+      "domain": "chemistry",
+      "misconception": "Atoms cannot be broken down into smaller parts.",
+      "correction": "An atom is the smallest unit of an element, but it is made of smaller particles: protons, neutrons, and electrons."
+    },
+    {
+      "id": "misconception.plants_no_respiration",
+      "domain": "biology",
+      "misconception": "Plants do not respire.",
+      "correction": "Plants respire day and night, breaking down glucose to release energy for growth and other life processes."
+    },
+    {
+      "id": "misconception.supply_demand_sole",
+      "domain": "economics",
+      "misconception": "Only supply and demand determine prices in every market.",
+      "correction": "Supply and demand are major price determinants, but government policy, production costs, competition, and other market structures also influence prices."
+    }
+  ],
+  "relations": [
+    {"from": "Biology", "type": "CONTAINS", "to": "Cell Biology"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Genetics"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Ecology"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Evolution"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Human Biology"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Plant Biology"},
+    {"from": "Biology", "type": "CONTAINS", "to": "Physiology"},
+    {"from": "Photosynthesis", "type": "RELATED_TO", "to": "Cellular Respiration"},
+    {"from": "Mitochondrion", "type": "PART_OF", "to": "Eukaryotic Cell"},
+    {"from": "Force", "type": "MEASURED_BY", "to": "Newton"},
+    {"from": "Cell", "type": "PART_OF", "to": "Tissue"},
+    {"from": "Tissue", "type": "PART_OF", "to": "Organ"},
+    {"from": "Organ", "type": "PART_OF", "to": "Organ System"},
+    {"from": "Demand", "type": "RELATED_TO", "to": "Supply"},
+    {"from": "Algorithm", "type": "RELATED_TO", "to": "Data Structures"},
+    {"from": "Chemistry", "type": "CONTAINS", "to": "Organic Chemistry"},
+    {"from": "Physics", "type": "STUDIES", "to": "Motion"}
+  ]
+}

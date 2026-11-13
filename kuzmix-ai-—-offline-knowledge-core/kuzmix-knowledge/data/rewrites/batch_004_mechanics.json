@@ -1,0 +1,446 @@
+[
+  {
+    "id": "c_cat_physics_mechanics_newtons_second_law_fma",
+    "name": "Newton's Second Law F=ma",
+    "summary_definition": "Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma — force is the rate of change of momentum, and acceleration follows the unbalanced force.",
+    "primary_explanation": "The law converts dynamics into bookkeeping: sum every force vector acting on a body, and the resultant sets the acceleration, a = F_net/m. The same 10 N shove accelerates a toy car ten times harder than a heavy cart — inertia (mass) resists change of motion. In its fuller form, F = dp/dt, it also covers variable-mass systems like rockets ejecting propellant, where thrust arises from momentum carried away. Force and acceleration are vectors, so components are solved independently on chosen axes, which is why projectile motion splits into a horizontal constant-velocity part and a vertical constant-acceleration part. The law is exact in inertial frames and only apparent (via fictitious forces) in accelerating ones.",
+    "key_properties": [
+      { "property": "Statement", "value": "F_net = ma = dp/dt" },
+      { "property": "Vector nature", "value": "Components solved independently per axis" },
+      { "property": "Mass role", "value": "Inertia: larger m requires more force for the same a" },
+      { "property": "Validity", "value": "Inertial reference frames; near-relativistic speeds use F = γ³ma" }
+    ],
+    "applications": [
+      "Vehicle design: braking distances and crumple zones from deceleration forces.",
+      "Rocketry: thrust from expelled momentum (variable-mass form).",
+      "Structural engineering: load paths computed as ma responses."
+    ],
+    "aliases": [
+      { "alias": "Law of Acceleration", "alias_type": "synonym" },
+      { "alias": "F=ma", "alias_type": "formula_repr" },
+      { "alias": "Newton's Second Law", "alias_type": "spelling_variant" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "An object moving at constant speed has no forces acting on it.",
+        "correction_text": "Zero net force means zero acceleration, not zero motion — constant-velocity motion needs balanced forces (e.g., engine thrust equals friction).",
+        "explanation": "F=ma links force to change in velocity; steady velocity is perfectly compatible with nonzero individual forces that cancel."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_gravity", "relationship_type": "related_to", "description": "Gravitational force produces acceleration via F=ma.", "weight": 0.9, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_physics_mechanics_conservation_of_momentum", "relationship_type": "related_to", "description": "Momentum conservation is F=ma integrated over collisions.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_conservation_of_momentum",
+    "name": "Conservation of Momentum",
+    "summary_definition": "The total momentum of a closed system stays constant when no external force acts: m₁v₁ + m₂v₂ before equals m₁v₁' + m₂v₂' after — momentum is never created or destroyed, only transferred.",
+    "primary_explanation": "Because F = dp/dt, zero net external force means total momentum p is constant — a conservation law valid in all inertial frames regardless of whether collisions are elastic or sticky. Two ice skaters pushing apart, a rifle's recoil, and a rocket's exhaust all follow the same accounting: the system's center of mass keeps moving as it always did while internal parts redistribute motion. In collisions, pairing momentum conservation with kinetic-energy accounting classifies outcomes: elastic collisions conserve both (billiard balls approximately), inelastic ones conserve momentum but lose kinetic energy to heat and deformation, and perfectly inelastic ones stick together. Momentum is a vector — directions must be handled component by component.",
+    "key_properties": [
+      { "property": "Condition", "value": "No net external force (closed system)" },
+      { "property": "Form", "value": "Σmᵢvᵢ = constant, component-wise" },
+      { "property": "Independence", "value": "Holds for elastic and inelastic interactions alike" },
+      { "property": "Center-of-mass link", "value": "Unforced system's center of mass moves uniformly" }
+    ],
+    "applications": [
+      "Collision reconstruction: deriving speeds from debris and skid marks.",
+      "Rocket propulsion: exhaust momentum balances vehicle momentum gain.",
+      "Particle physics: inferring unseen particles from missing momentum."
+    ],
+    "aliases": [
+      { "alias": "Linear Momentum Conservation", "alias_type": "synonym" },
+      { "alias": "p-Conservation", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Kinetic energy is always conserved in collisions.",
+        "correction_text": "Momentum is always conserved in closed systems; kinetic energy only survives elastic collisions — most real collisions lose some to heat, sound, and deformation.",
+        "explanation": "The two conservation statements answer different questions; only momentum has the universal condition (no external force)."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_elastic_vs_inelastic_collision", "relationship_type": "related_to", "description": "Collision types differ in energy bookkeeping, not momentum.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_physics_mechanics_work_energy_theorem", "relationship_type": "related_to", "description": "Momentum and energy are complementary collision constraints.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_work_energy_theorem",
+    "name": "Work-Energy Theorem",
+    "summary_definition": "The net work done on an object equals its change in kinetic energy: W_net = ΔKE = ½mv² − ½mu² — force applied over distance is exactly what changes speed.",
+    "primary_explanation": "Integrating F = ma along the path gives the theorem: every joule of net work done on a body shows up as kinetic energy. A car braking from 100 km/h to 50 dissipates three quarters of its KE through friction's negative work; a crane lifting a beam at constant speed does positive work against gravity that becomes gravitational potential energy rather than KE — which is why the theorem is usually generalized into energy conservation by including potential terms. Work is a scalar built from a vector product (W = F·d·cosθ), so forces perpendicular to motion — like gravity on a horizontal roll — do zero work. The approach bypasses acceleration details: with forces known as functions of position, energy methods yield speeds without solving the full trajectory.",
+    "key_properties": [
+      { "property": "Theorem", "value": "W_net = ΔKE = ½mv² − ½mu²" },
+      { "property": "Work definition", "value": "W = ∫F·ds — force component along the path" },
+      { "property": "Sign convention", "value": "Positive work speeds up; negative work slows down" },
+      { "property": "Path dependence", "value": "Only true for conservative forces; friction makes work path-dependent" }
+    ],
+    "applications": [
+      "Braking systems: sizing friction materials for required energy dissipation.",
+      "Ballistic and impact testing: inferring speeds from deformation work.",
+      "Machine design: motor sizing from required kinetic-energy changes."
+    ],
+    "aliases": [
+      { "alias": "Kinetic Energy Theorem", "alias_type": "synonym" },
+      { "alias": "Work-Energy Principle", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A force can do work without moving the point of application.",
+        "correction_text": "Work requires displacement along the force — a stationary wall exerts force but does zero work.",
+        "explanation": "W = F·d collapses to zero when d is zero, however large the force."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_angular_momentum_conservation", "relationship_type": "related_to", "description": "Rotational analogue: work changes rotational KE via torque.", "weight": 0.8, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_angular_momentum_conservation",
+    "name": "Angular Momentum Conservation",
+    "summary_definition": "When net external torque is zero, a system's total angular momentum L = r × p (or Iω for rotation) stays constant — spinners speed up when they pull mass inward because L cannot change.",
+    "primary_explanation": "Angular momentum is the rotational counterpart of linear momentum, and τ_net = dL/dt mirrors F = dp/dt: zero net torque freezes L. A pirouette drawing arms in reduces her moment of inertia I, so ω must rise to keep Iω constant — the same physics that makes ice skaters spin faster, planets swing faster at perihelion (Kepler's second law is angular-momentum conservation in gravity), and galaxies flatten into disks. Direction matters: L points along the spin axis by the right-hand rule, so gyroscopic devices resist changes to their orientation, producing precession instead. In collisions, angular momentum conservation supplements linear momentum when impacts occur off-center, determining post-collision rotation.",
+    "key_properties": [
+      { "property": "Definition", "value": "L = r × p; for rigid bodies L = Iω" },
+      { "property": "Condition", "value": "Zero net external torque" },
+      { "property": "Torque relation", "value": "τ_net = dL/dt" },
+      { "property": "Direction", "value": "Vector along spin axis (right-hand rule)" }
+    ],
+    "applications": [
+      "Gyroscopes and navigation: attitude control in aircraft and spacecraft.",
+      "Planetary motion: perihelion speed-up from conserved L.",
+      "Sports science: dive and ski-jump tucks trading L for rotation rate."
+    ],
+    "aliases": [
+      { "alias": "L-Conservation", "alias_type": "synonym" },
+      { "alias": "Rotational Momentum Conservation", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Pulling mass inward creates angular momentum out of nothing.",
+        "correction_text": "L = Iω is fixed when torque is zero — decreasing I necessarily increases ω; the angular momentum was there all along.",
+        "explanation": "Only the distribution of existing L among parts of the system changes, never the total."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_torque_and_lever_arms", "relationship_type": "related_to", "description": "Torque is the rate of change of angular momentum.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_physics_mechanics_conservation_of_momentum", "relationship_type": "related_to", "description": "Rotational sibling of linear momentum conservation.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_simple_harmonic_motion_oscilla",
+    "name": "Simple Harmonic Motion Oscillator",
+    "summary_definition": "A simple harmonic oscillator moves under a restoring force proportional to displacement (F = −kx), producing sinusoidal motion at angular frequency ω = √(k/m) with period T = 2π√(m/k).",
+    "primary_explanation": "The defining feature is linearity of the restoring force: double the stretch, double the pull-back. Solving F = −kx = ma yields x(t) = A·cos(ωt + φ), an endlessly repeating sine wave whose frequency depends only on stiffness and mass — not on amplitude, the remarkable isochronism that makes pendulum clocks work. Energy sloshes between potential (½kx², maximal at the turning points) and kinetic (½mv², maximal at the center) while their sum stays fixed. Damping (friction, air resistance) adds a decaying envelope and drives the system to rest, while an external periodic force near resonance makes amplitude grow — the behavior exploited in radios, tuning forks, and seismometers, and feared in bridges and buildings.",
+    "key_properties": [
+      { "property": "Restoring law", "value": "F = −kx (Hookean), giving a = −ω²x" },
+      { "property": "Frequency", "value": "ω = √(k/m); T = 2π√(m/k)" },
+      { "property": "Energy", "value": "E = ½kA² constant; exchanges KE ↔ PE twice per cycle" },
+      { "property": "Amplitude independence", "value": "Period is independent of amplitude (isochronism)" }
+    ],
+    "applications": [
+      "Timekeeping: pendulum and balance-wheel oscillators.",
+      "Filters and receivers: RLC circuits are electrical SHM tuned to frequencies.",
+      "Seismology and vibration testing: modeling building response to quakes."
+    ],
+    "aliases": [
+      { "alias": "SHM", "alias_type": "acronym" },
+      { "alias": "Harmonic Oscillator", "alias_type": "synonym" },
+      { "alias": "Mass-Spring System", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A stiffer spring makes the oscillator slower.",
+        "correction_text": "T = 2π√(m/k): stiffer springs raise k and shorten the period — the oscillator speeds up.",
+        "explanation": "Frequency grows with stiffness and shrinks with mass; spring stiffness and inertia pull frequency in opposite directions."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_pendulum_period_equation", "relationship_type": "related_to", "description": "The pendulum is the gravitational SHM archetype.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_physics_mechanics_hookes_law_springs", "relationship_type": "related_to", "description": "Hooke's law provides the linear restoring force.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_friction_static_and_kinetic",
+    "name": "Friction Static and Kinetic",
+    "summary_definition": "Static friction resists the start of motion up to μₛN, while kinetic friction acts during sliding at the lower μₖN — roughly constant regardless of speed — so objects are hardest to start moving, easier to keep moving.",
+    "primary_explanation": "Friction is a contact force parallel to surfaces, arising from microscopic welding and deformation of asperities. Before anything moves, static friction takes whatever value is needed to cancel the applied force, up to its ceiling fₛ ≤ μₛN — beyond that the contact breaks loose and kinetic friction takes over at fₖ = μₖN, typically 20–80% smaller than the static peak. This drop explains the lurch when a stuck box finally breaks free, why anti-lock brakes keep tires in the static regime (higher force, steerable), and why a leaned-over bike tire grips: banking raises the normal force N. Kinetic friction is nearly speed-independent, so sliding deceleration a = μₖg depends only on the surfaces.",
+    "key_properties": [
+      { "property": "Static law", "value": "fₛ ≤ μₛN — self-adjusting up to a maximum" },
+      { "property": "Kinetic law", "value": "fₖ = μₖN — constant during sliding" },
+      { "property": "Coefficient ordering", "value": "μₛ > μₖ for typical surface pairs" },
+      { "property": "Direction", "value": "Opposes relative sliding or its tendency" }
+    ],
+    "applications": [
+      "Braking and tire design: keeping wheels in static (rolling) contact.",
+      "Civil engineering: base friction in foundations and slope stability.",
+      "Machinery: clutch and belt design from μₛ/μₖ specifications."
+    ],
+    "aliases": [
+      { "alias": "Static and Kinetic Friction", "alias_type": "synonym" },
+      { "alias": "Coulomb Friction Model", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Kinetic friction increases with how fast you slide.",
+        "correction_text": "The Coulomb model makes kinetic friction independent of sliding speed (and of contact area) — only normal force and surface pair matter.",
+        "explanation": "Speed dependence appears only at extreme velocities where heating softens surfaces — outside the standard model."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_work_energy_theorem", "relationship_type": "related_to", "description": "Friction does negative work converting KE to heat.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_projectile_kinematics_trajecto",
+    "name": "Projectile Kinematics Trajectory",
+    "summary_definition": "Projectile motion splits into independent uniform horizontal motion and constant-acceleration vertical motion (a = −g), tracing a parabola y = x·tanθ − gx²/(2v₀²cos²θ) under ideal no-drag conditions.",
+    "primary_explanation": "Once launched, gravity is the only force (ignoring air), and vector independence lets each axis be solved alone: horizontal velocity v₀cosθ never changes, vertical velocity v₀sinθ − gt falls linearly, and combining x = v₀cosθ·t with the y-equation eliminates time to give the parabola. The launch angle that maximizes range on level ground is 45°, reduced for raised targets; time of flight depends only on the vertical component; and the apex occurs when the vertical velocity passes through zero. Range scales with v₀², explaining artillery tables. Air drag breaks the symmetry — real trajectories fall shorter on descent and peak slightly later — which is why ballistic coefficients exist, but the vacuum parabola remains the first-order model taught and used.",
+    "key_properties": [
+      { "property": "Decomposition", "value": "x: constant velocity; y: constant acceleration −g" },
+      { "property": "Trajectory", "value": "Parabola y(x) = x tanθ − gx²/(2v₀²cos²θ)" },
+      { "property": "Range (level)", "value": "R = v₀² sin(2θ)/g, maximized at θ = 45°" },
+      { "property": "Flight time", "value": "t = 2v₀ sinθ / g for return to launch height" }
+    ],
+    "applications": [
+      "Ballistics and artillery: firing tables from range equations.",
+      "Sports analytics: optimizing serve, shot-put, and free-kick angles.",
+      "Firefighting and rescue: aiming hose and throw trajectories."
+    ],
+    "aliases": [
+      { "alias": "Projectile Motion", "alias_type": "synonym" },
+      { "alias": "Ballistic Trajectory", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "At the top of its arc a projectile has zero velocity.",
+        "correction_text": "Only the vertical component vanishes at the apex — the horizontal component persists, which is why the projectile keeps moving forward there.",
+        "explanation": "Velocity is a vector; a zeroed component is not zero speed (except straight up-and-down launches)."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_newtons_second_law_fma", "relationship_type": "related_to", "description": "F=ma with F=mg generates the vertical acceleration.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_elastic_vs_inelastic_collision",
+    "name": "Elastic vs Inelastic Collisions",
+    "summary_definition": "Elastic collisions conserve both momentum and kinetic energy (balls, gas molecules); inelastic collisions conserve momentum but convert some KE to heat, sound, and deformation — perfectly inelastic ones end with the bodies stuck together.",
+    "primary_explanation": "The classification hangs on energy bookkeeping, not on softness or noise. In one dimension an elastic collision between masses m₁ and m₂ swaps or shares velocities according to conservation of both p and KE — deriving the well-known 'equal masses exchange velocities' result. In the real world only approximately elastic encounters happen (billiard balls, neutron moderation); anything with crunch, splash, or heat is inelastic, and the perfectly inelastic case (sticking) loses the most KE allowed while still satisfying momentum conservation. The lost KE is exactly the energy that went into deformation and thermal motion — it never vanishes. Collisions off-center add rotational outcomes, requiring angular-momentum conservation alongside the linear equations.",
+    "key_properties": [
+      { "property": "Momentum", "value": "Conserved in both types (no external force)" },
+      { "property": "Kinetic energy", "value": "Conserved only when elastic" },
+      { "property": "Coefficient of restitution", "value": "e = separation speed / approach speed; e=1 elastic, e=0 perfectly inelastic" },
+      { "property": "1D elastic swap", "value": "Equal masses exchange velocities" }
+    ],
+    "applications": [
+      "Vehicle crash design: engineered crumpling maximizes KE absorption per occupant g-load.",
+      "Gas kinetics: elastic molecular collisions maintain temperature equilibrium.",
+      "Ballistics and sports: restitution coefficients for equipment standards."
+    ],
+    "aliases": [
+      { "alias": "Elastic and Inelastic Collisions", "alias_type": "synonym" },
+      { "alias": "Perfectly Inelastic Impact", "alias_type": "synonym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Inelastic collisions violate conservation of energy.",
+        "correction_text": "Total energy is conserved — kinetic energy merely transforms into heat, sound, and deformation; only KE (not energy) is lost.",
+        "explanation": "The conservation law applies to the full energy budget, of which kinetic energy is just one transferable part."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_conservation_of_momentum", "relationship_type": "related_to", "description": "Momentum conservation governs both collision types.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_escape_velocity_formula",
+    "name": "Escape Velocity Formula",
+    "summary_definition": "Escape velocity is the minimum launch speed needed to break free of a body's gravity forever without further thrust: v = √(2GM/r) — about 11.2 km/s from Earth's surface.",
+    "primary_explanation": "Set the total energy (kinetic plus gravitational potential) to zero and solve: the kinetic energy ½mv² must exactly cancel the depth of the potential well −GMm/r, giving v = √(2GM/r). At that speed the object coasts uphill forever, slowing asymptotically toward zero but never falling back — below it, gravity eventually turns the trajectory around. The remarkable independence of mass appears because m cancels: a pebble and a spacecraft need the same speed from the same place. Escape velocity rises with the central mass and falls with distance (at twice the radius it is 1/√2 as large), which is why the Sun's 617 km/s makes Earth-bound launches harder than the Moon's 2.38 km/s makes lunar departures easy. Temperature-driven atmospheric loss follows the same logic via molecular speeds.",
+    "key_properties": [
+      { "property": "Formula", "value": "v_esc = √(2GM/r)" },
+      { "property": "Energy condition", "value": "Total energy ≥ 0 (KE cancels potential well depth)" },
+      { "property": "Mass independence", "value": "Object mass cancels — same speed for all payloads" },
+      { "property": "Earth value", "value": "≈ 11.2 km/s at the surface" }
+    ],
+    "applications": [
+      "Rocketry: computing minimum Δv budgets for orbit departure.",
+      "Planetary science: explaining atmospheric retention (light gases exceed v_esc thermally).",
+      "Astrophysics: black-hole escape speed reaches c at the event horizon."
+    ],
+    "aliases": [
+      { "alias": "Parabolic Velocity", "alias_type": "synonym" },
+      { "alias": "v_esc = sqrt(2GM/r)", "alias_type": "formula_repr" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Escape velocity means traveling fast enough to outrun gravity's pull continuously.",
+        "correction_text": "The escaper keeps feeling gravity the whole way — it just never wins: with total energy ≥ 0 the trajectory is open (parabolic/hyperbolic) and distance grows without bound.",
+        "explanation": "Gravity falls as 1/r²; once KE exceeds well depth, the object always retains some speed."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_gravity", "relationship_type": "related_to", "description": "Escape speed is derived from the gravitational potential well.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_keplers_first_law_ellipses",
+    "name": "Kepler's First Law Ellipses",
+    "summary_definition": "Kepler's first law: every planet moves on an ellipse with the Sun at one focus — orbits are not circles with the center at the Sun, and nothing sits at the geometric center.",
+    "primary_explanation": "Observing Mars across oppositions, Kepler rejected the 2,000-year-old deferent circles and fitted an ellipse — Sun at one focus, the other focus empty. The orbit's shape is quantified by eccentricity e: 0 is a perfect circle, e between 0 and 1 an ellipse (Earth e ≈ 0.017, nearly circular; Mercury 0.206, visibly oval), and e ≥ 1 open parabolic/hyperbolic paths for one-time visitors like comets. Perihelion (closest) and aphelion (farthest) mark the extremes, at distances a(1−e) and a(1+e). The law emerges inevitably from an inverse-square central force — Newton derived the conic-section orbits from his law of gravitation, showing Kepler's empirical rule and F = GMm/r² are the same statement. Paired with the second law (equal areas in equal times), it fully fixes the planar motion.",
+    "key_properties": [
+      { "property": "Shape", "value": "Ellipse with Sun at one focus" },
+      { "property": "Eccentricity", "value": "e = 0 circle; 0 < e < 1 ellipse; e ≥ 1 open orbit" },
+      { "property": "Extremes", "value": "Perihelion a(1−e); aphelion a(1+e)" },
+      { "property": "Derivation", "value": "Conic sections follow from inverse-square central forces" }
+    ],
+    "applications": [
+      "Mission planning: Hohmann transfers between elliptical orbits.",
+      "Exoplanet characterization: radial-velocity curves reveal orbital eccentricity.",
+      "Comet prediction: distinguishing bound ellipses from parabolic flybys."
+    ],
+    "aliases": [
+      { "alias": "Law of Ellipses", "alias_type": "synonym" },
+      { "alias": "Kepler's First Law", "alias_type": "spelling_variant" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "The Sun sits at the center of each planetary ellipse.",
+        "correction_text": "The Sun occupies a focus, offset from the center by ae — the center is empty space, which is why Earth's distance from the Sun varies through the year.",
+        "explanation": "A focus and an ellipse's center are distinct points; the offset equals eccentricity times semi-major axis."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_gravity", "relationship_type": "related_to", "description": "Inverse-square gravity generates elliptical orbits.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_cat_physics_mechanics_angular_momentum_conservation", "relationship_type": "related_to", "description": "Kepler's equal-area law is angular-momentum conservation.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_hookes_law_springs",
+    "name": "Hooke's Law Springs",
+    "summary_definition": "Hooke's law: a spring's restoring force is proportional to its extension, F = −kx — twice the stretch, twice the pull-back, with stiffness k setting the proportionality.",
+    "primary_explanation": "For deformations within the elastic limit, springs obey F = −kx, the minus sign marking a force that always points toward equilibrium. The constant k is the spring's stiffness (N/m): a 100 N/m spring stretched 5 cm pulls back 5 N. The stored potential energy ½kx² grows quadratically with stretch, which is the energy budget cushions, trampolines, and suspension systems meter out. Hooke's law is a small-deformation approximation — stretch far enough and the force sublinearizes until the spring yields or breaks, the tensile counterpart of plastic flow. As the linear restoring law behind SHM (ω = √(k/m)) and the model for atomic bonds vibrating about their equilibrium, it underlies both engineering springs and the thermal physics of solids.",
+    "key_properties": [
+      { "property": "Law", "value": "F = −kx (restoring, opposite to displacement)" },
+      { "property": "Stiffness k", "value": "Force per unit extension, N/m" },
+      { "property": "Stored energy", "value": "U = ½kx² — area under the F-x triangle" },
+      { "property": "Validity", "value": "Linear elastic regime only; beyond it, anharmonic then plastic" }
+    ],
+    "applications": [
+      "Vehicle suspension: spring rate tuning for load and comfort.",
+      "Seismometers: inertial mass on a spring converting ground motion to readable displacement.",
+      "Materials testing: stiffness measurements from force-extension curves."
+    ],
+    "aliases": [
+      { "alias": "Law of Elasticity", "alias_type": "synonym" },
+      { "alias": "F = -kx", "alias_type": "formula_repr" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Hooke's law holds for any stretch, however large.",
+        "correction_text": "It is a small-deformation approximation; past the proportional limit the F-x curve bends and the spring permanently deforms or breaks.",
+        "explanation": "Real materials transition linear-elastic → anharmonic → plastic, so k itself drifts at large strains."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_simple_harmonic_motion_oscilla", "relationship_type": "related_to", "description": "Linear restoring force is the defining condition of SHM.", "weight": 0.95, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_torque_and_lever_arms",
+    "name": "Torque and Lever Arms",
+    "summary_definition": "Torque is the rotational effect of a force: τ = r × F, magnitude rF·sinθ — it depends on how far the force acts from the pivot and on its angle, not on force alone.",
+    "primary_explanation": "Where F = ma governs straight-line motion, τ = Iα governs spinning: torque plays the role of force, moment of inertia I the role of mass, and angular acceleration α that of a. The lever arm (moment arm) is the perpendicular distance from pivot to the force's line of action — push a door at the hinge and the lever arm is zero, however hard you push. Loosening a stubborn bolt with a longer wrench raises r and multiplies torque; a force at 90° contributes fully, one pulling parallel to r contributes nothing (sinθ factor). Statics is the special case Στ = 0, the condition balancing seesaws, bridge trusses, and crane booms, while net torque driving rotation couples with angular momentum through τ = dL/dt.",
+    "key_properties": [
+      { "property": "Definition", "value": "τ = r × F, |τ| = rF sinθ" },
+      { "property": "Rotational law", "value": "τ_net = Iα" },
+      { "property": "Lever arm", "value": "Perpendicular pivot-to-line-of-action distance" },
+      { "property": "Equilibrium", "value": "Στ = 0 for balanced statics" }
+    ],
+    "applications": [
+      "Wrench and tool design: multiplying manual force through length.",
+      "Crane and bridge engineering: moment balance about support points.",
+      "Biomechanics: joint moments from muscle forces and moment arms."
+    ],
+    "aliases": [
+      { "alias": "Moment of Force", "alias_type": "synonym" },
+      { "alias": "Rotational Force", "alias_type": "synonym" },
+      { "alias": "τ = rF sinθ", "alias_type": "formula_repr" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Bigger force always means more turning effect.",
+        "correction_text": "Turning effect also depends on lever arm and angle — a large force through the pivot produces zero torque.",
+        "explanation": "Torque is the cross product r × F; geometry can nullify even a huge force."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_center_of_mass_calculation", "relationship_type": "related_to", "description": "Weight acts at the center of mass, fixing gravitational moments.", "weight": 0.85, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_pendulum_period_equation",
+    "name": "Pendulum Period Equation",
+    "summary_definition": "A simple pendulum's period is T = 2π√(L/g) — set by string length and gravity alone, independent of mass and (for small swings) of amplitude.",
+    "primary_explanation": "For small angles (under about 10–15°), sinθ ≈ θ turns the pendulum's equation of motion into the same linear restoring law as a spring, with effective k/m = g/L — hence the period T = 2π√(L/g). Galileo noticed the amplitude independence (isochronism) from church-lamp swings; it made pendulums the first precise timekeepers, with Huygens' clock exploiting it in 1656. Mass cancels, so a heavy and light bob on the same length swing in step; length tunes the rate (a 1 m pendulum has T ≈ 2 s, the basis of the seconds pendulum). Large swings lengthen the period — the nonlinearity that makes a grandfather clock's swing slow over weeks unless driven — and the same formula gives g from measured T and L, a classic gravimetry technique.",
+    "key_properties": [
+      { "property": "Formula", "value": "T = 2π√(L/g), small-angle regime" },
+      { "property": "Independence", "value": "Period unaffected by mass and (approximately) by amplitude" },
+      { "property": "Gravity dependence", "value": "Measured T with known L yields g" },
+      { "property": "Breakdown", "value": "Large swings lengthen T; formula becomes inaccurate beyond ~15°" }
+    ],
+    "applications": [
+      "Timekeeping: grandfather and pendulum clocks tuned by bob position.",
+      "Gravimetry: measuring local g from swing period.",
+      "Seismology: historic tiltmeters and early inertial instruments."
+    ],
+    "aliases": [
+      { "alias": "Simple Pendulum Formula", "alias_type": "synonym" },
+      { "alias": "T = 2π√(L/g)", "alias_type": "formula_repr" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A heavier bob makes the pendulum swing faster.",
+        "correction_text": "Mass cancels from T = 2π√(L/g) — only length and gravity set the rate.",
+        "explanation": "Both restoring force (mg sinθ) and inertia (m) scale with mass, so it divides out of the equation of motion."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_simple_harmonic_motion_oscilla", "relationship_type": "related_to", "description": "Small-angle pendulum is a gravitational SHM instance.", "weight": 0.95, "is_bidirectional": false },
+      { "target_concept_id": "c_gravity", "relationship_type": "related_to", "description": "Gravity provides the restoring acceleration g in the period formula.", "weight": 0.9, "is_bidirectional": false }
+    ]
+  },
+  {
+    "id": "c_cat_physics_mechanics_center_of_mass_calculation",
+    "name": "Center of Mass Calculation",
+    "summary_definition": "The center of mass is the mass-weighted average position r_cm = Σmᵢrᵢ/Σmᵢ — the single point where an object's mass can be treated as concentrated for translational motion and gravity torque accounting.",
+    "primary_explanation": "For a system of particles, the center of mass is the weighted mean of positions, weighting each by its mass; for continuous bodies the sum becomes an integral ∫r dm. It has two powers: (1) external forces accelerate the center of mass exactly as if all mass were there — a thrown wrench's CM traces a perfect parabola while the tool tumbles; and (2) gravity's torque on a rigid body equals the weight acting at the CM, which is why 'hanging from the CM' is stable and support must straddle the CM for balance. Symmetric objects place it at the geometric centroid (uniform sphere, rod midpoint); irregular or hollow shapes need the integral, and the CM can lie outside the material entirely — a banana's or boomerang's CM is in the air beside it.",
+    "key_properties": [
+      { "property": "Discrete formula", "value": "r_cm = Σmᵢrᵢ / Σmᵢ" },
+      { "property": "Continuous form", "value": "r_cm = (1/M)∫r dm" },
+      { "property": "Newton's second-law role", "value": "External forces move the CM as if all mass were concentrated there" },
+      { "property": "Can lie outside", "value": "Hollow or extended bodies may exclude their CM from material" }
+    ],
+    "applications": [
+      "Vehicle stability: keeping the CM low and within the wheelbase.",
+      "Robotics and aerospace: fuel slosh and attitude control about the CM.",
+      "Structural engineering: load balance and overturning-moment checks."
+    ],
+    "aliases": [
+      { "alias": "Center of Mass", "alias_type": "synonym" },
+      { "alias": "Barycenter (mechanics)", "alias_type": "synonym" },
+      { "alias": "CM", "alias_type": "acronym" }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "The center of mass must be located inside the object.",
+        "correction_text": "It is a mathematical average position — for hollow, arch, or boomerang shapes it can lie in empty space outside the material.",
+        "explanation": "Averaging positions weighted by mass needs no matter at the average point itself."
+      }
+    ],
+    "relationships": [
+      { "target_concept_id": "c_cat_physics_mechanics_torque_and_lever_arms", "relationship_type": "related_to", "description": "Weight acts at the CM when computing torques.", "weight": 0.85, "is_bidirectional": false }
+    ]
+  }
+]

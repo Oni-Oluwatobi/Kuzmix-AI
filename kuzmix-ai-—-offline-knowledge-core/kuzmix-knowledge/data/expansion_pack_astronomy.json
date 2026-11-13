@@ -1,0 +1,58 @@
+{
+  "pack_id": "pack_astronomy_deep_space",
+  "pack_name": "Kuzmix Astrophysics & Celestial Mechanics Pack",
+  "version": "1.1.0",
+  "author": "Kuzmix Knowledge Team",
+  "concepts": [
+    {
+      "id": "c_black_holes",
+      "domain_id": "sci_math",
+      "category_id": "cat_space_astronomy",
+      "topic_id": "top_cat_space_astronomy_core",
+      "name": "Black Holes and Event Horizons",
+      "summary_definition": "A region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it.",
+      "primary_explanation": "Predicted as exact mathematical solutions to Einstein's field equations by Karl Schwarzschild in 1916, a black hole forms when a massive stellar remnant undergoes catastrophic gravitational collapse. The boundary of no return is the event horizon, whose radius (Schwarzschild radius) is given by r_s = 2GM / c^2. At the center lies a gravitational singularity where spacetime curvature and density become formally infinite under classical general relativity. Black holes are directly imaged via radio interferometry (Event Horizon Telescope, 2019/2022) capturing the glowing photon ring of the accretion disk around the shadow.",
+      "key_properties": [
+        { "property": "Schwarzschild Radius Formula", "value": "r_s = 2 * G * M / c^2" },
+        { "property": "Hawking Radiation Temperature", "value": "T_H = hbar * c^3 / (8 * pi * G * M * k_B)" }
+      ],
+      "applications": [
+        "Gravitational wave astronomy (LIGO/Virgo detecting binary black hole coalescence).",
+        "Testing general relativity in extreme gravitational regimes."
+      ],
+      "prerequisites": ["c_gravity"],
+      "difficulty_level": "advanced",
+      "confidence_score": 1.0,
+      "provenance_type": "curated_scientific",
+      "source_id": "src_feynman_physics",
+      "aliases": [
+        { "alias": "Gravitational Singularity", "alias_type": "synonym" },
+        { "alias": "Schwarzschild Black Hole", "alias_type": "scientific_name" }
+      ],
+      "misconceptions": [
+        {
+          "misconception_text": "Black holes act like cosmic vacuum cleaners that suck in everything in the universe.",
+          "correction_text": "If the Sun were replaced by a black hole of equal mass, Earth's orbit would not change at all.",
+          "explanation": "At a given distance, gravitational pull depends solely on total mass; only objects that cross inside the event horizon cannot escape."
+        }
+      ],
+      "records": [
+        {
+          "id": "rec_schwarzschild_radius",
+          "record_type": "formula",
+          "title": "Schwarzschild Radius Equation",
+          "content": "r_s = (2 * G * M) / c^2, defining the event horizon distance from the center for a non-rotating mass M."
+        }
+      ],
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "chunk_type": "definition",
+          "header_context": "Science > Astronomy > Black Holes",
+          "text_content": "A Black Hole is a spacetime region where gravity prevents any particle or light from escaping. The event horizon boundary has radius r_s = 2GM/c^2 (Schwarzschild radius). At the center lies a spacetime curvature singularity. Black holes do not 'suck in' distant objects; their gravitational pull outside the horizon obeys standard orbital mechanics.",
+          "token_estimate": 73
+        }
+      ]
+    }
+  ]
+}

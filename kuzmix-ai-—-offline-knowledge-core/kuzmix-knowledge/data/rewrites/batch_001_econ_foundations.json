@@ -1,0 +1,1208 @@
+[
+  {
+    "id": "c_cat_econ_micro_law_of_demand_price_inverse",
+    "name": "Law of Demand",
+    "summary_definition": "The law of demand states that, all else equal (ceteris paribus), the quantity of a good that consumers are willing and able to buy falls as its price rises, and rises as its price falls — producing a downward-sloping demand curve.",
+    "primary_explanation": "The inverse price-quantity relationship emerges from two effects working together. The substitution effect: as a good becomes more expensive, buyers switch to cheaper alternatives. The income effect: a higher price effectively reduces purchasing power, so consumers buy less of most goods. Together they make the demand curve slope downward. The law holds when income, tastes, prices of related goods, and expectations are held constant; if any of these change, the whole curve shifts rather than moving along it. Exceptions are rare but real — Giffen goods (staples consumed by very poor households) and Veblen goods (luxuries valued for their high price) can bend the rule.",
+    "key_properties": [
+      {
+        "property": "Relationship",
+        "value": "Inverse between price and quantity demanded"
+      },
+      {
+        "property": "Curve movement",
+        "value": "Price change = movement along the curve; other factors = shift of the curve"
+      },
+      {
+        "property": "Ceteris paribus assumption",
+        "value": "Income, tastes, related-goods prices, and expectations held constant"
+      },
+      {
+        "property": "Typical exceptions",
+        "value": "Giffen goods and Veblen (status) goods"
+      }
+    ],
+    "applications": [
+      "Pricing strategy: predicting how sales volume responds to discounts and price increases.",
+      "Tax policy: estimating how fuel or sugar taxes change consumption.",
+      "Auction and yield-management design for airlines and hotels."
+    ],
+    "aliases": [
+      {
+        "alias": "Demand Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Inverse Price-Quantity Relationship",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Downward-Sloping Demand",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "A higher price always means the seller earns more revenue.",
+        "correction_text": "Revenue depends on elasticity: if demand is elastic, a price rise reduces quantity so much that total revenue falls.",
+        "explanation": "Total revenue equals price times quantity; the law of demand guarantees quantity drops, but not whether revenue rises or falls."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "One half of the supply-and-demand model that sets market price.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_micro_price_elasticity_of_demand_ped",
+        "relationship_type": "related_to",
+        "description": "Elasticity quantifies how strongly quantity demanded responds to price.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_law_of_supply_price_direct",
+    "name": "Law of Supply",
+    "summary_definition": "The law of supply states that, all else equal, producers offer more of a good for sale as its price rises and less as its price falls — producing an upward-sloping supply curve.",
+    "primary_explanation": "Higher prices make production more profitable, so firms expand output and new entrants join the market; lower prices squeeze margins and push marginal producers out. The curve's slope reflects rising marginal costs: as output grows, extra units usually cost more to produce (overtime pay, scarcer inputs, strained capacity), so firms need higher prices to justify them. Supply curves shift when input prices, technology, taxes, subsidies, number of sellers, or expectations change — a price change alone only moves along the curve. In the very short run supply can be nearly fixed (a sold-out concert, this year's harvest), which is why short-run supply curves are steeper than long-run ones.",
+    "key_properties": [
+      {
+        "property": "Relationship",
+        "value": "Direct (positive) relationship between price and quantity supplied"
+      },
+      {
+        "property": "Driver",
+        "value": "Rising marginal cost of production"
+      },
+      {
+        "property": "Supply shifters",
+        "value": "Input prices, technology, taxes/subsidies, number of sellers, expectations"
+      },
+      {
+        "property": "Run horizon",
+        "value": "Short-run supply is steep; long-run supply is flatter as capacity adjusts"
+      }
+    ],
+    "applications": [
+      "Capacity planning: forecasting how suppliers ramp output when market prices climb.",
+      "Agriculture: explaining why bumper crops lower prices and farm income.",
+      "Energy markets: how oil price spikes trigger additional drilling."
+    ],
+    "aliases": [
+      {
+        "alias": "Supply Law",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Price-Quantity Supplied Relationship",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Upward-Sloping Supply",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Supply curves shift whenever the market price changes.",
+        "correction_text": "A price change causes movement along the supply curve; the curve shifts only when a non-price determinant (input cost, technology, entry) changes.",
+        "explanation": "Confusing movement along a curve with a shift of the curve is the most common error in supply-and-demand analysis."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "Producer side of the model that determines market price.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_micro_law_of_demand_price_inverse",
+        "relationship_type": "related_to",
+        "description": "Demand side; the two curves together set equilibrium.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_market_equilibrium_clearing_pr",
+    "name": "Market Equilibrium",
+    "summary_definition": "Market equilibrium is the price at which quantity demanded equals quantity supplied; at that clearing price there is neither surplus nor shortage, and market forces have no pressure to move the price.",
+    "primary_explanation": "Every market tends toward its clearing price through feedback: if price sits above equilibrium, unsold inventory piles up and sellers cut prices; if price sits below, buyers bid against each other and shortages push prices up. At equilibrium, the last unit a consumer values is exactly the last unit a producer finds profitable to make — a match that makes the market's total surplus (consumer plus producer) as large as possible given the situation. Equilibrium is not static: it re-forms whenever the demand or supply curve shifts (income changes, new technology, taxes). Government interventions such as price ceilings and floors freeze the price away from clearing, leaving persistent shortages or surpluses instead.",
+    "key_properties": [
+      {
+        "property": "Clearing condition",
+        "value": "Quantity demanded = quantity supplied"
+      },
+      {
+        "property": "Stability",
+        "value": "Excess supply or demand creates price pressure back toward equilibrium"
+      },
+      {
+        "property": "Efficiency",
+        "value": "Maximizes combined consumer and producer surplus in competitive markets"
+      },
+      {
+        "property": "Adjustment speed",
+        "value": "Seconds on exchanges, months in slow markets like housing"
+      }
+    ],
+    "applications": [
+      "Exchange and marketplace pricing (stocks, ride-hailing surge pricing).",
+      "Forecasting clearing prices after a tax or subsidy is introduced.",
+      "Detecting shortages: price below equilibrium signals queues and black markets."
+    ],
+    "aliases": [
+      {
+        "alias": "Clearing Price",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Market-Clearing Equilibrium",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Supply-Demand Balance",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Equilibrium means prices never change.",
+        "correction_text": "Equilibrium is re-established after every shift; it means no internal pressure to change at that moment, not permanent stillness.",
+        "explanation": "Markets live in a sequence of equilibria — each shock (harvest, pandemic, innovation) produces a new clearing price."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "Equilibrium is the intersection of the supply and demand curves.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_micro_deadweight_loss_inefficiency_t",
+        "relationship_type": "related_to",
+        "description": "Deviations from equilibrium create deadweight loss.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_price_elasticity_of_demand_ped",
+    "name": "Price Elasticity of Demand",
+    "summary_definition": "Price elasticity of demand (PED) measures the percentage change in quantity demanded caused by a one percent change in price; PED = (% change in quantity) / (% change in price), and demand is elastic when |PED| > 1.",
+    "primary_explanation": "Elasticity turns the slope of the demand curve into a comparable number. Demand tends to be elastic when close substitutes exist, the good is a luxury rather than a necessity, the good takes a large share of income, or buyers have time to adjust. It is inelastic for necessities with few substitutes — insulin, fuel in the short run, table salt. The practical payoff is total revenue: if demand is elastic, a price cut raises revenue because volume grows faster than price falls; if inelastic, a price rise raises revenue. Governments lean on inelastic demand when taxing cigarettes or fuel, because consumption — and therefore the tax base — barely moves.",
+    "key_properties": [
+      {
+        "property": "Formula",
+        "value": "PED = % change in quantity demanded / % change in price"
+      },
+      {
+        "property": "Sign convention",
+        "value": "Always negative (law of demand); reported as absolute value"
+      },
+      {
+        "property": "Elastic",
+        "value": "|PED| > 1 — quantity responds more than proportionally"
+      },
+      {
+        "property": "Revenue link",
+        "value": "Elastic demand: price cuts raise revenue; inelastic demand: price rises raise revenue"
+      }
+    ],
+    "applications": [
+      "Dynamic pricing and discount depth for retailers.",
+      "Tax design: choosing goods whose demand is inelastic to minimize behavioral distortion.",
+      "Subscription pricing: testing churn sensitivity to fee increases."
+    ],
+    "aliases": [
+      {
+        "alias": "PED",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Demand Elasticity",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Elasticity of Demand",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Elastic and inelastic describe how steep the demand curve looks.",
+        "correction_text": "Elasticity is a ratio of percentage changes, not slope — the same straight-line curve has different elasticities at different points.",
+        "explanation": "Slope uses absolute units; elasticity uses percentages, which is why steep curves can still be elastic for cheap goods."
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_consumer_surplus_willingness_t",
+    "name": "Consumer Surplus",
+    "summary_definition": "Consumer surplus is the difference between what buyers are willing to pay for a good and what they actually pay — the total benefit consumers enjoy above the price they incur.",
+    "primary_explanation": "Each buyer carries a reservation price: the most they would pay. When the market price is lower, every such buyer pockets the gap as surplus. Graphically it is the area below the demand curve and above the price line; the demand curve itself is a schedule of marginal benefits, so the area measures aggregate consumer welfare in monetary terms. Markets generate enormous surplus because most transactions happen at one price even though many buyers would have paid more — a coffee drunk happily at $3 by someone who would have paid $6 yields $3 of surplus. Policies that raise price (taxes, monopolies) or lower quantity (quotas) shrink this area, which is why economists use consumer surplus to score who wins and loses from market changes.",
+    "key_properties": [
+      {
+        "property": "Definition",
+        "value": "Willingness to pay minus price actually paid"
+      },
+      {
+        "property": "Graphically",
+        "value": "Area under the demand curve and above the market price"
+      },
+      {
+        "property": "Scales with quantity",
+        "value": "Lower prices expand surplus for existing and new buyers"
+      },
+      {
+        "property": "Measurement unit",
+        "value": "Monetary, derived from the demand curve as marginal benefit"
+      }
+    ],
+    "applications": [
+      "Cost-benefit analysis of price controls and new marketplaces.",
+      "Free-trade arguments: quantifying gains from lower import prices.",
+      "Auction design: estimating bidder welfare and reserve prices."
+    ],
+    "aliases": [
+      {
+        "alias": "Consumer Welfare Gain",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Buyer Surplus",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Consumer surplus is money the seller refunds to the buyer.",
+        "correction_text": "It is an economic measure of benefit, not a cash payment — no money actually changes hands beyond the price.",
+        "explanation": "Surplus quantifies the extra value buyers receive; it exists because demand curves slope downward while one market price applies to all."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_producer_surplus_market_price_",
+        "relationship_type": "related_to",
+        "description": "Producer surplus is the supply-side counterpart; their sum is total surplus.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_producer_surplus_market_price_",
+    "name": "Producer Surplus",
+    "summary_definition": "Producer surplus is the difference between the price producers receive and the minimum price at which they would have sold — the benefit sellers earn above their marginal cost.",
+    "primary_explanation": "The supply curve is a marginal-cost schedule: each point shows the lowest price at which the producer of that unit is willing to sell. If the market price sits above the curve, every unit between zero and the quantity sold earns the seller the gap between price and cost — that gap, summed over all units, is producer surplus. It becomes operating profit in competitive markets and is closely related to profit, though it ignores fixed costs. Together with consumer surplus it forms total surplus, the yardstick for welfare analysis: policies are efficient when they grow total surplus and redistribute it when they move it between buyers and sellers. Taxes shrink producer surplus along with consumer surplus, which is why firms lobby against them.",
+    "key_properties": [
+      {
+        "property": "Definition",
+        "value": "Market price minus marginal cost of production, summed over units sold"
+      },
+      {
+        "property": "Graphically",
+        "value": "Area above the supply curve and below the market price"
+      },
+      {
+        "property": "Profit link",
+        "value": "Related to operating profit; ignores fixed costs"
+      },
+      {
+        "property": "Total surplus",
+        "value": "Consumer surplus + producer surplus"
+      }
+    ],
+    "applications": [
+      "Welfare evaluation of taxes, subsidies, and trade policy.",
+      "Negotiation: estimating a seller's minimum acceptable price.",
+      "Infarm pricing analysis for platforms connecting producers to buyers."
+    ],
+    "aliases": [
+      {
+        "alias": "Seller Surplus",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Producer Welfare Gain",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Producer surplus equals profit.",
+        "correction_text": "Surplus is measured against marginal (per-unit) cost only; profit also subtracts fixed costs, so surplus can exceed profit.",
+        "explanation": "Two concepts share the same graph but different accounting scopes — variable cost versus total cost."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_consumer_surplus_willingness_t",
+        "relationship_type": "related_to",
+        "description": "Consumer surplus is the demand-side counterpart.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_deadweight_loss_inefficiency_t",
+    "name": "Deadweight Loss",
+    "summary_definition": "Deadweight loss is the reduction in total surplus that occurs when a market produces less than the efficient quantity — value that neither buyers nor sellers capture, because mutually beneficial trades do not happen.",
+    "primary_explanation": "At the competitive equilibrium, every unit whose value to buyers exceeds its cost to producers gets traded. Interventions that wedge price away from cost — taxes, price ceilings, tariffs, monopolies restricting output — push quantity below that level. The units between the efficient quantity and the actual quantity represent trades that would have created value (the demand curve sits above the supply curve there) but are blocked; the triangle formed by those forgone gains is deadweight loss. Its size grows with the square of the tax rate, which is why doubling a tax more than doubles the distortion. Deadweight loss is the technical term for economic waste: it is surplus that disappears entirely rather than being transferred to the government or another party.",
+    "key_properties": [
+      {
+        "property": "Graphically",
+        "value": "The triangle between demand and supply from actual to efficient quantity"
+      },
+      {
+        "property": "Causes",
+        "value": "Taxes, price controls, tariffs, monopolies, externalities"
+      },
+      {
+        "property": "Growth rule",
+        "value": "Scales roughly with the square of the tax or price wedge"
+      },
+      {
+        "property": "Distinction",
+        "value": "Lost to everyone — unlike surplus transferred to government as tax revenue"
+      }
+    ],
+    "applications": [
+      "Comparing tax designs: revenue raised per unit of distortion.",
+      "Antitrust: quantifying output restriction by monopolists.",
+      "Evaluating rent control and minimum-wage trade-offs."
+    ],
+    "aliases": [
+      {
+        "alias": "DWL",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Allocative Inefficiency Loss",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Welfare Loss Triangle",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Tax revenue is deadweight loss.",
+        "correction_text": "Revenue transfers surplus to the government; deadweight loss is the separate surplus destroyed by the behavioral response to the tax.",
+        "explanation": "A tax has two effects: a transfer (revenue) and a destroyed volume of trade (deadweight loss) — only the second is waste."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_pigouvian_taxes_internalizing_",
+        "relationship_type": "related_to",
+        "description": "Pigouvian taxes can reduce deadweight loss by internalizing externalities.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_marginal_utility_diminishing_r",
+    "name": "Diminishing Marginal Utility",
+    "summary_definition": "Diminishing marginal utility is the tendency for each additional unit of a good consumed to add less satisfaction than the unit before — the first slice of bread nourishes far more than the fifth.",
+    "primary_explanation": "Utility means satisfaction; marginal utility is the gain from one more unit. Experience shows the first units of anything — a glass of water when thirsty, an hour of leisure after work — are the most valued, and each repeat delivers less. This single observation explains a surprising amount of economics: demand curves slope downward because buyers will only purchase extra units at lower prices; consumer choice spreads spending across goods so the last dollar yields similar satisfaction everywhere (equal marginal utility per dollar); and progressive taxation leans on the idea that a dollar means less to someone who already has many. It also underpins price discrimination — heavy users who have passed the steep part of the curve still value extra units enough to buy them.",
+    "key_properties": [
+      {
+        "property": "Core law",
+        "value": "Marginal utility per extra unit declines with consumption"
+      },
+      {
+        "property": "Explains",
+        "value": "Downward-sloping demand and price sensitivity of heavy users"
+      },
+      {
+        "property": "Consumer optimum",
+        "value": "MU per dollar equalized across all goods"
+      },
+      {
+        "property": "Cardinal vs ordinal",
+        "value": "Modern theory needs only ranked preferences, not measurable utils"
+      }
+    ],
+    "applications": [
+      "Bundle and tiered pricing: pricing extra usage lower to capture more sales.",
+      "Public finance: justification for progressive tax schedules.",
+      "Portfolio choice: diversification because each additional identical bet adds less new value."
+    ],
+    "aliases": [
+      {
+        "alias": "Law of Diminishing Utility",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Falling Marginal Satisfaction",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Total satisfaction keeps falling once diminishing returns set in.",
+        "correction_text": "Marginal (extra) utility falls, but total utility still rises — just more slowly — until marginal utility reaches zero.",
+        "explanation": "Diminishing describes the increment, not the cumulative amount of satisfaction."
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_externalities_negative_carbon_",
+    "name": "Negative Externalities",
+    "summary_definition": "A negative externality is a cost imposed on third parties who are not part of a transaction — pollution from a factory harms neighbors who neither produce nor buy the factory's output, so the private market overproduces the harmful good.",
+    "primary_explanation": "When a producer or consumer does not pay the full social cost of an action, decisions based on private cost alone overshoot the efficient level. A mill dumping waste into a river accounts for labor and materials but not the downstream fishing losses, so it prices output too low and makes too much of it: at the market quantity, the social cost curve lies above the demand curve, and the wedge between them — summed over the excess units — is deadweight loss. Remedies follow the same logic as the problem: Pigouvian taxes price the harm back into the decision, cap-and-trade systems limit total harm while letting firms find the cheapest reductions, and regulation sets floors directly. The Coase theorem adds that if property rights are clear and bargaining is cheap, private parties can sometimes solve it themselves.",
+    "key_properties": [
+      {
+        "property": "Direction",
+        "value": "Cost falls on bystanders outside the transaction"
+      },
+      {
+        "property": "Market result",
+        "value": "Overproduction relative to the social optimum"
+      },
+      {
+        "property": "Classic examples",
+        "value": "Carbon emissions, noise, second-hand smoke, river pollution"
+      },
+      {
+        "property": "Standard fixes",
+        "value": "Pigouvian tax, cap-and-trade, command-and-control regulation, liability rules"
+      }
+    ],
+    "applications": [
+      "Carbon pricing: emissions taxes and tradable permit systems.",
+      "Urban policy: congestion charges for traffic externalities.",
+      "Noise and light ordinances priced through fines near airports."
+    ],
+    "aliases": [
+      {
+        "alias": "External Cost",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Spillover Cost",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Pollution Externality",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Externalities are always illegal or intentional.",
+        "correction_text": "Externalities are often lawful side effects — a warm sidewalk grill warms passers-by too — the term describes economics, not ethics or law.",
+        "explanation": "The concept covers any uncompensated third-party effect, good or bad, intentional or accidental."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_pigouvian_taxes_internalizing_",
+        "relationship_type": "related_to",
+        "description": "The standard tax remedy for external costs.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_public_goods_non_excludable_ri",
+    "name": "Public Goods",
+    "summary_definition": "Public goods are goods that are non-excludable (people cannot be prevented from using them) and non-rivalrous (one person's use does not reduce availability for others) — street lighting being the textbook example.",
+    "primary_explanation": "Non-excludability defeats the profit motive: once the lighthouse shines, no ship can be billed, so private firms underprovide the good even though society values it. Non-rivalry means exclusion is wasteful — an empty seat on a bridge costs nothing extra to carry, so pricing users away destroys surplus. Together the two properties produce the free-rider problem: everyone prefers to let others pay, and the good goes underfunded. This is the standard economic justification for government provision through taxation. Many real goods are impure commons — forests, fisheries, bandwidth — rivalrous but hard to exclude; these invite tragedy-of-the-commons overuse instead of underprovision, managed by quotas, licenses, or community rules.",
+    "key_properties": [
+      {
+        "property": "Excludability",
+        "value": "Non-excludable — usage cannot practically be blocked"
+      },
+      {
+        "property": "Rivalry",
+        "value": "Non-rivalrous — one person's use does not subtract from others"
+      },
+      {
+        "property": "Failure mode",
+        "value": "Free riding leads to private underprovision"
+      },
+      {
+        "property": "Related category",
+        "value": "Common-pool resources are rivalrous but non-excludable"
+      }
+    ],
+    "applications": [
+      "Public finance: justifying tax funding for defense, basic research, and street lighting.",
+      "Digital goods: open-source software and standards with near-zero marginal cost.",
+      "Spectrum policy: shared radio bands managed as commons."
+    ],
+    "aliases": [
+      {
+        "alias": "Non-Rival Non-Excludable Good",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Collective Good",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Public good means provided by the government.",
+        "correction_text": "The economic definition is about excludability and rivalry, not ownership — a privately donated fireworks display is still a public good.",
+        "explanation": "Government provision is a consequence of the free-rider problem, not part of the definition."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_tragedy_of_the_commons_overuse",
+        "relationship_type": "related_to",
+        "description": "Common-pool resources share non-excludability but are rivalrous.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_price_ceilings_shortage_lines",
+    "name": "Price Ceilings",
+    "summary_definition": "A price ceiling is a legal maximum price set below the market-clearing level — designed to keep essentials affordable, it instead creates persistent shortages because quantity demanded exceeds quantity supplied.",
+    "primary_explanation": "Rent control, fuel-price caps, and wartime price limits all share one mechanism: held below equilibrium, the ceiling makes the good cheaper, so buyers want more while sellers offer less. The gap is the shortage — queues, rationing, black markets, and quality erosion substitute for the price signal that would have cleared the market. Suppliers cut quality rather than sell below cost (landlords stop repairing buildings), and connections replace price as the allocation device. Economists distinguish short-run relief (tenants already housed gain) from long-run decay (builders stop building, so supply shrinks further). Ceilings above equilibrium are harmless but pointless; the damage appears only when the cap binds below the clearing price.",
+    "key_properties": [
+      {
+        "property": "Binding condition",
+        "value": "Must sit below the equilibrium price to have effect"
+      },
+      {
+        "property": "Result",
+        "value": "Shortage = quantity demanded − quantity supplied"
+      },
+      {
+        "property": "Non-price rationing",
+        "value": "Queues, lotteries, connections, black markets"
+      },
+      {
+        "property": "Long-run effect",
+        "value": "Supply contracts as investment becomes unprofitable"
+      }
+    ],
+    "applications": [
+      "Housing policy analysis: evaluating rent-control ordinances.",
+      "Crisis policy: price gouging laws after disasters (with trade-off awareness).",
+      "Utility rate-setting: capped electricity prices and their rationing effects."
+    ],
+    "aliases": [
+      {
+        "alias": "Maximum Price Control",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Rent Control (housing instance)",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Capping prices makes goods more available to the poor.",
+        "correction_text": "Capped prices reduce the quantity available; without rationing rules the good may go to whoever is best connected rather than neediest.",
+        "explanation": "Affordability rises per unit while availability falls — a shortage is the hidden cost of the cap."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "A ceiling freezes price below the supply-demand clearing point.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_micro_perfect_competition_price_take",
+    "name": "Perfect Competition",
+    "summary_definition": "Perfect competition describes a market with many small firms selling an identical product, free entry and exit, and full information — conditions under which no firm can influence price and each is a price taker.",
+    "primary_explanation": "When thousands of sellers offer interchangeable goods and buyers know all prices, any firm charging above the market loses every customer, so it must accept the prevailing price. Profit then does the regulating: above-normal earnings attract entrants, supply expands, and price falls to the level where firms just cover all costs including a normal return on capital — zero economic profit in long-run equilibrium. The result is efficient: price equals marginal cost (allocative efficiency) and firms are forced onto their lowest possible average cost (productive efficiency). Wheat farming, currency dealing, and many online marketplaces approximate the model. Real markets drift from it whenever products differentiate, information hides, or entry barriers block the profit signal.",
+    "key_properties": [
+      {
+        "property": "Price role",
+        "value": "Each firm is a price taker facing a perfectly elastic demand curve"
+      },
+      {
+        "property": "Product",
+        "value": "Homogeneous — buyers see no difference between sellers"
+      },
+      {
+        "property": "Entry/exit",
+        "value": "Free in the long run, eroding economic profit to zero"
+      },
+      {
+        "property": "Efficiency",
+        "value": "P = MC in equilibrium; firms produce at minimum average cost"
+      }
+    ],
+    "applications": [
+      "Benchmark for judging real markets (agriculture, exchanges, commodity trading).",
+      "Antitrust analysis: testing how far actual markets deviate from competition.",
+      "Platform design: making marketplaces behave more like competitive auctions."
+    ],
+    "aliases": [
+      {
+        "alias": "Atomistic Competition",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Price-Taker Market",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Firms in perfect competition never earn profit.",
+        "correction_text": "They earn normal profit continuously; economic (above-normal) profit is driven to zero only in long-run equilibrium.",
+        "explanation": "Accounting profit can be healthy while economic profit — return above the next-best alternative — sits at zero."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_micro_monopoly_single_seller_price_m",
+        "relationship_type": "related_to",
+        "description": "Monopoly is the opposite extreme: one price maker.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_supply_demand",
+        "relationship_type": "related_to",
+        "description": "Equilibrium forms from the interaction of many price-taking buyers and sellers.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_gross_domestic_product_gdp_out",
+    "name": "Gross Domestic Product (GDP)",
+    "summary_definition": "Gross domestic product is the market value of all final goods and services produced within a country's borders in a given period — the standard scoreboard of an economy's size and growth.",
+    "primary_explanation": "GDP can be measured three ways that must agree: the expenditure approach adds consumption, investment, government spending, and net exports (C + I + G + NX); the income approach sums wages, rents, interest, and profits; the production approach totals value added at each stage of output. Only final goods count to avoid double counting intermediate inputs, which is why value added is used. Real GDP deflates nominal figures by a price index so growth reflects output rather than inflation. GDP ignores unpaid household work, leisure quality, environmental damage, and inequality — a country can grow while wellbeing stagnates. It remains the cleanest comparable measure of production, used to date recessions via quarters of decline and to size fiscal responses.",
+    "key_properties": [
+      {
+        "property": "Expenditure identity",
+        "value": "GDP = C + I + G + (X − M)"
+      },
+      {
+        "property": "Scope",
+        "value": "Final goods and services produced domestically within the period"
+      },
+      {
+        "property": "Real vs nominal",
+        "value": "Real GDP removes price effects using a deflator"
+      },
+      {
+        "property": "Known exclusions",
+        "value": "Informal economy, household production, environmental costs, distribution"
+      }
+    ],
+    "applications": [
+      "Recession dating: two consecutive quarters of declining real GDP.",
+      "Fiscal sizing: debt-to-GDP and deficit-to-GDP ratios.",
+      "Cross-country comparison of economic scale and productivity."
+    ],
+    "aliases": [
+      {
+        "alias": "GDP",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Gross Domestic Product",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Output Expenditure Aggregate",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "GDP measures a country's welfare or happiness.",
+        "correction_text": "GDP measures production; it excludes leisure, inequality, unpaid work, and environmental quality, so welfare can diverge from GDP.",
+        "explanation": "GDP answers 'how much did we produce?', not 'how well did we live?' — alternative indices like HDI cover the gap."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_nominal_vs_real_gdp_deflator_i",
+        "relationship_type": "related_to",
+        "description": "The deflator separates output growth from price growth.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_inflation_purchasing_power_ero",
+        "relationship_type": "related_to",
+        "description": "Inflation erodes the purchasing power that nominal GDP figures imply.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_inflation_purchasing_power_ero",
+    "name": "Inflation",
+    "summary_definition": "Inflation is a sustained rise in the general price level, which erodes purchasing power — the same money buys fewer goods and services than before.",
+    "primary_explanation": "Inflation is measured with price indexes such as the CPI (a basket of consumer goods) or the GDP deflator (all output). Its two main engines are cost-push — wages, energy, or supply shocks raising production costs — and demand-pull — spending growing faster than productive capacity, as when money supply expands or fiscal stimulus hits a constrained economy. Expected inflation becomes self-fulfilling: workers demand higher wages, firms pre-raise prices, and the spiral continues. Moderate inflation around 2% is tolerated because it lubricates adjustment — it lets real wages fall without nominal cuts and gives central banks room to cut real rates below zero. Beyond that, distortion grows: menu costs, bracket creep in taxes, and savers watching cash decay. Deflation, its mirror, is rarer and more dangerous because it postpones spending and enlarges debt burdens.",
+    "key_properties": [
+      {
+        "property": "Primary measure",
+        "value": "CPI and GDP deflator, year-over-year percentage change"
+      },
+      {
+        "property": "Demand-pull driver",
+        "value": "Spending exceeds capacity; 'too much money chasing too few goods'"
+      },
+      {
+        "property": "Cost-push driver",
+        "value": "Wage, energy, or supply-chain shocks raise unit costs"
+      },
+      {
+        "property": "Common target",
+        "value": "~2% per year — enough to avoid deflation's trap"
+      }
+    ],
+    "applications": [
+      "Central bank policy: inflation targeting sets interest rates.",
+      "Contracts: indexing rents, wages, and benefits to CPI.",
+      "Personal finance: comparing real vs nominal returns on savings."
+    ],
+    "aliases": [
+      {
+        "alias": "Price-Level Inflation",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Purchasing Power Erosion",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Inflation means all prices rise equally.",
+        "correction_text": "Inflation is an average; specific prices jump or fall at different rates — recent years saw groceries rise faster than electronics.",
+        "explanation": "The index aggregates thousands of items whose individual paths differ widely, which is why inflation feels different from household to household."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_consumer_price_index_cpi_baske",
+        "relationship_type": "related_to",
+        "description": "The CPI is the main instrument used to measure inflation.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_monetary_policy_central_bank_m",
+        "relationship_type": "related_to",
+        "description": "Central banks raise rates to cool excessive inflation.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_unemployment_rate_labor_force_",
+    "name": "Unemployment Rate",
+    "summary_definition": "The unemployment rate is the share of the labor force without a job, actively seeking work, and available to start — unemployed people who stop looking are no longer counted.",
+    "primary_explanation": "The rate is computed as unemployed divided by the labor force, where the labor force equals employed plus actively job-hunting unemployed; people not searching (students, retirees, discouraged workers) sit outside both. That definition makes the headline number sensitive to participation: if discouraged workers stop applying, unemployment can fall without anyone finding a job. Economists separate frictional unemployment (normal search between jobs), structural unemployment (skills or regions mismatched with vacancies), and cyclical unemployment (shortfalls during recessions). The sum of frictional and structural is the natural rate — the level consistent with stable inflation, around 4–5% in the US. Policymakers watch new claims, long-term shares, and prime-age participation to judge slack beneath the headline.",
+    "key_properties": [
+      {
+        "property": "Formula",
+        "value": "Unemployed / labor force × 100"
+      },
+      {
+        "property": "Counting rule",
+        "value": "Must be actively searching and available to work"
+      },
+      {
+        "property": "Types",
+        "value": "Frictional (search), structural (mismatch), cyclical (recession)"
+      },
+      {
+        "property": "Natural rate",
+        "value": "Frictional + structural; consistent with stable inflation"
+      }
+    ],
+    "applications": [
+      "Policy triggers: extended benefits activate at set unemployment thresholds.",
+      "Business cycles: payroll and claims data forecast consumer spending.",
+      "Regional development: targeting retraining where structural rates run high."
+    ],
+    "aliases": [
+      {
+        "alias": "Jobless Rate",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Headline Unemployment (U-3)",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "The unemployment rate counts everyone without a job.",
+        "correction_text": "Discouraged workers who have stopped job hunting are excluded, so the official rate can understate true labor-market slack.",
+        "explanation": "Participation and the headline rate move together — always read them as a pair."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_natural_rate_of_unemployment_n",
+        "relationship_type": "related_to",
+        "description": "The natural rate is the unemployment level with stable inflation.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_okuns_law_gdp_unemployment_lin",
+        "relationship_type": "related_to",
+        "description": "Okun's law links unemployment gaps to GDP output.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_monetary_policy_central_bank_m",
+    "name": "Monetary Policy",
+    "summary_definition": "Monetary policy is the management of money supply and interest rates by a central bank — such as the US Federal Reserve — to promote price stability, full employment, and financial stability.",
+    "primary_explanation": "A central bank's main lever is the policy rate: the interest rate at which commercial banks borrow short-term. Raising it makes borrowing dearer, cooling spending and investment until price pressure eases; cutting it stimulates borrowing, spending, and asset prices when the economy weakens. Beyond rates, banks use open-market operations (buying or selling government bonds), reserve requirements, and — when rates hit zero — quantitative easing (purchasing longer-term assets to push down longer-term yields). Transmission runs through bank lending, exchange rates, asset valuations, and expectations. Independence matters: when fiscal authorities also control the money printer, inflationary temptation grows, which is why modern central banks target inflation explicitly, around 2%.",
+    "key_properties": [
+      {
+        "property": "Primary tool",
+        "value": "Policy interest rate (federal funds rate, refinancing rate)"
+      },
+      {
+        "property": "Secondary tools",
+        "value": "Open-market operations, reserve requirements, quantitative easing"
+      },
+      {
+        "property": "Typical mandate",
+        "value": "Price stability plus maximum employment"
+      },
+      {
+        "property": "Transmission",
+        "value": "Rates → lending, spending, exchange rate, asset prices, expectations"
+      }
+    ],
+    "applications": [
+      "Inflation control: raising rates to slow demand-pull inflation.",
+      "Recession response: cutting rates and buying assets to lower long-term yields.",
+      "Currency management: rate differentials attract or repel foreign capital."
+    ],
+    "aliases": [
+      {
+        "alias": "Central Bank Policy",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Interest Rate Policy",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Repo and OMO Policy",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Central banks set the mortgage rate directly.",
+        "correction_text": "They set the overnight policy rate; mortgage rates follow longer-term bond yields, which respond to but are not identical with policy.",
+        "explanation": "The policy rate anchors the short end of the curve; long-term rates add expectations and risk premium."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_open_market_operations_bond_pu",
+        "relationship_type": "related_to",
+        "description": "Open-market operations are the day-to-day implementation tool.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_fiscal_policy_government_spend",
+        "relationship_type": "related_to",
+        "description": "Monetary and fiscal policy are complementary demand-management tools.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_fiscal_policy_government_spend",
+    "name": "Fiscal Policy",
+    "summary_definition": "Fiscal policy is the use of government spending and taxation to influence the economy — expanding during downturns to support demand and tightening during booms to prevent overheating.",
+    "primary_explanation": "Government spending injects demand directly: building a bridge pays contractors today, who pay workers, who spend — a chain captured by the fiscal multiplier, which exceeds 1 when the economy has slack and idle workers. Tax cuts work indirectly by leaving households with more to spend, with the effect depending on whether recipients save or consume the windfall. Automatic stabilizers — unemployment benefits, progressive taxes — cushion recessions without new legislation, while discretionary packages (stimulus checks, infrastructure bills) require political action. The trade-off is debt: deficits financed by borrowing raise debt-to-GDP ratios and, at high levels, can crowd out private investment by pushing up interest rates. Sound fiscal policy times support for slack and restraint for heat, keeping the debt path sustainable.",
+    "key_properties": [
+      {
+        "property": "Tools",
+        "value": "Government spending, taxation, and transfer payments"
+      },
+      {
+        "property": "Automatic stabilizers",
+        "value": "Unemployment insurance and progressive taxes adjust without legislation"
+      },
+      {
+        "property": "Multiplier",
+        "value": "Spending multipliers usually exceed tax multipliers, especially in recessions"
+      },
+      {
+        "property": "Constraint",
+        "value": "Deficits add to public debt; sustainability depends on growth vs interest rates"
+      }
+    ],
+    "applications": [
+      "Stimulus packages during recessions (2008-09, 2020 COVID relief).",
+      "Austerity debates: when and how fast to reduce deficits.",
+      "Structural reform: shifting spending toward productivity-raising investment."
+    ],
+    "aliases": [
+      {
+        "alias": "Budget Policy",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Tax-and-Spend Policy",
+        "alias_type": "colloquial"
+      },
+      {
+        "alias": "Fiscal Stance",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Government spending must be cut first in every recession.",
+        "correction_text": "Standard countercyclical policy does the opposite: spending rises in downturns to offset collapsing private demand, then tightens in recoveries.",
+        "explanation": "Fiscal policy acts as a stabilizer — pulling the same direction as the cycle deepens it; acting against it smooths it."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_expansionary_vs_contractionary",
+        "relationship_type": "related_to",
+        "description": "The two stances of fiscal policy across the cycle.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_crowding_out_effect_interest_r",
+        "relationship_type": "related_to",
+        "description": "Deficit spending can raise rates and crowd out private investment.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_aggregate_demand_downward_slop",
+    "name": "Aggregate Demand",
+    "summary_definition": "Aggregate demand (AD) is the total spending on a nation's output at each price level — the sum of consumption, investment, government purchases, and net exports; it slopes downward because higher prices reduce real wealth, raise interest rates, and make exports dearer.",
+    "primary_explanation": "Three effects explain why AD slopes down. Wealth effect: higher prices shrink the real value of cash and bonds, so households spend less. Interest-rate effect: price-level rises increase money demand, pushing rates up and discouraging borrowing for homes and capital. Exchange-rate effect: higher domestic prices make exports costly and imports cheap, cutting net exports. AD shifts with consumer confidence, interest rates, fiscal policy, exchange rates, and foreign income. Its interaction with aggregate supply determines the price level and output: in the short run, upward-sloping SRAS means demand shocks move both prices and jobs; in the long run, vertical LRAS at potential output means only prices adjust. Demand management is the central debate of macroeconomics.",
+    "key_properties": [
+      {
+        "property": "Components",
+        "value": "AD = C + I + G + (X − M)"
+      },
+      {
+        "property": "Downward slope causes",
+        "value": "Wealth, interest-rate, and exchange-rate effects"
+      },
+      {
+        "property": "Shifters",
+        "value": "Confidence, rates, fiscal policy, exchange rates, foreign income"
+      },
+      {
+        "property": "Equilibrium partner",
+        "value": "Intersects short-run and long-run aggregate supply"
+      }
+    ],
+    "applications": [
+      "Diagnosing demand-pull inflation vs supply shocks.",
+      "Modeling stimulus impact on output and prices.",
+      "Scenario analysis for currency or rate changes on net exports."
+    ],
+    "aliases": [
+      {
+        "alias": "AD",
+        "alias_type": "acronym"
+      },
+      {
+        "alias": "Total Expenditure Curve",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Aggregate demand is the same as consumer spending.",
+        "correction_text": "Consumer spending is the largest part (roughly two-thirds in the US) but AD also includes investment, government purchases, and net exports.",
+        "explanation": "The C + I + G + NX decomposition shows all four spending channels."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_aggregate_supply_short_vs_long",
+        "relationship_type": "related_to",
+        "description": "AD and AS together determine price level and output.",
+        "weight": 0.95,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_gross_domestic_product_gdp_out",
+        "relationship_type": "related_to",
+        "description": "AD is the spending view of GDP.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_money_multiplier_fractional_re",
+    "name": "Money Multiplier",
+    "summary_definition": "The money multiplier is the ratio by which the money supply exceeds the monetary base: with fractional-reserve banking, each dollar of reserves supports several dollars of deposits as banks re-lend what they hold.",
+    "primary_explanation": "When a customer deposits $100 with a 10% reserve requirement, the bank keeps $10 and lends $90; that $90 is spent and redeposited elsewhere, of which $9 is reserved and $81 re-lent — the process repeats, expanding deposits toward 1/0.10 = 10 times the original base in the textbook model. The ceiling is set by the reserve ratio, but the actual multiplier depends on banks' willingness to lend and the public's preference for holding cash rather than deposits; in a crisis both collapse and the multiplier shrinks even if the central bank prints base money. Modern systems often use interest-on-reserves and ample-reserves frameworks where the multiplier is managed less by ratios and more by the policy rate itself.",
+    "key_properties": [
+      {
+        "property": "Textbook formula",
+        "value": "Multiplier = 1 / reserve ratio (m = 1/r)"
+      },
+      {
+        "property": "Process",
+        "value": "Successive re-lending of deposits expands the money supply"
+      },
+      {
+        "property": "Leakages",
+        "value": "Cash holdings and excess reserves reduce the realized multiplier"
+      },
+      {
+        "property": "Regime note",
+        "value": "Under ample-reserves frameworks the multiplier is no longer the binding constraint"
+      }
+    ],
+    "applications": [
+      "Explaining how bank lending creates money beyond central-bank base money.",
+      "Stress scenarios: why credit booms and collapses amplify monetary policy.",
+      "Reserve-requirement cuts as a stimulus tool (used heavily in emerging markets)."
+    ],
+    "aliases": [
+      {
+        "alias": "Deposit Multiplier",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Credit Multiplier",
+        "alias_type": "synonym"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Banks lend out their customers' deposits directly.",
+        "correction_text": "Lending creates new deposits — money is created by the loan, not pre-existing and handed over; reserves settle obligations between banks.",
+        "explanation": "In modern banking, loans come first and deposits follow; reserves constrain the system but are not lent one-for-one."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_reserve_requirements_fractiona",
+        "relationship_type": "related_to",
+        "description": "Reserve requirements set the textbook multiplier's denominator.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_fiat_money_legal_tender_confid",
+        "relationship_type": "related_to",
+        "description": "The whole multiplier chain rests on trust in fiat money.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  },
+  {
+    "id": "c_cat_econ_macro_business_cycle_expansion_peak_",
+    "name": "Business Cycle",
+    "summary_definition": "The business cycle is the recurring alternation between economic expansion and contraction — expansions build toward a peak, contraction (recession) bottoms at a trough, and recovery begins again.",
+    "primary_explanation": "Output, employment, income, and spending fluctuate around a long-run growth trend. During expansion, confidence and credit amplify each other: firms hire and invest, incomes rise, spending rises further. Near the peak, capacity constraints appear — vacancies tighten, inflation builds, central banks raise rates. Contraction follows when spending disappoints inventories and balance sheets: firms cut production and workers, pessimism feeds back, until pricing and inventory adjustment clears the way for recovery. Recessions are conventionally two or more quarters of falling real GDP (the NBER uses broader judgment including employment and income). Depth and duration vary — the 2008-09 crisis was slow and financial; 2020's was abrupt and external. Recessions purge malinvestment and reset expectations, but at real human cost.",
+    "key_properties": [
+      {
+        "property": "Phases",
+        "value": "Expansion → peak → contraction/recession → trough → recovery"
+      },
+      {
+        "property": "Amplifiers",
+        "value": "Credit cycles, inventory adjustment, confidence feedback"
+      },
+      {
+        "property": "Common definition",
+        "value": "Two consecutive quarters of declining real GDP (NBER: broader)"
+      },
+      {
+        "property": "Underlying trend",
+        "value": "Fluctuations occur around long-run productivity-driven growth"
+      }
+    ],
+    "applications": [
+      "Asset allocation: adjusting risk exposure by cycle phase.",
+      "Inventory and hiring plans for cyclical industries.",
+      "Policy timing: staging stimulus before the trough, not after recovery."
+    ],
+    "aliases": [
+      {
+        "alias": "Economic Cycle",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Growth Cycle",
+        "alias_type": "synonym"
+      },
+      {
+        "alias": "Boom-Bust Cycle",
+        "alias_type": "colloquial"
+      }
+    ],
+    "misconceptions": [
+      {
+        "misconception_text": "Recessions mean the economy is shrinking forever.",
+        "correction_text": "A recession is a temporary deviation below trend; economies typically resume growth from the trough, often regaining prior peaks within years.",
+        "explanation": "Cycles are fluctuations around an upward path — the trend and the cycle are separate phenomena."
+      }
+    ],
+    "relationships": [
+      {
+        "target_concept_id": "c_cat_econ_macro_cyclical_unemployment_recessio",
+        "relationship_type": "related_to",
+        "description": "Cyclical unemployment is the labor-market face of contraction.",
+        "weight": 0.9,
+        "is_bidirectional": false
+      },
+      {
+        "target_concept_id": "c_cat_econ_macro_keynesian_economics_multiplier",
+        "relationship_type": "related_to",
+        "description": "Keynesian theory addresses demand collapses during downturns.",
+        "weight": 0.85,
+        "is_bidirectional": false
+      }
+    ]
+  }
+]

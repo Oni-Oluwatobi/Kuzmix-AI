@@ -1,0 +1,67 @@
+[
+  {
+    "family_id": "fam_classical_mechanics",
+    "name": "Newtonian Classical Mechanics Family",
+    "domain_id": "sci_math",
+    "description": "Foundational physical laws governing motion, forces, momentum, energy conservation, and gravitation.",
+    "concepts": [
+      "c_gravity",
+      "c_newtons_laws",
+      "c_conservation_energy"
+    ]
+  },
+  {
+    "family_id": "fam_electrical_systems",
+    "name": "Circuit Theory & Electrical Systems",
+    "domain_id": "eng_tech",
+    "description": "Electromotive force, resistance, Ohm's law, domestic wiring, and electrical utility safety.",
+    "concepts": [
+      "c_ohms_law",
+      "c_domestic_electrical"
+    ]
+  },
+  {
+    "family_id": "fam_algorithms_data_structures",
+    "name": "Computational Complexity & Data Structures",
+    "domain_id": "computing_ai",
+    "description": "Asymptotic analysis (Big-O), associative arrays (Hash Tables), and search algorithms.",
+    "concepts": [
+      "c_big_o_notation",
+      "c_hash_table",
+      "c_rag",
+      "c_transformer_arch"
+    ]
+  },
+  {
+    "family_id": "fam_market_economics",
+    "name": "Microeconomic Foundations & Valuation",
+    "domain_id": "business_econ",
+    "description": "Supply/demand equilibrium, opportunity cost, and compound interest calculations.",
+    "concepts": [
+      "c_supply_demand",
+      "c_opportunity_cost",
+      "c_compound_interest"
+    ]
+  },
+  {
+    "family_id": "fam_cognitive_science",
+    "name": "Epistemology & Cognitive Architecture",
+    "domain_id": "humanities",
+    "description": "Empirical falsifiability, working memory constraints, and heuristic decision biases.",
+    "concepts": [
+      "c_scientific_falsifiability",
+      "c_working_memory",
+      "c_cognitive_biases"
+    ]
+  },
+  {
+    "family_id": "fam_constitutional_governance",
+    "name": "Constitutional Law & Governance Structures",
+    "domain_id": "society_culture",
+    "description": "Separation of powers, checks and balances, and the procedural rule of law.",
+    "concepts": [
+      "c_separation_of_powers",
+      "c_rule_of_law"
+    ]
+  }
+]

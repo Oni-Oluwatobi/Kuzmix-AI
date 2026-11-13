@@ -1,0 +1,72 @@
+[
+  {
+    "source_concept_id": "c_cat_math_calculus_partial_derivatives",
+    "target_concept_id": "c_cat_eng_robotics_jacobian_velocity_kinematics_s",
+    "relationship_type": "governed_by",
+    "description": "Calculus derivatives formally define instantaneous velocity as dx/dt.",
+    "weight": 0.95
+  },
+  {
+    "source_concept_id": "c_cat_math_algebra_eigenvalues_eigenvectors",
+    "target_concept_id": "c_cat_physics_quantum_quantum_superposition_states",
+    "relationship_type": "governed_by",
+    "description": "Observable physical states in quantum mechanics correspond to eigenvalues of Hermitian operators.",
+    "weight": 0.95
+  },
+  {
+    "source_concept_id": "c_cat_math_algebra_singular_value_decomposition",
+    "target_concept_id": "c_transformer_arch",
+    "relationship_type": "used_for",
+    "description": "SVD enables low-rank matrix factorization (LoRA) for efficient LLM parameter adaptation.",
+    "weight": 0.9
+  },
+  {
+    "source_concept_id": "c_cat_chem_general_valence_electron_bonding",
+    "target_concept_id": "c_cat_eng_materials_composite_materials_fiber_matr",
+    "relationship_type": "prerequisite_of",
+    "description": "Covalent electron sharing binds repeating monomer chains into structural polymers.",
+    "weight": 0.9
+  },
+  {
+    "source_concept_id": "c_cat_chem_physical_electrochemical_galvanic_cells",
+    "target_concept_id": "c_cat_eng_energy_lithium_ion_battery_intercalat",
+    "relationship_type": "application_of",
+    "description": "Galvanic cell redox reactions supply direct electrical current in lithium-ion and alkaline batteries.",
+    "weight": 0.95
+  },
+  {
+    "source_concept_id": "c_cat_health_physiology_action_potential_depolarizatio",
+    "target_concept_id": "c_cat_hum_psychology_neuroplasticity_synaptic_pruni",
+    "relationship_type": "causes",
+    "description": "Axonal action potentials trigger neurotransmitter exocytosis across synaptic junctions.",
+    "weight": 0.95
+  },
+  {
+    "source_concept_id": "c_working_memory",
+    "target_concept_id": "c_cat_hum_psychology_cognitive_load_theory_sweller_",
+    "relationship_type": "prerequisite_of",
+    "description": "Working memory limits (7\u00b12 chunks) dictate cognitive load boundaries in instructional design.",
+    "weight": 0.9
+  },
+  {
+    "source_concept_id": "c_cat_math_probability_central_limit_theorem",
+    "target_concept_id": "c_cat_math_probability_hypothesis_testing",
+    "relationship_type": "prerequisite_of",
+    "description": "CLT guarantees sampling distributions approach normality, validating z-tests and t-tests.",
+    "weight": 0.95
+  },
+  {
+    "source_concept_id": "c_cat_econ_micro_opportunity_cost_scarcity_trad",
+    "target_concept_id": "c_cat_biz_marketing_consumer_decision_journey_funn",
+    "relationship_type": "influenced_by",
+    "description": "Sunk cost fallacy causes economic actors to miscalculate opportunity costs by honoring past unrecoverable expenses.",
+    "weight": 0.9
+  },
+  {
+    "source_concept_id": "c_cat_art_design_gestalt_law_of_proximity_spati",
+    "target_concept_id": "c_cat_art_typography_serif_readability_book_print_l",
+    "relationship_type": "application_of",
+    "description": "Gestalt proximity and similarity dictate optimal typographic leading and visual header hierarchy.",
+    "weight": 0.95
+  }
+]

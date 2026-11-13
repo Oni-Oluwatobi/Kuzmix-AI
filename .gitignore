@@ -1,0 +1,57 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+release/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Android Studio
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystores (never commit signing material)
+*.jks
+*.keystore
+
+# Intermediate DB snapshots (the final sqlite is LFS-tracked below)
+*.bak.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build/test logs
+*.log
+
+# Node tooling (knowledge-core pipeline; regenerable via npm install)
+node_modules/
+
+# Kotlin/Gradle daemon state
+.kotlin/
+
+# Python bytecode
+__pycache__/
+*.pyc

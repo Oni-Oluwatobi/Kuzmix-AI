@@ -1,0 +1,6121 @@
+{
+  "concepts": [
+    {
+      "id": "concept.economics.scarcity",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Scarcity",
+      "aliases": [
+        "resource scarcity"
+      ],
+      "definition": "Scarcity means resources are limited relative to unlimited wants, and scarcity creates the need for choice.",
+      "keywords": [
+        "scarcity",
+        "resources",
+        "wants",
+        "limited",
+        "unlimited",
+        "choice"
+      ],
+      "related": [
+        "Opportunity Cost",
+        "Basic Economic Problem",
+        "Factors of Production"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.opportunity_cost",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Opportunity Cost",
+      "aliases": [
+        "trade-off"
+      ],
+      "definition": "Opportunity cost is the value of the next best alternative forgone when a choice is made.",
+      "keywords": [
+        "opportunity cost",
+        "alternative",
+        "choice",
+        "forgone",
+        "decision",
+        "scarcity"
+      ],
+      "related": [
+        "Scarcity",
+        "Basic Economic Problem"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.demand",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Demand",
+      "aliases": [
+        "consumer demand"
+      ],
+      "definition": "Demand is the quantity of a good or service consumers are willing and able to buy at different prices under specified conditions during a given period.",
+      "keywords": [
+        "consumers",
+        "willing and able",
+        "price",
+        "quantity",
+        "market",
+        "buy"
+      ],
+      "related": [
+        "Supply",
+        "Law of Demand",
+        "Market Equilibrium",
+        "Price Elasticity of Demand"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.supply",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Supply",
+      "aliases": [],
+      "definition": "Supply is the quantity of a good or service producers are willing and able to sell at different prices under specified conditions.",
+      "keywords": [
+        "producers",
+        "price",
+        "quantity",
+        "sell",
+        "market"
+      ],
+      "related": [
+        "Demand",
+        "Law of Supply",
+        "Market Equilibrium"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.market_equilibrium",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Market Equilibrium",
+      "aliases": [
+        "equilibrium"
+      ],
+      "definition": "A simplified market equilibrium occurs where quantity demanded equals quantity supplied.",
+      "keywords": [
+        "equilibrium",
+        "quantity demanded",
+        "quantity supplied",
+        "market",
+        "price"
+      ],
+      "related": [
+        "Demand",
+        "Supply",
+        "Law of Demand",
+        "Law of Supply"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.inflation",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Inflation",
+      "aliases": [
+        "price inflation"
+      ],
+      "definition": "Inflation is a sustained increase in the general price level over time.",
+      "keywords": [
+        "inflation",
+        "price level",
+        "general prices",
+        "rising prices",
+        "time"
+      ],
+      "related": [
+        "Monetary Policy",
+        "GDP",
+        "Fiscal Policy",
+        "Interest Rate"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.unemployment",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Unemployment",
+      "aliases": [],
+      "definition": "Unemployment is a condition involving people who are available for and seeking work but do not currently have employment, subject to the statistical definition being used.",
+      "keywords": [
+        "unemployment",
+        "employment",
+        "work",
+        "job seekers",
+        "labour",
+        "statistics"
+      ],
+      "related": [
+        "GDP",
+        "Factors of Production",
+        "Fiscal Policy"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.state",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "State",
+      "aliases": [
+        "nation-state"
+      ],
+      "definition": "A state is a political entity generally characterized by territory, population, government, and sovereignty.",
+      "keywords": [
+        "state",
+        "territory",
+        "population",
+        "government",
+        "sovereignty"
+      ],
+      "related": [
+        "Citizenship",
+        "Constitution",
+        "Democracy"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.democracy",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Democracy",
+      "aliases": [
+        "democratic system",
+        "representative government"
+      ],
+      "definition": "Democracy is a system in which political authority is exercised directly or through representatives under an established institutional framework.",
+      "keywords": [
+        "democracy",
+        "political authority",
+        "representatives",
+        "direct rule",
+        "institutional framework",
+        "government"
+      ],
+      "related": [
+        "Constitution",
+        "Election",
+        "Rule of Law",
+        "Political Party"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.constitution",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Constitution",
+      "aliases": [
+        "constitutional framework"
+      ],
+      "definition": "A constitution is a fundamental framework establishing institutions, powers, rights, and rules of governance.",
+      "keywords": [
+        "constitution",
+        "framework",
+        "institutions",
+        "powers",
+        "rights",
+        "rules of governance"
+      ],
+      "related": [
+        "Constitutionalism",
+        "Rule of Law",
+        "Separation of Powers"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.separation_of_powers",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Separation of Powers",
+      "aliases": [
+        "division of powers"
+      ],
+      "definition": "Government functions may be distributed among legislature, executive, and judiciary, and separation of powers distributes governmental functions to reduce concentration of authority.",
+      "keywords": [
+        "separation of powers",
+        "legislature",
+        "executive",
+        "judiciary",
+        "distribution of functions",
+        "authority"
+      ],
+      "related": [
+        "Checks and Balances",
+        "Legislature",
+        "Executive",
+        "Judiciary"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.rule_of_law",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Rule of Law",
+      "aliases": [
+        "supremacy of law"
+      ],
+      "definition": "The rule of law is the principle that laws and legal institutions govern public authority and are applied through established legal processes.",
+      "keywords": [
+        "rule of law",
+        "laws",
+        "legal institutions",
+        "public authority",
+        "legal processes"
+      ],
+      "related": [
+        "Constitution",
+        "Constitutionalism",
+        "Judiciary"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.citizenship",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Citizenship",
+      "aliases": [
+        "citizen status"
+      ],
+      "definition": "Citizenship is legal membership in a state, associated with rights and duties under that state's law.",
+      "keywords": [
+        "citizenship",
+        "membership",
+        "state",
+        "rights",
+        "duties",
+        "law"
+      ],
+      "related": [
+        "State",
+        "Human Rights",
+        "Civil Society"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.parts_of_speech",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Parts of Speech",
+      "aliases": [
+        "word classes"
+      ],
+      "definition": "Common parts of speech include noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection, and determiner.",
+      "keywords": [
+        "parts of speech",
+        "noun",
+        "pronoun",
+        "verb",
+        "adjective",
+        "adverb",
+        "preposition",
+        "conjunction",
+        "grammar"
+      ],
+      "related": [
+        "Noun",
+        "Verb",
+        "Clauses",
+        "Adjective"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.sentence_types",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Sentence Types",
+      "aliases": [
+        "types of sentences"
+      ],
+      "definition": "Common sentence types are declarative, interrogative, imperative, and exclamatory.",
+      "keywords": [
+        "sentence types",
+        "declarative",
+        "interrogative",
+        "imperative",
+        "exclamatory",
+        "grammar"
+      ],
+      "related": [
+        "Declarative",
+        "Interrogative",
+        "Imperative",
+        "Exclamatory"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.declarative",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Declarative",
+      "aliases": [
+        "declarative sentence"
+      ],
+      "definition": "A declarative sentence makes a statement.",
+      "keywords": [
+        "declarative",
+        "statement",
+        "sentence",
+        "grammar"
+      ],
+      "related": [
+        "Sentence Types",
+        "Interrogative",
+        "Punctuation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.interrogative",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Interrogative",
+      "aliases": [
+        "interrogative sentence"
+      ],
+      "definition": "An interrogative sentence asks a question.",
+      "keywords": [
+        "interrogative",
+        "question",
+        "sentence",
+        "grammar"
+      ],
+      "related": [
+        "Sentence Types",
+        "Declarative",
+        "Punctuation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.imperative",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Imperative",
+      "aliases": [
+        "imperative sentence"
+      ],
+      "definition": "An imperative sentence gives a command or instruction.",
+      "keywords": [
+        "imperative",
+        "command",
+        "instruction",
+        "sentence",
+        "grammar"
+      ],
+      "related": [
+        "Sentence Types",
+        "Exclamatory"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.exclamatory",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Exclamatory",
+      "aliases": [
+        "exclamatory sentence"
+      ],
+      "definition": "An exclamatory sentence expresses strong feeling.",
+      "keywords": [
+        "exclamatory",
+        "feeling",
+        "emotion",
+        "sentence",
+        "grammar"
+      ],
+      "related": [
+        "Sentence Types",
+        "Imperative",
+        "Punctuation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.clauses",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Clauses",
+      "aliases": [
+        "clause types"
+      ],
+      "definition": "Clauses are classified as independent clauses, which can function as complete sentences, and dependent clauses, which cannot normally stand alone as complete sentences.",
+      "keywords": [
+        "clauses",
+        "independent clause",
+        "dependent clause",
+        "sentence",
+        "grammar"
+      ],
+      "related": [
+        "Independent Clause",
+        "Dependent Clause",
+        "Sentence Types"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.independent_clause",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Independent Clause",
+      "aliases": [
+        "main clause"
+      ],
+      "definition": "An independent clause can function as a complete sentence.",
+      "keywords": [
+        "independent clause",
+        "complete sentence",
+        "clause",
+        "grammar"
+      ],
+      "related": [
+        "Clauses",
+        "Dependent Clause"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.dependent_clause",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Dependent Clause",
+      "aliases": [
+        "subordinate clause"
+      ],
+      "definition": "A dependent clause cannot normally stand alone as a complete sentence.",
+      "keywords": [
+        "dependent clause",
+        "subordinate clause",
+        "clause",
+        "grammar"
+      ],
+      "related": [
+        "Clauses",
+        "Independent Clause"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.figures_of_speech",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Figures of Speech",
+      "aliases": [
+        "Common Figures of Speech",
+        "figurative language"
+      ],
+      "definition": "Common figures of speech include simile, metaphor, personification, hyperbole, irony, oxymoron, alliteration, and onomatopoeia.",
+      "keywords": [
+        "figures of speech",
+        "simile",
+        "metaphor",
+        "rhetoric",
+        "language",
+        "poetry"
+      ],
+      "related": [
+        "Simile",
+        "Metaphor",
+        "Irony",
+        "Personification"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.simile",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Simile",
+      "aliases": [],
+      "definition": "Simile is one of the common figures of speech listed alongside metaphor, personification, hyperbole, irony, oxymoron, alliteration, and onomatopoeia.",
+      "keywords": [
+        "simile",
+        "figure of speech",
+        "comparison",
+        "language",
+        "poetry"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Metaphor"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.metaphor",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Metaphor",
+      "aliases": [
+        "metaphorical figure"
+      ],
+      "definition": "Metaphor is a common figure of speech, listed alongside simile, personification, hyperbole, irony, oxymoron, alliteration, and onomatopoeia.",
+      "keywords": [
+        "metaphor",
+        "figure of speech",
+        "comparison",
+        "rhetoric",
+        "poetry",
+        "prose"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Simile",
+        "Irony",
+        "Personification"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.personification",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Personification",
+      "aliases": [],
+      "definition": "Personification is one of the common figures of speech.",
+      "keywords": [
+        "personification",
+        "figure of speech",
+        "language",
+        "poetry",
+        "prose"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Metaphor",
+        "Simile"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.hyperbole",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Hyperbole",
+      "aliases": [
+        "exaggeration"
+      ],
+      "definition": "Hyperbole is one of the common figures of speech.",
+      "keywords": [
+        "hyperbole",
+        "figure of speech",
+        "exaggeration",
+        "language",
+        "poetry"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Irony"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.irony",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Irony",
+      "aliases": [],
+      "definition": "Irony is a contrast between appearance or expectation and reality, with different forms, and it is one of the common figures of speech.",
+      "keywords": [
+        "irony",
+        "contrast",
+        "appearance",
+        "reality",
+        "expectation",
+        "figure of speech"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Metaphor",
+        "Tone"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.oxymoron",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Oxymoron",
+      "aliases": [],
+      "definition": "Oxymoron is one of the common figures of speech.",
+      "keywords": [
+        "oxymoron",
+        "figure of speech",
+        "language",
+        "poetry",
+        "prose"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Irony"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.alliteration",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Alliteration",
+      "aliases": [],
+      "definition": "Alliteration is one of the common figures of speech.",
+      "keywords": [
+        "alliteration",
+        "figure of speech",
+        "sound",
+        "poetry",
+        "language"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Onomatopoeia",
+        "Poetry"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.onomatopoeia",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Onomatopoeia",
+      "aliases": [],
+      "definition": "Onomatopoeia is one of the common figures of speech.",
+      "keywords": [
+        "onomatopoeia",
+        "figure of speech",
+        "sound words",
+        "poetry",
+        "language"
+      ],
+      "related": [
+        "Figures of Speech",
+        "Alliteration"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.interjection",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Interjection",
+      "aliases": [],
+      "definition": "Interjection is one of the common categories of parts of speech.",
+      "keywords": [
+        "interjection",
+        "parts of speech",
+        "grammar",
+        "exclamation"
+      ],
+      "related": [
+        "Parts of Speech",
+        "Determiner"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.english_language.determiner",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Determiner",
+      "aliases": [],
+      "definition": "Determiner is one of the common categories of parts of speech.",
+      "keywords": [
+        "determiner",
+        "parts of speech",
+        "grammar",
+        "article"
+      ],
+      "related": [
+        "Parts of Speech",
+        "Noun",
+        "Interjection"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.literature.prose",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Prose",
+      "aliases": [],
+      "definition": "Prose is ordinary written language, including forms such as novels and short stories.",
+      "keywords": [
+        "prose",
+        "novels",
+        "short stories",
+        "written language",
+        "fiction"
+      ],
+      "related": [
+        "Poetry",
+        "Drama",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.poetry",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Poetry",
+      "aliases": [
+        "verse"
+      ],
+      "definition": "Poetry is literary expression that often uses rhythm, imagery, sound, structure, and condensed language.",
+      "keywords": [
+        "poetry",
+        "rhythm",
+        "imagery",
+        "sound",
+        "structure",
+        "condensed language"
+      ],
+      "related": [
+        "Prose",
+        "Drama",
+        "Imagery",
+        "Alliteration"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.drama",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Drama",
+      "aliases": [
+        "play"
+      ],
+      "definition": "Drama is literature intended for performance.",
+      "keywords": [
+        "drama",
+        "performance",
+        "play",
+        "theatre",
+        "literature"
+      ],
+      "related": [
+        "Prose",
+        "Poetry",
+        "Plot"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.literary_elements",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Literary Elements",
+      "aliases": [
+        "elements of literature"
+      ],
+      "definition": "Literary elements include plot, character, setting, theme, conflict, point of view, tone, mood, symbolism, and imagery.",
+      "keywords": [
+        "literary elements",
+        "plot",
+        "character",
+        "setting",
+        "theme",
+        "conflict",
+        "tone",
+        "mood"
+      ],
+      "related": [
+        "Plot",
+        "Character",
+        "Theme",
+        "Setting"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.plot",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Plot",
+      "aliases": [
+        "story line"
+      ],
+      "definition": "Plot is the sequence of events in a work of literature, commonly developed through exposition, rising action, climax, falling action, and resolution.",
+      "keywords": [
+        "plot",
+        "sequence of events",
+        "exposition",
+        "climax",
+        "resolution",
+        "narrative"
+      ],
+      "related": [
+        "Exposition",
+        "Climax",
+        "Conflict",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.character",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Character",
+      "aliases": [
+        "characters"
+      ],
+      "definition": "Character is one of the literary elements of a work; the exposition introduces the relevant characters, and a writer develops characters through characterization.",
+      "keywords": [
+        "character",
+        "characters",
+        "literary element",
+        "narrative",
+        "development"
+      ],
+      "related": [
+        "Characterization",
+        "Setting",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.setting",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Setting",
+      "aliases": [],
+      "definition": "Setting is one of the literary elements of a work, and the exposition introduces the relevant setting, characters, and situation.",
+      "keywords": [
+        "setting",
+        "literary element",
+        "location",
+        "situation",
+        "narrative"
+      ],
+      "related": [
+        "Exposition",
+        "Plot",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.theme",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Theme",
+      "aliases": [],
+      "definition": "Theme is the central idea explored by a work of literature; it is one of the literary elements.",
+      "keywords": [
+        "theme",
+        "central idea",
+        "literary element",
+        "meaning",
+        "work"
+      ],
+      "related": [
+        "Literary Elements",
+        "Tone",
+        "Mood"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.conflict",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Conflict",
+      "aliases": [],
+      "definition": "Conflict is one of the literary elements of a work, listed alongside plot, character, setting, theme, point of view, tone, mood, symbolism, and imagery.",
+      "keywords": [
+        "conflict",
+        "literary element",
+        "struggle",
+        "narrative",
+        "plot"
+      ],
+      "related": [
+        "Plot",
+        "Literary Elements",
+        "Rising Action"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.literature.point_of_view",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Point of View",
+      "aliases": [
+        "POV",
+        "narrative perspective"
+      ],
+      "definition": "Point of view is one of the literary elements of a work, listed alongside plot, character, setting, theme, conflict, tone, mood, symbolism, and imagery.",
+      "keywords": [
+        "point of view",
+        "perspective",
+        "narrator",
+        "literary element",
+        "narrative"
+      ],
+      "related": [
+        "Literary Elements",
+        "Character",
+        "Tone"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.literature.tone",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Tone",
+      "aliases": [],
+      "definition": "Tone is the writer's or speaker's attitude, and it is one of the literary elements.",
+      "keywords": [
+        "tone",
+        "attitude",
+        "writer",
+        "speaker",
+        "literary element"
+      ],
+      "related": [
+        "Mood",
+        "Theme",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.mood",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Mood",
+      "aliases": [
+        "atmosphere"
+      ],
+      "definition": "Mood is the emotional atmosphere experienced by the reader or audience, and it is one of the literary elements.",
+      "keywords": [
+        "mood",
+        "emotional atmosphere",
+        "reader",
+        "audience",
+        "literary element"
+      ],
+      "related": [
+        "Tone",
+        "Theme",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.symbolism",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Symbolism",
+      "aliases": [
+        "symbol"
+      ],
+      "definition": "Symbolism is one of the literary elements of a work, listed alongside plot, character, setting, theme, conflict, point of view, tone, mood, and imagery.",
+      "keywords": [
+        "symbolism",
+        "symbol",
+        "literary element",
+        "meaning",
+        "narrative"
+      ],
+      "related": [
+        "Literary Elements",
+        "Imagery",
+        "Theme"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.literature.imagery",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Imagery",
+      "aliases": [],
+      "definition": "Imagery is one of the literary elements of a work, and poetry often uses imagery along with rhythm, sound, structure, and condensed language.",
+      "keywords": [
+        "imagery",
+        "literary element",
+        "poetry",
+        "sensory language",
+        "description"
+      ],
+      "related": [
+        "Poetry",
+        "Symbolism",
+        "Literary Elements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.old_testament_topics",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Old Testament Topics",
+      "aliases": [
+        "Old Testament"
+      ],
+      "definition": "Old Testament topics include Creation, Fall, Noah, Abraham, Isaac, Jacob, Joseph, Moses, Exodus, Ten Commandments, Judges, Kings, Prophets, and Wisdom literature, with core categories also covering Covenant, Patriarchs, Law, and Kingdom.",
+      "keywords": [
+        "old testament",
+        "creation",
+        "exodus",
+        "patriarchs",
+        "prophets",
+        "wisdom literature",
+        "covenant",
+        "law",
+        "kingdom"
+      ],
+      "related": [
+        "New Testament Topics",
+        "Christian Ethics",
+        "Denominational Interpretation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.crs.new_testament_topics",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "New Testament Topics",
+      "aliases": [
+        "New Testament"
+      ],
+      "definition": "New Testament topics include the birth and ministry of Jesus, teachings, parables, miracles, disciples, passion, resurrection, Great Commission, Pentecost, early church, and Pauline ministry, with core categories also covering the life and teachings of Jesus and death and resurrection.",
+      "keywords": [
+        "new testament",
+        "jesus",
+        "parables",
+        "miracles",
+        "resurrection",
+        "pentecost",
+        "early church",
+        "disciples",
+        "passion"
+      ],
+      "related": [
+        "Old Testament Topics",
+        "Christian Ethics",
+        "Denominational Interpretation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.crs.christian_ethics",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Christian Ethics",
+      "aliases": [],
+      "definition": "Christian ethics includes love, forgiveness, justice, mercy, honesty, service, humility, stewardship, and faithfulness, and is a core Christian Religious Studies knowledge category.",
+      "keywords": [
+        "christian ethics",
+        "love",
+        "forgiveness",
+        "justice",
+        "mercy",
+        "honesty",
+        "humility",
+        "stewardship",
+        "faithfulness"
+      ],
+      "related": [
+        "Love",
+        "Forgiveness",
+        "Service",
+        "Faith"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.crs.faith",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Faith",
+      "aliases": [],
+      "definition": "Faith is a core Christian Religious Studies knowledge category and a value within Christian ethics.",
+      "keywords": [
+        "faith",
+        "christian ethics",
+        "belief",
+        "christian religious studies"
+      ],
+      "related": [
+        "Christian Ethics",
+        "Love",
+        "Forgiveness"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.love",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Love",
+      "aliases": [],
+      "definition": "Love is a core Christian Religious Studies knowledge category and a value within Christian ethics.",
+      "keywords": [
+        "love",
+        "christian ethics",
+        "christian religious studies",
+        "virtue"
+      ],
+      "related": [
+        "Christian Ethics",
+        "Faith",
+        "Forgiveness"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.forgiveness",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Forgiveness",
+      "aliases": [],
+      "definition": "Forgiveness is a core Christian Religious Studies knowledge category and a value within Christian ethics.",
+      "keywords": [
+        "forgiveness",
+        "christian ethics",
+        "christian religious studies",
+        "virtue"
+      ],
+      "related": [
+        "Christian Ethics",
+        "Love",
+        "Service"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.service",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Service",
+      "aliases": [],
+      "definition": "Service is a core Christian Religious Studies knowledge category and a value within Christian ethics.",
+      "keywords": [
+        "service",
+        "christian ethics",
+        "christian religious studies",
+        "virtue"
+      ],
+      "related": [
+        "Christian Ethics",
+        "Forgiveness",
+        "Leadership"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.leadership",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Leadership",
+      "aliases": [],
+      "definition": "Leadership is a core Christian Religious Studies knowledge category.",
+      "keywords": [
+        "leadership",
+        "christian religious studies",
+        "service",
+        "responsibility"
+      ],
+      "related": [
+        "Service",
+        "Christian Ethics"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "concept.crs.denominational_interpretation",
+      "type": "CONCEPT",
+      "domain": "crs",
+      "name": "Denominational Interpretation",
+      "aliases": [
+        "interpretive distinctions"
+      ],
+      "definition": "When answering denominational or interpretive questions, distinguish biblical text, historical interpretation, denominational interpretation, and personal interpretation.",
+      "keywords": [
+        "interpretation",
+        "denominational",
+        "biblical text",
+        "historical interpretation",
+        "personal interpretation"
+      ],
+      "related": [
+        "Old Testament Topics",
+        "New Testament Topics",
+        "Christian Ethics"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.business_model",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Business Model",
+      "aliases": [],
+      "definition": "A business model describes how an organization creates, delivers, and captures value.",
+      "keywords": [
+        "business model",
+        "value creation",
+        "value delivery",
+        "organization",
+        "strategy"
+      ],
+      "related": [
+        "Value Proposition",
+        "Revenue",
+        "Marketing",
+        "Product-Market Fit"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.value_proposition",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Value Proposition",
+      "aliases": [],
+      "definition": "A value proposition explains why a target customer might choose a product or service.",
+      "keywords": [
+        "value proposition",
+        "customer",
+        "product",
+        "service",
+        "choice",
+        "benefit",
+        "value",
+        "offer"
+      ],
+      "related": [
+        "Customer Segments",
+        "Product-Market Fit",
+        "Marketing",
+        "Business Model",
+        "Pain Point",
+        "Customer Persona",
+        "Go-to-Market"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.customer_segments",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Customer Segments",
+      "aliases": [
+        "market segments"
+      ],
+      "definition": "Customer segments are groups of customers with relevant shared needs or characteristics.",
+      "keywords": [
+        "customer segments",
+        "customers",
+        "shared needs",
+        "characteristics",
+        "market"
+      ],
+      "related": [
+        "Value Proposition",
+        "Customer Feedback",
+        "Marketing"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.cost",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Cost",
+      "aliases": [],
+      "definition": "Cost is the resources consumed to operate or produce.",
+      "keywords": [
+        "cost",
+        "resources",
+        "operations",
+        "production",
+        "spending"
+      ],
+      "related": [
+        "Fixed Cost",
+        "Variable Cost",
+        "Expense",
+        "Break-even"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.fixed_cost",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Fixed Cost",
+      "aliases": [
+        "fixed costs"
+      ],
+      "definition": "A fixed cost does not vary directly with short-term production volume in the simplified model.",
+      "keywords": [
+        "fixed cost",
+        "production volume",
+        "short term",
+        "overhead",
+        "cost"
+      ],
+      "related": [
+        "Variable Cost",
+        "Cost",
+        "Break-even"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.variable_cost",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Variable Cost",
+      "aliases": [
+        "variable costs"
+      ],
+      "definition": "A variable cost changes with production or activity level.",
+      "keywords": [
+        "variable cost",
+        "production level",
+        "activity level",
+        "cost"
+      ],
+      "related": [
+        "Fixed Cost",
+        "Cost",
+        "Break-even"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.gross_profit",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Gross Profit",
+      "aliases": [],
+      "definition": "Gross profit is revenue minus cost of goods sold, under the relevant accounting framework.",
+      "keywords": [
+        "gross profit",
+        "revenue",
+        "cost of goods sold",
+        "accounting",
+        "margin"
+      ],
+      "related": [
+        "Revenue",
+        "Profit",
+        "Cost",
+        "Break-even"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.break_even",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Break-even",
+      "aliases": [
+        "break-even point",
+        "breakeven"
+      ],
+      "definition": "Break-even is the point where total revenue equals total cost in a simplified model.",
+      "keywords": [
+        "break-even",
+        "total revenue",
+        "total cost",
+        "profit",
+        "threshold"
+      ],
+      "related": [
+        "Fixed Cost",
+        "Variable Cost",
+        "Profit",
+        "Gross Profit"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.marketing",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Marketing",
+      "aliases": [],
+      "definition": "Marketing covers the activities used to communicate and deliver value to customers.",
+      "keywords": [
+        "marketing",
+        "communication",
+        "customers",
+        "value",
+        "promotion"
+      ],
+      "related": [
+        "Branding",
+        "Value Proposition",
+        "Customer Segments"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.branding",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Branding",
+      "aliases": [
+        "brand"
+      ],
+      "definition": "Branding is the system of identity, associations, and experiences connected with an organization or product.",
+      "keywords": [
+        "branding",
+        "brand",
+        "identity",
+        "associations",
+        "experience",
+        "product"
+      ],
+      "related": [
+        "Marketing",
+        "Value Proposition",
+        "Product-Market Fit"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.product_market_fit",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Product-Market Fit",
+      "aliases": [
+        "product market fit"
+      ],
+      "definition": "Product-market fit is the concept describing strong alignment between a product and a real market need.",
+      "keywords": [
+        "product-market fit",
+        "alignment",
+        "market need",
+        "product",
+        "demand"
+      ],
+      "related": [
+        "MVP",
+        "Customer Feedback",
+        "Value Proposition"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.mvp",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "MVP",
+      "aliases": [
+        "Minimum Viable Product"
+      ],
+      "definition": "MVP means minimum viable product: the smallest useful version designed to test assumptions with users.",
+      "keywords": [
+        "mvp",
+        "minimum viable product",
+        "prototype",
+        "assumptions",
+        "users",
+        "testing",
+        "smallest",
+        "version",
+        "test"
+      ],
+      "related": [
+        "Product-Market Fit",
+        "Customer Feedback",
+        "Business Model",
+        "Prototype",
+        "Iteration"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.customer_feedback",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Customer Feedback",
+      "aliases": [
+        "user feedback"
+      ],
+      "definition": "Customer feedback is evidence used to improve product decisions.",
+      "keywords": [
+        "customer feedback",
+        "evidence",
+        "product decisions",
+        "improvement",
+        "customers"
+      ],
+      "related": [
+        "MVP",
+        "Product-Market Fit",
+        "Customer Segments"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.revenue",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Revenue",
+      "aliases": [
+        "turnover",
+        "income"
+      ],
+      "definition": "Revenue is money earned by an organization and income from ordinary activities.",
+      "keywords": [
+        "revenue",
+        "income",
+        "earnings",
+        "ordinary activities",
+        "money"
+      ],
+      "related": [
+        "Profit",
+        "Expense",
+        "Gross Profit",
+        "Cash Flow"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.assets",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Assets",
+      "aliases": [],
+      "definition": "Assets are resources controlled by an entity that have economic value.",
+      "keywords": [
+        "assets",
+        "resources",
+        "economic value",
+        "entity",
+        "balance sheet"
+      ],
+      "related": [
+        "Accounting Equation",
+        "Liabilities",
+        "Equity",
+        "Depreciation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.liabilities",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Liabilities",
+      "aliases": [],
+      "definition": "Liabilities are obligations.",
+      "keywords": [
+        "liabilities",
+        "obligations",
+        "debts",
+        "balance sheet"
+      ],
+      "related": [
+        "Accounting Equation",
+        "Assets",
+        "Equity"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.equity",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Equity",
+      "aliases": [
+        "owners' equity",
+        "net worth"
+      ],
+      "definition": "Equity is the residual interest after liabilities are deducted from assets.",
+      "keywords": [
+        "equity",
+        "residual interest",
+        "assets",
+        "liabilities",
+        "ownership"
+      ],
+      "related": [
+        "Accounting Equation",
+        "Assets",
+        "Liabilities"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.accounting_equation",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Accounting Equation",
+      "aliases": [
+        "balance sheet equation"
+      ],
+      "definition": "The accounting equation states that Assets = Liabilities + Equity.",
+      "keywords": [
+        "accounting equation",
+        "assets",
+        "liabilities",
+        "equity",
+        "balance sheet"
+      ],
+      "related": [
+        "Assets",
+        "Liabilities",
+        "Equity"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.expense",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Expense",
+      "aliases": [
+        "expenses"
+      ],
+      "definition": "An expense is a cost incurred in generating revenue.",
+      "keywords": [
+        "expense",
+        "cost",
+        "revenue",
+        "generating income",
+        "accounting"
+      ],
+      "related": [
+        "Revenue",
+        "Profit",
+        "Cost"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.profit",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Profit",
+      "aliases": [
+        "net income"
+      ],
+      "definition": "Profit is revenue minus expenses under the applicable accounting definition.",
+      "keywords": [
+        "profit",
+        "revenue",
+        "expenses",
+        "earnings",
+        "accounting"
+      ],
+      "related": [
+        "Revenue",
+        "Expense",
+        "Gross Profit",
+        "Break-even"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.cash_flow",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Cash Flow",
+      "aliases": [
+        "cash flows"
+      ],
+      "definition": "Cash flow is the movement of cash into and out of an entity.",
+      "keywords": [
+        "cash flow",
+        "cash",
+        "inflows",
+        "outflows",
+        "entity"
+      ],
+      "related": [
+        "Revenue",
+        "Budget",
+        "Profit"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.budget",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Budget",
+      "aliases": [
+        "budgeting"
+      ],
+      "definition": "A budget is planned income and expenditure.",
+      "keywords": [
+        "budget",
+        "planned income",
+        "expenditure",
+        "planning",
+        "finance"
+      ],
+      "related": [
+        "Cash Flow",
+        "Revenue",
+        "Expense"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.accounting.depreciation",
+      "type": "CONCEPT",
+      "domain": "accounting",
+      "name": "Depreciation",
+      "aliases": [],
+      "definition": "Depreciation is the systematic allocation of an asset's depreciable amount over its useful life.",
+      "keywords": [
+        "depreciation",
+        "asset",
+        "useful life",
+        "allocation",
+        "accounting"
+      ],
+      "related": [
+        "Assets",
+        "Expense",
+        "Accounting Equation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.basic_economic_problem",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Basic Economic Problem",
+      "aliases": [
+        "economic problem"
+      ],
+      "definition": "The basic economic problem is that scarcity creates the need for choice.",
+      "keywords": [
+        "basic economic problem",
+        "scarcity",
+        "choice",
+        "resources",
+        "wants"
+      ],
+      "related": [
+        "Scarcity",
+        "Opportunity Cost",
+        "Factors of Production"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.factors_of_production",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Factors of Production",
+      "aliases": [],
+      "definition": "The factors of production are land, labour, capital, and entrepreneurship.",
+      "keywords": [
+        "factors of production",
+        "land",
+        "labour",
+        "capital",
+        "entrepreneurship"
+      ],
+      "related": [
+        "Scarcity",
+        "GDP",
+        "Basic Economic Problem"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.utility",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Utility",
+      "aliases": [],
+      "definition": "Utility is the satisfaction derived from consumption.",
+      "keywords": [
+        "utility",
+        "satisfaction",
+        "consumption",
+        "consumer",
+        "welfare"
+      ],
+      "related": [
+        "Marginal Utility",
+        "Demand",
+        "Price Elasticity of Demand"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.marginal_utility",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Marginal Utility",
+      "aliases": [],
+      "definition": "Marginal utility is the additional utility from one more unit.",
+      "keywords": [
+        "marginal utility",
+        "additional utility",
+        "one more unit",
+        "consumption",
+        "satisfaction"
+      ],
+      "related": [
+        "Utility",
+        "Demand",
+        "Law of Demand"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.law_of_demand",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Law of Demand",
+      "aliases": [],
+      "definition": "The law of demand states that, ceteris paribus, quantity demanded generally decreases as price rises.",
+      "keywords": [
+        "law of demand",
+        "quantity demanded",
+        "price",
+        "ceteris paribus",
+        "inverse relationship"
+      ],
+      "related": [
+        "Demand",
+        "Price Elasticity of Demand",
+        "Law of Supply"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.law_of_supply",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Law of Supply",
+      "aliases": [],
+      "definition": "The law of supply states that, ceteris paribus, quantity supplied generally increases as price rises.",
+      "keywords": [
+        "law of supply",
+        "quantity supplied",
+        "price",
+        "ceteris paribus",
+        "producers"
+      ],
+      "related": [
+        "Supply",
+        "Law of Demand",
+        "Market Equilibrium"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.elasticity",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Elasticity",
+      "aliases": [],
+      "definition": "Elasticity measures the responsiveness of one variable to another.",
+      "keywords": [
+        "elasticity",
+        "responsiveness",
+        "variable",
+        "measurement",
+        "price"
+      ],
+      "related": [
+        "Price Elasticity of Demand",
+        "Demand",
+        "Law of Demand"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.price_elasticity_of_demand",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Price Elasticity of Demand",
+      "aliases": [
+        "PED"
+      ],
+      "definition": "Price elasticity of demand is the percentage change in quantity demanded divided by the percentage change in price.",
+      "keywords": [
+        "price elasticity of demand",
+        "percentage change",
+        "quantity demanded",
+        "price",
+        "elasticity"
+      ],
+      "related": [
+        "Demand",
+        "Elasticity",
+        "Law of Demand"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.gdp",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "GDP",
+      "aliases": [
+        "Gross Domestic Product"
+      ],
+      "definition": "GDP is the market value of final goods and services produced within a geographic area during a specified period.",
+      "keywords": [
+        "gdp",
+        "gross domestic product",
+        "market value",
+        "goods and services",
+        "production",
+        "geographic area"
+      ],
+      "related": [
+        "Nominal GDP",
+        "Real GDP",
+        "Fiscal Policy",
+        "Balance of Payments"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.nominal_gdp",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Nominal GDP",
+      "aliases": [],
+      "definition": "Nominal GDP is measured at current prices.",
+      "keywords": [
+        "nominal gdp",
+        "current prices",
+        "gdp",
+        "money value"
+      ],
+      "related": [
+        "GDP",
+        "Real GDP",
+        "Inflation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.real_gdp",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Real GDP",
+      "aliases": [],
+      "definition": "Real GDP is adjusted to remove the effect of price changes using an appropriate methodology.",
+      "keywords": [
+        "real gdp",
+        "price changes",
+        "adjustment",
+        "gdp",
+        "inflation"
+      ],
+      "related": [
+        "GDP",
+        "Nominal GDP",
+        "Inflation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.fiscal_policy",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Fiscal Policy",
+      "aliases": [],
+      "definition": "Fiscal policy covers government decisions about taxation and expenditure.",
+      "keywords": [
+        "fiscal policy",
+        "taxation",
+        "expenditure",
+        "government",
+        "spending"
+      ],
+      "related": [
+        "Monetary Policy",
+        "Budget",
+        "GDP",
+        "Inflation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.monetary_policy",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Monetary Policy",
+      "aliases": [],
+      "definition": "Monetary policy is central-bank policy affecting money, credit, interest rates, and related conditions.",
+      "keywords": [
+        "monetary policy",
+        "central bank",
+        "money",
+        "credit",
+        "interest rates"
+      ],
+      "related": [
+        "Interest Rate",
+        "Fiscal Policy",
+        "Inflation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.interest_rate",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Interest Rate",
+      "aliases": [],
+      "definition": "An interest rate is the cost of borrowing or the return for lending or saving, depending on context.",
+      "keywords": [
+        "interest rate",
+        "borrowing",
+        "lending",
+        "saving",
+        "cost of credit"
+      ],
+      "related": [
+        "Monetary Policy",
+        "Exchange Rate",
+        "Budget"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.exchange_rate",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Exchange Rate",
+      "aliases": [
+        "foreign exchange rate",
+        "FX rate"
+      ],
+      "definition": "An exchange rate is the price of one currency in terms of another.",
+      "keywords": [
+        "exchange rate",
+        "currency",
+        "price",
+        "foreign exchange",
+        "conversion"
+      ],
+      "related": [
+        "Balance of Payments",
+        "Interest Rate",
+        "GDP"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.balance_of_payments",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Balance of Payments",
+      "aliases": [
+        "BOP"
+      ],
+      "definition": "The balance of payments is a systematic record of economic transactions between residents of an economy and the rest of the world.",
+      "keywords": [
+        "balance of payments",
+        "transactions",
+        "residents",
+        "rest of the world",
+        "record"
+      ],
+      "related": [
+        "Exchange Rate",
+        "GDP",
+        "Imports and Exports"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.political_institutions",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Political Institutions",
+      "aliases": [],
+      "definition": "Political institutions include the legislature, executive, and judiciary.",
+      "keywords": [
+        "political institutions",
+        "legislature",
+        "executive",
+        "judiciary",
+        "government"
+      ],
+      "related": [
+        "Legislature",
+        "Executive",
+        "Judiciary",
+        "Separation of Powers"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.legislature",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Legislature",
+      "aliases": [
+        "lawmaking body"
+      ],
+      "definition": "The legislature makes laws and performs representation and oversight functions within its constitutional framework.",
+      "keywords": [
+        "legislature",
+        "law making",
+        "representation",
+        "oversight",
+        "constitutional framework"
+      ],
+      "related": [
+        "Executive",
+        "Judiciary",
+        "Separation of Powers",
+        "Political Institutions"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.executive",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Executive",
+      "aliases": [],
+      "definition": "The executive implements laws and manages public administration.",
+      "keywords": [
+        "executive",
+        "implements laws",
+        "public administration",
+        "government",
+        "execution"
+      ],
+      "related": [
+        "Legislature",
+        "Judiciary",
+        "Separation of Powers",
+        "Political Institutions"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.judiciary",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Judiciary",
+      "aliases": [
+        "courts",
+        "judicial system"
+      ],
+      "definition": "The judiciary interprets and applies law through courts.",
+      "keywords": [
+        "judiciary",
+        "courts",
+        "interprets law",
+        "applies law",
+        "justice"
+      ],
+      "related": [
+        "Legislature",
+        "Executive",
+        "Rule of Law",
+        "Separation of Powers"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.constitutionalism",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Constitutionalism",
+      "aliases": [],
+      "definition": "Constitutionalism means that government authority is constrained by constitutional rules.",
+      "keywords": [
+        "constitutionalism",
+        "government authority",
+        "constitutional rules",
+        "constraints",
+        "limited government"
+      ],
+      "related": [
+        "Constitution",
+        "Rule of Law",
+        "Federalism",
+        "Checks and Balances"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.federalism",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Federalism",
+      "aliases": [
+        "federal system"
+      ],
+      "definition": "Federalism is the constitutional division of powers between levels of government.",
+      "keywords": [
+        "federalism",
+        "division of powers",
+        "levels of government",
+        "constitutional",
+        "central government"
+      ],
+      "related": [
+        "Unitary System",
+        "Constitution",
+        "Constitutionalism"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.unitary_system",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Unitary System",
+      "aliases": [
+        "unitary government"
+      ],
+      "definition": "In a unitary system, central government retains primary constitutional authority, with local administration delegated under the relevant system.",
+      "keywords": [
+        "unitary system",
+        "central government",
+        "constitutional authority",
+        "local administration",
+        "delegation"
+      ],
+      "related": [
+        "Federalism",
+        "Constitution",
+        "Political Institutions"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.checks_and_balances",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Checks and Balances",
+      "aliases": [],
+      "definition": "Under checks and balances, institutions constrain one another through legally defined powers.",
+      "keywords": [
+        "checks and balances",
+        "institutions",
+        "constrain",
+        "legally defined powers",
+        "oversight"
+      ],
+      "related": [
+        "Separation of Powers",
+        "Legislature",
+        "Executive",
+        "Judiciary"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.election",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Election",
+      "aliases": [
+        "elections",
+        "voting"
+      ],
+      "definition": "An election is the formal process through which voters select representatives or decide specified questions.",
+      "keywords": [
+        "election",
+        "voters",
+        "representatives",
+        "voting",
+        "formal process"
+      ],
+      "related": [
+        "Political Party",
+        "Democracy",
+        "Citizenship"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.political_party",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Political Party",
+      "aliases": [
+        "party"
+      ],
+      "definition": "A political party is an organization that seeks to influence or obtain political power through electoral and political activity.",
+      "keywords": [
+        "political party",
+        "political power",
+        "electoral activity",
+        "organization",
+        "politics"
+      ],
+      "related": [
+        "Election",
+        "Democracy",
+        "Civil Society"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.civil_society",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Civil Society",
+      "aliases": [],
+      "definition": "Civil society comprises organizations and associations outside the state and family structures that participate in public life.",
+      "keywords": [
+        "civil society",
+        "associations",
+        "organizations",
+        "public life",
+        "community"
+      ],
+      "related": [
+        "Political Party",
+        "Human Rights",
+        "Citizenship"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.government.human_rights",
+      "type": "CONCEPT",
+      "domain": "government",
+      "name": "Human Rights",
+      "aliases": [],
+      "definition": "Human rights are fundamental rights and freedoms recognized by applicable legal and international frameworks.",
+      "keywords": [
+        "human rights",
+        "fundamental rights",
+        "freedoms",
+        "legal framework",
+        "international"
+      ],
+      "related": [
+        "Citizenship",
+        "Civil Society",
+        "Rule of Law"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.nigerian_studies.geography_of_nigeria",
+      "type": "CONCEPT",
+      "domain": "nigerian_studies",
+      "name": "Geography of Nigeria",
+      "aliases": [
+        "Nigeria Geography"
+      ],
+      "definition": "Nigeria is located in West Africa and has a coastline on the Gulf of Guinea.",
+      "keywords": [
+        "nigeria",
+        "west africa",
+        "gulf of guinea",
+        "geography",
+        "coastline"
+      ],
+      "related": [
+        "Major Rivers",
+        "Major Vegetation Belts"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.nigerian_studies.major_rivers",
+      "type": "CONCEPT",
+      "domain": "nigerian_studies",
+      "name": "Major Rivers",
+      "aliases": [
+        "Rivers of Nigeria"
+      ],
+      "definition": "Nigeria's major rivers are the Niger and the Benue.",
+      "keywords": [
+        "major rivers",
+        "niger",
+        "benue",
+        "nigeria",
+        "drainage"
+      ],
+      "related": [
+        "Geography of Nigeria",
+        "Major Vegetation Belts"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.nigerian_studies.major_vegetation_belts",
+      "type": "CONCEPT",
+      "domain": "nigerian_studies",
+      "name": "Major Vegetation Belts",
+      "aliases": [
+        "Vegetation Belts of Nigeria"
+      ],
+      "definition": "Nigeria's major vegetation belts are mangrove/swamp, rainforest, Guinea savanna, Sudan savanna, and the Sahel transition in the far north.",
+      "keywords": [
+        "vegetation belts",
+        "mangrove",
+        "rainforest",
+        "guinea savanna",
+        "sudan savanna",
+        "sahel",
+        "nigeria"
+      ],
+      "related": [
+        "Geography of Nigeria",
+        "Major Rivers"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.noun",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Noun",
+      "aliases": [],
+      "definition": "A noun names a person, place, thing, concept, or entity, and is one of the common parts of speech.",
+      "keywords": [
+        "noun",
+        "person",
+        "place",
+        "thing",
+        "concept",
+        "entity",
+        "parts of speech"
+      ],
+      "related": [
+        "Pronoun",
+        "Parts of Speech",
+        "Adjective"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.pronoun",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Pronoun",
+      "aliases": [],
+      "definition": "A pronoun substitutes for a noun phrase.",
+      "keywords": [
+        "pronoun",
+        "noun phrase",
+        "substitute",
+        "parts of speech"
+      ],
+      "related": [
+        "Noun",
+        "Parts of Speech",
+        "Verb"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.verb",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Verb",
+      "aliases": [],
+      "definition": "A verb expresses action, occurrence, or state.",
+      "keywords": [
+        "verb",
+        "action",
+        "occurrence",
+        "state",
+        "parts of speech"
+      ],
+      "related": [
+        "Tense",
+        "Subject-Verb Agreement",
+        "Parts of Speech",
+        "Adverb"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.adjective",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Adjective",
+      "aliases": [],
+      "definition": "An adjective modifies or describes a noun or noun phrase.",
+      "keywords": [
+        "adjective",
+        "modifies",
+        "describes",
+        "noun",
+        "parts of speech"
+      ],
+      "related": [
+        "Adverb",
+        "Noun",
+        "Parts of Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.adverb",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Adverb",
+      "aliases": [],
+      "definition": "An adverb modifies a verb, adjective, adverb, clause, or sentence depending on use.",
+      "keywords": [
+        "adverb",
+        "modifies",
+        "verb",
+        "adjective",
+        "clause",
+        "parts of speech"
+      ],
+      "related": [
+        "Adjective",
+        "Verb",
+        "Parts of Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.preposition",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Preposition",
+      "aliases": [],
+      "definition": "A preposition expresses relationships such as location, direction, time, or manner.",
+      "keywords": [
+        "preposition",
+        "location",
+        "direction",
+        "time",
+        "manner",
+        "parts of speech"
+      ],
+      "related": [
+        "Conjunction",
+        "Clauses",
+        "Parts of Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.conjunction",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Conjunction",
+      "aliases": [],
+      "definition": "A conjunction connects words, phrases, or clauses.",
+      "keywords": [
+        "conjunction",
+        "connects",
+        "words",
+        "phrases",
+        "clauses",
+        "parts of speech"
+      ],
+      "related": [
+        "Preposition",
+        "Clauses",
+        "Parts of Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.tense",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Tense",
+      "aliases": [
+        "verb tense"
+      ],
+      "definition": "Tense expresses temporal relationships through grammatical forms.",
+      "keywords": [
+        "tense",
+        "temporal relationships",
+        "grammatical forms",
+        "time",
+        "verb"
+      ],
+      "related": [
+        "Verb",
+        "Active Voice",
+        "Indirect Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.active_voice",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Active Voice",
+      "aliases": [],
+      "definition": "In the active voice, the subject performs the action.",
+      "keywords": [
+        "active voice",
+        "subject",
+        "performs action",
+        "grammar",
+        "sentence"
+      ],
+      "related": [
+        "Passive Voice",
+        "Verb",
+        "Tense"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.passive_voice",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Passive Voice",
+      "aliases": [],
+      "definition": "In the passive voice, the subject receives the action.",
+      "keywords": [
+        "passive voice",
+        "subject",
+        "receives action",
+        "grammar",
+        "sentence"
+      ],
+      "related": [
+        "Active Voice",
+        "Verb",
+        "Tense"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.direct_speech",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Direct Speech",
+      "aliases": [
+        "quoted speech"
+      ],
+      "definition": "Direct speech reports exact wording as quoted.",
+      "keywords": [
+        "direct speech",
+        "quoted",
+        "exact wording",
+        "quotation",
+        "punctuation"
+      ],
+      "related": [
+        "Indirect Speech",
+        "Punctuation",
+        "Tense"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.indirect_speech",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Indirect Speech",
+      "aliases": [
+        "reported speech"
+      ],
+      "definition": "Indirect speech reports content without necessarily preserving exact wording.",
+      "keywords": [
+        "indirect speech",
+        "reported speech",
+        "content",
+        "wording",
+        "reporting"
+      ],
+      "related": [
+        "Direct Speech",
+        "Tense",
+        "Punctuation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.subject_verb_agreement",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Subject-Verb Agreement",
+      "aliases": [
+        "SVA"
+      ],
+      "definition": "The verb form should agree appropriately with the grammatical subject.",
+      "keywords": [
+        "subject-verb agreement",
+        "verb form",
+        "grammatical subject",
+        "agreement",
+        "grammar"
+      ],
+      "related": [
+        "Verb",
+        "Noun",
+        "Parts of Speech"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.punctuation",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Punctuation",
+      "aliases": [],
+      "definition": "Common punctuation marks include the comma, period/full stop, colon, semicolon, question mark, exclamation mark, apostrophe, quotation marks, and parentheses.",
+      "keywords": [
+        "punctuation",
+        "comma",
+        "colon",
+        "semicolon",
+        "apostrophe",
+        "quotation marks",
+        "parentheses",
+        "question mark"
+      ],
+      "related": [
+        "Direct Speech",
+        "Sentence Types",
+        "Interrogative"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.exposition",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Exposition",
+      "aliases": [],
+      "definition": "The exposition introduces the relevant setting, characters, and situation.",
+      "keywords": [
+        "exposition",
+        "setting",
+        "characters",
+        "situation",
+        "plot",
+        "narrative"
+      ],
+      "related": [
+        "Plot",
+        "Setting",
+        "Rising Action",
+        "Character"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.rising_action",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Rising Action",
+      "aliases": [],
+      "definition": "Rising action consists of developing complications in a plot.",
+      "keywords": [
+        "rising action",
+        "complications",
+        "plot",
+        "narrative",
+        "tension"
+      ],
+      "related": [
+        "Plot",
+        "Climax",
+        "Conflict"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.climax",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Climax",
+      "aliases": [],
+      "definition": "The climax is the major turning point or peak of dramatic tension.",
+      "keywords": [
+        "climax",
+        "turning point",
+        "dramatic tension",
+        "plot",
+        "peak"
+      ],
+      "related": [
+        "Plot",
+        "Rising Action",
+        "Falling Action"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.falling_action",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Falling Action",
+      "aliases": [],
+      "definition": "Falling action comprises the events following the climax.",
+      "keywords": [
+        "falling action",
+        "events",
+        "climax",
+        "plot",
+        "narrative"
+      ],
+      "related": [
+        "Climax",
+        "Resolution",
+        "Plot"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.resolution",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Resolution",
+      "aliases": [
+        "outcome",
+        "conclusion"
+      ],
+      "definition": "Resolution is the outcome or conclusion of a work.",
+      "keywords": [
+        "resolution",
+        "outcome",
+        "conclusion",
+        "plot",
+        "ending"
+      ],
+      "related": [
+        "Falling Action",
+        "Plot",
+        "Climax"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.characterization",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Characterization",
+      "aliases": [],
+      "definition": "Characterization is how a writer develops characters.",
+      "keywords": [
+        "characterization",
+        "writer",
+        "develops",
+        "characters",
+        "technique"
+      ],
+      "related": [
+        "Character",
+        "Plot",
+        "Point of View"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.foreshadowing",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Foreshadowing",
+      "aliases": [],
+      "definition": "Foreshadowing gives hints about possible future events.",
+      "keywords": [
+        "foreshadowing",
+        "hints",
+        "future events",
+        "plot",
+        "narrative"
+      ],
+      "related": [
+        "Flashback",
+        "Plot",
+        "Climax"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.literature.flashback",
+      "type": "CONCEPT",
+      "domain": "literature",
+      "name": "Flashback",
+      "aliases": [],
+      "definition": "A flashback is a narrative shift to an earlier event.",
+      "keywords": [
+        "flashback",
+        "narrative shift",
+        "earlier event",
+        "past",
+        "plot"
+      ],
+      "related": [
+        "Foreshadowing",
+        "Exposition",
+        "Plot"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.argument",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Argument",
+      "aliases": [],
+      "definition": "An argument is a set of premises intended to support a conclusion.",
+      "keywords": [
+        "argument",
+        "premises",
+        "conclusion",
+        "support",
+        "reasoning"
+      ],
+      "related": [
+        "Premise",
+        "Conclusion",
+        "Deductive Reasoning",
+        "Inductive Reasoning"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.premise",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Premise",
+      "aliases": [
+        "premises"
+      ],
+      "definition": "A premise is a statement offered as support.",
+      "keywords": [
+        "premise",
+        "statement",
+        "support",
+        "argument",
+        "reasoning"
+      ],
+      "related": [
+        "Argument",
+        "Conclusion",
+        "Deductive Reasoning"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.conclusion",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Conclusion",
+      "aliases": [],
+      "definition": "A conclusion is a claim supported by premises.",
+      "keywords": [
+        "conclusion",
+        "claim",
+        "premises",
+        "argument",
+        "reasoning"
+      ],
+      "related": [
+        "Argument",
+        "Premise",
+        "Deductive Reasoning"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.deductive_reasoning",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Deductive Reasoning",
+      "aliases": [
+        "deduction"
+      ],
+      "definition": "In deductive reasoning, if premises are true and reasoning is valid, the conclusion follows necessarily.",
+      "keywords": [
+        "deductive reasoning",
+        "premises",
+        "valid",
+        "conclusion",
+        "certainty"
+      ],
+      "related": [
+        "Inductive Reasoning",
+        "Argument",
+        "Premise",
+        "Conclusion"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.inductive_reasoning",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Inductive Reasoning",
+      "aliases": [
+        "induction"
+      ],
+      "definition": "Inductive reasoning uses observations or evidence to support a generalization without deductive certainty.",
+      "keywords": [
+        "inductive reasoning",
+        "observations",
+        "evidence",
+        "generalization",
+        "certainty"
+      ],
+      "related": [
+        "Deductive Reasoning",
+        "Argument",
+        "Correlation",
+        "Causation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.correlation",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Correlation",
+      "aliases": [
+        "statistical association"
+      ],
+      "definition": "Correlation is a statistical association.",
+      "keywords": [
+        "correlation",
+        "statistical association",
+        "relationship",
+        "variables"
+      ],
+      "related": [
+        "Causation",
+        "Inductive Reasoning"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.causation",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Causation",
+      "aliases": [
+        "cause and effect"
+      ],
+      "definition": "Causation means one factor contributes to producing another under a defined causal model.",
+      "keywords": [
+        "causation",
+        "cause",
+        "effect",
+        "causal model",
+        "contribution"
+      ],
+      "related": [
+        "Correlation",
+        "Inductive Reasoning"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.common_fallacies",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Common Fallacies",
+      "aliases": [
+        "logical fallacies"
+      ],
+      "definition": "Common fallacies include ad hominem, straw man, false dilemma, appeal to ignorance, hasty generalization, circular reasoning, slippery slope, and appeal to popularity.",
+      "keywords": [
+        "fallacies",
+        "ad hominem",
+        "straw man",
+        "false dilemma",
+        "appeal to ignorance",
+        "hasty generalization",
+        "circular reasoning",
+        "slippery slope",
+        "appeal to popularity"
+      ],
+      "related": [
+        "Argument",
+        "Deductive Reasoning",
+        "Conclusion"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.active_recall",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Active Recall",
+      "aliases": [],
+      "definition": "Active recall is the attempt to retrieve information from memory rather than merely rereading.",
+      "keywords": [
+        "active recall",
+        "retrieve",
+        "memory",
+        "rereading",
+        "learning"
+      ],
+      "related": [
+        "Spaced Repetition",
+        "Practice Testing",
+        "Error Log"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.spaced_repetition",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Spaced Repetition",
+      "aliases": [],
+      "definition": "Spaced repetition is reviewing material at increasing intervals.",
+      "keywords": [
+        "spaced repetition",
+        "review",
+        "intervals",
+        "memory",
+        "learning"
+      ],
+      "related": [
+        "Active Recall",
+        "Interleaving",
+        "Practice Testing"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.interleaving",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Interleaving",
+      "aliases": [],
+      "definition": "Interleaving means mixing related problem types rather than practicing only one type at a time.",
+      "keywords": [
+        "interleaving",
+        "mixing",
+        "problem types",
+        "practice",
+        "learning"
+      ],
+      "related": [
+        "Practice Testing",
+        "Spaced Repetition",
+        "Active Recall"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.elaboration",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Elaboration",
+      "aliases": [],
+      "definition": "Elaboration means explaining why or how information connects to other knowledge.",
+      "keywords": [
+        "elaboration",
+        "explain",
+        "connections",
+        "knowledge",
+        "learning"
+      ],
+      "related": [
+        "Feynman-Style Explanation",
+        "Active Recall"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.practice_testing",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Practice Testing",
+      "aliases": [
+        "self-testing"
+      ],
+      "definition": "Practice testing uses questions to test retrieval and application.",
+      "keywords": [
+        "practice testing",
+        "questions",
+        "retrieval",
+        "application",
+        "learning"
+      ],
+      "related": [
+        "Active Recall",
+        "Error Log",
+        "Interleaving"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.feynman_style_explanation",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Feynman-Style Explanation",
+      "aliases": [
+        "Feynman technique"
+      ],
+      "definition": "A Feynman-style explanation means explaining a concept in simple language, identifying gaps, then refining.",
+      "keywords": [
+        "feynman-style explanation",
+        "simple language",
+        "identify gaps",
+        "refine",
+        "learning"
+      ],
+      "related": [
+        "Elaboration",
+        "Active Recall",
+        "Practice Testing"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.error_log",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Error Log",
+      "aliases": [
+        "mistake log"
+      ],
+      "definition": "An error log records the question, the mistake, the correct method, why the mistake happened, and a prevention strategy.",
+      "keywords": [
+        "error log",
+        "mistake",
+        "correct method",
+        "prevention strategy",
+        "review"
+      ],
+      "related": [
+        "Practice Testing",
+        "Active Recall"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_civilizations",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient Civilizations",
+      "aliases": [
+        "Ancient Civilizations Framework"
+      ],
+      "definition": "The ancient civilizations grouping covers Mesopotamia, Ancient Egypt, Ancient Greece, Ancient Rome, Indus Valley, Ancient China, and Mesoamerican civilizations as foundational history topics.",
+      "keywords": [
+        "ancient",
+        "civilizations",
+        "mesopotamia",
+        "egypt",
+        "greece",
+        "rome"
+      ],
+      "related": [
+        "Mesopotamia",
+        "Ancient Egypt",
+        "Ancient Greece",
+        "Ancient Rome"
+      ],
+      "examples": [
+        "Mesopotamia",
+        "Ancient Egypt",
+        "Ancient Greece",
+        "Ancient Rome",
+        "Indus Valley",
+        "Ancient China",
+        "Mesoamerican civilizations"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.mesopotamia",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Mesopotamia",
+      "aliases": [],
+      "definition": "Mesopotamia is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "mesopotamia",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Ancient Egypt"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_egypt",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient Egypt",
+      "aliases": [],
+      "definition": "Ancient Egypt is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "egypt",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Mesopotamia"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_greece",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient Greece",
+      "aliases": [],
+      "definition": "Ancient Greece is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "greece",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Ancient Rome"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_rome",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient Rome",
+      "aliases": [],
+      "definition": "Ancient Rome is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "rome",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Ancient Greece"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.indus_valley",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Indus Valley",
+      "aliases": [
+        "Indus Valley Civilization"
+      ],
+      "definition": "The Indus Valley is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "indus",
+        "valley",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Ancient China"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_china",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient China",
+      "aliases": [],
+      "definition": "Ancient China is one of the ancient civilizations covered in the history knowledge framework.",
+      "keywords": [
+        "china",
+        "ancient",
+        "civilization",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Indus Valley"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.mesoamerican_civilizations",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Mesoamerican Civilizations",
+      "aliases": [
+        "Mesoamerica"
+      ],
+      "definition": "Mesoamerican civilizations are one of the ancient civilization groupings covered in the history knowledge framework.",
+      "keywords": [
+        "mesoamerican",
+        "civilizations",
+        "ancient",
+        "history framework"
+      ],
+      "related": [
+        "Ancient Civilizations",
+        "Ancient China"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.west_african_history",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "West African History",
+      "aliases": [
+        "West African History Framework"
+      ],
+      "definition": "West African history is a framework of useful topics covering ancient West African states, the Ghana, Mali, and Songhai empires, trade, regional states, colonialism, and independence movements.",
+      "keywords": [
+        "west africa",
+        "history",
+        "empires",
+        "trade",
+        "colonialism",
+        "independence"
+      ],
+      "related": [
+        "Ghana Empire",
+        "Mali Empire",
+        "Songhai Empire",
+        "Colonialism"
+      ],
+      "examples": [
+        "Ancient West African states",
+        "Trans-Saharan trade",
+        "Colonialism",
+        "Independence movements"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ancient_west_african_states",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ancient West African States",
+      "aliases": [],
+      "definition": "Ancient West African states are one of the useful topics listed in the West African history framework.",
+      "keywords": [
+        "west africa",
+        "states",
+        "ancient",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Hausa City-States"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.ghana_empire",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Ghana Empire",
+      "aliases": [
+        "Wagadou Empire"
+      ],
+      "definition": "The Ghana Empire is a West African state studied alongside the Mali and Songhai empires and Trans-Saharan trade in the West African history framework.",
+      "keywords": [
+        "ghana",
+        "empire",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Mali Empire",
+        "Songhai Empire"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.mali_empire",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Mali Empire",
+      "aliases": [],
+      "definition": "The Mali Empire is a West African empire studied alongside the Ghana and Songhai empires and Trans-Saharan trade in the West African history framework.",
+      "keywords": [
+        "mali",
+        "empire",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Ghana Empire",
+        "Songhai Empire"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.songhai_empire",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Songhai Empire",
+      "aliases": [],
+      "definition": "The Songhai Empire is a West African empire studied alongside the Ghana and Mali empires and Trans-Saharan trade in the West African history framework.",
+      "keywords": [
+        "songhai",
+        "empire",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Ghana Empire",
+        "Mali Empire"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.trans_saharan_trade",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Trans-Saharan Trade",
+      "aliases": [
+        "Transaharan Trade"
+      ],
+      "definition": "Trans-Saharan trade is a useful topic in the West African history framework, listed alongside the Ghana, Mali, and Songhai empires.",
+      "keywords": [
+        "trans-saharan",
+        "trade",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Ghana Empire",
+        "Mali Empire"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.kanem_bornu",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Kanem-Bornu",
+      "aliases": [
+        "Kanem Bornu"
+      ],
+      "definition": "Kanem-Bornu is one of the useful topics listed in the West African history framework.",
+      "keywords": [
+        "kanem",
+        "bornu",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Oyo",
+        "Benin"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.oyo",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Oyo",
+      "aliases": [
+        "Oyo Empire"
+      ],
+      "definition": "Oyo is one of the useful topics listed in the West African history framework.",
+      "keywords": [
+        "oyo",
+        "west africa",
+        "history framework",
+        "state"
+      ],
+      "related": [
+        "West African History",
+        "Benin",
+        "Kanem-Bornu"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.benin",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Benin",
+      "aliases": [
+        "Benin Kingdom"
+      ],
+      "definition": "Benin is one of the useful topics listed in the West African history framework.",
+      "keywords": [
+        "benin",
+        "west africa",
+        "history framework",
+        "state"
+      ],
+      "related": [
+        "West African History",
+        "Oyo",
+        "Kanem-Bornu"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.hausa_city_states",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Hausa City-States",
+      "aliases": [
+        "Hausa States"
+      ],
+      "definition": "The Hausa city-states are one of the useful topics listed in the West African history framework.",
+      "keywords": [
+        "hausa",
+        "city-states",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Ancient West African States"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.african_european_trade",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "African-European Trade",
+      "aliases": [
+        "Africa-Europe Trade"
+      ],
+      "definition": "African-European trade is a useful topic in the West African history framework, listed alongside colonialism and independence movements.",
+      "keywords": [
+        "african",
+        "european",
+        "trade",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Colonialism",
+        "Independence Movements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.colonialism",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Colonialism",
+      "aliases": [],
+      "definition": "Colonialism is a useful topic in the West African history framework, listed with African-European trade and independence movements.",
+      "keywords": [
+        "colonialism",
+        "west africa",
+        "history framework",
+        "independence"
+      ],
+      "related": [
+        "West African History",
+        "African-European Trade",
+        "Independence Movements"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.independence_movements",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Independence Movements",
+      "aliases": [],
+      "definition": "Independence movements are a useful topic in the West African history framework, listed with colonialism and African-European trade.",
+      "keywords": [
+        "independence",
+        "movements",
+        "west africa",
+        "history framework"
+      ],
+      "related": [
+        "West African History",
+        "Colonialism",
+        "African-European Trade"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.nigerian_history_framework",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Nigerian History Framework",
+      "aliases": [],
+      "definition": "The Nigerian history framework covers precolonial societies, transatlantic trade, British colonial administration, amalgamation, nationalist movements, independence, constitutional development, post-independence political history, military and civilian periods, civil war, and the return to democratic governance.",
+      "keywords": [
+        "nigeria",
+        "precolonial",
+        "colonial",
+        "amalgamation",
+        "independence",
+        "civil war"
+      ],
+      "related": [
+        "West African History",
+        "Colonialism",
+        "Independence Movements"
+      ],
+      "examples": [
+        "Precolonial societies",
+        "Amalgamation",
+        "Nationalist movements",
+        "Civil war"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.precolonial_societies",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Precolonial Societies",
+      "aliases": [],
+      "definition": "Precolonial societies are a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "precolonial",
+        "societies",
+        "nigeria",
+        "history framework"
+      ],
+      "related": [
+        "Nigerian History Framework",
+        "British Colonial Administration"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.transatlantic_trade",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Transatlantic Trade",
+      "aliases": [],
+      "definition": "Transatlantic trade is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "transatlantic",
+        "trade",
+        "nigeria",
+        "history framework"
+      ],
+      "related": [
+        "Nigerian History Framework",
+        "Trans-Saharan Trade",
+        "African-European Trade"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.british_colonial_administration",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "British Colonial Administration",
+      "aliases": [],
+      "definition": "British colonial administration is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "british",
+        "colonial",
+        "administration",
+        "nigeria",
+        "history framework"
+      ],
+      "related": [
+        "Nigerian History Framework",
+        "Colonialism",
+        "Amalgamation"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.amalgamation",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Amalgamation",
+      "aliases": [],
+      "definition": "Amalgamation is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "amalgamation",
+        "nigeria",
+        "colonial",
+        "history framework"
+      ],
+      "related": [
+        "British Colonial Administration",
+        "Nigerian History Framework"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.nationalist_movements",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Nationalist Movements",
+      "aliases": [],
+      "definition": "Nationalist movements are a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "nationalist",
+        "movements",
+        "nigeria",
+        "independence",
+        "history framework"
+      ],
+      "related": [
+        "Independence Movements",
+        "Independence",
+        "Nigerian History Framework"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.independence",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Independence",
+      "aliases": [],
+      "definition": "Independence is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "independence",
+        "nigeria",
+        "nationalist movements",
+        "history framework"
+      ],
+      "related": [
+        "Nationalist Movements",
+        "Independence Movements",
+        "Nigerian History Framework"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.constitutional_development",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Constitutional Development",
+      "aliases": [],
+      "definition": "Constitutional development is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "constitutional",
+        "development",
+        "nigeria",
+        "governance",
+        "history framework"
+      ],
+      "related": [
+        "Nigerian History Framework",
+        "Return to Democratic Governance"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.post_independence_political_history",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Post-Independence Political History",
+      "aliases": [],
+      "definition": "Post-independence political history is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "post-independence",
+        "political",
+        "history",
+        "nigeria",
+        "governance"
+      ],
+      "related": [
+        "Independence",
+        "Military/Civilian Periods",
+        "Civil War"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.military_civilian_periods",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Military/Civilian Periods",
+      "aliases": [],
+      "definition": "Military and civilian periods are a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "military",
+        "civilian",
+        "periods",
+        "governance",
+        "nigeria"
+      ],
+      "related": [
+        "Post-Independence Political History",
+        "Return to Democratic Governance",
+        "Civil War"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.civil_war",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Civil War",
+      "aliases": [],
+      "definition": "Civil war is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "civil war",
+        "nigeria",
+        "conflict",
+        "history framework"
+      ],
+      "related": [
+        "Nigerian History Framework",
+        "Post-Independence Political History"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.history.return_to_democratic_governance",
+      "type": "CONCEPT",
+      "domain": "history",
+      "name": "Return to Democratic Governance",
+      "aliases": [],
+      "definition": "The return to democratic governance is a listed topic in the Nigerian history framework.",
+      "keywords": [
+        "democratic",
+        "governance",
+        "return",
+        "nigeria",
+        "history framework"
+      ],
+      "related": [
+        "Military/Civilian Periods",
+        "Constitutional Development",
+        "Nigerian History Framework"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.epistemology",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Epistemology",
+      "aliases": [],
+      "definition": "Epistemology is the study of knowledge, justification, and belief.",
+      "keywords": [
+        "knowledge",
+        "justification",
+        "belief",
+        "philosophy",
+        "study"
+      ],
+      "related": [
+        "Ethics",
+        "Metaphysics"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.ethics",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Ethics",
+      "aliases": [],
+      "definition": "Ethics is the study of moral concepts and conduct.",
+      "keywords": [
+        "moral",
+        "conduct",
+        "ethics",
+        "philosophy",
+        "study"
+      ],
+      "related": [
+        "Epistemology",
+        "Metaphysics"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.metaphysics",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Metaphysics",
+      "aliases": [],
+      "definition": "Metaphysics is the study of fundamental questions about reality and existence.",
+      "keywords": [
+        "reality",
+        "existence",
+        "fundamental questions",
+        "philosophy"
+      ],
+      "related": [
+        "Epistemology",
+        "Ethics"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.logical_validity",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Logical Validity",
+      "aliases": [],
+      "definition": "Logical validity is an argument form that guarantees the conclusion from the premises if the premises are true.",
+      "keywords": [
+        "validity",
+        "argument",
+        "premises",
+        "conclusion",
+        "logic"
+      ],
+      "related": [
+        "Soundness"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.philosophy.soundness",
+      "type": "CONCEPT",
+      "domain": "philosophy",
+      "name": "Soundness",
+      "aliases": [],
+      "definition": "Soundness is a valid argument with true premises.",
+      "keywords": [
+        "soundness",
+        "valid",
+        "true premises",
+        "argument",
+        "logic"
+      ],
+      "related": [
+        "Logical Validity"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.active_listening",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Active Listening",
+      "aliases": [],
+      "definition": "Active listening is the practice of understanding, clarifying, reflecting, and responding to a speaker.",
+      "keywords": [
+        "listening",
+        "understand",
+        "clarify",
+        "reflect",
+        "respond"
+      ],
+      "related": [
+        "Paraphrasing",
+        "Ambiguity"
+      ],
+      "examples": [
+        "Understand",
+        "Clarify",
+        "Reflect",
+        "Respond"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.paraphrasing",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Paraphrasing",
+      "aliases": [],
+      "definition": "Paraphrasing is restating an idea using different wording while preserving meaning.",
+      "keywords": [
+        "paraphrasing",
+        "restate",
+        "different wording",
+        "preserving meaning",
+        "communication"
+      ],
+      "related": [
+        "Active Listening"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.ambiguity",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Ambiguity",
+      "aliases": [],
+      "definition": "Ambiguity is a statement that admits multiple plausible interpretations.",
+      "keywords": [
+        "ambiguity",
+        "interpretations",
+        "plausible",
+        "statement",
+        "meaning"
+      ],
+      "related": [
+        "Paraphrasing",
+        "Active Listening"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.synonym",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Synonym",
+      "aliases": [],
+      "definition": "A synonym is a word with a similar meaning.",
+      "keywords": [
+        "synonym",
+        "similar meaning",
+        "vocabulary",
+        "word"
+      ],
+      "related": [
+        "Antonym",
+        "Hypernym"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.antonym",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Antonym",
+      "aliases": [],
+      "definition": "An antonym is a word of opposite or contrasting meaning.",
+      "keywords": [
+        "antonym",
+        "opposite",
+        "contrast",
+        "vocabulary",
+        "word"
+      ],
+      "related": [
+        "Synonym",
+        "Hypernym"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.hypernym",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Hypernym",
+      "aliases": [],
+      "definition": "A hypernym is a broader category; animal is the hypernym of dog.",
+      "keywords": [
+        "hypernym",
+        "broader",
+        "category",
+        "vocabulary",
+        "word"
+      ],
+      "related": [
+        "Hyponym",
+        "Synonym"
+      ],
+      "examples": [
+        "Animal is the hypernym of dog"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.hyponym",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Hyponym",
+      "aliases": [],
+      "definition": "A hyponym is a more specific member of a category; dog is the hyponym of animal.",
+      "keywords": [
+        "hyponym",
+        "specific member",
+        "category",
+        "vocabulary",
+        "word"
+      ],
+      "related": [
+        "Hypernym",
+        "Synonym"
+      ],
+      "examples": [
+        "Dog is the hyponym of animal"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.homonym",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Homonym",
+      "aliases": [],
+      "definition": "A homonym has the same form or sound with different meanings depending on the definition.",
+      "keywords": [
+        "homonym",
+        "same form",
+        "sound",
+        "different meanings",
+        "vocabulary"
+      ],
+      "related": [
+        "Polysemy",
+        "Synonym"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.english_language.polysemy",
+      "type": "CONCEPT",
+      "domain": "english_language",
+      "name": "Polysemy",
+      "aliases": [],
+      "definition": "Polysemy occurs when one word has multiple related meanings.",
+      "keywords": [
+        "polysemy",
+        "multiple meanings",
+        "related meanings",
+        "word",
+        "vocabulary"
+      ],
+      "related": [
+        "Homonym",
+        "Synonym"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.market_structures",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Market Structures",
+      "aliases": [],
+      "definition": "Market structures include perfect competition, monopolistic competition, oligopoly, and monopoly.",
+      "keywords": [
+        "market structures",
+        "competition",
+        "oligopoly",
+        "monopoly",
+        "firms"
+      ],
+      "related": [
+        "Perfect Competition",
+        "Monopolistic Competition",
+        "Oligopoly",
+        "Monopoly"
+      ],
+      "examples": [
+        "Perfect competition",
+        "Monopolistic competition",
+        "Oligopoly",
+        "Monopoly"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.perfect_competition",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Perfect Competition",
+      "aliases": [],
+      "definition": "Perfect competition is one of the market structures covered in the advanced economics framework.",
+      "keywords": [
+        "perfect competition",
+        "market structure",
+        "firms",
+        "competition"
+      ],
+      "related": [
+        "Market Structures",
+        "Monopolistic Competition"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.monopolistic_competition",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Monopolistic Competition",
+      "aliases": [],
+      "definition": "Monopolistic competition is one of the market structures covered in the advanced economics framework.",
+      "keywords": [
+        "monopolistic competition",
+        "market structure",
+        "firms",
+        "competition"
+      ],
+      "related": [
+        "Market Structures",
+        "Perfect Competition",
+        "Oligopoly"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.monopoly",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Monopoly",
+      "aliases": [],
+      "definition": "A monopoly is a single dominant seller under the simplified model, with significant barriers to entry.",
+      "keywords": [
+        "monopoly",
+        "single seller",
+        "barriers to entry",
+        "dominant",
+        "market"
+      ],
+      "related": [
+        "Market Structures",
+        "Oligopoly"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.oligopoly",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Oligopoly",
+      "aliases": [],
+      "definition": "An oligopoly is a market dominated by a small number of firms.",
+      "keywords": [
+        "oligopoly",
+        "small number",
+        "firms",
+        "market",
+        "dominated"
+      ],
+      "related": [
+        "Market Structures",
+        "Monopoly"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.externality",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Externality",
+      "aliases": [],
+      "definition": "An externality is the effect of an activity on third parties not fully reflected in market prices.",
+      "keywords": [
+        "externality",
+        "third parties",
+        "market prices",
+        "activity",
+        "effect"
+      ],
+      "related": [
+        "Public Good",
+        "Common Resource"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.public_good",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Public Good",
+      "aliases": [],
+      "definition": "A public good is often characterized by non-rivalry and non-excludability in the idealized model.",
+      "keywords": [
+        "public good",
+        "non-rivalry",
+        "non-excludability",
+        "idealized model"
+      ],
+      "related": [
+        "Common Resource",
+        "Externality"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.common_resource",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Common Resource",
+      "aliases": [],
+      "definition": "A common resource is difficult to exclude people from using and can be depleted by use.",
+      "keywords": [
+        "common resource",
+        "depleted",
+        "exclusion",
+        "use",
+        "resource"
+      ],
+      "related": [
+        "Public Good",
+        "Externality"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.subsidy",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Subsidy",
+      "aliases": [],
+      "definition": "A subsidy is financial support that can lower effective cost or encourage an activity.",
+      "keywords": [
+        "subsidy",
+        "financial support",
+        "cost",
+        "encourage",
+        "activity"
+      ],
+      "related": [
+        "Price Ceiling",
+        "Price Floor"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.price_ceiling",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Price Ceiling",
+      "aliases": [],
+      "definition": "A price ceiling is a legal maximum price.",
+      "keywords": [
+        "price ceiling",
+        "legal maximum",
+        "price",
+        "law"
+      ],
+      "related": [
+        "Price Floor",
+        "Subsidy"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.economics.price_floor",
+      "type": "CONCEPT",
+      "domain": "economics",
+      "name": "Price Floor",
+      "aliases": [],
+      "definition": "A price floor is a legal minimum price.",
+      "keywords": [
+        "price floor",
+        "legal minimum",
+        "price",
+        "law"
+      ],
+      "related": [
+        "Price Ceiling",
+        "Subsidy"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.market_research",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Market Research",
+      "aliases": [],
+      "definition": "Market research collects evidence about customers, alternatives, needs, and market conditions.",
+      "keywords": [
+        "market research",
+        "customers",
+        "needs",
+        "alternatives",
+        "market conditions"
+      ],
+      "related": [
+        "Customer Persona",
+        "Competitive Analysis"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.customer_persona",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Customer Persona",
+      "aliases": [],
+      "definition": "A customer persona is a representative description of a target customer segment.",
+      "keywords": [
+        "persona",
+        "customer",
+        "segment",
+        "target",
+        "representation"
+      ],
+      "related": [
+        "Market Research",
+        "Value Proposition"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.pain_point",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Pain Point",
+      "aliases": [],
+      "definition": "A pain point is a problem or friction experienced by a customer.",
+      "keywords": [
+        "pain point",
+        "problem",
+        "friction",
+        "customer",
+        "need"
+      ],
+      "related": [
+        "Customer Persona",
+        "Value Proposition"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.competitive_analysis",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Competitive Analysis",
+      "aliases": [],
+      "definition": "Competitive analysis is the study of alternatives, differentiators, constraints, and market positioning.",
+      "keywords": [
+        "competitive analysis",
+        "alternatives",
+        "differentiators",
+        "positioning",
+        "constraints"
+      ],
+      "related": [
+        "Market Research",
+        "Go-to-Market"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.go_to_market",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Go-to-Market",
+      "aliases": [],
+      "definition": "A go-to-market plan is a plan for launching and distributing a product.",
+      "keywords": [
+        "go-to-market",
+        "launch",
+        "distribution",
+        "product",
+        "plan"
+      ],
+      "related": [
+        "Value Proposition",
+        "Competitive Analysis"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.retention",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Retention",
+      "aliases": [],
+      "definition": "Retention is the ability to keep users or customers over time.",
+      "keywords": [
+        "retention",
+        "users",
+        "customers",
+        "keep",
+        "time"
+      ],
+      "related": [
+        "Churn",
+        "Lifetime Value"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.churn",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Churn",
+      "aliases": [],
+      "definition": "Churn is the rate at which customers or users stop using a product or service.",
+      "keywords": [
+        "churn",
+        "rate",
+        "customers",
+        "users",
+        "stop using"
+      ],
+      "related": [
+        "Retention",
+        "Lifetime Value"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.lifetime_value",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Lifetime Value",
+      "aliases": [],
+      "definition": "Lifetime value is the estimated economic value of a customer relationship under a chosen model.",
+      "keywords": [
+        "lifetime value",
+        "customer",
+        "economic value",
+        "estimate",
+        "model"
+      ],
+      "related": [
+        "Customer Acquisition Cost",
+        "Retention",
+        "Churn"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.customer_acquisition_cost",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Customer Acquisition Cost",
+      "aliases": [],
+      "definition": "Customer acquisition cost is the cost associated with acquiring customers.",
+      "keywords": [
+        "customer acquisition cost",
+        "acquiring customers",
+        "cost",
+        "business"
+      ],
+      "related": [
+        "Lifetime Value",
+        "Market Research"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.project",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Project",
+      "aliases": [],
+      "definition": "A project is a temporary effort intended to create a defined output.",
+      "keywords": [
+        "project",
+        "temporary",
+        "effort",
+        "output",
+        "defined"
+      ],
+      "related": [
+        "Scope",
+        "Milestone"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.scope",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Scope",
+      "aliases": [],
+      "definition": "Scope is what is included and excluded in a project.",
+      "keywords": [
+        "scope",
+        "included",
+        "excluded",
+        "project"
+      ],
+      "related": [
+        "Project",
+        "Backlog"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.milestone",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Milestone",
+      "aliases": [],
+      "definition": "A milestone is a significant checkpoint.",
+      "keywords": [
+        "milestone",
+        "checkpoint",
+        "significant",
+        "project"
+      ],
+      "related": [
+        "Project",
+        "Dependency"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.dependency",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Dependency",
+      "aliases": [],
+      "definition": "A dependency is a relationship where one task relies on another.",
+      "keywords": [
+        "dependency",
+        "task",
+        "relies",
+        "another",
+        "project"
+      ],
+      "related": [
+        "Project",
+        "Milestone"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.risk",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Risk",
+      "aliases": [],
+      "definition": "Risk is a potential uncertain event with impact.",
+      "keywords": [
+        "risk",
+        "uncertain",
+        "event",
+        "impact",
+        "potential"
+      ],
+      "related": [
+        "Issue",
+        "Project"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.issue",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Issue",
+      "aliases": [],
+      "definition": "An issue is a problem currently occurring.",
+      "keywords": [
+        "issue",
+        "problem",
+        "occurring",
+        "current",
+        "project"
+      ],
+      "related": [
+        "Risk",
+        "Backlog"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.backlog",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Backlog",
+      "aliases": [],
+      "definition": "A backlog is an ordered list of pending work.",
+      "keywords": [
+        "backlog",
+        "ordered",
+        "pending",
+        "work",
+        "list"
+      ],
+      "related": [
+        "Sprint",
+        "Issue"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.sprint",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Sprint",
+      "aliases": [],
+      "definition": "A sprint is a time-boxed development period in Scrum-style workflows.",
+      "keywords": [
+        "sprint",
+        "time-boxed",
+        "scrum",
+        "development",
+        "workflow"
+      ],
+      "related": [
+        "Backlog",
+        "Kanban",
+        "Definition of Done"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.kanban",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Kanban",
+      "aliases": [],
+      "definition": "Kanban is a visual workflow management approach.",
+      "keywords": [
+        "kanban",
+        "visual",
+        "workflow",
+        "management",
+        "approach"
+      ],
+      "related": [
+        "Sprint",
+        "Backlog"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.project_management.definition_of_done",
+      "type": "CONCEPT",
+      "domain": "project_management",
+      "name": "Definition of Done",
+      "aliases": [],
+      "definition": "The definition of done is agreed criteria for considering work complete.",
+      "keywords": [
+        "definition of done",
+        "criteria",
+        "complete",
+        "agreed",
+        "work"
+      ],
+      "related": [
+        "Sprint",
+        "Backlog"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.discovery",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Discovery",
+      "aliases": [],
+      "definition": "Discovery is understanding the problem, users, and context before committing to solutions.",
+      "keywords": [
+        "discovery",
+        "problem",
+        "users",
+        "context",
+        "solutions"
+      ],
+      "related": [
+        "Prototype",
+        "MVP"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.prototype",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Prototype",
+      "aliases": [],
+      "definition": "A prototype is a representation used to explore or test an idea.",
+      "keywords": [
+        "prototype",
+        "representation",
+        "explore",
+        "test",
+        "idea"
+      ],
+      "related": [
+        "MVP",
+        "Discovery"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.iteration",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Iteration",
+      "aliases": [],
+      "definition": "Iteration is a cycle of build, observe, learn, and improve.",
+      "keywords": [
+        "iteration",
+        "build",
+        "observe",
+        "learn",
+        "improve"
+      ],
+      "related": [
+        "MVP",
+        "Prototype"
+      ],
+      "examples": [
+        "build → observe → learn → improve"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.regression",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Regression",
+      "aliases": [],
+      "definition": "Regression is a new change unintentionally breaking old behavior.",
+      "keywords": [
+        "regression",
+        "change",
+        "breaks",
+        "behavior",
+        "unintentional"
+      ],
+      "related": [
+        "Feature",
+        "Iteration"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.feature",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Feature",
+      "aliases": [],
+      "definition": "A feature is a user-facing capability.",
+      "keywords": [
+        "feature",
+        "capability",
+        "user-facing",
+        "product"
+      ],
+      "related": [
+        "MVP",
+        "Regression"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.business.tech_debt",
+      "type": "CONCEPT",
+      "domain": "business",
+      "name": "Tech Debt",
+      "aliases": [],
+      "definition": "Tech debt is future cost created by expedient technical decisions.",
+      "keywords": [
+        "tech debt",
+        "future cost",
+        "decisions",
+        "expedient",
+        "technical"
+      ],
+      "related": [
+        "Feature",
+        "Discovery"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.paragraph",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Paragraph",
+      "aliases": [],
+      "definition": "A paragraph usually has a topic or central idea, supporting details, coherence, and a closing or transition where needed.",
+      "keywords": [
+        "paragraph",
+        "topic",
+        "supporting details",
+        "coherence",
+        "transition"
+      ],
+      "related": [
+        "Thesis",
+        "Outline"
+      ],
+      "examples": [
+        "Topic or central idea",
+        "Supporting details",
+        "Coherence",
+        "Closing or transition"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.thesis",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Thesis",
+      "aliases": [],
+      "definition": "A thesis is the central claim of an essay or argument.",
+      "keywords": [
+        "thesis",
+        "central claim",
+        "essay",
+        "argument"
+      ],
+      "related": [
+        "Paragraph",
+        "Outline"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.outline",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Outline",
+      "aliases": [],
+      "definition": "An outline is a plan of major sections before drafting.",
+      "keywords": [
+        "outline",
+        "plan",
+        "major sections",
+        "drafting"
+      ],
+      "related": [
+        "Thesis",
+        "Revision"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.revision",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Revision",
+      "aliases": [],
+      "definition": "Revision improves content, logic, organization, and clarity.",
+      "keywords": [
+        "revision",
+        "content",
+        "logic",
+        "organization",
+        "clarity"
+      ],
+      "related": [
+        "Editing",
+        "Proofreading",
+        "Outline"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.editing",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Editing",
+      "aliases": [],
+      "definition": "Editing corrects grammar, wording, consistency, and style.",
+      "keywords": [
+        "editing",
+        "grammar",
+        "wording",
+        "consistency",
+        "style"
+      ],
+      "related": [
+        "Revision",
+        "Proofreading"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.proofreading",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Proofreading",
+      "aliases": [],
+      "definition": "Proofreading is a final surface-level error check.",
+      "keywords": [
+        "proofreading",
+        "final",
+        "error",
+        "check",
+        "surface-level"
+      ],
+      "related": [
+        "Editing",
+        "Revision"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.writing.tone",
+      "type": "CONCEPT",
+      "domain": "writing",
+      "name": "Tone",
+      "aliases": [],
+      "definition": "Tone is the attitude conveyed by a text; in writing it may be formal, neutral, conversational, persuasive, academic, or friendly.",
+      "keywords": [
+        "tone",
+        "attitude",
+        "formal",
+        "conversational",
+        "persuasive",
+        "academic",
+        "friendly"
+      ],
+      "related": [
+        "Author's Purpose",
+        "Editing"
+      ],
+      "examples": [
+        "Formal",
+        "Neutral",
+        "Conversational",
+        "Persuasive",
+        "Academic",
+        "Friendly"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.slide_purpose",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Slide Purpose",
+      "aliases": [],
+      "definition": "Slide purpose is the principle that each slide should support one major idea where practical.",
+      "keywords": [
+        "slide",
+        "major idea",
+        "presentation",
+        "one idea"
+      ],
+      "related": [
+        "Good Structure",
+        "Data Visualization"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.good_structure",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Good Structure",
+      "aliases": [],
+      "definition": "A good presentation structure includes title, context, key message, evidence or example, and a conclusion or next step.",
+      "keywords": [
+        "title",
+        "context",
+        "key message",
+        "evidence",
+        "conclusion",
+        "presentation"
+      ],
+      "related": [
+        "Slide Purpose",
+        "Data Visualization"
+      ],
+      "examples": [
+        "Title",
+        "Context",
+        "Key message",
+        "Evidence/example",
+        "Conclusion/next step"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.communication.data_visualization",
+      "type": "CONCEPT",
+      "domain": "communication",
+      "name": "Data Visualization",
+      "aliases": [],
+      "definition": "Data visualization means choosing a chart based on the question: bar to compare categories, line for trend over time, scatter for relationship, histogram for distribution, and pie for limited part-to-whole comparisons when appropriate; avoid misleading scales and unnecessary decoration.",
+      "keywords": [
+        "data visualization",
+        "chart",
+        "categories",
+        "trend",
+        "distribution",
+        "part-to-whole"
+      ],
+      "related": [
+        "Good Structure",
+        "Slide Purpose"
+      ],
+      "examples": [
+        "Bar → compare categories",
+        "Line → trend over time",
+        "Scatter → relationship",
+        "Histogram → distribution",
+        "Pie → limited part-to-whole comparisons"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.main_idea",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Main Idea",
+      "aliases": [],
+      "definition": "The main idea is the central point of a passage.",
+      "keywords": [
+        "main idea",
+        "central point",
+        "passage",
+        "reading"
+      ],
+      "related": [
+        "Detail",
+        "Inference"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.detail",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Detail",
+      "aliases": [],
+      "definition": "A detail is supporting information in a passage.",
+      "keywords": [
+        "detail",
+        "supporting information",
+        "passage",
+        "reading"
+      ],
+      "related": [
+        "Main Idea",
+        "Inference"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.inference",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Inference",
+      "aliases": [],
+      "definition": "An inference is a conclusion supported by evidence but not directly stated.",
+      "keywords": [
+        "inference",
+        "conclusion",
+        "evidence",
+        "not directly stated",
+        "reading"
+      ],
+      "related": [
+        "Main Idea",
+        "Critical Reading"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.authors_purpose",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Author's Purpose",
+      "aliases": [],
+      "definition": "The author's purpose is the reason for creating the text.",
+      "keywords": [
+        "author's purpose",
+        "reason",
+        "text",
+        "writing",
+        "reading"
+      ],
+      "related": [
+        "Tone",
+        "Main Idea"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.context",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Context",
+      "aliases": [],
+      "definition": "Context is the information around a statement that helps interpret meaning.",
+      "keywords": [
+        "context",
+        "information",
+        "statement",
+        "interpret",
+        "meaning"
+      ],
+      "related": [
+        "Main Idea",
+        "Inference"
+      ],
+      "examples": [],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "concept.study_skills.critical_reading",
+      "type": "CONCEPT",
+      "domain": "study_skills",
+      "name": "Critical Reading",
+      "aliases": [],
+      "definition": "Critical reading asks what the claim is, what evidence supports it, whether that evidence is relevant and sufficient, what assumptions and alternative explanations exist, whether the source is reliable, and what would disprove the claim.",
+      "keywords": [
+        "critical reading",
+        "claim",
+        "evidence",
+        "assumptions",
+        "relevance",
+        "reliability"
+      ],
+      "related": [
+        "Inference",
+        "Main Idea",
+        "Author's Purpose"
+      ],
+      "examples": [
+        "What is the claim?",
+        "What evidence supports it?",
+        "Is evidence relevant?",
+        "Is evidence sufficient?",
+        "What assumptions exist?",
+        "What alternative explanations exist?",
+        "Is the source reliable?",
+        "What would disprove the claim?"
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    }
+  ]
+}

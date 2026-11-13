@@ -1,0 +1,146 @@
+[
+  {
+    "id": "src_feynman_physics",
+    "title": "The Feynman Lectures on Physics",
+    "author_or_org": "Richard Feynman, Robert Leighton, Matthew Sands",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "https://www.feynmanlectures.caltech.edu/",
+    "license": "Public Access / Educational Reference",
+    "notes": "Fundamental physics principles, mechanics, electromagnetism, and quantum behavior."
+  },
+  {
+    "id": "src_halliday_resnick",
+    "title": "Fundamentals of Physics (11th Edition)",
+    "author_or_org": "David Halliday, Robert Resnick, Jearl Walker",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Wiley",
+    "license": "Academic Reference Standard",
+    "notes": "Classical mechanics, wave physics, thermodynamics, optics, and gravitation."
+  },
+  {
+    "id": "src_openstax_bio",
+    "title": "OpenStax Biology 2e",
+    "author_or_org": "Mary Ann Clark, Matthew Douglas, Jung Choi / OpenStax",
+    "source_type": "open_educational_resource",
+    "uri_or_reference": "https://openstax.org/details/books/biology-2e",
+    "license": "CC BY 4.0",
+    "notes": "Cellular biology, genetics, evolutionary biology, and physiology."
+  },
+  {
+    "id": "src_campbell_bio",
+    "title": "Campbell Biology (12th Edition)",
+    "author_or_org": "Lisa A. Urry, Michael L. Cain, Steven A. Wasserman",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Pearson",
+    "license": "Academic Reference",
+    "notes": "Molecular genetics, biochemistry, zoology, ecology, and evolutionary mechanisms."
+  },
+  {
+    "id": "src_openstax_chem",
+    "title": "OpenStax Chemistry 2e",
+    "author_or_org": "Paul Flowers, Klaus Theopold, Richard Langley / OpenStax",
+    "source_type": "open_educational_resource",
+    "uri_or_reference": "https://openstax.org/details/books/chemistry-2e",
+    "license": "CC BY 4.0",
+    "notes": "Atomic structure, chemical bonding, thermodynamics, and kinetics."
+  },
+  {
+    "id": "src_clrs_algorithms",
+    "title": "Introduction to Algorithms (4th Edition)",
+    "author_or_org": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "MIT Press",
+    "license": "Copyright MIT Press / Citation Standard",
+    "notes": "Standard foundational algorithms, computational complexity, and data structures."
+  },
+  {
+    "id": "src_tanenbaum_os",
+    "title": "Modern Operating Systems (4th Edition)",
+    "author_or_org": "Andrew S. Tanenbaum, Herbert Bos",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Pearson",
+    "license": "Academic Reference",
+    "notes": "Process scheduling, memory management, file systems, and concurrency."
+  },
+  {
+    "id": "src_kurose_ross_networking",
+    "title": "Computer Networking: A Top-Down Approach (8th Edition)",
+    "author_or_org": "James F. Kurose, Keith W. Ross",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Pearson",
+    "license": "Academic Reference",
+    "notes": "TCP/IP protocol architecture, transport layer flow control, and routing algorithms."
+  },
+  {
+    "id": "src_russell_norvig_ai",
+    "title": "Artificial Intelligence: A Modern Approach (4th Edition)",
+    "author_or_org": "Stuart Russell, Peter Norvig",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Pearson",
+    "license": "Academic Reference",
+    "notes": "Search algorithms, probabilistic reasoning, machine learning, and knowledge representation."
+  },
+  {
+    "id": "src_mankiw_econ",
+    "title": "Principles of Microeconomics",
+    "author_or_org": "N. Gregory Mankiw",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Cengage Learning",
+    "license": "Academic Reference",
+    "notes": "Supply and demand, market structures, price elasticity, and opportunity cost."
+  },
+  {
+    "id": "src_who_guidelines",
+    "title": "World Health Organization Essential Nutrition and Health Guidelines",
+    "author_or_org": "World Health Organization (WHO)",
+    "source_type": "institutional_guideline",
+    "uri_or_reference": "https://www.who.int/publications",
+    "license": "Open Public Health Data",
+    "notes": "Macro/micronutrient guidelines, hydration standards, and public health hygiene."
+  },
+  {
+    "id": "src_red_cross_first_aid",
+    "title": "First Aid/CPR/AED Participant's Manual",
+    "author_or_org": "American Red Cross",
+    "source_type": "institutional_guideline",
+    "uri_or_reference": "https://www.redcross.org",
+    "license": "Public Safety Reference",
+    "notes": "Emergency bleeding control, CPR ratios, choking response, and burn triage."
+  },
+  {
+    "id": "src_norman_design",
+    "title": "The Design of Everyday Things",
+    "author_or_org": "Don Norman",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Basic Books",
+    "license": "Academic Reference",
+    "notes": "Affordances, signifiers, feedback loops, conceptual models, and error tolerance."
+  },
+  {
+    "id": "src_nist_standards",
+    "title": "NIST Handbook of Physical and Chemical Constants",
+    "author_or_org": "National Institute of Standards and Technology (NIST)",
+    "source_type": "scientific_standard",
+    "uri_or_reference": "https://www.nist.gov",
+    "license": "Public Domain (US Government)",
+    "notes": "Standard physical constants, unit measurements, and thermodynamic properties."
+  },
+  {
+    "id": "src_strang_linear_algebra",
+    "title": "Introduction to Linear Algebra (5th Edition)",
+    "author_or_org": "Gilbert Strang",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Wellesley-Cambridge Press",
+    "license": "Academic Reference",
+    "notes": "Vector spaces, eigenvalues, singular value decomposition, and linear transformations."
+  },
+  {
+    "id": "src_mcgee_food_cooking",
+    "title": "On Food and Cooking: The Science and Lore of the Kitchen",
+    "author_or_org": "Harold McGee",
+    "source_type": "academic_textbook",
+    "uri_or_reference": "Scribner",
+    "license": "Culinary Science Reference",
+    "notes": "Food chemistry, protein denaturation, emulsions, caramelization, and heat transfer."
+  }
+]
