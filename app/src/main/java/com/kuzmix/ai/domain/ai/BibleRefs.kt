@@ -207,7 +207,7 @@ object BibleRefs {
 
     /** Words allowed before a chapter-only reference at the "start" of a query. */
     private val leadingFunctionWords = Regex(
-        "^(?:(?:in|at|from|to|read|open|see|check|go|look|turn|about|the|book of|psalm of)\\s+)+$",
+        "^(?:(?:in|at|from|to|read|open|see|check|go|look|turn|about|the|book of|psalm of)\\s*)+$",
         RegexOption.IGNORE_CASE
     )
 

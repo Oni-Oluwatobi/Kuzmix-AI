@@ -84,17 +84,16 @@ object MathSolver {
         return when (degree) {
             1 -> solveLinear(variable, left, right, diff)
             2 -> solveQuadratic(variable, diff)
-            0 -> if (diff.isZero())
-                Solution(
-                    Kind.IDENTITY,
-                    listOf(
-                        "Both sides are identical expressions.",
-                        "Every value of $variable makes the two sides equal."
-                    ),
-                    "True for all values of $variable (identity)",
-                    variable
-                )
-            else Solution(
+            -1 -> Solution(                    // zero polynomial: both sides identical
+                Kind.IDENTITY,
+                listOf(
+                    "Both sides are identical expressions.",
+                    "Every value of $variable makes the two sides equal."
+                ),
+                "True for all values of $variable (identity)",
+                variable
+            )
+            0 -> Solution(
                 Kind.CONTRADICTION,
                 listOf(
                     "Simplify both sides: ${renderPoly(diff, variable)} = 0",
@@ -127,11 +126,13 @@ object MathSolver {
             val pair = findFactorPair(bb, cc)
             if (pair != null) {
                 val (p, q) = pair
+                val fp = if (p >= 0) "+ ${fmt(p.toDouble())}" else "- ${fmt((-p).toDouble())}"
+                val fq = if (q >= 0) "+ ${fmt(q.toDouble())}" else "- ${fmt((-q).toDouble())}"
                 steps += "Find two numbers that multiply to $cc and add to $bb: $p and $q."
-                steps += "Write the factors: (${variable} + ${fmt(p)})(${variable} + ${fmt(q)}) = 0."
+                steps += "Write the factors: (${variable} $fp)(${variable} $fq) = 0."
                 return Solution(
                     Kind.FACTOR, steps,
-                    "($variable + ${fmt(p)})($variable + ${fmt(q)})",
+                    "($variable $fp)($variable $fq)",
                     variable,
                     listOf(-p.toDouble(), -q.toDouble())
                 )
@@ -146,9 +147,9 @@ object MathSolver {
         steps += "Solve ${renderPoly(poly, variable)} = 0 first to find the roots."
         return when (roots.size) {
             1 -> {
-                steps += "Double root: $variable = ${fmt(roots[0])}."
+                val r = roots[0]
+                steps += "Double root: $variable = ${fmt(r)}."
                 if (a == 1.0) {
-                    val r = roots[0]
                     val sign = if (r >= 0) "+" else "-"
                     Solution(Kind.FACTOR, steps, "($variable - ${fmt(r)})($variable - ${fmt(r)})", variable, roots)
                         .let { it.copy(answer = "($variable ${sign} ${fmt(abs(r))})\u00b2".replace("()", "($variable ${sign} ${fmt(abs(r))})")) }
@@ -333,8 +334,9 @@ object MathSolver {
             .replace('÷', '/')
             .replace('＝', '=')
         t = t.replace(Regex("^\\s*(?:what\\s+is|whats|calculate|compute|work\\s+out|evaluate)\\s*"), "")
-        t = t.replace(Regex("^\\s*solve(?:\\s+for\\s+[a-z])?\\s*[:\-]?\\s*"), "")
+        t = t.replace(Regex("^\\s*solve(?:\\s+for\\s+[a-z])?\\s*[:\\-]?\\s*"), "")
         t = t.replace(Regex("^\\s*(?:find|determine|simplify)\\s+(?:the\\s+value\\s+of\\s+)?"), "")
+        t = t.replace(Regex("^\\s*(?:factori[sz]e|factor|expand)\\s*"), "")
         t = t.replace(Regex("\\s*=\\s*what\\s*\\??$"), " =")
         t = t.replace(Regex("^\\s*the\\s+equation\\s+is\\s*"), "")
         t = t.replace("?", "")
@@ -353,7 +355,7 @@ object MathSolver {
         // prefer classic unknowns, then any stray letter that is not in a word
         val candidates = "xyzabcdefghijklmnopqrstuvw".toSet()
         val found = text.filter { it in candidates }.toSet()
-        return found.firstOrNull() ?: text.firstOrNull { it.isLetter() }
+        return found.firstOrNull()?.toString() ?: text.firstOrNull { it.isLetter() }?.toString()
     }
 
     // ---------------------------------------------------------------- algebra

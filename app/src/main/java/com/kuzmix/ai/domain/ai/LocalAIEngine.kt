@@ -35,6 +35,10 @@ class LocalAIEngine(
     @Volatile
     private var llm: LlmInference? = null
 
+    /** Active streaming sink; set only while [generateStream] is awaiting a result. */
+    @Volatile
+    private var streamSink: StreamSink? = null
+
     private val _statusFlow = MutableStateFlow(ModelStatus.NOT_INSTALLED)
     val statusFlow: StateFlow<ModelStatus> = _statusFlow.asStateFlow()
 
@@ -67,11 +71,25 @@ class LocalAIEngine(
             try {
                 unloadLocked()
                 val options = LlmInference.LlmInferenceOptions.builder()
-                    .setModelAssetPath(path)
+                    .setModelPath(path)
                     .setMaxTokens(MAX_TOKENS)
-                    .setTemperature(TEMPERATURE)
-                    .setTopK(TOP_K)
-                    .setRandomSeed(SEED)
+                    .setMaxTopK(TOP_K)
+                    .setResultListener { result, done ->
+                        val sink = streamSink
+                        if (sink != null) {
+                            if (done) {
+                                streamSink = null
+                                sink.onDone(result)
+                            } else if (result.isNotEmpty()) {
+                                sink.onPartial(result)
+                            }
+                        }
+                    }
+                    .setErrorListener { err ->
+                        val sink = streamSink
+                        streamSink = null
+                        sink?.onError(err)
+                    }
                     .build()
                 llm = LlmInference.createFromOptions(appContext, options)
                 modelPath = path
@@ -130,29 +148,26 @@ class LocalAIEngine(
         val model = llm ?: throw IllegalStateException("Local model is not loaded")
         return mutex.withLock {
             suspendCancellableCoroutine { cont ->
-                model.generateResponseAsync(
-                    prompt,
-                    object : LlmInference.LlmInferenceResponseListener {
-                        override fun onPartialResponse(partialResult: String) {
-                            if (cont.isActive) onPartial(partialResult)
-                        }
-
-                        override fun onResponse(response: String) {
-                            if (cont.isActive) cont.resume(response)
-                        }
-
-                        override fun onError(error: LlmInference.LlmInferenceResponseListener.Error) {
-                            if (cont.isActive) {
-                                cont.resumeWithException(
-                                    RuntimeException(error.message())
-                                )
-                            }
-                        }
-                    }
+                streamSink = StreamSink(
+                    onPartial = { s -> if (cont.isActive) onPartial(s) },
+                    onDone = { s -> if (cont.isActive) cont.resume(s) },
+                    onError = { e -> if (cont.isActive) cont.resumeWithException(e) }
                 )
+                try {
+                    model.generateResponseAsync(prompt)
+                } catch (t: Throwable) {
+                    streamSink = null
+                    if (cont.isActive) cont.resumeWithException(t)
+                }
             }
         }
     }
+
+    private class StreamSink(
+        val onPartial: (String) -> Unit,
+        val onDone: (String) -> Unit,
+        val onError: (Throwable) -> Unit
+    )
 
     private fun unloadLocked() {
         try {
@@ -178,8 +193,6 @@ class LocalAIEngine(
     companion object {
         private const val TAG = "LocalAIEngine"
         private const val MAX_TOKENS = 1024
-        private const val TEMPERATURE = 0.7f
         private const val TOP_K = 40
-        private const val SEED = 101L
     }
 }
