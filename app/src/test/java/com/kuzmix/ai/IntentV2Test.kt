@@ -115,6 +115,29 @@ class IntentV2Test {
         assertEquals("agriculture", m.entity)
     }
 
+    @Test
+    fun objectivePhrasesRouteToQuizWizard() {
+        // "objectives on physics" used to fall through to a subject/roadmap
+        // answer — it is a quiz request like any other "questions on X".
+        val objectives = classify("objectives on physics")
+        assertEquals(Intent.PRACTICE_QUESTION, objectives.intent)
+        assertEquals("physics", objectives.entity)
+
+        val study = classify("give me study questions")
+        assertEquals(Intent.PRACTICE_QUESTION, study.intent)
+
+        val typed = classify("give me study objective questions on buology")
+        assertEquals(Intent.PRACTICE_QUESTION, typed.intent)
+        assertEquals("buology", typed.entity)
+
+        val learning = classify("learning objectives for chemistry")
+        assertEquals(Intent.PRACTICE_QUESTION, learning.intent)
+        assertEquals("chemistry", learning.entity)
+
+        // a genuine "what are the objectives of X" is still a definition
+        assertEquals(Intent.DEFINITION, classify("what are the objectives of photosynthesis").intent)
+    }
+
     // ------------------------------------------------------ sessions
 
     @Test

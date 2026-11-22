@@ -130,4 +130,25 @@ class KnowledgeIndexTest {
         assertEquals(2, results.size)
         assertEquals(results[0].score, results[1].score, 1e-9)
     }
+
+    @Test
+    fun resolveEntity_toleratesSmallTypos_butNeverWildlyDifferentNames() = runBlocking {
+        val index = KnowledgeIndex(pack, source = null)
+
+        // one-substitution typo resolves to the real concept
+        assertEquals("c_static", index.resolveEntity("photosynthesys")?.id)
+        assertEquals("c_static", index.resolveEntity("Photosynthesis")?.id)
+
+        // far-off names must not fuzzy-match anything
+        assertEquals(null, index.resolveEntity("quantum economics"))
+        assertEquals(null, index.resolveEntity("zoology"))
+    }
+
+    @Test
+    fun resolveEntity_typoToleranceAppliesInDiskModeToo() = runBlocking {
+        // disk mode: the source misses (lookup -> null), the typo pass still
+        // repairs a misspelled entity against the static shell entries
+        val index = KnowledgeIndex(pack, StubSource(emptyList()))
+        assertEquals("c_static", index.resolveEntity("photosynthesys")?.id)
+    }
 }

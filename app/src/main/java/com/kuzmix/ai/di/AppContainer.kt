@@ -3,6 +3,7 @@ package com.kuzmix.ai.di
 import android.app.ActivityManager
 import android.content.Context
 import android.util.Log
+import com.kuzmix.ai.data.auth.AuthRepository
 import com.kuzmix.ai.data.knowledge.KnowledgeCoreConceptSource
 import com.kuzmix.ai.data.knowledge.KnowledgeCoreCorpusSource
 import com.kuzmix.ai.data.knowledge.KnowledgeCoreStore
@@ -11,12 +12,14 @@ import com.kuzmix.ai.data.knowledge.KnowledgeSeeder
 import com.kuzmix.ai.data.knowledge.RoomConceptSource
 import com.kuzmix.ai.data.knowledge.SeedState
 import com.kuzmix.ai.data.local.KuzmixDatabase
+import com.kuzmix.ai.data.preferences.StoredQuizHistory
 import com.kuzmix.ai.data.preferences.UserPreferences
 import com.kuzmix.ai.domain.ai.AIRepository
 import com.kuzmix.ai.domain.ai.ConceptCache
 import com.kuzmix.ai.domain.ai.KnowledgeEngine
 import com.kuzmix.ai.domain.ai.LocalAIEngine
 import com.kuzmix.ai.domain.ai.ModelFileManager
+import com.kuzmix.ai.domain.ai.SecretDocs
 import com.kuzmix.ai.domain.repository.ChatRepository
 import com.kuzmix.ai.domain.repository.SettingsRepository
 import kotlinx.coroutines.CompletableDeferred
@@ -31,6 +34,9 @@ class AppContainer(context: Context) {
     private val preferences = UserPreferences(context)
     private val knowledgeDataSource = KnowledgeDataSource(context)
     private val appContext = context.applicationContext
+
+    /** Firebase auth + users/{uid} profile (class/term/name/email). */
+    val authRepository = AuthRepository(appContext, preferences)
 
     private val conceptCache = ConceptCache(cacheCapacity(context))
     private val seedGate = CompletableDeferred<Unit>()
@@ -84,11 +90,31 @@ class AppContainer(context: Context) {
     )
 
     private val corpusSource = KnowledgeCoreCorpusSource(store = { kbStore.await() })
-    private val knowledgeEngine = KnowledgeEngine(knowledgeDataSource.loadShell(), conceptSource, corpusSource)
+    private val knowledgeEngine = KnowledgeEngine(
+        knowledgeDataSource.loadShell(),
+        conceptSource,
+        corpusSource,
+        StoredQuizHistory(preferences),   // "never repeat a question" survives restarts
+        onScopePinned = { cls, className, term ->
+            // local cache first (works offline), Firestore mirror best-effort
+            appScope.launch {
+                try {
+                    preferences.setSavedClass(cls, className, term)
+                } catch (t: Throwable) {
+                    Log.w(TAG, "saved-class write failed", t)
+                }
+            }
+            authRepository.saveClassTerm(cls, className, term)
+        }
+    )
     private val modelFileManager = ModelFileManager(appContext)
+
     private val localAIEngine = LocalAIEngine(appContext, modelFileManager) { path ->
         preferences.setModelPath(path)
     }
+
+    /** Admin drawer: codes typed in the chat unlock the bundled SS guides. */
+    private val secretDocs = SecretDocs()
 
     init {
         appScope.launch {
@@ -102,7 +128,7 @@ class AppContainer(context: Context) {
         }
     }
 
-    val aiRepository = AIRepository(knowledgeEngine, localAIEngine)
+    val aiRepository = AIRepository(knowledgeEngine, localAIEngine, secretDocs)
     val chatRepository = ChatRepository(database.conversationDao(), database.messageDao())
     val settingsRepository = SettingsRepository(preferences)
 

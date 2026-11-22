@@ -6,6 +6,7 @@ import com.kuzmix.ai.domain.ai.CorpusSource
 import com.kuzmix.ai.domain.ai.BiblePassage
 import com.kuzmix.ai.domain.ai.FtsMatcher
 import com.kuzmix.ai.domain.ai.QueryNormalizer
+import com.kuzmix.ai.domain.ai.SchemeSubject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -70,6 +71,44 @@ class KnowledgeCoreCorpusSource(
         val s = store() ?: return emptyList()
         return withContext(Dispatchers.IO) {
             s.bibleSearch(match, limit).map { it.toPassage() }
+        }
+    }
+
+    override suspend fun schemeSubjects(cls: String, term: Int?): List<SchemeSubject> {
+        val s = store() ?: return emptyList()
+        return withContext(Dispatchers.IO) {
+            s.schemeSubjects(cls, term).map { SchemeSubject(it.subject, it.conceptId) }
+                .also { Log.i(TAG, "schemeSubjects cls=$cls term=$term -> ${it.size}") }
+        }
+    }
+
+    override suspend fun lessonTopics(conceptId: String, limit: Int): List<String> {
+        if (conceptId.isBlank()) return emptyList()
+        val s = store() ?: return emptyList()
+        return withContext(Dispatchers.IO) {
+            s.lessonTopics(conceptId, limit)
+                .also { Log.i(TAG, "lessonTopics $conceptId -> ${it.size}") }
+        }
+    }
+
+    override suspend fun examChunksFor(
+        cls: String,
+        term: Int?,
+        subject: String?,
+        terms: List<String>,
+        limit: Int
+    ): List<CorpusChunk> {
+        val s = store() ?: return emptyList()
+        // empty terms -> paper order inside the scope (null match)
+        val match = if (terms.isEmpty()) null else matchExpr(terms)
+        if (terms.isNotEmpty() && match == null) return emptyList()
+        return withContext(Dispatchers.IO) {
+            s.examChunksFor(cls, term, subject, match, limit)
+                .map { it.toCorpusChunk() }
+                .also {
+                    Log.i(TAG, "examChunksFor cls=$cls term=$term subject=$subject " +
+                        "terms='${terms.joinToString(" ")}' -> ${it.size}")
+                }
         }
     }
 

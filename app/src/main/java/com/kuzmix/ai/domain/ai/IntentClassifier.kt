@@ -193,6 +193,17 @@ object IntentClassifier {
         Regex("\\bgive (me )?(some |a few )?(practice )?questions\\b"),
         Regex("\\bexam questions?\\b"),
         Regex("\\bquestions? (on|for|about)\\b"),
+        // "study questions", "study objective questions" -> the quiz wizard
+        Regex("\\bstudy (?:objective |exam |practice )?questions?\\b"),
+        // "objectives on physics", "objective questions for chemistry"
+        Regex("\\bobjective questions?\\b"),
+        Regex("\\bobjectives?\\b[^.]{0,40}\\b(?:on|for|about|in)\\b"),
+        Regex("\\blearning objectives?\\b"),
+        // "random questions", "questions in random order", "shuffle my questions"
+        // -> the same class-scoped quiz wizard (random never leaves the class)
+        Regex("\\brandom (practice |exam |study )?questions?\\b"),
+        Regex("\\bquestions?[^.]{0,24}\\brandom(?:ly)?\\b"),
+        Regex("\\b(shuffle|randomi[sz]e)(?:\\s+(?:it|the|my))?\\s*questions?\\b"),
         Regex("\\bmark my (answer|work)\\b"),
         Regex("\\bsolve this question\\b"),
         Regex("\\bexamine me\\b")

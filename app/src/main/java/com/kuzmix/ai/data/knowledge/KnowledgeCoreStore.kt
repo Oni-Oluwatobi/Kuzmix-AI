@@ -257,6 +257,243 @@ class KnowledgeCoreStore private constructor(
         return out
     }
 
+    // ---------------------------------------------------- scheme of work
+    // Quiz scoping (see CorpusSource.schemeSubjects / lessonTopics /
+    // examChunksFor): which subjects a class reads in a term, that
+    // subject's weekly lesson topics, and exam questions pinned to
+    // class + term + subject (+ topic words). [cls] is the lowercase class
+    // key ("jss1".."ss3"): concept ids embed it (c_cur_jss1_*) and concept
+    // names spell it with a space ("JSS 1"), rebuilt by [classLabel].
+
+    /** One subject offered for a class (+ term). */
+    data class SchemeSubjectRow(
+        val subject: String,
+        val conceptId: String,
+        val fromExam: Boolean
+    )
+
+    fun schemeSubjects(cls: String, term: Int?): List<SchemeSubjectRow> {
+        val key = cls.trim().lowercase()
+        if (key !in CLASS_KEYS) return emptyList()
+        val t = term?.takeIf { it in 1..3 }
+        return try {
+            val label = classLabel(key)
+            val out = LinkedHashMap<String, SchemeSubjectRow>()
+            // curriculum lesson notes first, exam-only subjects appended
+            for (isExam in listOf(false, true)) {
+                val prefix = (if (isExam) "c\\_exam\\_" else "c\\_cur\\_") + key + "\\_%"
+                val chunkType = if (isExam) "exam_questions" else "lesson_notes"
+                // when a term is pinned, its _tN concept must win over a
+                // term-less wrapper of the same subject (the wrapper's
+                // topics span the whole year)
+                val order = if (t != null) {
+                    "ORDER BY (co.id LIKE '%\\_t$t' ESCAPE '\\') DESC, co.name"
+                } else {
+                    "ORDER BY co.name"
+                }
+                db.rawQuery(
+                    "SELECT co.id, co.name FROM concepts co " +
+                        "WHERE co.id LIKE ? ESCAPE '\\' AND EXISTS (" +
+                        "SELECT 1 FROM chunks ch WHERE ch.concept_id = co.id " +
+                        "AND ch.chunk_type = ?)" +
+                        termFilter("co.id", t).let { if (it.isEmpty()) "" else " AND $it" } +
+                        " $order",
+                    arrayOf(prefix, chunkType)
+                ).use { cursor ->
+                    while (cursor.moveToNext()) {
+                        val id = cursor.getString(0)
+                        val name = cursor.getString(1) ?: continue
+                        val subject = subjectOf(name, label)
+                        if (subject.isEmpty()) continue
+                        if (!isExam) {
+                            out.putIfAbsent(subject, SchemeSubjectRow(subject, id, false))
+                        } else if (out.keys.none { sameSubject(it, subject) }) {
+                            out[subject] = SchemeSubjectRow(subject, id, true)
+                        }
+                    }
+                }
+            }
+            out.values.sortedBy { it.subject.lowercase() }
+        } catch (e: SQLiteException) {
+            Log.w(TAG, "scheme subjects failed: ${e.message}")
+            emptyList()
+        }
+    }
+
+    /**
+     * Weekly lesson topics for one curriculum concept, in scheme order:
+     * the section titles carried in header_context ("... > WHOLE NUMBERS"),
+     * de-duplicated after trailing-colon cleanup. Calendar filler
+     * ("MIDTERM BREAK", a bare "REVISION") is not a study topic; real
+     * topics like "REVISION OF ALGEBRA" stay.
+     */
+    fun lessonTopics(conceptId: String, limit: Int): List<String> {
+        if (conceptId.isBlank() || limit <= 0) return emptyList()
+        return try {
+            db.rawQuery(
+                "SELECT ch.header_context FROM chunks ch " +
+                    "WHERE ch.concept_id = ? AND ch.chunk_type = 'lesson_notes' " +
+                    "GROUP BY ch.header_context ORDER BY MIN(ch.chunk_index)",
+                arrayOf(conceptId)
+            ).use { cursor ->
+                val out = LinkedHashSet<String>(limit)
+                while (cursor.moveToNext() && out.size < limit) {
+                    val raw = cursor.getString(0) ?: continue
+                    val title = raw.substringAfterLast('>').trim().trimEnd(':').trim()
+                    if (title.isEmpty() || title.uppercase() in TOPIC_FILLER) continue
+                    out.add(title)
+                }
+                out.toList()
+            }
+        } catch (e: SQLiteException) {
+            Log.w(TAG, "lesson topics failed: ${e.message}")
+            emptyList()
+        }
+    }
+
+    /**
+     * Exam-question chunks for one class (+ term) + subject, BM25-ranked by
+     * the ready FTS5 [match] expression (null = paper order).
+     *
+     * Subject matching is deliberately fuzzy: the scheme of work and the
+     * exam papers name the same subject differently ("English Studies" vs
+     * "English Language", "Catering and Craft Practice" vs "Catering
+     * Craft"), so the exam concepts of the class are loaded first and
+     * filtered in Kotlin by [sameSubject].
+     */
+    fun examChunksFor(
+        cls: String,
+        term: Int?,
+        subject: String?,
+        match: String?,
+        limit: Int
+    ): List<ChunkResult> {
+        val key = cls.trim().lowercase()
+        if (key !in CLASS_KEYS || limit <= 0) return emptyList()
+        val t = term?.takeIf { it in 1..3 }
+        return try {
+            val label = classLabel(key)
+            val order = if (t != null) {
+                "ORDER BY (co.id LIKE '%\\_t$t' ESCAPE '\\') DESC, co.name"
+            } else {
+                "ORDER BY co.name"
+            }
+            val ids = ArrayList<String>()
+            db.rawQuery(
+                "SELECT co.id, co.name FROM concepts co " +
+                    "WHERE co.id LIKE 'c\\_exam\\_${key}\\_%' ESCAPE '\\' AND EXISTS (" +
+                    "SELECT 1 FROM chunks ch WHERE ch.concept_id = co.id " +
+                    "AND ch.chunk_type = 'exam_questions')" +
+                    termFilter("co.id", t).let { if (it.isEmpty()) "" else " AND $it" } +
+                    " $order",
+                null
+            ).use { cursor ->
+                while (cursor.moveToNext()) {
+                    val id = cursor.getString(0)
+                    val examSubject = subjectOf(cursor.getString(1) ?: "", label)
+                    if (subject.isNullOrBlank() || sameSubject(subject, examSubject)) {
+                        ids.add(id)
+                    }
+                }
+            }
+            if (ids.isEmpty()) return emptyList()
+
+            val ph = ids.joinToString(",") { "?" }
+            val select = "SELECT ch.concept_id, co.name, ch.chunk_type, ch.header_context, " +
+                "ch.text_content, ch.chunk_index FROM "
+            val rows = if (match != null) {
+                db.rawQuery(
+                    select + "chunks_fts f JOIN chunks ch ON ch.rowid = f.rowid " +
+                        "JOIN concepts co ON co.id = ch.concept_id " +
+                        "WHERE chunks_fts MATCH ? AND ch.chunk_type = 'exam_questions' " +
+                        "AND ch.concept_id IN ($ph) " +
+                        "ORDER BY bm25(chunks_fts, 1.0, 4.0) LIMIT ?",
+                    (arrayOf(match) + ids + limit.toString())
+                )
+            } else {
+                db.rawQuery(
+                    select + "chunks ch JOIN concepts co ON co.id = ch.concept_id " +
+                        "WHERE ch.chunk_type = 'exam_questions' AND ch.concept_id IN ($ph) " +
+                        "ORDER BY co.name, ch.chunk_index LIMIT ?",
+                    (ids + limit.toString()).toTypedArray()
+                )
+            }
+            rows.use { cursor -> readChunks(cursor) }
+        } catch (e: SQLiteException) {
+            Log.w(TAG, "scoped exam chunks failed: ${e.message}")
+            emptyList()
+        }
+    }
+
+    /**
+     * "SS 2 Physics Examination (First Term)" -> "Physics".
+     * Strips the class label, the trailing term parenthetical and the
+     * "Examination" marker the exam ingester appends.
+     */
+    private fun subjectOf(name: String, classLabel: String): String {
+        var s = name.trim()
+        if (s.length > classLabel.length &&
+            s.regionMatches(0, classLabel, 0, classLabel.length, ignoreCase = true)
+        ) {
+            s = s.substring(classLabel.length).trim()
+        }
+        s = TERM_SUFFIX.replace(s, "").trim()
+        if (s.length > 11 && s.endsWith("Examination", ignoreCase = true)) {
+            s = s.substring(0, s.length - 11).trim()
+        }
+        return s.trim('-', ':', ' ', '\t')
+    }
+
+    /** SQL fragment pinning [column] to [term] (term-less concepts stay eligible). */
+    private fun termFilter(column: String, term: Int?): String =
+        if (term == null) "" else
+            "($column LIKE '%\\_t$term' ESCAPE '\\' OR ($column NOT LIKE '%\\_t1' ESCAPE '\\' " +
+                "AND $column NOT LIKE '%\\_t2' ESCAPE '\\' " +
+                "AND $column NOT LIKE '%\\_t3' ESCAPE '\\'))"
+
+    /** Generic words dropped from both sides of a subject comparison. */
+    private val SUBJECT_STOP = setOf(
+        "and", "or", "of", "for", "the", "a", "an", "in", "on",
+        "language", "languages", "studies", "study", "practice",
+        "subject", "paper", "questions"
+    )
+
+    private fun subjectTokens(s: String): List<String> =
+        s.lowercase()
+            .replace('&', ' ')
+            .replace(Regex("\\([^)]*\\)"), " ")
+            .replace(Regex("[^a-z0-9]+"), " ")
+            .split(' ')
+            .filter { it.length > 1 && it !in SUBJECT_STOP }
+            .map { if (it.length > 3 && it.endsWith("s")) it.dropLast(1) else it }
+
+    /**
+     * Do these two names mean the same subject? Equal token sets match
+     * outright; otherwise BOTH sides must overlap by >= 60%, so
+     * "Computer Hardwares and Repairs" ~ "Computer Hardware and Gsm
+     * Repairs" (3/3 and 3/4) passes while "Mathematics" never swallows
+     * "Further Mathematics" (1/1 passes one way, 1/2 fails the other).
+     */
+    private fun sameSubject(a: String, b: String): Boolean {
+        val ta = subjectTokens(a)
+        val tb = subjectTokens(b)
+        if (ta.isEmpty() || tb.isEmpty()) return false
+        if (ta == tb) return true
+        val sa = ta.toSet()
+        val sb = tb.toSet()
+        val inter = sa.intersect(sb).size
+        return inter.toDouble() / ta.size >= 0.6 && inter.toDouble() / tb.size >= 0.6
+    }
+
+    private fun classLabel(cls: String): String {
+        val c = cls.trim().lowercase()
+        return if (c.length >= 3 && c.last().isDigit()) {
+            c.dropLast(1).uppercase() + " " + c.last()
+        } else {
+            c.uppercase()
+        }
+    }
+
     /** Exact verses for a book/chapter/verse range (from..to inclusive). */
     fun bibleRange(book: String, chapter: Int, fromVerse: Int, toVerse: Int): List<BibleResult> {
         if (book.isBlank() || chapter < 1) return emptyList()
@@ -360,12 +597,42 @@ class KnowledgeCoreStore private constructor(
     companion object {
         private const val TAG = "KuzmixKB"
 
-        /** Bump together with the bundled asset to force a re-copy on update. */
-        const val DB_VERSION = 8
+        /**
+         * Bump together with the bundled asset to force a re-copy on update.
+         *
+         * v8 -> v9: devices that installed an earlier build kept a stale
+         * knowledge DB whose schema predates bible_verses/chunks_fts. Every
+         * query then threw "no such table", the SQLiteException was swallowed
+         * and all answers degraded to the fallback replies (Bible lookups,
+         * lesson search and definitions all returned empty on device while
+         * the shipped asset itself was healthy). The bump forces one fresh
+         * copy of the verified asset.
+         */
+        const val DB_VERSION = 9
         const val ASSET_NAME = "kuzmix_knowledge.sqlite"
 
         /** Upper bound for the BM25 row window inside [searchIds]. */
         private const val MAX_ROW_WINDOW = 600
+
+        /** Valid lowercase class keys used by the quiz scoping queries. */
+        private val CLASS_KEYS = setOf("jss1", "jss2", "jss3", "ss1", "ss2", "ss3")
+
+        /** Trailing "(First Term)" / "(Second Term)" / "(Third Term)". */
+        private val TERM_SUFFIX =
+            Regex("""\s*\((?:First|Second|Third)\s+Term\)\s*$""", RegexOption.IGNORE_CASE)
+
+        /**
+         * Section titles that are calendar furniture, not study topics —
+         * a topic chip must never be "MIDTERM BREAK". Content-bearing
+         * titles such as "REVISION OF ALGEBRA" are deliberately absent.
+         */
+        private val TOPIC_FILLER = setOf(
+            "REVISION", "MIDTERM BREAK", "BREAK", "EXAMINATION", "EXAMINATION WEEK",
+            "VACATION", "HOLIDAY", "LESSON NOTES", "LESSON NOTE", "NOTE", "NOTES",
+            "WEEKLY ASSESSMENT", "ASSIGNMENT", "ASSIGNMENTS", "SCHEME OF WORK",
+            "FIRST TERM", "SECOND TERM", "THIRD TERM", "CONTENTS", "CONTENT",
+            "WEEK", "WEEKS", "OVERVIEW", "INTRODUCTION"
+        )
 
         /**
          * Copy the asset if needed, open, convert the shipped WAL journal

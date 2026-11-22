@@ -80,6 +80,8 @@ class KuzmixViewModelFactory(private val container: AppContainer) : ViewModelPro
                 com.kuzmix.ai.ui.screens.home.HomeViewModel(container.chatRepository, container.aiRepository) as T
             modelClass.isAssignableFrom(com.kuzmix.ai.ui.screens.profile.ProfileViewModel::class.java) ->
                 com.kuzmix.ai.ui.screens.profile.ProfileViewModel(container.settingsRepository, container.aiRepository) as T
+            modelClass.isAssignableFrom(com.kuzmix.ai.ui.screens.auth.AuthViewModel::class.java) ->
+                com.kuzmix.ai.ui.screens.auth.AuthViewModel(container.authRepository) as T
             modelClass.isAssignableFrom(com.kuzmix.ai.ui.screens.imagegen.ImageGenViewModel::class.java) ->
                 com.kuzmix.ai.ui.screens.imagegen.ImageGenViewModel() as T
             modelClass.isAssignableFrom(com.kuzmix.ai.ui.screens.code.CodeViewModel::class.java) ->

@@ -108,4 +108,42 @@ object QueryNormalizer {
 
     fun stripPunct(text: String): String =
         text.lowercase().replace(Regex("[^\\w\\s]"), " ").replace(Regex("\\s+"), " ").trim()
+
+    /**
+     * Bounded Levenshtein distance between [a] and [b] (single-character
+     * insert / delete / substitute): the real distance when it is <= [max],
+     * otherwise [max] + 1 as an early-out sentinel. The two-row DP abandons
+     * a row as soon as every cell exceeds the budget, so it is cheap enough
+     * for on-the-fly typo tolerance ("buology" ~ "biology") without ever
+     * becoming a general fuzzy matcher.
+     */
+    fun editDistanceAtMost(a: String, b: String, max: Int): Int {
+        if (a == b) return 0
+        if (kotlin.math.abs(a.length - b.length) > max) return max + 1
+        if (a.isEmpty() || b.isEmpty()) {
+            val d = maxOf(a.length, b.length)
+            return if (d <= max) d else max + 1
+        }
+        var prev = IntArray(b.length + 1) { it }
+        var cur = IntArray(b.length + 1)
+        for (i in 1..a.length) {
+            cur[0] = i
+            var rowMin = i
+            for (j in 1..b.length) {
+                val cost = if (a[i - 1] == b[j - 1]) 0 else 1
+                cur[j] = minOf(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost)
+                if (cur[j] < rowMin) rowMin = cur[j]
+            }
+            if (rowMin > max) return max + 1
+            val swap = prev
+            prev = cur
+            cur = swap
+        }
+        val d = prev[b.length]
+        return if (d <= max) d else max + 1
+    }
+
+    /** Convenience: [editDistanceAtMost] within the budget. */
+    fun withinEditDistance(a: String, b: String, max: Int): Boolean =
+        editDistanceAtMost(a, b, max) <= max
 }

@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """
-Kuzmix AI - PDF curriculum ingestion
-====================================
-Extracts the local PDF e-lesson-note corpus (JSS 1 - SS 3, in <workspace>/pdf)
-and folds it into kuzmix_knowledge.sqlite as a provenance-linked curriculum layer.
+Kuzmix AI - curriculum ingestion (PDF + DOCX lesson notes)
+==========================================================
+Extracts the local e-lesson-note corpus (JSS 1 - SS 3, in <workspace>/pdf)
+and folds it into kuzmix_knowledge.sqlite as a provenance-linked curriculum
+layer. Reads BOTH formats found in the corpus:
+  * .pdf  - the 143 lesson-note PDFs
+  * .docx - lesson-note Word files that live beside the PDFs (e.g.
+            "SS2 PHYSICS LESSON NOTES.docx"). Exam papers (any file with
+            EXAMINATION in its name) are excluded here - they belong to
+            ingest_docx_exams.py.
+Every topic outline is kept: sections as short as 40 characters are
+ingested (a WEEK/LESSON heading with a topic list is real scheme-of-work
+content and must not be dropped), while pure calendar filler such as
+"MIDTERM BREAK" stays excluded via RE_SKIP_TITLE.
 
 Goals:
   SMART    - structure-aware parsing (term markers / WEEK headings / TOPIC
@@ -35,7 +45,9 @@ import shutil
 import sqlite3
 import sys
 import time
+import zipfile
 import zlib
+import xml.etree.ElementTree as ET
 
 try:
     import pymupdf  # type: ignore
@@ -227,6 +239,52 @@ def extract_pdf(path: str):
             pages.append("")
     doc.close()
     return pages
+
+
+# DOCX lesson notes: a .docx is a ZIP of XML, so the standard library is
+# enough (no python-docx dependency). Paragraph breaks are preserved so the
+# WEEK/LESSON/TOPIC heading parser sees one heading per line.
+W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+
+
+def extract_docx(path: str):
+    """-> [text] - one pseudo-page holding the whole document."""
+    with zipfile.ZipFile(path) as z:
+        xml = z.read("word/document.xml")
+    root = ET.fromstring(xml)
+    lines = []
+
+    def para_text(p):
+        parts = []
+        for node in p.iter():
+            if node.tag == W_NS + "t":
+                parts.append(node.text or "")
+            elif node.tag == W_NS + "tab":
+                parts.append("\t")
+            elif node.tag == W_NS + "br":
+                parts.append("\n")
+        return "".join(parts)
+
+    body = root.find(W_NS + "body")
+    if body is None:
+        return [""]
+    for child in body:
+        if child.tag == W_NS + "p":
+            lines.append(para_text(child))
+        elif child.tag == W_NS + "tbl":
+            for row in child.iter(W_NS + "tr"):
+                cells = [para_text(p) for p in row.iter(W_NS + "p")]
+                lines.append(" | ".join(c for c in cells if c))
+    return ["\n".join(lines)]
+
+
+def extract_pages(path: str):
+    lower = path.lower()
+    if lower.endswith(".docx"):
+        return extract_docx(path)
+    if lower.endswith(".pdf"):
+        return extract_pdf(path)
+    return []
 
 
 def clean_page(text: str) -> str:
@@ -518,10 +576,19 @@ def classify_filename(filename: str):
 
 
 def collect_pdfs(pdf_root: str):
+    """Unique (hash, path) lesson-note files - PDF and DOCX alike.
+
+    Exam papers (.docx with EXAMINATION in the name) are left to
+    ingest_docx_exams.py so the two ingesters never double-count them.
+    """
+    exam_stem = re.compile(r"(?i)\bEXAMINATION\b")
     files = []
     for dp, _dn, fn in os.walk(pdf_root):
         for f in fn:
-            if f.lower().endswith(".pdf"):
+            low = f.lower()
+            if low.endswith(".pdf"):
+                files.append(os.path.join(dp, f))
+            elif low.endswith(".docx") and not exam_stem.search(os.path.splitext(f)[0]):
                 files.append(os.path.join(dp, f))
     files.sort()
     seen, unique, dupes = set(), [], []
@@ -629,7 +696,7 @@ def run(args) -> int:
             stats["skipped"].append((base, f"unmapped subject: '{skey}'"))
             continue
 
-        pages = extract_pdf(path)
+        pages = extract_pages(path)
         raw = sum(len(p) for p in pages)
         stats["raw_chars"] += raw
         if raw < 400:
@@ -644,7 +711,10 @@ def run(args) -> int:
         for s in sections:
             clean = re.sub(r"\s+", " ", s["text"]).strip()
             stats["clean_chars"] += len(clean)
-            if len(clean) < 160:
+            # 40 chars (~10 tokens): a WEEK/LESSON heading plus a topic list
+            # is genuine scheme-of-work content - keep it. Calendar filler
+            # ("MIDTERM BREAK") is still dropped by RE_SKIP_TITLE below.
+            if len(clean) < 40:
                 stats["skipped_short"] += 1
                 continue
             if RE_SKIP_TITLE.search(s["title"]) and token_est(clean) < 200:

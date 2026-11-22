@@ -29,7 +29,14 @@ data class KnowledgeHit(
 class KnowledgeEngine(
     private val pack: KnowledgePack,
     conceptSource: ConceptSource? = null,
-    private val corpus: CorpusSource? = null
+    private val corpus: CorpusSource? = null,
+    private val quizHistory: QuizHistory = InMemoryQuizHistory(),
+    /**
+     * Fired when a quiz pins its final scope (class + term). The host uses
+     * it to cache the student's class locally and mirror it to Firestore
+     * (`users/{uid}`) — the engine itself never touches storage.
+     */
+    private val onScopePinned: ((cls: String, className: String, term: Int?) -> Unit)? = null
 ) : AIEngine {
 
     override val engineName: String = "Kuzmix Knowledge Base"
@@ -42,6 +49,19 @@ class KnowledgeEngine(
 
     var lastTrace: EngineTrace? = null
         private set
+
+    /**
+     * Tappable option chips for the chat UI: wizard steps while the quiz
+     * setup runs (class/term/subject/topic), answer letters (A/B/C/D)
+     * during an MCQ, empty otherwise. Re-synced after every reply so a
+     * stale tap can never be shown.
+     */
+    var pendingChoices: List<String> = emptyList()
+        private set
+
+    /** True while an interactive session (quiz setup / quiz / reader) holds. */
+    val sessionActive: Boolean
+        get() = session != null
 
     private val enabledSubjects: List<SubjectRecord>
         get() = pack.subjects.filter { it.enabled }
@@ -151,6 +171,10 @@ class KnowledgeEngine(
             ) "fallback" else "success"
         )
 
+        // chips always mirror the state AFTER this reply (wizard step,
+        // MCQ options, or none) — never a stale tap target
+        pendingChoices = currentChoices()
+
         response
     }
 
@@ -178,7 +202,11 @@ class KnowledgeEngine(
             val questions: List<QuizQuestion>,
             val keysByConcept: Map<String, Map<Int, String>>,
             val referenceText: String,
-            var index: Int = 0
+            var index: Int = 0,
+            /** Pinned scope — "more" reshuffles THIS class, never another. */
+            val cls: String? = null,
+            val term: Int? = null,
+            val subject: String? = null
         ) : Session
 
         /** Stepwise reading of one concept's lesson notes. */
@@ -188,6 +216,30 @@ class KnowledgeEngine(
             val chunks: List<CorpusChunk>,
             var offset: Int = 0
         ) : Session
+
+        /**
+         * CLASS -> TERM -> SUBJECT -> TOPIC setup wizard. Every quiz starts
+         * here so questions can never drift outside the chosen class: the
+         * class is a hard filter on every rung of the widening ladder in
+         * [buildScopedQuiz]. Lists are snapshotted per stage (so a reply
+         * can never be matched against another stage's options) and [page]
+         * drives "More…" paging for long subject/topic lists.
+         */
+        data class QuizSetup(
+            var stage: Stage = Stage.CLASS,
+            var cls: String? = null,
+            var term: Int? = null,
+            var subject: String? = null,
+            var subjectConceptId: String? = null,
+            var topic: String? = null,
+            var subjects: List<SchemeSubject> = emptyList(),
+            var topics: List<String> = emptyList(),
+            var page: Int = 0,
+            /** Topic/subject named up front ("questions on chemistry"). */
+            var prefill: String? = null
+        ) : Session {
+            enum class Stage { CLASS, TERM, SUBJECT, TOPIC }
+        }
     }
 
     private data class QuizQuestion(
@@ -211,14 +263,46 @@ class KnowledgeEngine(
         private const val CORPUS_ANSWER_CHARS = 650
         /** Max chars of lesson material appended under a definition. */
         private const val DEFINITION_LESSON_CHARS = 550
-        /** Questions per generated quiz. */
-        private const val QUIZ_SIZE = 5
+        /** Objective (tap-to-answer) questions per random quiz. */
+        private const val OBJECTIVE_SIZE = 20
+        /** Theory (type-your-answer) questions per random quiz. */
+        private const val THEORY_SIZE = 5
+        /**
+         * Exam chunks fetched per widening rung. Measured on the shipped
+         * corpus: the class needing the most chunks to reach 20 objective
+         * + 5 theory in paper order is JSS3 at 106 — 160 leaves headroom
+         * even after stem dedup.
+         */
+        private const val EXAM_FETCH = 160
+        /** Wizard choices per page before a "More…" chip appears. */
+        private const val CHOICE_PAGE = 6
+        private const val MORE_CHOICE = "More…"
+        private const val ANY_TOPIC_LABEL = "Any topic"
+        private val CLASS_KEYS = setOf("jss1", "jss2", "jss3", "ss1", "ss2", "ss3")
+        private val CLASS_CHOICES = listOf("JSS 1", "JSS 2", "JSS 3", "SS 1", "SS 2", "SS 3")
+        private val TERM_CHOICES = listOf("1st Term", "2nd Term", "3rd Term")
+        private val ANY_TOPIC_CHOICES = setOf(
+            "any topic", "any", "all topics", "everything", "mix", "mixed"
+        )
+        /** Cancel words (normalised) — an exact stage choice beats these. */
+        private val QUIZ_CANCEL_WORDS = setOf(
+            "stop", "quit", "exit", "cancel", "abort", "forget it", "never mind",
+            "nevermind", "leave it", "no thanks", "that s all", "thats all", "done"
+        )
+        /**
+         * Intents that stay inside the wizard (re-prompt) instead of falling
+         * through to normal dispatch: anything not here ends the setup.
+         */
+        private val WIZARD_KEEP_INTENTS = setOf(
+            Intent.UNKNOWN, Intent.GENERAL_KNOWLEDGE, Intent.PRACTICE_QUESTION,
+            Intent.SMALL_TALK, Intent.GREETING, Intent.THANKS
+        )
     }
 
     /** Simple "x = 5" / "5" typed during an equation practice round. */
     private val trivialAnswerForm = Regex("^(?:[a-z]\\s*=\\s*)?[-+]?\\d+(?:\\.\\d+)?$")
 
-    private fun handleSessionReply(
+    private suspend fun handleSessionReply(
         active: Session,
         intent: Intent,
         nq: NormalizedQuery,
@@ -227,6 +311,7 @@ class KnowledgeEngine(
         val raw = nq.raw.trim()
         val continueRequest = intent == Intent.SMALL_TALK && match.entity == "__continue__"
         return when (active) {
+            is Session.QuizSetup -> handleQuizSetup(active, intent, nq, match)
             is Session.EquationPractice -> when {
                 continueRequest -> {
                     // "next"/"another": swap in a fresh problem of the same shape
@@ -251,9 +336,38 @@ class KnowledgeEngine(
             }
 
             is Session.Quiz -> when {
+                // a clean exit word ends the round before answer-marking
+                // ("stop" during a quiz must not be marked as an answer)
+                normalizeChoice(raw) in QUIZ_CANCEL_WORDS -> {
+                    session = null
+                    "Quiz ended. Ask \"practice questions\" or \"random questions\" " +
+                        "anytime for another set in the same class."
+                }
+                // round finished: "more"/"another" reshuffles the SAME
+                // pinned scope — the class never changes silently
+                active.index >= active.questions.size -> when {
+                    continueRequest ||
+                        (intent == Intent.PRACTICE_QUESTION &&
+                            (match.entity.isNullOrBlank() ||
+                                match.entity.equals(active.topic, true))) ->
+                        continueQuiz(active)
+                    else -> {
+                        session = null
+                        null
+                    }
+                }
                 continueRequest -> presentQuizQuestion(active)
-                intent == Intent.PRACTICE_QUESTION && sameTopic(match.entity, active) ->
-                    presentQuizQuestion(active)
+                intent == Intent.PRACTICE_QUESTION -> {
+                    // same topic (or unnamed) -> keep the current round;
+                    // a NEW topic/subject request -> fresh class-scoped setup
+                    val ent = match.entity
+                    if (ent.isNullOrBlank() || ent.equals(active.topic, true)) {
+                        presentQuizQuestion(active)
+                    } else {
+                        session = null
+                        null
+                    }
+                }
                 intent in replyIntents -> markQuizReply(active, raw)
                 else -> {
                     session = null
@@ -271,12 +385,410 @@ class KnowledgeEngine(
         }
     }
 
-    private fun sameTopic(entity: String?, quiz: Session.Quiz): Boolean {
-        if (entity.isNullOrBlank()) return true          // "more questions" -> same quiz
-        val a = entity.trim().lowercase()
-        val b = quiz.topic.trim().lowercase()
-        return a == b || a in b || b in a
+    // -------------------------------------------------- quiz setup wizard
+    // CLASS -> TERM -> SUBJECT -> TOPIC. The class picked here becomes a
+    // hard SQL filter inside buildScopedQuiz, so random/shuffled questions
+    // can never leave it. Each stage snaps its own choice list, and the
+    // chat UI mirrors the current step's choices as tappable chips.
+
+    private suspend fun handleQuizSetup(
+        setup: Session.QuizSetup,
+        intent: Intent,
+        nq: NormalizedQuery,
+        match: IntentMatch
+    ): String? {
+        val nc = normalizeChoice(nq.raw)
+
+        // 1) an exact tap (or exact typed choice) beats every exit word
+        stageChoice(setup, nc, exact = true)?.let { return it }
+
+        // 2) "More…" pages long subject/topic lists
+        if (nc == "more" && hasMorePages(setup)) {
+            setup.page++
+            return quizStagePrompt(setup)
+        }
+
+        // 3) explicit cancellation — after exact choices, before fuzzy ones
+        if (intent == Intent.FAREWELL || nc in QUIZ_CANCEL_WORDS) {
+            session = null
+            return "No problem — quiz setup cancelled. Say \"practice questions\" or " +
+                "\"random questions\" any time and I'll pin your class first."
+        }
+
+        // 4) fuzzy match for sloppily typed input — loses to exit words above
+        stageChoice(setup, nc, exact = false)?.let { return it }
+
+        // 5) an unrelated question hands control back to normal dispatch
+        if (intent !in WIZARD_KEEP_INTENTS) {
+            session = null
+            return null
+        }
+
+        // 6) anything else: gently re-ask the current step
+        return "Let's finish setting up your quiz first.\n\n" + quizStagePrompt(setup)
     }
+
+    /** Applies one stage's choice; null = this input is not a valid pick. */
+    private suspend fun stageChoice(
+        setup: Session.QuizSetup,
+        nc: String,
+        exact: Boolean
+    ): String? {
+        when (setup.stage) {
+            Session.QuizSetup.Stage.CLASS -> {
+                val key = nc.replace(" ", "")
+                val cls = if (exact) key.takeIf { it in CLASS_KEYS } else parseClass(nc)
+                if (cls != null) {
+                    setup.cls = cls
+                    setup.stage = Session.QuizSetup.Stage.TERM
+                    setup.page = 0
+                    return quizStagePrompt(setup)
+                }
+            }
+
+            Session.QuizSetup.Stage.TERM -> {
+                val term = if (exact) parseTermExact(nc) else parseTerm(nc)
+                if (term != null) {
+                    setup.term = term
+                    return openSubjectStage(setup)
+                }
+            }
+
+            Session.QuizSetup.Stage.SUBJECT -> {
+                val hit = if (exact) {
+                    setup.subjects.firstOrNull { normalizeChoice(it.subject) == nc }
+                } else {
+                    setup.subjects.firstOrNull { sameSubject(nc, it.subject) }
+                }
+                if (hit != null) {
+                    if (setup.prefill?.let { sameSubject(it, hit.subject) } == true) {
+                        setup.prefill = null   // consumed (a topic prefill may still apply)
+                    }
+                    setup.subject = hit.subject
+                    setup.subjectConceptId = hit.conceptId
+                    return openTopicStage(setup)
+                }
+            }
+
+            Session.QuizSetup.Stage.TOPIC -> {
+                if (exact && nc in ANY_TOPIC_CHOICES) {
+                    setup.topic = null
+                    return startScopedQuiz(setup)
+                }
+                val topic = if (exact) {
+                    setup.topics.firstOrNull { normalizeChoice(it) == nc }
+                } else {
+                    setup.topics.firstOrNull { topicMatches(nc, it) }
+                }
+                if (topic != null) {
+                    setup.topic = topic
+                    return startScopedQuiz(setup)
+                }
+            }
+        }
+        return null
+    }
+
+    /** Loads the scheme-of-work subjects for the pinned class (+ term). */
+    private suspend fun openSubjectStage(setup: Session.QuizSetup): String {
+        val cls = setup.cls ?: return quizStagePrompt(setup)
+        val src = corpus
+        var subjects = src?.schemeSubjects(cls, setup.term).orEmpty()
+        if (subjects.isEmpty() && setup.term != null) {
+            // no term-tagged entries -> any term for this class (class stays pinned)
+            subjects = src?.schemeSubjects(cls, null).orEmpty()
+            if (subjects.isNotEmpty()) setup.term = null
+        }
+
+        // a subject named up front ("questions on chemistry") jumps to its topics
+        setup.prefill?.let { pre ->
+            subjects.firstOrNull { sameSubject(pre, it.subject) }?.let { hit ->
+                setup.subject = hit.subject
+                setup.subjectConceptId = hit.conceptId
+                setup.prefill = null
+                return openTopicStage(setup)
+            }
+        }
+
+        if (subjects.isEmpty()) {
+            session = null
+            return "I couldn't find scheme-of-work material for ${classLabel(cls)} in the shipped " +
+                "books. Try another class by asking for a quiz again, ask me anything else, or " +
+                "say \"teach me <topic>\" to study instead."
+        }
+        setup.subjects = subjects
+        setup.stage = Session.QuizSetup.Stage.SUBJECT
+        setup.page = 0
+        return quizStagePrompt(setup)
+    }
+
+    /** Loads the weekly lesson topics of the chosen subject. */
+    private suspend fun openTopicStage(setup: Session.QuizSetup): String {
+        val conceptId = setup.subjectConceptId
+        val topics = if (conceptId.isNullOrBlank()) {
+            emptyList()
+        } else {
+            corpus?.lessonTopics(conceptId, 40).orEmpty()
+                .map { it.trim() }
+                .filter { it.isNotEmpty() }
+                .distinct()
+        }
+        setup.topics = topics
+        setup.stage = Session.QuizSetup.Stage.TOPIC
+        setup.page = 0
+
+        // exam-only subject (no lesson notes for this class): quiz the lot
+        if (topics.isEmpty()) return startScopedQuiz(setup)
+
+        // a topic named up front matches exactly only — fuzzy could mis-jump
+        setup.prefill?.let { pre ->
+            val npc = normalizeChoice(pre)
+            topics.firstOrNull { normalizeChoice(it) == npc }?.let { t ->
+                setup.topic = t
+                return startScopedQuiz(setup)
+            }
+        }
+        return quizStagePrompt(setup)
+    }
+
+    /** Builds and opens the class-pinned, shuffled, repeat-free quiz. */
+    private suspend fun startScopedQuiz(setup: Session.QuizSetup): String {
+        val cls = setup.cls
+        val subject = setup.subject
+        if (cls == null || subject == null) {
+            // defensive: a quiz can never start without a pinned class
+            val fresh = Session.QuizSetup(prefill = setup.prefill)
+            session = fresh
+            return quizStagePrompt(fresh)
+        }
+        val quiz = buildScopedQuiz(cls, setup.term, subject, setup.topic)
+        if (quiz == null) {
+            session = null
+            return "I couldn't find exam questions for ${scopeLine(setup)} in the shipped exam " +
+                "papers. Try a different topic, say \"teach me <topic>\" to revise first, or ask " +
+                "for a quiz again."
+        }
+        session = quiz
+        lastCandidateId = quiz.questions.firstOrNull()?.conceptId
+        lastCandidateScore = 1.0
+        lastCandidateConfidence = "HIGH"
+        // remember this class on-device and mirror it to Firestore
+        onScopePinned?.invoke(cls, classLabel(cls), setup.term)
+        return "🎯 ${quizSplit(quiz)} for ${scopeLine(setup)} — shuffled, no repeats:\n\n" +
+            presentQuizQuestion(quiz)
+    }
+
+    /** "20 objective + 5 theory" — the actual split of a built quiz. */
+    private fun quizSplit(quiz: Session.Quiz): String {
+        val objective = quiz.questions.count { it.options.isNotEmpty() }
+        return "$objective objective + ${quiz.questions.size - objective} theory questions"
+    }
+
+    private fun quizStagePrompt(setup: Session.QuizSetup): String = buildString {
+        when (setup.stage) {
+            Session.QuizSetup.Stage.CLASS -> {
+                append("Let's set up your quiz — which class are you in? " +
+                    "Every question stays inside that class.")
+                setup.prefill?.let { append(" (You asked for \"$it\".)") }
+            }
+            Session.QuizSetup.Stage.TERM -> {
+                append("Got it — ${classLabel(setup.cls ?: "")}. Which term?")
+            }
+            Session.QuizSetup.Stage.SUBJECT -> {
+                val scope = listOfNotNull(
+                    setup.cls?.let { classLabel(it) },
+                    setup.term?.let { termLabel(it) }
+                ).joinToString(" ")
+                append("Which subject do you want questions for — $scope?")
+            }
+            Session.QuizSetup.Stage.TOPIC -> {
+                val scope = buildList {
+                    setup.cls?.let { add(classLabel(it)) }
+                    setup.term?.let { add(termLabel(it)) }
+                }.joinToString(" ")
+                append("Which topic in ${setup.subject ?: "that subject"} ($scope)?")
+            }
+        }
+        append("\n")
+        quizStageChoices(setup).forEach { append("\n• $it") }
+        append("\n\n")
+        append(
+            when (setup.stage) {
+                Session.QuizSetup.Stage.CLASS ->
+                    "Tap a class or type it — you can say \"stop\" anytime."
+                Session.QuizSetup.Stage.TERM ->
+                    "Tap a term or type it."
+                Session.QuizSetup.Stage.SUBJECT ->
+                    "Tap a subject — you'll pick a topic next."
+                Session.QuizSetup.Stage.TOPIC ->
+                    "Tap a topic, or \"Any topic\" to mix the whole subject. " +
+                        "You'll get 20 objective + 5 theory questions — shuffled, never repeated."
+            }
+        )
+    }
+
+    private fun quizStageChoices(setup: Session.QuizSetup): List<String> = when (setup.stage) {
+        Session.QuizSetup.Stage.CLASS -> CLASS_CHOICES
+        Session.QuizSetup.Stage.TERM -> TERM_CHOICES
+        Session.QuizSetup.Stage.SUBJECT ->
+            pagedChoices(setup.subjects.map { it.subject }, setup.page)
+        Session.QuizSetup.Stage.TOPIC ->
+            pagedChoices(setup.topics, setup.page) +
+                (if (setup.topics.isNotEmpty()) listOf(ANY_TOPIC_LABEL) else emptyList())
+    }
+
+    private fun pagedChoices(items: List<String>, page: Int): List<String> {
+        if (items.isEmpty()) return emptyList()
+        val from = page * CHOICE_PAGE
+        if (from >= items.size) return emptyList()
+        val out = items.subList(from, minOf(from + CHOICE_PAGE, items.size)).toMutableList()
+        if (from + CHOICE_PAGE < items.size) out.add(MORE_CHOICE)
+        return out
+    }
+
+    private fun hasMorePages(setup: Session.QuizSetup): Boolean = when (setup.stage) {
+        Session.QuizSetup.Stage.SUBJECT ->
+            (setup.page + 1) * CHOICE_PAGE < setup.subjects.size
+        Session.QuizSetup.Stage.TOPIC ->
+            (setup.page + 1) * CHOICE_PAGE < setup.topics.size
+        else -> false
+    }
+
+    /**
+     * Tappable chips mirroring the live state: the current wizard step's
+     * choices, or the MCQ option letters during a quiz, empty otherwise.
+     */
+    private fun currentChoices(): List<String> = when (val s = session) {
+        is Session.QuizSetup -> quizStageChoices(s)
+        is Session.Quiz -> s.questions.getOrNull(s.index)
+            ?.takeIf { it.options.isNotEmpty() }
+            ?.options
+            ?.mapIndexed { i, _ -> ('A' + i).toString() }
+            ?: emptyList()
+        else -> emptyList()
+    }
+
+    // ------------------------------------------------------ stage parsers
+
+    private fun normalizeChoice(raw: String): String =
+        raw.trim().lowercase().replace(Regex("[^a-z0-9]+"), " ").trim()
+
+    /** "J.S.S 1" / "jss1" / "i'm in ss2" -> "jss1" / "ss2"; null when absent. */
+    private fun parseClass(text: String): String? {
+        val stripped = text.replace(Regex("[^a-z0-9]"), "")
+        CLASS_KEYS.firstOrNull { stripped == it }?.let { return it }
+        // word-bounded so "class 1" or "questions" never parse as a class
+        Regex("\\b(j\\s*s\\s*s|s\\s*s)\\s*([1-3])\\b").find(text)?.let { m ->
+            return m.groupValues[1].replace(" ", "") + m.groupValues[2]
+        }
+        return null
+    }
+
+    /** Exact wizard chips: "1", "1st", "first", "term 2", "2nd Term"... */
+    private fun parseTermExact(nc: String): Int? {
+        val s = nc.replace("term", "").trim()
+        return when (s) {
+            "1", "1st", "first" -> 1
+            "2", "2nd", "second" -> 2
+            "3", "3rd", "third" -> 3
+            else -> null
+        }
+    }
+
+    /** Fuzzy: "i'm in 2nd term", "second term please" -> 2. */
+    private fun parseTerm(text: String): Int? {
+        if (parseClass(text) != null) return null     // a class name, not a term
+        if (Regex("\\b(first|1st)\\b").containsMatchIn(text)) return 1
+        if (Regex("\\b(second|2nd)\\b").containsMatchIn(text)) return 2
+        if (Regex("\\b(third|3rd)\\b").containsMatchIn(text)) return 3
+        if (Regex("\\b1\\b").containsMatchIn(text)) return 1
+        if (Regex("\\b2\\b").containsMatchIn(text)) return 2
+        if (Regex("\\b3\\b").containsMatchIn(text)) return 3
+        return null
+    }
+
+    /** Generic words dropped from both sides of a subject comparison. */
+    private val wizardSubjectStop = setOf(
+        "and", "or", "of", "for", "the", "a", "an", "in", "on",
+        "language", "languages", "studies", "study", "practice",
+        "subject", "paper", "questions"
+    )
+
+    private fun wizardSubjectTokens(s: String): List<String> =
+        s.lowercase()
+            .replace('&', ' ')
+            .replace(Regex("\\([^)]*\\)"), " ")
+            .replace(Regex("[^a-z0-9]+"), " ")
+            .split(' ')
+            .filter { it.length > 1 && it !in wizardSubjectStop }
+            .map { if (it.length > 3 && it.endsWith("s")) it.dropLast(1) else it }
+
+    /**
+     * Same rule as KnowledgeCoreStore.sameSubject: equal token sets match
+     * outright, otherwise BOTH sides must overlap by >= 60% — so
+     * "English Studies" ~ "English Language" passes while "Mathematics"
+     * never swallows "Further Mathematics". Single-word subjects get two
+     * extra allowances: a prefix ("math" -> Mathematics) and a small edit
+     * budget ("buology" -> Biology), both gated on >= 4 characters so
+     * short noise can never pin a subject.
+     */
+    private fun sameSubject(a: String, b: String): Boolean {
+        val ta = wizardSubjectTokens(a)
+        val tb = wizardSubjectTokens(b)
+        if (ta.isEmpty() || tb.isEmpty()) return false
+        if (ta == tb) return true
+        if (ta.size == 1 && tb.size == 1) {
+            val x = ta[0]
+            val y = tb[0]
+            if (x.length >= 4 && y.length >= 4) {
+                if (y.startsWith(x) || x.startsWith(y)) return true
+                return QueryNormalizer.withinEditDistance(x, y, 2)
+            }
+        }
+        val sa = ta.toSet()
+        val sb = tb.toSet()
+        val inter = sa.intersect(sb).size
+        return inter.toDouble() / ta.size >= 0.6 && inter.toDouble() / tb.size >= 0.6
+    }
+
+    /** Loose containment for topic names (the list is already subject-scoped). */
+    private fun topicMatches(typed: String, topic: String): Boolean {
+        val a = normalizeChoice(typed)
+        val b = normalizeChoice(topic)
+        if (a.isEmpty() || b.isEmpty()) return false
+        if (a == b) return true
+        if (a.length >= 4 && b.contains(a)) return true
+        if (b.length >= 4 && a.contains(b)) return true
+        return false
+    }
+
+    private fun classLabel(cls: String): String {
+        val c = cls.trim().lowercase()
+        return if (c.length >= 3 && c.last().isDigit()) {
+            c.dropLast(1).uppercase() + " " + c.last()
+        } else {
+            c.uppercase()
+        }
+    }
+
+    private fun termLabel(term: Int): String = when (term) {
+        1 -> "1st Term"
+        2 -> "2nd Term"
+        3 -> "3rd Term"
+        else -> "$term Term"
+    }
+
+    /** "JSS 1 · 1st Term · Chemistry · Acids" — shown with the quiz. */
+    private fun scopeLine(setup: Session.QuizSetup): String =
+        scopeLine(setup.cls, setup.term, setup.subject, setup.topic)
+
+    private fun scopeLine(cls: String?, term: Int?, subject: String?, topic: String?): String =
+        buildList {
+            cls?.let { add(classLabel(it)) }
+            term?.let { add(termLabel(it)) }
+            subject?.let { add(it) }
+            topic?.let { add(it) }
+        }.joinToString(" · ")
 
     // ------------------------------------------------------ equation solving
 
@@ -423,18 +935,19 @@ class KnowledgeEngine(
     private fun presentQuizQuestion(quiz: Session.Quiz): String {
         val i = quiz.index
         if (i >= quiz.questions.size) {
-            session = null
-            return "🎉 That's all ${quiz.questions.size} questions on \"${quiz.topic}\". " +
-                "Say \"more\" for another set, name a different topic, or \"teach me <topic>\" to revise first."
+            // session stays alive (finished): "more" reshuffles this scope
+            return finishMessage(quiz)
         }
         val q = quiz.questions[i]
         return buildString {
-            append("Question ${i + 1} of ${quiz.questions.size}\n\n")
+            append("Question ${i + 1} of ${quiz.questions.size}")
+            append(if (q.options.isNotEmpty()) " · Objective" else " · Theory")
+            append("\n\n")
             append(q.stem)
             if (q.options.isNotEmpty()) {
                 append("\n")
                 q.options.forEachIndexed { oi, opt -> append("\n${'A' + oi}) $opt") }
-                append("\n\nType your answer (A, B, C, D) or explain your choice.")
+                append("\n\nTap your answer below — or type just the letter (A, B, C, D).")
             } else {
                 append("\n\nType your answer in your own words — I'll check it against your notes.")
             }
@@ -449,7 +962,8 @@ class KnowledgeEngine(
         when {
             key != null && q.options.isNotEmpty() -> {
                 val chosen = detectOption(reply, q.options)
-                    ?: return "I couldn't catch your choice — reply with just the letter (A, B, C or D)."
+                    ?: return "I couldn't catch your choice — tap an option below " +
+                        "(or reply with just the letter A, B, C or D)."
                 val chosenText = q.options.getOrNull(chosen[0] - 'A')
                 if (chosen == key) {
                     sb.append("✅ Correct!")
@@ -479,11 +993,40 @@ class KnowledgeEngine(
         if (quiz.index < quiz.questions.size) {
             sb.append("\n\n").append(presentQuizQuestion(quiz))
         } else {
-            session = null
-            sb.append("\n\n🎉 That's all ${quiz.questions.size} questions on \"${quiz.topic}\". " +
-                "Say \"more\" for another set, name a different topic, or \"teach me <topic>\" to revise first.")
+            // keep the (finished) session alive: "more" reshuffles this scope
+            sb.append("\n\n").append(finishMessage(quiz))
         }
         return sb.toString()
+    }
+
+    /** End-of-round text; the finished session stays so "more" can continue. */
+    private fun finishMessage(quiz: Session.Quiz): String {
+        val scope = quiz.cls?.let {
+            " for ${scopeLine(quiz.cls, quiz.term, quiz.subject, null)}"
+        } ?: ""
+        return "🎉 That's all ${quiz.questions.size} questions (${quizSplit(quiz)})$scope. " +
+            "Say \"more\" for another shuffled set, name a different topic, " +
+            "or \"teach me <topic>\" to revise first."
+    }
+
+    /** "more" after a finished round: a fresh shuffle of the SAME scope. */
+    private suspend fun continueQuiz(quiz: Session.Quiz): String? {
+        val cls = quiz.cls
+        if (cls != null) {
+            val fresh = buildScopedQuiz(cls, quiz.term, quiz.subject, quiz.topic)
+            if (fresh != null) {
+                session = fresh
+                lastCandidateId = fresh.questions.firstOrNull()?.conceptId
+                lastCandidateScore = 1.0
+                lastCandidateConfidence = "HIGH"
+                return "🔄 Another shuffled set — ${quizSplit(fresh)} for " +
+                    scopeLine(quiz.cls, quiz.term, quiz.subject, null) + ":\n\n" +
+                    presentQuizQuestion(fresh)
+            }
+        }
+        session = null
+        return "🎉 That's all the \"${quiz.topic}\" questions I have in this scope — " +
+            "you've seen every one. Name another topic, or say \"teach me <topic>\" to revise."
     }
 
     /** "b", "B.", "answer is c", "Field", "cultivating land..." -> "B"/"C". */
@@ -865,13 +1408,22 @@ class KnowledgeEngine(
         return builder.toString()
     }
 
+    /**
+     * Repairs a stale-seed arrow artifact: some devices still carry Room
+     * rows from an older pack where " → " was mangled into " ’n ".
+     * The SEED_VERSION bump re-seeds clean data; this keeps any copy that
+     * escaped the re-seed readable in the meantime.
+     */
+    private fun fixArrowArtifacts(text: String): String =
+        text.replace(Regex(" ['’]n "), " → ")
+
     private suspend fun renderConcept(c: ConceptRecord): String {
         val builder = StringBuilder()
-        builder.append(c.definition.trim())
+        builder.append(fixArrowArtifacts(c.definition.trim()))
         if (c.formula.isNotBlank()) {
             builder.append("\n\nFormula: ${c.formula}")
         }
-        c.examples.firstOrNull()?.let { builder.append("\n\nExample: $it") }
+        c.examples.firstOrNull()?.let { builder.append("\n\nExample: ${fixArrowArtifacts(it)}") }
         val relatedNames = c.related.mapNotNull { index.nameOf(it) }.filter { !it.equals(c.name, true) }.take(3)
         if (relatedNames.isNotEmpty()) {
             builder.append("\n\nRelated: ${relatedNames.joinToString(", ")}")
@@ -993,8 +1545,10 @@ class KnowledgeEngine(
         val concept = entry.concept
         return when {
             concept != null && concept.examples.isNotEmpty() ->
-                "${concept.definition.trim()}\n\n" +
-                    concept.examples.mapIndexed { i, ex -> "Example ${i + 1}: $ex" }.joinToString("\n")
+                "${fixArrowArtifacts(concept.definition.trim())}\n\n" +
+                    concept.examples.mapIndexed { i, ex ->
+                        "Example ${i + 1}: ${fixArrowArtifacts(ex)}"
+                    }.joinToString("\n")
             concept != null -> renderConcept(concept)
             entry.subject != null -> renderSubject(entry.subject)
             else -> entry.definition
@@ -1002,24 +1556,19 @@ class KnowledgeEngine(
     }
 
     private suspend fun practiceResponse(match: IntentMatch, ctx: ConversationContext): String {
-        val subject = match.entity?.let { index.resolveEntity(it) }?.subject
-            ?: ctx.activeSubject?.let { id -> enabledSubjects.firstOrNull { it.id == id } }
-
-        // 1) real exam questions from the shipped corpus (the pdf folder)
-        val label = match.entity ?: subject?.name
-        val terms = entityTerms(label).filter { it !in QueryNormalizer.stopwords }
-        if (!label.isNullOrBlank() && terms.isNotEmpty()) {
-            buildQuizFromCorpus(terms, label)?.let { quiz ->
-                session = quiz
-                lastCandidateId = quiz.questions.firstOrNull()?.conceptId
-                lastCandidateScore = 1.0
-                lastCandidateConfidence = "HIGH"
-                return "I pulled real questions on \"$label\" from your exam papers:\n\n" +
-                    presentQuizQuestion(quiz)
-            }
+        // 1) class-scoped wizard (default): pin CLASS -> TERM -> SUBJECT ->
+        //    TOPIC first, so questions (random/shuffled or not) can never
+        //    leave the student's class. "random questions" / "shuffle
+        //    questions" phrasing lands here too via IntentClassifier.
+        if (corpus != null) {
+            val setup = Session.QuizSetup(prefill = match.entity?.takeIf { it.isNotBlank() })
+            session = setup
+            return quizStagePrompt(setup)
         }
 
-        // 2) fallback: subject subtopics (legacy behaviour)
+        // 2) legacy fallback (unit tests / DB unavailable): subject subtopics
+        val subject = match.entity?.let { index.resolveEntity(it) }?.subject
+            ?: ctx.activeSubject?.let { id -> enabledSubjects.firstOrNull { it.id == id } }
         if (subject == null) {
             lastCandidateId = null
             lastCandidateScore = null
@@ -1041,34 +1590,87 @@ class KnowledgeEngine(
     }
 
     /**
-     * Builds a quiz from the ingested exam papers: BM25 search for the
-     * topic, question/Q-number parsing, answer keys where the paper ships
-     * them, and a reference passage for key-point marking where it does not.
+     * Builds a quiz pinned to ONE class from the ingested exam papers.
+     *
+     * The class key is a hard filter on EVERY rung of the widening ladder
+     * (drop topic, then term, then subject — the class never drops), so
+     * randomisation can never leave the chosen class. Questions are then
+     * shuffled inside that pinned scope, and stems already shown
+     * (QuizHistory) are skipped — fresh questions first, least-recently
+     * asked ones reused only as a last resort for a tiny scope.
      */
-    private suspend fun buildQuizFromCorpus(terms: List<String>, label: String): Session.Quiz? {
+    private suspend fun buildScopedQuiz(
+        cls: String,
+        term: Int?,
+        subject: String?,
+        topic: String?
+    ): Session.Quiz? {
         val src = corpus ?: return null
-        val examHits = src.search(terms, 6, "exam_questions")
-        if (examHits.isEmpty()) return null
-
-        val keys = HashMap<String, Map<Int, String>>()
-        val questions = ArrayList<QuizQuestion>(QUIZ_SIZE)
-        for (hit in examHits) {
-            parseAnswerKeys(hit.text).let { parsed -> if (parsed.isNotEmpty()) keys[hit.conceptId] = parsed }
-            for (q in parseQuestions(stripAnswerKeySections(hit.text))) {
-                if (questions.none { it.stem.equals(q.stem, true) }) {
-                    questions.add(q.copy(conceptId = hit.conceptId))
-                }
-                if (questions.size >= QUIZ_SIZE) break
-            }
-            if (questions.size >= QUIZ_SIZE) break
+        val topicTerms = entityTerms(topic).filter { it !in QueryNormalizer.stopwords }
+        val rungs = buildList {
+            add(Triple(term, subject, topicTerms))
+            add(Triple(term, subject, emptyList<String>()))
+            add(Triple(null, subject, emptyList<String>()))
+            add(Triple(null, null, emptyList<String>()))
         }
+
+        val asked = quizHistory.askedStems()
+        val keys = HashMap<String, Map<Int, String>>()
+        val freshObj = ArrayList<QuizQuestion>(OBJECTIVE_SIZE)
+        val freshThy = ArrayList<QuizQuestion>(THEORY_SIZE)
+        val staleObj = ArrayList<QuizQuestion>()
+        val staleThy = ArrayList<QuizQuestion>()
+        val seenStems = HashSet<String>()
+        run@ for ((rTerm, rSubject, rTerms) in rungs) {
+            val hits = src.examChunksFor(cls, rTerm, rSubject, rTerms, EXAM_FETCH)
+            for (hit in hits) {
+                parseAnswerKeys(hit.text).let { parsed ->
+                    if (parsed.isNotEmpty()) keys[hit.conceptId] = parsed
+                }
+                // "B: THEORY" sections are typed answers even when a stray
+                // "A." in the prose looks like an option marker
+                val theorySection = hit.headerContext.contains("THEORY", ignoreCase = true)
+                for (q in parseQuestions(stripAnswerKeySections(hit.text))) {
+                    val item = if (theorySection) {
+                        q.copy(conceptId = hit.conceptId, options = emptyList())
+                    } else {
+                        q.copy(conceptId = hit.conceptId)
+                    }
+                    if (!seenStems.add(item.stem.lowercase())) continue
+                    val objective = item.options.isNotEmpty()
+                    if (QuizHistory.stemHash(item.stem) in asked) {
+                        if (objective) staleObj.add(item) else staleThy.add(item)
+                    } else {
+                        if (objective) freshObj.add(item) else freshThy.add(item)
+                    }
+                    if (freshObj.size >= OBJECTIVE_SIZE && freshThy.size >= THEORY_SIZE) break@run
+                }
+            }
+        }
+        // objectives first (shuffled), then theory (shuffled) — both inside
+        // the pinned class; stale stems only fill slots no fresh one reached
+        val objectives = (freshObj + staleObj).take(OBJECTIVE_SIZE).shuffled()
+        val theories = (freshThy + staleThy).take(THEORY_SIZE).shuffled()
+        val questions = objectives + theories
         if (questions.isEmpty()) return null
 
-        // reference passage: concise concept definition first, lesson notes second
-        val reference = src.search(terms, 1, "definition").firstOrNull()?.text
-            ?: src.search(terms, 1, "lesson_notes").firstOrNull()?.text
-            ?: ""
-        return Session.Quiz(label, questions, keys, reference, 0)
+        // remember everything shown this round -> never asked again
+        quizHistory.remember(questions.map { QuizHistory.stemHash(it.stem) })
+
+        // reference passage: the topic's definition/notes first, the
+        // subject's next (used to mark answers where a paper has no key)
+        val refTerms = topicTerms.ifEmpty {
+            entityTerms(subject).filter { it !in QueryNormalizer.stopwords }
+        }
+        val reference = if (refTerms.isEmpty()) {
+            ""
+        } else {
+            src.search(refTerms, 1, "definition").firstOrNull()?.text
+                ?: src.search(refTerms, 1, "lesson_notes").firstOrNull()?.text
+                ?: ""
+        }
+        val label = topic ?: subject ?: classLabel(cls)
+        return Session.Quiz(label, questions, keys, reference, 0, cls, term, subject)
     }
 
     private fun identityResponse(): String {
@@ -1101,7 +1703,8 @@ class KnowledgeEngine(
             "• Step-by-step equations — \"2x - 3 = 34\", \"x^2 - 5x + 6 = 0\", \"factorise x^2 + 5x + 6\"\n" +
             "• Bible (full KJV) — \"John 3:16\", \"Psalm 23\", \"verses about love\"\n" +
             "• Teaching from your notes — \"teach me photosynthesis\", then \"next\"\n" +
-            "• Exam practice — \"give me practice questions on chemistry\" (real past questions)\n" +
+            "• Exam practice — \"give me practice questions on chemistry\" " +
+                "(20 objective + 5 theory, real past questions from your class)\n" +
             "• Study plans — \"I need help on biology\", then \"where should we begin?\"\n" +
             "• Code guidance — \"create a simple Android app\"\n" +
             "• Calculations — \"12 * 8\" or a formula with your values\n" +

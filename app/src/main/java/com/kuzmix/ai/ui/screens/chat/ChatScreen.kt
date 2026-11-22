@@ -6,10 +6,13 @@ import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -47,6 +50,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -300,6 +304,40 @@ fun ChatScreen(
                             text = "Thinking...",
                             style = MaterialTheme.typography.bodySmall,
                             color = KuzmixTextSecondary
+                        )
+                    }
+                }
+            }
+        }
+
+        // Tappable chips — quiz wizard steps (class/term/subject/topic)
+        // and MCQ answer letters. Tapping one sends it as a message; they
+        // never show while an answer streams (no stale tap targets).
+        if (uiState.chips.isNotEmpty() && !uiState.isLoading) {
+            FlowRow(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = KuzmixSpacing.ScreenHorizontal)
+                    .padding(bottom = KuzmixSpacing.Sm),
+                horizontalArrangement = Arrangement.spacedBy(KuzmixSpacing.Sm),
+                verticalArrangement = Arrangement.spacedBy(KuzmixSpacing.Xs)
+            ) {
+                uiState.chips.forEach { chip ->
+                    Surface(
+                        shape = RoundedCornerShape(50),
+                        color = KuzmixSurfaceElevated,
+                        border = BorderStroke(1.dp, KuzmixOrange)
+                    ) {
+                        Text(
+                            text = chip,
+                            style = MaterialTheme.typography.labelMedium,
+                            color = KuzmixOrange,
+                            modifier = Modifier
+                                .clickable { viewModel.sendMessage(chip) }
+                                .padding(
+                                    horizontal = KuzmixSpacing.Md,
+                                    vertical = KuzmixSpacing.Sm
+                                )
                         )
                     }
                 }

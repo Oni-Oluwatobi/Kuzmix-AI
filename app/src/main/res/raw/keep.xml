@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Resource-shrinker keep rules for the knowledge packs.
+
+  These JSON files were historically loaded with Resources.getIdentifier(),
+  which the shrinker cannot trace — it stripped all of them from the
+  release APK and emptied the tutor's knowledge base on device. They are
+  now referenced statically via R.raw (see KnowledgeDataSource.readRaw),
+  and this file guarantees they survive shrinkResources even if that
+  mapping is ever refactored back to a reflective lookup.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="raw.knowledge_base,raw.kp_subjects,raw.kp_concepts_science,raw.kp_concepts_tech,raw.kp_concepts_humanities" />

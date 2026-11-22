@@ -58,6 +58,10 @@ fun KuzmixNavGraph(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
+    // Firebase session (null = signed out). Seeded from the cached user so
+    // returning users never see the login gate flash.
+    val authUser by container.authRepository.authState.collectAsStateWithLifecycle()
+
     val bottomBarRoutes = setOf("home", "chats", "tools", "profile")
     val showBottomBar = currentRoute in bottomBarRoutes
 
@@ -80,7 +84,15 @@ fun KuzmixNavGraph(
             )
         }
         true -> {
-            Scaffold(
+            // Internet-first gate: no account, no app (v2.0 Firebase login).
+            if (authUser == null) {
+                val authVm: com.kuzmix.ai.ui.screens.auth.AuthViewModel = viewModel(factory = factory)
+                com.kuzmix.ai.ui.screens.auth.AuthScreen(
+                    viewModel = authVm,
+                    googleSignInIntent = { container.authRepository.googleSignInIntent() }
+                )
+            } else {
+                Scaffold(
                 containerColor = KuzmixBackground,
                 contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Top),
                 bottomBar = {
@@ -114,6 +126,7 @@ fun KuzmixNavGraph(
                     conversations = conversations,
                     modifier = Modifier.padding(padding)
                 )
+            }
             }
         }
     }
@@ -199,9 +212,8 @@ private fun AppNavHost(
             val vm: ProfileViewModel = viewModel(factory = factory)
             ProfileScreen(
                 viewModel = vm,
-                onLogout = {
-                    mainViewModel.resetFirstLaunch()
-                }
+                // sign out -> authState flips null -> login gate reappears
+                onLogout = { container.authRepository.signOut() }
             )
         }
 

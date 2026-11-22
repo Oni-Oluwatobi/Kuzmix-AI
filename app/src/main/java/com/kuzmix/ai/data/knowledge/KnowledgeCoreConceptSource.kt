@@ -57,12 +57,25 @@ class KnowledgeCoreConceptSource(
             val exactId = s.lookupExact(entity.trim().lowercase())
                 ?: s.lookupExact(n)
             val exact = exactId?.let { id -> hydrate(s, listOf(id)).firstOrNull() }
-            if (exact != null) Log.i(TAG, "exact lookup hit id=${exact.id} for '$entity'")
-            exact ?: run {
-                val entityTokens = QueryNormalizer.contentTokens(n.split(" "))
-                val ids = candidateIds(s, n, entityTokens.ifEmpty { listOf(n) }, LOOKUP_LIMIT)
-                Log.i(TAG, "lookup fuzzy candidates=${ids.size} for '$entity'")
-                if (ids.isEmpty()) null else LooseEntityMatcher.firstMatch(hydrate(s, ids), entity)
+            if (exact != null) {
+                Log.i(TAG, "exact lookup hit id=${exact.id} for '$entity'")
+                exact
+            } else {
+                // JSON/Room concepts (Debugging, Thermodynamics, ...) resolve
+                // BEFORE the sqlite fuzzy pass: LooseEntityMatcher only accepts
+                // near-exact names/aliases, so a hit here is a true name match —
+                // while the fuzzy pass would hand back a thematically-close PDF
+                // chunk concept instead of the concept actually asked for.
+                val fromJson = fallback.lookup(entity)
+                if (fromJson != null) {
+                    Log.i(TAG, "JSON/Room lookup hit id=${fromJson.id} for '$entity'")
+                    fromJson
+                } else {
+                    val entityTokens = QueryNormalizer.contentTokens(n.split(" "))
+                    val ids = candidateIds(s, n, entityTokens.ifEmpty { listOf(n) }, LOOKUP_LIMIT)
+                    Log.i(TAG, "lookup fuzzy candidates=${ids.size} for '$entity'")
+                    if (ids.isEmpty()) null else LooseEntityMatcher.firstMatch(hydrate(s, ids), entity)
+                }
             }
         }
     }

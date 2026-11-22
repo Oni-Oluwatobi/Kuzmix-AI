@@ -113,13 +113,45 @@ class KnowledgeIndex(
                     byAlias[key]?.let { return prefer(it) }
                 }
             }
-            return null
+            return fuzzyResolve(n)
         }
 
         // Disk-backed mode: subjects/formulas resolved above; concepts go
         // through the store (FTS + cache), which applies the same
         // exact/fuzzy name and alias logic over its hydrated candidates.
-        return source.lookup(entity)?.let { conceptEntry(it) }
+        // The typo pass runs last so exact hits always win.
+        return source.lookup(entity)?.let { conceptEntry(it) } ?: fuzzyResolve(n)
+    }
+
+    /**
+     * Typo tolerance for direct lookups ("buology" -> Biology): the best
+     * name/alias key within a tiny edit budget. Subjects (and formulas)
+     * live in the static shell in BOTH modes, so a misspelled subject
+     * request resolves here even when the disk concept source misses.
+     * Budget is 1 edit for short words, 2 for longer ones — tight enough
+     * that "physics" can never swallow an unrelated subject.
+     */
+    private fun fuzzyResolve(n: String): Entry? {
+        if (n.length < 4) return null
+        val budget = if (n.length <= 5) 1 else 2
+        var bestDist = budget + 1
+        var best: Entry? = null
+        fun consider(key: String, list: List<Entry>) {
+            if (key.isEmpty() || kotlin.math.abs(key.length - n.length) > budget) return
+            val d = QueryNormalizer.editDistanceAtMost(n, key, budget)
+            if (d > budget) return
+            val e = prefer(list)
+            val cur = best
+            if (cur == null || d < bestDist || (d == bestDist && kindRank(e) < kindRank(cur))) {
+                bestDist = d
+                best = e
+            }
+        }
+        for ((key, list) in byName) consider(key, list)
+        if (best == null) {
+            for ((key, list) in byAlias) consider(key, list)
+        }
+        return best
     }
 
     suspend fun search(
@@ -252,10 +284,14 @@ class KnowledgeIndex(
         concept = c
     )
 
-    private fun prefer(list: List<Entry>): Entry {
-        val order = mapOf(Kind.SUBJECT to 0, Kind.CONCEPT to 1, Kind.FORMULA to 2)
-        return list.minByOrNull { order.getValue(it.kind) } ?: list.first()
+    private fun kindRank(e: Entry): Int = when (e.kind) {
+        Kind.SUBJECT -> 0
+        Kind.CONCEPT -> 1
+        Kind.FORMULA -> 2
     }
+
+    private fun prefer(list: List<Entry>): Entry =
+        list.minByOrNull { kindRank(it) } ?: list.first()
 
     private fun isActiveDomain(activeSubject: String, domain: String): Boolean =
         DomainBridge.matches(activeSubject, domain)

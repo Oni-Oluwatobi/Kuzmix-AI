@@ -23,7 +23,17 @@ class KnowledgeSeeder(
     private val state: SeedState
 ) {
     companion object {
-        const val SEED_VERSION = 1
+        /**
+         * v1 -> v2: the v2.0 release APK shipped with the res/raw JSON packs stripped
+         * by the resource shrinker, so devices seeded Room with ZERO concepts
+         * and recorded version 1. Bumping forces a full re-seed now that the
+         * packs are statically referenced and survive shrinking.
+         *
+         * v2 -> v3: pick up the new Thermodynamics concept AND repair devices
+         * whose older seed stored mangled example arrows (" → " stored as
+         * " ’n ") — a full delete + re-import from the clean packs.
+         */
+        const val SEED_VERSION = 3
         private const val INSERT_CHUNK = 250
     }
 

@@ -1,6 +1,40 @@
 {
   "concepts": [
     {
+      "id": "concept.physics.thermodynamics",
+      "type": "CONCEPT",
+      "domain": "physics",
+      "name": "Thermodynamics",
+      "aliases": [
+        "thermal physics",
+        "study of heat and energy"
+      ],
+      "definition": "Thermodynamics is the branch of physics that studies heat, work, temperature and energy, and the laws governing how they transfer between systems: the zeroth law defines thermal equilibrium, the first law states that energy is conserved, the second law states that the entropy of an isolated system never decreases (setting the direction of natural processes), and the third law states that absolute zero cannot be reached in a finite number of steps.",
+      "keywords": [
+        "heat",
+        "temperature",
+        "energy",
+        "entropy",
+        "thermal",
+        "laws",
+        "heat transfer",
+        "internal energy"
+      ],
+      "related": [
+        "Zeroth Law of Thermodynamics",
+        "First Law of Thermodynamics",
+        "Second Law of Thermodynamics",
+        "Heat"
+      ],
+      "examples": [
+        "A refrigerator pumps heat from a cold interior to a warm room, but only by doing work - heat does not flow spontaneously from cold to hot.",
+        "Steam expanding in a turbine converts thermal energy into mechanical work as it cools."
+      ],
+      "misconceptions": [],
+      "formula": "",
+      "confidence": "HIGH"
+    },
+    {
       "id": "concept.general_knowledge.scientific_method",
       "type": "CONCEPT",
       "domain": "general_knowledge",

@@ -209,7 +209,7 @@ fun ProfileScreen(
                     fontWeight = FontWeight.SemiBold
                 )
                 Text(
-                    text = "DB v4 · 2,577 concepts · RAM cache · Zero network",
+                    text = "DB v9 · 3,036 concepts · RAM cache · Offline core",
                     style = MaterialTheme.typography.bodySmall,
                     color = KuzmixTextSecondary
                 )
@@ -230,7 +230,7 @@ fun ProfileScreen(
         SettingsRow(Icons.Outlined.SmartToy, "AI Model", if (isModelInstalled) "Installed" else "Not installed") {
             activeDialog = "model"
         }
-        SettingsRow(Icons.Filled.Info, "About Kuzmix AI", "v1.0.0") { activeDialog = "about" }
+        SettingsRow(Icons.Filled.Info, "About Kuzmix AI", "v2.0.0") { activeDialog = "about" }
 
         Spacer(modifier = Modifier.height(KuzmixSpacing.Xl))
 
@@ -329,7 +329,7 @@ private fun ProfileInfoDialog(
                 )
                 Spacer(modifier = Modifier.height(KuzmixSpacing.Md))
                 Text(
-                    text = "Kuzmix AI runs fully offline — your account details stay on this device.",
+                    text = "Your class, term, and name sync to your Firebase account so they follow you across devices. Chats and voice recordings stay on this device.",
                     style = MaterialTheme.typography.bodySmall,
                     color = KuzmixTextSecondary
                 )
@@ -349,7 +349,7 @@ private fun ProfileInfoDialog(
             title = "Privacy & Security"
             {
                 Text(
-                    text = "Kuzmix AI works completely offline. No chats, voice recordings, or personal data ever leave your device. There are no accounts on any server and the app never connects to the internet.",
+                    text = "Kuzmix AI's study engine runs offline. Logging in and account creation need an internet connection; after that your class and term sync to Firebase. Chats, voice recordings, and personal data never leave your device, and questions are answered on-device.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = KuzmixTextPrimary
                 )
@@ -359,7 +359,7 @@ private fun ProfileInfoDialog(
             title = "Data & Storage"
             {
                 Text(
-                    text = "Conversations are stored locally in the app's private database. The onboard knowledge base (19.6 MB) ships with the app. Clearing app data in Android settings removes all chats.",
+                    text = "Conversations are stored locally in the app's private database. The onboard knowledge base (~114 MB) ships with the app. Clearing app data in Android settings removes all chats.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = KuzmixTextPrimary
                 )
@@ -409,7 +409,7 @@ private fun ProfileInfoDialog(
             title = "About Kuzmix AI"
             {
                 Text(
-                    text = "Kuzmix AI v1.0.0\nby The Kreadive Galaxy\n\nOffline AI assistant with a 2,577-concept onboard knowledge base. No internet required.",
+                    text = "Kuzmix AI v2.0.0\nby The Kreadive Galaxy\n\nOffline AI assistant with a 3,036-concept onboard knowledge base. Internet is used only to log in and sync your class.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = KuzmixTextPrimary
                 )

@@ -1,6 +1,7 @@
 package com.kuzmix.ai.data.knowledge
 
 import android.content.Context
+import com.kuzmix.ai.R
 import com.kuzmix.ai.domain.ai.ConceptRecord
 import com.kuzmix.ai.domain.ai.KnowledgePack
 import com.kuzmix.ai.domain.ai.KnowledgePackParser
@@ -37,8 +38,25 @@ class KnowledgeDataSource(private val context: Context) {
         "kp_concepts_humanities"
     )
 
+    /**
+     * Reads one bundled JSON pack by resource NAME via a static R.raw mapping.
+     *
+     * getIdentifier() must NOT be used here: the release resource shrinker
+     * (shrinkResources) cannot trace reflective lookups and silently strips
+     * every JSON pack under res/raw from the APK — which emptied the subject list,
+     * the response shell and the Room seed on device (v2.0 field report).
+     * A compile-time R.raw reference is always retained by the shrinker.
+     * Keep res/raw/keep.xml in sync as a second line of defence.
+     */
     private fun readRaw(name: String): String? {
-        val id = context.resources.getIdentifier(name, "raw", context.packageName)
+        val id = when (name) {
+            "knowledge_base" -> R.raw.knowledge_base
+            "kp_subjects" -> R.raw.kp_subjects
+            "kp_concepts_science" -> R.raw.kp_concepts_science
+            "kp_concepts_tech" -> R.raw.kp_concepts_tech
+            "kp_concepts_humanities" -> R.raw.kp_concepts_humanities
+            else -> 0
+        }
         if (id == 0) return null
         return context.resources.openRawResource(id).bufferedReader().use { it.readText() }
     }

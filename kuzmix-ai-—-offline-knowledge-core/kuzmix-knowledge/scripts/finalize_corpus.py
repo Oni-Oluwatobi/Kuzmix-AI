@@ -51,10 +51,18 @@ def run():
     log(f"  chunks rows: {chunks:,}")
 
     # ---- 1. chunks_fts (external content, index-only) ----------------------
+    # NOTE: COUNT(*) on an external-content FTS5 table reads the *content*
+    # table, so it always equals COUNT(chunks) even when the index itself is
+    # stale. The shadow %_docsize table holds one row per indexed document -
+    # that is the real staleness signal (probe: 51,074 docsize vs 51,369
+    # chunks after an ingest that never touched the index).
     have = cur.execute(
         "SELECT 1 FROM sqlite_master WHERE name = 'chunks_fts'").fetchone()
     if have:
-        n = cur.execute("SELECT COUNT(*) FROM chunks_fts").fetchone()[0]
+        try:
+            n = cur.execute("SELECT COUNT(*) FROM chunks_fts_docsize").fetchone()[0]
+        except sqlite3.OperationalError:
+            n = -1                     # docsize shadow missing -> rebuild
         if n == chunks:
             log(f"  chunks_fts already built ({n:,} rows) - skipping")
         else:
@@ -62,7 +70,7 @@ def run():
             cur.execute("DROP TABLE chunks_fts")
             have = None
     if not have or cur.execute(
-            "SELECT COUNT(*) FROM chunks_fts").fetchone()[0] != chunks:
+            "SELECT COUNT(*) FROM chunks_fts_docsize").fetchone()[0] != chunks:
         cur.execute("DROP TABLE IF EXISTS chunks_fts")
         cur.execute("""
             CREATE VIRTUAL TABLE chunks_fts USING fts5(
@@ -76,7 +84,7 @@ def run():
         cur.fetchall()
         log("  chunks_fts built + optimized")
 
-    n = cur.execute("SELECT COUNT(*) FROM chunks_fts").fetchone()[0]
+    n = cur.execute("SELECT COUNT(*) FROM chunks_fts_docsize").fetchone()[0]
     assert n == chunks, f"chunks_fts {n} != chunks {chunks}"
     log(f"  chunks_fts rows : {n:,} (matches)")
 
